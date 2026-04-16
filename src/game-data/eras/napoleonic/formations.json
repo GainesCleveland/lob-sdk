@@ -266,7 +266,7 @@
     "shootingAngle": 360,
     "rangedAttackModifier": 0.8,
     "shootingMaxTargets": 1,
-    "rangedDamageResistance": 0.5,
+    "rangedDamageResistance": 0.25,
     "rangedOrgResistance": 3,
     "movementModifier": -0.5,
     "runMovementModifier": -0.5,
