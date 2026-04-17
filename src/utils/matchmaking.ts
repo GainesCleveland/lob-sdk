@@ -9,6 +9,12 @@ export const ELO_RANGE_INTERVAL_SECONDS = 10;
 export const MAX_ELO_RANGE = 400;
 
 /**
+ * Maximum number of matchmaking presets a user can submit at once.
+ * Shared between client (UI limit) and server (validation).
+ */
+export const MAX_MATCHMAKING_SETTINGS = 4;
+
+/**
  * Calculates the ELO range based on the time spent in the matchmaking queue.
  * The range starts at BASE_ELO_RANGE and increases by ELO_RANGE_INCREMENT
  * every ELO_RANGE_INTERVAL_SECONDS seconds, up to MAX_ELO_RANGE.
