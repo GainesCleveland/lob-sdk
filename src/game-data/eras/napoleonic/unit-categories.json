@@ -153,7 +153,8 @@
       "6lb-canister-fire": 0.4,
       "4lb-canister-fire": 0.4,
       "howitzer-canister": 0.4,
-      "rocket": 0.9
+      "rocket": 0.9,
+      "rocket-long": 0.9
     },
     "autofirePriority": {
       "scoutCavalry": -1,
