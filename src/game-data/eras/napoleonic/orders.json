@@ -39,7 +39,8 @@
   },
   {
     "id": 5,
-    "name": "placeEntity"
+    "name": "placeEntity",
+    "userSelectable": false
   },
   {
     "id": 6,
@@ -67,6 +68,7 @@
   {
     "id": 7,
     "name": "rotate",
+    "userSelectable": false,
     "allowFireWhenMoving": true,
     "canFocusLocation": true
   }

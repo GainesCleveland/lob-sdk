@@ -271,6 +271,8 @@ export interface OrderTemplate {
   orgRegainModifier?: number;
   /** When true, the UI selects this order by default at the start of a game. At most one order per era should set this. */
   isDefault?: boolean;
+  /** When false, this order is hidden from the player's order selector (modal, cycle, keybinds). System orders like placeEntity/rotate set this. Defaults to true if omitted. */
+  userSelectable?: boolean;
 }
 
 /**

@@ -819,6 +819,15 @@ export class GameDataManager {
     return this._orders.map((order) => order.id);
   }
 
+  // Subset of `getOrderTypes()` the player can pick from the order selector.
+  // Excludes orders flagged `userSelectable: false` (system orders like
+  // placeEntity, rotate) so the UI doesn't expose them.
+  public getUserSelectableOrderTypes(): OrderType[] {
+    return this._orders
+      .filter((order) => order.userSelectable !== false)
+      .map((order) => order.id);
+  }
+
   // Order flagged with `isDefault: true` in the era's orders.json. Returns
   // null if no order is flagged so callers can fall back as they prefer.
   public getDefaultOrderType(): OrderType | null {
