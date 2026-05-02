@@ -810,7 +810,7 @@ export type TutorialSituationKey =
   | "cavalryVsWeakerCavalry"
   | "cavalryVsEqualCavalry"
   | "cavalryVsStrongerCavalry"
-  | "cavalryVsInfantrySquare"
+  | "enemyInfantrySquare"
   | "cavalryVsInfantryFlank"
   | "cavalryVsShakenInfantry"
   | "cavalryVsSkirmishers"

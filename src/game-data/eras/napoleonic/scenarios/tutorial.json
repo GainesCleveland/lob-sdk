@@ -4191,29 +4191,29 @@
         ]
       },
       {
-        "id": "infantryFormLineVsCavalryFrontal",
+        "id": "infantryFormLine",
         "fireOn": {
-          "situation": "infantryShouldFormLineVsCavalryFrontal",
+          "situation": "infantryShouldFormLineAny",
           "afterChapter": "enemyContact"
         },
         "beats": [
           {
-            "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.intro",
+            "copy": "tutorial.situational.infantryFormLine.intro",
             "advanceOn": "never",
             "bubbleAnchorAabb": true,
             "showWhen": {
               "kind": "anyUnitInSituation",
-              "situation": "infantryShouldFormLineVsCavalryFrontal"
+              "situation": "infantryShouldFormLineAny"
             },
             "highlight": {
               "targetSelector": {
                 "kind": "playerUnitsInSituation",
-                "situation": "infantryShouldFormLineVsCavalryFrontal"
+                "situation": "infantryShouldFormLineAny"
               },
               "style": "ring"
             },
             "formationModalOverride": {
-              "situation": "infantryShouldFormLineVsCavalryFrontal",
+              "situation": "infantryShouldFormLineAny",
               "ifMatchSelected": { "targetId": "formation-option-line" },
               "otherwise": { "targetId": "modal-close-button" },
               "whenClosedAndMatchSelected": { "targetId": "hud-formation" }
@@ -4576,14 +4576,14 @@
         ]
       },
       {
-        "id": "cavalryVsInfantrySquare",
+        "id": "enemyInfantrySquare",
         "fireOn": {
-          "situation": "cavalryVsInfantrySquare",
+          "situation": "enemyInfantrySquare",
           "afterChapter": "enemyContact"
         },
         "beats": [
           {
-            "copy": "tutorial.situational.cavalryVsInfantrySquare.intro",
+            "copy": "tutorial.situational.enemyInfantrySquare.intro",
             "advanceOn": "button",
             "highlight": {
               "targetSelector": {
@@ -4953,6 +4953,86 @@
         ]
       },
       {
+        "id": "cavalryFallbackFromInfantry",
+        "fireOn": {
+          "situation": "cavalryShouldFallbackFromInfantry",
+          "oncePerUnit": true,
+          "afterChapter": "enemyContact"
+        },
+        "beats": [
+          {
+            "copy": "tutorial.situational.cavalryFallbackFromInfantry.intro",
+            "advanceOn": "button",
+            "highlight": {
+              "targetSelector": [
+                { "kind": "specificUnit" },
+                {
+                  "kind": "nearestEnemyTo",
+                  "playerCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+                  "enemyCategory": ["infantry", "guardsInfantry", "militiaInfantry"]
+                }
+              ],
+              "style": "ring"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryFallbackFromInfantry.select",
+            "advanceOn": "unitSelected",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "highlight": {
+              "targetSelector": { "kind": "specificUnit" },
+              "style": "spotlight"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryFallbackFromInfantry.openMenu",
+            "advanceOn": "orderTypeModalOpened",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 6,
+            "highlight": {
+              "targetId": "hud-order-type",
+              "style": "ring"
+            },
+            "placement": "top"
+          },
+          {
+            "copy": "tutorial.situational.cavalryFallbackFromInfantry.pickFb",
+            "advanceOn": "orderTypeSelected",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 6,
+            "highlight": {
+              "targetId": "orderType-option-6",
+              "style": "ring"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryFallbackFromInfantry.drawFb",
+            "advanceOn": "orderPlaced",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 6,
+            "gesture": "drawOrder",
+            "highlight": {
+              "targetSelector": { "kind": "specificUnit" },
+              "style": "spotlight"
+            },
+            "moveDestination": {
+              "kind": "awayFromThreats",
+              "distancePx": 96,
+              "radiusPx": 192,
+              "threatCategory": [
+                "infantry",
+                "guardsInfantry",
+                "militiaInfantry",
+                "midCavalry",
+                "lightCavalry",
+                "heavyCavalry",
+                "scoutCavalry"
+              ]
+            }
+          }
+        ]
+      },
+      {
         "id": "dominatingShouldPushObjective",
         "fireOn": {
           "situation": "dominatingShouldPushObjective",
@@ -5012,37 +5092,6 @@
               "style": "spotlight"
             },
             "placement": "top"
-          }
-        ]
-      },
-      {
-        "id": "infantryFirefightRange",
-        "fireOn": {
-          "situation": "infantryFirefightRange",
-          "afterChapter": "enemyContact"
-        },
-        "beats": [
-          {
-            "copy": "tutorial.situational.infantryFirefightRange.intro",
-            "advanceOn": "never",
-            "bubbleAnchorAabb": true,
-            "showWhen": {
-              "kind": "anyUnitInSituation",
-              "situation": "infantryFirefightRange"
-            },
-            "highlight": {
-              "targetSelector": {
-                "kind": "playerUnitsInSituation",
-                "situation": "infantryFirefightRange"
-              },
-              "style": "ring"
-            },
-            "formationModalOverride": {
-              "situation": "infantryFirefightRange",
-              "ifMatchSelected": { "targetId": "formation-option-line" },
-              "otherwise": { "targetId": "modal-close-button" },
-              "whenClosedAndMatchSelected": { "targetId": "hud-formation" }
-            }
           }
         ]
       },
@@ -5694,13 +5743,7 @@
       "tutorial.move.removeOrdersInfo": "Changed your mind? Remove Orders clears the orders on the selected units so you can redraw them.",
       "tutorial.submitHint": "When everything's ready, submit orders to advance to the next turn.",
       "tutorial.enemyContact.intro": "Enemy in sight, form up.",
-      "tutorial.stamina.message": "Running burns stamina. Tired units hit softer and rout faster. Walk into position and save the sprint for when it actually matters.",
-      "tutorial.shoot.message": "Skirmishers and artillery shoot on their own once an enemy walks into range. Skirmishers hit hard at distance but fold in melee, so keep them behind your line. Artillery reaches the furthest. Don't let cavalry get close to it.",
-      "tutorial.charge.message": "Set Run {icon.run} as the order type, then {input.moveUnit} into an enemy — running into contact triggers the charge. A good charge can break an infantry line, but it burns your horses' stamina fast. Pick the moment.",
       "tutorial.objectives.message": "This is the Victory Points bar. If your side of the bar reaches 0, you lose. Each turn, casualties and captured objectives add or subtract points. Click for more information.",
-      "tutorial.formation.message": "A supported line is hard to break. Don't leave skirmishers or artillery on their own. One cavalry charge into an isolated unit is enough to end it. Screen with line infantry and anchor with artillery.",
-      "tutorial.morale.message": "Units rout when their organization collapses. Losses, a flank attack, or plain exhaustion can all do it. A routing unit won't fight. Pull tired units back to recover and send fresh ones up.",
-      "tutorial.finalPush.message": "Last turns. If neither side runs out of VP, the bigger lead at the final turn takes it. Pick the objective that decides it and throw everything at that one. Don't try to hold everywhere.",
       "tutorial.situational.skirmisherVsArtillery.intro": "Enemy battery in your skirmisher's reach. Pour fire into the gun crew — light infantry shred unprotected artillery before it can answer.",
       "tutorial.situational.skirmisherVsArtillery.select": "{input.selectUnits} your skirmisher to select it.",
       "tutorial.situational.skirmisherVsArtillery.openMenu": "Open the order menu to switch to FAA {icon.fireAdvance}",
@@ -5716,7 +5759,7 @@
       "tutorial.situational.skirmisherVsInfantry.openMenu": "Open the order menu to switch to Fallback {icon.fallback}",
       "tutorial.situational.skirmisherVsInfantry.pickFallback": "Pick Fallback {icon.fallback} — disengage and stay out of musket-rush range.",
       "tutorial.situational.skirmisherVsInfantry.drawFallback": "{input.moveUnit} away from the bayonets — draw the path opposite the threat.",
-      "tutorial.situational.infantryFormLineVsCavalryFrontal.intro": "Cavalry charging the front of your infantry and they're not in line yet. Form line on each highlighted unit so every musket faces forward — line infantry can stand and fire a frontal charge. Don't form square here, you'd lose half your firepower.",
+      "tutorial.situational.infantryFormLine.intro": "Switch these units to line. With enemy infantry in musket range or cavalry coming at the front, line gives you the most muskets pointed forward and the best defense against incoming volleys. Don't form square against a frontal charge, you'd lose half your firepower.",
       "tutorial.situational.infantryVsCavalryFrontal.intro": "Enemy cavalry charging the front of your infantry, but they have movement orders queued — they'll walk into the hooves instead of standing and firing. Clear the orders on each highlighted unit so they hold the line.",
       "tutorial.situational.infantryVsCavalryFrontal.selectUnit": "Start with the highlighted unit — {input.selectUnits} on it.",
       "tutorial.situational.infantryVsCavalryFrontal.clearOrder": "Press Remove Orders so this unit stands still and autofire takes the charge.",
@@ -5741,7 +5784,7 @@
       "tutorial.situational.cavalryVsStrongerCavalry.openMenu": "Open the order menu to switch to Fallback {icon.fallback}",
       "tutorial.situational.cavalryVsStrongerCavalry.pickFb": "Pick Fallback {icon.fallback} — disengage in good order.",
       "tutorial.situational.cavalryVsStrongerCavalry.drawFb": "{input.moveUnit} away from the enemy horsemen — draw the path opposite the threat.",
-      "tutorial.situational.cavalryVsInfantrySquare.intro": "Enemy infantry has formed square — every face has muskets out and a charge into it costs you horses for nothing. Keep your cavalry away and look for line or column targets with a flank to exploit.",
+      "tutorial.situational.enemyInfantrySquare.intro": "Enemy infantry has formed square — every face has muskets out and a charge into it costs you horses for nothing. Keep your cavalry away and look for line or column targets with a flank to exploit.",
       "tutorial.situational.cavalryVsInfantryFlank.intro": "Enemy infantry's flank is open and they're roughly as steady as you — exactly the moment a clean charge breaks them. Hit the side, not the front.",
       "tutorial.situational.cavalryVsInfantryFlank.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
       "tutorial.situational.cavalryVsInfantryFlank.openMenu": "Open the order menu to switch to Run {icon.run}",
@@ -5760,6 +5803,11 @@
       "tutorial.situational.cavalryShouldPursueRouter.openMenu": "Open the order menu to switch to Run {icon.run}",
       "tutorial.situational.cavalryShouldPursueRouter.pickRun": "Pick Run {icon.run} — running into a router rides them down.",
       "tutorial.situational.cavalryShouldPursueRouter.drawCharge": "{input.moveUnit} into the broken unit to ride them down.",
+      "tutorial.situational.cavalryFallbackFromInfantry.intro": "Your cavalry is sitting in musket range of healthy line infantry. Pull back before they grind down your horse, look for shaken targets or open flanks instead.",
+      "tutorial.situational.cavalryFallbackFromInfantry.select": "Pick up the highlighted cavalry, {input.selectUnits} on it.",
+      "tutorial.situational.cavalryFallbackFromInfantry.openMenu": "Open the order menu to switch to Fallback {icon.fallback}",
+      "tutorial.situational.cavalryFallbackFromInfantry.pickFb": "Pick Fallback {icon.fallback} to break contact in good order.",
+      "tutorial.situational.cavalryFallbackFromInfantry.drawFb": "{input.moveUnit} away from the line, draw the path opposite the threat.",
       "tutorial.situational.cavalryVsSkirmishers.intro": "Skirmishers caught in the open with a clear lane to your horse. They fold in melee and can't outrun a charge — ride them down before they reach cover.",
       "tutorial.situational.cavalryVsSkirmishers.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
       "tutorial.situational.cavalryVsSkirmishers.openMenu": "Open the order menu to switch to Run {icon.run}",
@@ -5770,7 +5818,6 @@
       "tutorial.situational.cavalryVsArtillery.openMenu": "Open the order menu to switch to Run {icon.run}",
       "tutorial.situational.cavalryVsArtillery.pickRun": "Pick Run {icon.run} — running into contact triggers the charge.",
       "tutorial.situational.cavalryVsArtillery.drawCharge": "{input.moveUnit} into the gun crew — running into contact triggers the charge.",
-      "tutorial.situational.infantryFirefightRange.intro": "Enemy infantry inside your musket range. Switch to line — wider frontage, more muskets firing, better defense against incoming volleys.",
       "tutorial.situational.infantryBayonetCharge.intro": "Weak enemy infantry within charge range. Form column and run into them — bayonet on contact in column breaks them.",
       "tutorial.situational.infantryBayonetCharge.select": "Pick up the highlighted infantry — {input.selectUnits} on it.",
       "tutorial.situational.infantryBayonetCharge.openFormationMenu": "Open the formation menu.",
