@@ -4193,59 +4193,13 @@
         "id": "infantryFormLineVsCavalryFrontal",
         "fireOn": {
           "situation": "infantryShouldFormLineVsCavalryFrontal",
-          "oncePerUnit": true,
           "afterChapter": "enemyContact"
         },
         "beats": [
           {
             "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.intro",
-            "advanceOn": "button",
-            "highlight": {
-              "targetSelector": [
-                {
-                  "kind": "playerUnitsInSituation",
-                  "situation": "infantryShouldFormLineVsCavalryFrontal"
-                },
-                { "kind": "specificUnit" }
-              ],
-              "style": "ring"
-            }
-          },
-          {
-            "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.selectUnit",
-            "advanceOn": "unitSelected",
-            "unitCategory": ["infantry", "guardsInfantry", "militiaInfantry"],
-            "gesture": "tap",
-            "highlight": {
-              "targetSelector": { "kind": "specificUnit" },
-              "style": "ring"
-            }
-          },
-          {
-            "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.openFormationMenu",
-            "advanceOn": "formationModalOpened",
-            "unitCategory": ["infantry", "guardsInfantry", "militiaInfantry"],
-            "formationId": "line",
-            "highlight": {
-              "targetId": "hud-formation",
-              "style": "spotlight"
-            },
-            "placement": "top"
-          },
-          {
-            "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.formLine",
-            "advanceOn": "formationSelected",
-            "unitCategory": ["infantry", "guardsInfantry", "militiaInfantry"],
-            "formationId": "line",
-            "highlight": {
-              "targetId": "formation-option-line",
-              "style": "spotlight"
-            },
-            "placement": "left"
-          },
-          {
-            "copy": "tutorial.situational.infantryFormLineVsCavalryFrontal.formRest",
-            "advanceOn": "button",
+            "advanceOn": "never",
+            "bubbleAnchorAabb": true,
             "showWhen": {
               "kind": "anyUnitInSituation",
               "situation": "infantryShouldFormLineVsCavalryFrontal"
@@ -4256,6 +4210,12 @@
                 "situation": "infantryShouldFormLineVsCavalryFrontal"
               },
               "style": "ring"
+            },
+            "formationModalOverride": {
+              "situation": "infantryShouldFormLineVsCavalryFrontal",
+              "ifMatchSelected": { "targetId": "formation-option-line" },
+              "otherwise": { "targetId": "modal-close-button" },
+              "whenClosedAndMatchSelected": { "targetId": "hud-formation" }
             }
           }
         ]
@@ -5666,10 +5626,6 @@
       "tutorial.situational.skirmisherVsInfantry.pickFallback": "Pick Fallback {icon.fallback} — disengage and stay out of musket-rush range.",
       "tutorial.situational.skirmisherVsInfantry.drawFallback": "{input.moveUnit} away from the bayonets — draw the path opposite the threat.",
       "tutorial.situational.infantryFormLineVsCavalryFrontal.intro": "Cavalry charging the front of your infantry and they're not in line yet. Form line on each highlighted unit so every musket faces forward — line infantry can stand and fire a frontal charge. Don't form square here, you'd lose half your firepower.",
-      "tutorial.situational.infantryFormLineVsCavalryFrontal.selectUnit": "Start with the highlighted unit — {input.selectUnits} on it.",
-      "tutorial.situational.infantryFormLineVsCavalryFrontal.openFormationMenu": "Open the formation menu.",
-      "tutorial.situational.infantryFormLineVsCavalryFrontal.formLine": "Pick Line. Maximum frontage, every musket on the cavalry.",
-      "tutorial.situational.infantryFormLineVsCavalryFrontal.formRest": "Now do the same on the rest of your highlighted infantry — line them up before the charge lands.",
       "tutorial.situational.infantryVsCavalryFrontal.intro": "Enemy cavalry charging the front of your infantry, but they have movement orders queued — they'll walk into the hooves instead of standing and firing. Clear the orders on each highlighted unit so they hold the line.",
       "tutorial.situational.infantryVsCavalryFrontal.selectUnit": "Start with the highlighted unit — {input.selectUnits} on it.",
       "tutorial.situational.infantryVsCavalryFrontal.clearOrder": "Press Remove Orders so this unit stands still and autofire takes the charge.",

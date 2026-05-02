@@ -17,6 +17,7 @@ import { OrderType } from "./order";
 export type TutorialBeatAdvance =
   | "click" // any click on the overlay dismisses (default for info bubbles)
   | "button" // bubble shows an explicit Continue button
+  | "never" // beat only dismisses via `showWhen` auto-skip — no event advances it
   | "unitSelected" // first UNIT_SELECTED event on the client
   | "unitsDeselected" // first UNIT_DESELECTED event that leaves selection empty
   | "unitRepositioned" // first reposition committed in the deployment phase
@@ -366,6 +367,8 @@ export type TutorialMoveDestinationSelector =
        */
       kind: "towardNearestEnemy";
       distancePx?: number;
+      /** Multiplier on `walkMovement` when `distancePx` is omitted. Defaults to 1. */
+      walkTicks?: number;
       rectSizePx?: number;
     }
   | {
@@ -657,6 +660,33 @@ export interface TutorialBeat {
    */
   silent?: boolean;
   /**
+   * When true, the bubble anchors on the union AABB of all resolved highlight
+   * rects instead of just the first one. Useful for "wait until everyone is
+   * in formation" beats that highlight a whole group — the bubble parks above
+   * the group as a whole rather than next to one unit.
+   */
+  bubbleAnchorAabb?: boolean;
+  /**
+   * While the formation-select modal is open, replace this beat's bubble and
+   * highlights with a single highlight inside the modal: on the line option
+   * when at least one unit matching `situation` is currently selected,
+   * otherwise on the modal close button. Lets a "wait until everyone is in
+   * line" beat redirect attention to the right modal control without ending
+   * the wait.
+   */
+  formationModalOverride?: {
+    situation: TutorialSituationKey;
+    ifMatchSelected: { targetId: string };
+    otherwise: { targetId: string };
+    /**
+     * Additional highlight rendered alongside the group rings while the modal
+     * is *closed* and at least one unit matching `situation` is currently
+     * selected — usually points at the "formations" HUD button so the player
+     * knows where to open the modal.
+     */
+    whenClosedAndMatchSelected?: { targetId: string };
+  };
+  /**
    * Input schemes this beat applies to. When omitted, the beat runs for all
    * schemes. When present, the beat is skipped if the active scheme is not
    * listed. Used for mechanics that only one input style needs to learn
@@ -701,6 +731,8 @@ export type TutorialSituationKey =
   | "infantryThreatenedByCavalryFrontal"
   | "infantryThreatenedByCavalryFlank"
   | "infantryShouldFormLineVsCavalryFrontal"
+  | "infantryShouldFormLineAny"
+  | "cavalryShouldFallbackFromInfantry"
   | "artilleryCanFireAndAdvance"
   | "artilleryCanRotateToFire"
   | "infantryReadyForLine"
