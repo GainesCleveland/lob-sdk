@@ -157,6 +157,8 @@ export type TutorialHighlightSelector =
        * highlight and the gesture target stay in sync.
        */
       maxEnemyOrgPp?: number;
+      /** When true, only consider routing enemies (used by pursue-router). */
+      onlyRouting?: boolean;
     }
   | {
       /**
@@ -302,6 +304,8 @@ export type TutorialMoveDestinationSelector =
       maxEnemyOrgPp?: number;
       /** Output rect side length (world px). Default 48. */
       rectSizePx?: number;
+      /** When true, only consider routing enemies (used by pursue-router). */
+      onlyRouting?: boolean;
     }
   | {
       /**
@@ -623,6 +627,14 @@ export interface TutorialBeat {
    */
   unitCategory?: string | string[];
   /**
+   * When true, a `unitSelected` beat advances only after the player has the
+   * **entire** category group selected (every player-owned, non-routing unit
+   * matching `unitCategory`) and nothing else. Picking a single unit is no
+   * longer enough. Independent of `gesture`, so a `selectionBox` beat can
+   * still teach the drag-select while requiring the full group as the gate.
+   */
+  requireFullGroup?: boolean;
+  /**
    * Destination for a `moveUnit` beat. Scoped to world coords (same space as
    * units / deployment zones). Only meaningful when `gesture` is `"moveUnit"`.
    * Either a static rect (`{x, y, width, height}`, optionally `kind: "rect"`)
@@ -784,6 +796,7 @@ export type TutorialSituationKey =
   | "cavalryVsShakenInfantry"
   | "cavalryVsSkirmishers"
   | "cavalryVsArtillery"
+  | "cavalryShouldPursueRouter"
   | "infantryFirefightRange"
   | "infantryBayonetCharge"
   | "infantryFallback"

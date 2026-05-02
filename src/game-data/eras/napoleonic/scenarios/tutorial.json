@@ -3492,7 +3492,8 @@
             },
             "gesture": "selectionBox",
             "advanceOn": "unitSelected",
-            "unitCategory": "infantry"
+            "unitCategory": "infantry",
+            "requireFullGroup": true
           },
           {
             "copy": "tutorial.deploy.positionInfantry",
@@ -3549,7 +3550,8 @@
             },
             "gesture": "selectionBox",
             "advanceOn": "unitSelected",
-            "unitCategory": "midCavalry"
+            "unitCategory": "midCavalry",
+            "requireFullGroup": true
           },
           {
             "copy": "tutorial.deploy.positionCavalry",
@@ -3585,7 +3587,8 @@
             },
             "gesture": "selectionBox",
             "advanceOn": "unitSelected",
-            "unitCategory": "artillery"
+            "unitCategory": "artillery",
+            "requireFullGroup": true
           },
           {
             "copy": "tutorial.deploy.positionArtillery",
@@ -3621,7 +3624,8 @@
             },
             "gesture": "selectionBox",
             "advanceOn": "unitSelected",
-            "unitCategory": "skirmishInfantry"
+            "unitCategory": "skirmishInfantry",
+            "requireFullGroup": true
           },
           {
             "copy": "tutorial.deploy.positionSkirmishers",
@@ -3658,7 +3662,15 @@
         "beats": [
           {
             "copy": "tutorial.move.intro",
-            "advanceOn": "button"
+            "advanceOn": "button",
+            "highlight": {
+              "targetSelector": {
+                "kind": "objectives",
+                "objective": "neutral",
+                "radiusTiles": 8
+              },
+              "style": "spotlight"
+            }
           },
           {
             "copy": "tutorial.move.selectInfantry",
@@ -4940,6 +4952,77 @@
         ]
       },
       {
+        "id": "cavalryShouldPursueRouter",
+        "fireOn": {
+          "situation": "cavalryShouldPursueRouter",
+          "oncePerUnit": true,
+          "afterChapter": "enemyContact"
+        },
+        "beats": [
+          {
+            "copy": "tutorial.situational.cavalryShouldPursueRouter.intro",
+            "advanceOn": "button",
+            "highlight": {
+              "targetSelector": [
+                { "kind": "specificUnit" },
+                {
+                  "kind": "nearestEnemyTo",
+                  "playerCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+                  "onlyRouting": true
+                }
+              ],
+              "style": "ring"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryShouldPursueRouter.select",
+            "advanceOn": "unitSelected",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "highlight": {
+              "targetSelector": { "kind": "specificUnit" },
+              "style": "spotlight"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryShouldPursueRouter.openMenu",
+            "advanceOn": "orderTypeModalOpened",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 2,
+            "highlight": {
+              "targetId": "hud-order-type",
+              "style": "ring"
+            },
+            "placement": "top"
+          },
+          {
+            "copy": "tutorial.situational.cavalryShouldPursueRouter.pickRun",
+            "advanceOn": "orderTypeSelected",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 2,
+            "highlight": {
+              "targetId": "orderType-option-2",
+              "style": "ring"
+            }
+          },
+          {
+            "copy": "tutorial.situational.cavalryShouldPursueRouter.drawCharge",
+            "advanceOn": "orderPlaced",
+            "unitCategory": ["midCavalry", "lightCavalry", "heavyCavalry", "scoutCavalry"],
+            "orderType": 2,
+            "gesture": "drawOrder",
+            "highlight": {
+              "targetSelector": { "kind": "specificUnit" },
+              "style": "spotlight"
+            },
+            "moveDestination": {
+              "kind": "weakEnemyTarget",
+              "withinPx": 192,
+              "onlyRouting": true
+            }
+          }
+        ]
+      },
+      {
         "id": "infantryFirefightRange",
         "fireOn": {
           "situation": "infantryFirefightRange",
@@ -5657,6 +5740,11 @@
       "tutorial.situational.cavalryVsShakenInfantry.openMenu": "Open the order menu to switch to Run {icon.run}",
       "tutorial.situational.cavalryVsShakenInfantry.pickRun": "Pick Run {icon.run} — running into contact triggers the charge.",
       "tutorial.situational.cavalryVsShakenInfantry.drawCharge": "{input.moveUnit} into the broken infantry — running into contact triggers the charge.",
+      "tutorial.situational.cavalryShouldPursueRouter.intro": "That enemy is broken and running, with no support to interrupt the chase. A pursuit by cavalry breaks them for good — finish them before they reform.",
+      "tutorial.situational.cavalryShouldPursueRouter.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
+      "tutorial.situational.cavalryShouldPursueRouter.openMenu": "Open the order menu to switch to Run {icon.run}",
+      "tutorial.situational.cavalryShouldPursueRouter.pickRun": "Pick Run {icon.run} — running into a router rides them down.",
+      "tutorial.situational.cavalryShouldPursueRouter.drawCharge": "{input.moveUnit} into the broken unit to ride them down.",
       "tutorial.situational.cavalryVsSkirmishers.intro": "Skirmishers caught in the open with a clear lane to your horse. They fold in melee and can't outrun a charge — ride them down before they reach cover.",
       "tutorial.situational.cavalryVsSkirmishers.select": "Pick up the highlighted cavalry — {input.selectUnits} on it.",
       "tutorial.situational.cavalryVsSkirmishers.openMenu": "Open the order menu to switch to Run {icon.run}",
