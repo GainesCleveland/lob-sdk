@@ -50,7 +50,7 @@ export class RandomMapGenerator {
       gameDataManager.getGameConstants().DEFAULT_BATTLE_TYPE;
     const battleType = gameDataManager.getBattleType(resolvedBattleType);
     const mapSizeIndex = getMapSizeIndex(maxPlayers, battleType.mapSize.length);
-    const battleSize = battleType.mapSize[mapSizeIndex] as Size;
+    const battleSize = battleType.mapSize[mapSizeIndex];
     const { map } = gameDataManager.getMapSizes()[battleSize];
 
     // Pre-placed objectives from the scenario seed the result; instruction
