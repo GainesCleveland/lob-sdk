@@ -233,5 +233,37 @@
     "tier": 4,
     "premiumPrice": 3750,
     "discount": 0.2
+  },
+  {
+    "id": 31,
+    "name": "shogi",
+    "base": "shogi",
+    "tier": 3,
+    "premiumPrice": 720,
+    "discount": 0.2
+  },
+  {
+    "id": 32,
+    "name": "blossom-point",
+    "base": "blossom-point",
+    "tier": 3,
+    "premiumPrice": 720,
+    "discount": 0.2
+  },
+  {
+    "id": 33,
+    "name": "yinyang-core",
+    "base": "yinyang-core",
+    "tier": 3,
+    "premiumPrice": 720,
+    "discount": 0.2
+  },
+  {
+    "id": 34,
+    "name": "skull",
+    "base": "skull",
+    "tier": 3,
+    "premiumPrice": 720,
+    "discount": 0.2
   }
 ]
