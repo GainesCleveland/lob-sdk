@@ -15,8 +15,8 @@
     "forwardDeployment": { "tilesX": 94, "tilesY": 16, "zoneSeparation": 64 }
   },
   "xl": {
-    "map": { "tilesX": 112, "tilesY": 112 },
-    "mainDeployment": { "tilesX": 106, "tilesY": 14, "zoneSeparation": 74 },
-    "forwardDeployment": { "tilesX": 106, "tilesY": 20, "zoneSeparation": 68 }
+    "map": { "tilesX": 124, "tilesY": 100 },
+    "mainDeployment": { "tilesX": 118, "tilesY": 10, "zoneSeparation": 70 },
+    "forwardDeployment": { "tilesX": 118, "tilesY": 16, "zoneSeparation": 64 }
   }
 }
