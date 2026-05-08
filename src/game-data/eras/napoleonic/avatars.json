@@ -533,5 +533,12 @@
     "tier": 1,
     "premiumPrice": 100,
     "discount": 0.2
+  },
+  {
+    "id": 77,
+    "name": "hussar-maiden",
+    "tier": 3,
+    "premiumPrice": 1250,
+    "discount": 0.2
   }
 ]
