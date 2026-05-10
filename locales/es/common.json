@@ -53,7 +53,6 @@
     "inQueue": "¡Ahora estás en la cola de emparejamiento! El sistema está buscando otro jugador que haya seleccionado las mismas configuraciones que tú.",
     "matchFound": "Una vez que se encuentre un emparejamiento, serás redirigido al juego.",
     "extendQueue": "Extender cola",
-    "extendQueueSuccess": "Buscando en cualquier rango de Elo.",
     "cancelledBy": "La cola fue cancelada por {{username}}.",
     "playersInQueue": "{{count}} jugadores buscando",
     "disconnectedReconnecting": "Conexión Perdida. Reconectando"

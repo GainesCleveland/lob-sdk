@@ -64,7 +64,6 @@
     "inQueue": "Şimdi eşleştirme kuyruğundasınız! Sistem, sizinle aynı ayarları seçmiş başka bir oyuncu arıyor.",
     "matchFound": "Bir eşleşme bulunduğunda, oyuna yönlendirileceksiniz.",
     "extendQueue": "Kuyruğu genişlet",
-    "extendQueueSuccess": "Herhangi bir Elo aralığında aranıyor.",
     "cancelledBy": "Kuyruk {{username}} tarafından iptal edildi.",
     "playersInQueue": "{{count}} oyuncu aranıyor",
     "disconnectedReconnecting": "Bağlantı Kesildi. Yeniden Bağlanıyor"
