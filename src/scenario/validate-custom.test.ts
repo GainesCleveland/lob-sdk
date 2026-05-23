@@ -1,5 +1,7 @@
 import {
   CUSTOM_UNIT_TYPE_MIN,
+  MAX_CUSTOM_SPRITES,
+  MAX_CUSTOM_TERRAIN_CATEGORIES,
   validateScenarioCustomDefs,
 } from "./validate-custom";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
@@ -71,6 +73,60 @@ function makeUnitTemplate(
 describe("validateScenarioCustomDefs", () => {
   it("returns no errors for an empty scenario", () => {
     expect(validateScenarioCustomDefs(makeScenario({}), era)).toEqual([]);
+  });
+
+  describe("abuse count caps", () => {
+    it("flags too many custom terrain categories", () => {
+      const customTerrainCategories: CustomTerrainCategoryOverride[] =
+        Array.from({ length: MAX_CUSTOM_TERRAIN_CATEGORIES + 1 }, (_, i) => ({
+          id: `terrain_${i}`,
+          config: {},
+        }));
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customTerrainCategories }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) =>
+            e.scope === "terrainCategory" &&
+            /Too many custom terrain categories/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
+    it("flags too many custom sprites", () => {
+      const customSprites = Object.fromEntries(
+        Array.from({ length: MAX_CUSTOM_SPRITES + 1 }, (_, i) => [
+          `cs_${i}`,
+          { dataUrl: "data:image/webp;base64,AAAA", width: 8, height: 8 },
+        ]),
+      );
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customSprites }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) =>
+            e.scope === "customSprite" &&
+            /Too many custom sprites/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
+    it("accepts a collection exactly at the cap", () => {
+      const customTerrainCategories: CustomTerrainCategoryOverride[] =
+        Array.from({ length: MAX_CUSTOM_TERRAIN_CATEGORIES }, (_, i) => ({
+          id: `terrain_${i}`,
+          config: {},
+        }));
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customTerrainCategories }),
+        era,
+      );
+      expect(errors.some((e) => /Too many custom/.test(e.message))).toBe(false);
+    });
   });
 
   describe("custom damage types", () => {

@@ -68,7 +68,7 @@ export function validateScenarioCustomDefs(
     [customUnitFormations.length, MAX_CUSTOM_UNIT_FORMATIONS, "unitFormation", "unit formations"],
     [customUnitCategories.length, MAX_CUSTOM_UNIT_CATEGORIES, "unitCategory", "unit categories"],
     [customTerrainCategories.length, MAX_CUSTOM_TERRAIN_CATEGORIES, "terrainCategory", "terrain categories"],
-    [Object.keys(customSprites).length, MAX_CUSTOM_SPRITES, "customSprite", "custom sprites"],
+    [Object.keys(customSprites).length, MAX_CUSTOM_SPRITES, "customSprite", "sprites"],
   ];
   for (const [count, max, scope, label] of countLimits) {
     if (count > max) {
@@ -417,6 +417,14 @@ function validateCustomUnitTemplates(
 
   return errors;
 }
+
+/**
+ * Max size of a *compressed* scenario the client lets the user import, kept as a
+ * margin below the server's 200KB request-body cap (server/src/app.ts). Single
+ * source of truth for the import-size limit: the editor budgets and the
+ * "scenario too large" message all derive from this.
+ */
+export const MAX_COMPRESSED_SCENARIO_IMPORT_BYTES = 150 * 1024;
 
 /**
  * Per-sprite byte budget for uploaded custom sprites: the editor re-encodes to
