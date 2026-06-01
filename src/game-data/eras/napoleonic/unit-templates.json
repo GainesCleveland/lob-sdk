@@ -1500,6 +1500,7 @@
     "name": "ship_of_the_line",
     "type": 26,
     "category": "ship",
+    "locked": true,
     "rangedAttack": 4000,
     "meleeAttack": 400,
     "meleeDefense": 800,
