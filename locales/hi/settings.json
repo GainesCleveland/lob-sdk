@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "कैमरा संवेदनशीलता (पीसी)"
   },
+  "rotationSensibility": {
+    "title": "घूर्णन संवेदनशीलता"
+  },
   "replaySpeed": {
     "title": "रिप्ले गति"
   },

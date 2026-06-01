@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "화면 감도 (PC)"
   },
+  "rotationSensibility": {
+    "title": "회전 감도"
+  },
   "replaySpeed": {
     "title": "전투 복기 속도"
   },

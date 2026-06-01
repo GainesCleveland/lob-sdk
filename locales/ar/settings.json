@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "حساسية الكاميرا (أجهزة الكمبيوتر)"
   },
+  "rotationSensibility": {
+    "title": "حساسية الدوران"
+  },
   "replaySpeed": {
     "title": "سرعة إعادة التشغيل"
   },

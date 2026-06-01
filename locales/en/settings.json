@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "Camera sensitivity (PC)"
   },
+  "rotationSensibility": {
+    "title": "Rotation sensitivity"
+  },
   "replaySpeed": {
     "title": "Replay Speed"
   },

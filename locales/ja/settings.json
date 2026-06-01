@@ -49,6 +49,9 @@
   "cameraSensibility": {
     "title": "カメラ感度（PC）"
   },
+  "rotationSensibility": {
+    "title": "回転感度"
+  },
   "replaySpeed": {
     "title": "リプレイスピード"
   },

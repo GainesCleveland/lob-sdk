@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "镜头敏感度（PC）"
   },
+  "rotationSensibility": {
+    "title": "旋转敏感度"
+  },
   "replaySpeed": {
     "title": "回放速度"
   },

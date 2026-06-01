@@ -49,6 +49,9 @@
   "cameraSensibility": {
     "title": "Kamera Érzékenység (PC)"
   },
+  "rotationSensibility": {
+    "title": "Forgatás Érzékenység"
+  },
   "replaySpeed": {
     "title": "Visszajátszás sebessége"
   },
