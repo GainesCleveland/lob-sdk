@@ -8,6 +8,7 @@ import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
   CustomTerrainCategoryOverride,
   FormationTemplate,
+  OrderType,
   RangeUnitTemplate,
   Scenario,
   UnitTemplate,
@@ -427,6 +428,60 @@ describe("validateScenarioCustomDefs", () => {
         errors.some((e) => /needs at least one range bracket/.test(e.message)),
       ).toBe(false);
     });
+
+    it("flags a ranged damage type with an out-of-range angleOffset", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99005,
+              name: "bad-angle",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              ranges: [{ start: 0, end: 100, startMod: 1, endMod: 1 }],
+              angleOffset: 400,
+              projectileWidth: 4,
+              areaOfEffect: {
+                type: "circular",
+                ranges: [{ start: 0, end: 100, startRadius: 0, endRadius: 0 }],
+                edgeDamageModifier: 1,
+              },
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some((e) => /angleOffset must be between/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("accepts a ranged damage type with an in-range angleOffset", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99006,
+              name: "good-angle",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              ranges: [{ start: 0, end: 100, startMod: 1, endMod: 1 }],
+              angleOffset: 90,
+              projectileWidth: 4,
+              areaOfEffect: {
+                type: "circular",
+                ranges: [{ start: 0, end: 100, startRadius: 0, endRadius: 0 }],
+                edgeDamageModifier: 1,
+              },
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some((e) => /angleOffset must be between/.test(e.message)),
+      ).toBe(false);
+    });
   });
 
   describe("custom unit formations", () => {
@@ -828,6 +883,36 @@ describe("validateScenarioCustomDefs", () => {
         errors.some((e) => /references a melee damage type/.test(e.message)),
       ).toBe(false);
     });
+
+    it("flags a runnable unit (runMovement > 0) missing runCost (the NaN-stamina bug)", () => {
+      const { runCost: _omit, ...tmpl } = makeUnitTemplate({ runMovement: 100 });
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customUnitTemplates: [tmpl as UnitTemplate] }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) =>
+            e.scope === "unitTemplate" &&
+            /runCost is required for a unit that can run/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
+    it("accepts an immobile unit (runMovement 0) missing runCost/walkMovement", () => {
+      // Walls / static artillery legitimately omit movement stats; the engine
+      // never reads runCost for them, so validation must not reject them.
+      const { runCost: _rc, walkMovement: _wm, ...tmpl } = makeUnitTemplate({
+        runMovement: 0,
+      });
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customUnitTemplates: [tmpl as UnitTemplate] }),
+        era,
+      );
+      expect(
+        errors.some((e) => /is required for a unit that can run/.test(e.message)),
+      ).toBe(false);
+    });
   });
 });
 
@@ -894,5 +979,93 @@ describe("validateCustomSprites", () => {
     expect(errors.some((e) => /missing custom sprite/.test(e.message))).toBe(
       true,
     );
+  });
+
+  describe("game constant & rule overrides", () => {
+    it("accepts a valid sparse override with no errors", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customGameConstants: { ATTACK_PERIOD: 3, TILE_SIZE: 32 },
+          customGameRules: { objectives: { radius: 80 } },
+        }),
+        era,
+      );
+      expect(errors).toEqual([]);
+    });
+
+    it("rejects a non-finite constant override", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customGameConstants: { ATTACK_PERIOD: NaN } }),
+        era,
+      );
+      expect(errors.some((e) => e.scope === "gameConstants")).toBe(true);
+    });
+
+    it("rejects a non-finite nested rule override", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customGameRules: { stamina: { regainRates: { range1: NaN } } },
+        }),
+        era,
+      );
+      expect(errors.some((e) => e.scope === "gameRules")).toBe(true);
+    });
+
+    it("rejects a non-positive divisor/dimension constant", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customGameConstants: { TILE_SIZE: 0 } }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) => e.scope === "gameConstants" && e.field === "TILE_SIZE",
+        ),
+      ).toBe(true);
+    });
+  });
+
+  describe("custom orders", () => {
+    it("accepts a valid override of an existing order", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customOrders: { [OrderType.Run]: { orgRegainModifier: -0.3 } },
+        }),
+        era,
+      );
+      expect(errors.some((e) => e.scope === "order")).toBe(false);
+    });
+
+    it("rejects an order id that is not a known era order", () => {
+      const customOrders: Record<number, { speedModifier: number }> = {
+        9999: { speedModifier: -0.5 },
+      };
+      const errors = validateScenarioCustomDefs(
+        makeScenario({ customOrders }),
+        era,
+      );
+      expect(
+        errors.some((e) => e.scope === "order" && e.field === "9999"),
+      ).toBe(true);
+    });
+
+    it("rejects a non-finite numeric leaf", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customOrders: { [OrderType.Walk]: { orgRegainModifier: NaN } },
+        }),
+        era,
+      );
+      expect(errors.some((e) => e.scope === "order")).toBe(true);
+    });
+
+    it("rejects changing the order's identity name", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customOrders: { [OrderType.Walk]: { name: "sprint" } },
+        }),
+        era,
+      );
+      expect(errors.some((e) => e.scope === "order")).toBe(true);
+    });
   });
 });

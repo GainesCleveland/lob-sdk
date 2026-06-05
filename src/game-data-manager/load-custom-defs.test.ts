@@ -2,7 +2,9 @@ import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { CUSTOM_UNIT_TYPE_MIN } from "@lob-sdk/scenario";
 import {
   FormationTemplate,
+  OrderType,
   RangeUnitTemplate,
+  TerrainType,
   UnitTemplate,
 } from "@lob-sdk/types";
 import {
@@ -59,10 +61,8 @@ describe("GameDataManager custom defs", () => {
         customUnitCategories: [{ id: "drone", firingAltitude: 0 }],
       });
       // The era's terrain configs use a `*` wildcard for default movement.
-      // Without the re-expansion, isPassable for an unknown category would
-      // fall back to 0 ( > IMPASSABLE_THRESHOLD = -10) and silently report
-      // every terrain as passable. With re-expansion, the result must match
-      // what an existing category would get on the same terrain.
+      // Without the re-expansion a new category would miss the wildcard value
+      // and read 0, so it must match what an existing category gets.
       const terrainType = m.getTerrains()[0]!.id;
       const builtInCategory = m.getUnitCategories()[0]!.id;
       // Same modifier ⇒ same passability ⇒ wildcard was applied.
@@ -407,6 +407,157 @@ describe("GameDataManager custom defs", () => {
       });
       const tc = m.getTerrainCategories() as Record<string, any>;
       expect(tc.forest.movementModifier.drone).toBe(0.5);
+    });
+
+    it("blocks a category via the impassable flag on a custom override", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customTerrainCategories: [
+          { id: "forest", config: { impassable: { infantry: true } } },
+        ],
+      });
+      expect(m.isPassable(TerrainType.Forest, "infantry")).toBe(false);
+      // Categories without the flag stay passable.
+      expect(m.isPassable(TerrainType.Forest, "artillery")).toBe(true);
+    });
+
+    it("re-expands the impassable `*` wildcard to new unit categories", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customUnitCategories: [{ id: "drone", firingAltitude: 0 }],
+      });
+      // deepWater is impassable via `*`; the new category must inherit it
+      // instead of falling through to the passable default.
+      expect(m.isPassable(TerrainType.DeepWater, "drone")).toBe(false);
+    });
+  });
+
+  describe("loadCustomDefs: game constants & rules", () => {
+    it("applies a constant override without mutating the era singleton", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const baseTile = eraSingleton.getGameConstants().TILE_SIZE;
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customGameConstants: { TILE_SIZE: baseTile + 16 },
+      });
+      expect(m.getGameConstants().TILE_SIZE).toBe(baseTile + 16);
+      expect(eraSingleton.getGameConstants().TILE_SIZE).toBe(baseTile);
+    });
+
+    it("deep-merges a nested rule override, keeping untouched siblings", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const baseRadius = eraSingleton.getGameRules().objectives.radius;
+      const baseRegainRate = eraSingleton.getGameRules().organization.regainRate;
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customGameRules: { objectives: { radius: baseRadius + 10 } },
+      });
+      expect(m.getGameRules().objectives.radius).toBe(baseRadius + 10);
+      // Sibling group untouched by the partial merge.
+      expect(m.getGameRules().organization.regainRate).toBe(baseRegainRate);
+      // Singleton untouched.
+      expect(eraSingleton.getGameRules().objectives.radius).toBe(baseRadius);
+    });
+
+    it("recomputes the head-on cosine cache when the angle constant changes", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const baseCosine = eraSingleton.getHeadOnCollisionCosineThresholdSquared();
+      const baseAngle =
+        eraSingleton.getGameConstants().HEAD_ON_COLLISION_ANGLE_DEGREES;
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customGameConstants: { HEAD_ON_COLLISION_ANGLE_DEGREES: baseAngle / 2 },
+      });
+      expect(m.getHeadOnCollisionCosineThresholdSquared()).not.toBe(baseCosine);
+      expect(eraSingleton.getHeadOnCollisionCosineThresholdSquared()).toBe(
+        baseCosine,
+      );
+    });
+
+    it("treats empty override objects the same as omitted (still singleton)", () => {
+      const a = GameDataManager.createWithCustomDefs("napoleonic", {
+        customGameConstants: {},
+        customGameRules: {},
+      });
+      expect(a).toBe(GameDataManager.get("napoleonic"));
+    });
+  });
+
+  describe("loadCustomDefs: custom orders", () => {
+    it("deep-merges a per-order override without mutating the era singleton", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const baseRun = eraSingleton.getOrderTemplate(OrderType.Run);
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders: { [OrderType.Run]: { orgRegainModifier: -0.3 } },
+      });
+      expect(m.getOrderTemplate(OrderType.Run).orgRegainModifier).toBe(-0.3);
+      // Sibling field untouched by the partial merge.
+      expect(m.getOrderTemplate(OrderType.Run).receivedOrgDamage).toBe(
+        baseRun.receivedOrgDamage,
+      );
+      // Singleton untouched.
+      expect(eraSingleton.getOrderTemplate(OrderType.Run).orgRegainModifier).toBe(
+        baseRun.orgRegainModifier,
+      );
+    });
+
+    it("deep-merges one category in a by-category map, keeping the others", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const base = eraSingleton.getOrderTemplate(OrderType.FireAndAdvance)
+        .speedModifierWhenShootingByCategory;
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders: {
+          [OrderType.FireAndAdvance]: {
+            speedModifierWhenShootingByCategory: { infantry: -0.25 },
+          },
+        },
+      });
+      const merged = m.getOrderTemplate(OrderType.FireAndAdvance)
+        .speedModifierWhenShootingByCategory;
+      expect(merged?.infantry).toBe(-0.25);
+      // Other categories survive the partial merge.
+      expect(merged?.skirmishInfantry).toBe(base?.skirmishInfantry);
+    });
+
+    it("overriding userSelectable removes the order from the selectable set", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      expect(eraSingleton.getUserSelectableOrderTypes()).toContain(
+        OrderType.Run,
+      );
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders: { [OrderType.Run]: { userSelectable: false } },
+      });
+      expect(m.getUserSelectableOrderTypes()).not.toContain(OrderType.Run);
+      // Singleton untouched.
+      expect(eraSingleton.getUserSelectableOrderTypes()).toContain(
+        OrderType.Run,
+      );
+    });
+
+    it("overriding isDefault changes the default order", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      expect(eraSingleton.getDefaultOrderType()).toBe(OrderType.FireAndAdvance);
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders: {
+          [OrderType.FireAndAdvance]: { isDefault: false },
+          [OrderType.Walk]: { isDefault: true },
+        },
+      });
+      expect(m.getDefaultOrderType()).toBe(OrderType.Walk);
+    });
+
+    it("skips unknown order ids without throwing", () => {
+      const eraSingleton = GameDataManager.get("napoleonic");
+      const before = eraSingleton.getOrderTypes().length;
+      const customOrders: Record<number, { speedModifier: number }> = {
+        9999: { speedModifier: -0.5 },
+      };
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders,
+      });
+      expect(m.getOrderTypes().length).toBe(before);
+    });
+
+    it("treats an empty override map the same as omitted (still singleton)", () => {
+      const a = GameDataManager.createWithCustomDefs("napoleonic", {
+        customOrders: {},
+      });
+      expect(a).toBe(GameDataManager.get("napoleonic"));
     });
   });
 });

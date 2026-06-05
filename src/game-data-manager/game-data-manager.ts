@@ -80,6 +80,7 @@ import napoleonicLowCountries from "@lob-sdk/game-data/eras/napoleonic/scenarios
 import napoleonicHedgerows from "@lob-sdk/game-data/eras/napoleonic/scenarios/hedgerows.json";
 import napoleonicLeipzig from "@lob-sdk/game-data/eras/napoleonic/scenarios/leipzig.json";
 import napoleonicTutorial from "@lob-sdk/game-data/eras/napoleonic/scenarios/tutorial.json";
+import napoleonicLineOfBattle from "@lob-sdk/game-data/eras/napoleonic/scenarios/line-of-battle.json";
 
 import ww2BattleTypes from "@lob-sdk/game-data/eras/ww2/battle-types.json";
 import ww2Orders from "@lob-sdk/game-data/eras/ww2/orders.json";
@@ -108,7 +109,7 @@ import gameConstantCategories from "@lob-sdk/game-data/shared/game-constant-cate
 import { FormationTemplate, OrderTemplate, OrderType } from "@lob-sdk/types";
 import { FormationManager } from "./formation-manager";
 import { UnitTemplateManager } from "./unit-template-manager";
-import { degreesToRadians } from "@lob-sdk/utils";
+import { degreesToRadians, deepMerge, type DeepPartial } from "@lob-sdk/utils";
 
 /**
  * Centralized lazy-loading game data manager.
@@ -118,11 +119,6 @@ import { degreesToRadians } from "@lob-sdk/utils";
 export class GameDataManager {
   readonly era: GameEra;
   private static instances: Map<GameEra, GameDataManager> = new Map();
-
-  /**
-   * Terrain is considered globally impassable (e.g., Deep Water) if the modifier is this or less.
-   */
-  public static readonly IMPASSABLE_THRESHOLD = -10;
 
   // Centralized data cache
   private battleTypes: Record<DynamicBattleType, BattleTypeTemplate> =
@@ -245,6 +241,9 @@ export class GameDataManager {
       customUnitFormations?: FormationTemplate[];
       customUnitCategories?: UnitCategoryTemplate[];
       customTerrainCategories?: CustomTerrainCategoryOverride[];
+      customGameConstants?: Partial<GameConstants>;
+      customGameRules?: DeepPartial<GameRules>;
+      customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
     },
   ): GameDataManager {
     const hasCustom = !!(
@@ -252,7 +251,10 @@ export class GameDataManager {
       customDefs.customDamageTypes?.length ||
       customDefs.customUnitFormations?.length ||
       customDefs.customUnitCategories?.length ||
-      customDefs.customTerrainCategories?.length
+      customDefs.customTerrainCategories?.length ||
+      Object.keys(customDefs.customGameConstants ?? {}).length ||
+      Object.keys(customDefs.customGameRules ?? {}).length ||
+      Object.keys(customDefs.customOrders ?? {}).length
     );
 
     if (!hasCustom) {
@@ -276,8 +278,11 @@ export class GameDataManager {
     customUnitFormations?: FormationTemplate[];
     customUnitCategories?: UnitCategoryTemplate[];
     customTerrainCategories?: CustomTerrainCategoryOverride[];
+    customGameConstants?: Partial<GameConstants>;
+    customGameRules?: DeepPartial<GameRules>;
+    customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
   }): void {
-    // Order matters: categories → terrain categories → damage types →
+    // Order matters: orders → categories → terrain categories → damage types →
     // formations → templates. Terrain categories slot in after unit
     // categories so the wildcard expansion has the full set of unit
     // category ids to populate against.
@@ -294,6 +299,25 @@ export class GameDataManager {
     this.terrainCategories = JSON.parse(
       JSON.stringify(this.terrainCategories ?? {}),
     ) as Record<TerrainCategoryType, TerrainCategoryConfig>;
+
+    if (
+      customDefs.customOrders &&
+      Object.keys(customDefs.customOrders).length > 0
+    ) {
+      // Clone the shared era array, then deep-merge each override by id and
+      // re-key the maps. Unknown ids are skipped (validation rejects them).
+      this._orders = [...this._orders];
+      for (const [idStr, override] of Object.entries(customDefs.customOrders)) {
+        if (!override) continue;
+        const id = Number(idStr);
+        const idx = this._orders.findIndex((o) => o.id === id);
+        if (idx < 0) continue;
+        const merged = deepMerge<OrderTemplate>(this._orders[idx], override);
+        this._orders[idx] = merged;
+        this._orderMap.set(merged.id, merged);
+        this._orderNameMap.set(merged.name, merged.id);
+      }
+    }
 
     if (customDefs.customUnitCategories?.length) {
       // Clone, then replace-by-id so override doesn't duplicate the entry.
@@ -384,6 +408,29 @@ export class GameDataManager {
       ];
       this._unitTemplateManager = new UnitTemplateManager();
       this._unitTemplateManager.load(merged);
+    }
+
+    if (
+      customDefs.customGameConstants &&
+      Object.keys(customDefs.customGameConstants).length > 0
+    ) {
+      // deepMerge clones, so the era singleton's constants are never mutated.
+      this.gameConstants = deepMerge<GameConstants>(
+        this.getGameConstants(),
+        customDefs.customGameConstants,
+      );
+      // Recompute the cosine cache in case HEAD_ON_COLLISION_ANGLE_DEGREES changed.
+      this._headOnCollisionCosineThresholdSquared = -1;
+    }
+
+    if (
+      customDefs.customGameRules &&
+      Object.keys(customDefs.customGameRules).length > 0
+    ) {
+      this.gameRules = deepMerge<GameRules>(
+        this.getGameRules(),
+        customDefs.customGameRules,
+      );
     }
   }
 
@@ -483,6 +530,7 @@ export class GameDataManager {
           "clash-at-chelmnitz": napoleonicClashAtChelmnitz as RawScenarioInput,
           dresden: napoleonicDresden as RawScenarioInput,
           tutorial: napoleonicTutorial as RawScenarioInput,
+          "line-of-battle": napoleonicLineOfBattle as RawScenarioInput,
         };
 
         break;
@@ -606,6 +654,20 @@ export class GameDataManager {
             // UnitCategoryId is a string, so bracket access is safe and supported.
             if (!(unitCategory.id in modifierMap)) {
               modifierMap[unitCategory.id] = defaultValue;
+            }
+          }
+        }
+      }
+
+      // `impassable` shares the `*` wildcard convention but holds booleans, so
+      // it is expanded separately from the numeric modifier maps above.
+      const impassableMap = category.impassable;
+      if (impassableMap && "*" in impassableMap) {
+        const defaultValue = impassableMap["*"];
+        if (defaultValue !== undefined) {
+          for (const unitCategory of this.unitCategories) {
+            if (!(unitCategory.id in impassableMap)) {
+              impassableMap[unitCategory.id] = defaultValue;
             }
           }
         }
@@ -1218,16 +1280,16 @@ export class GameDataManager {
   }
 
   /**
-   * Check if terrain is passable.
-   * If no category is provided, it falls back to the supplyLines.movementCategory or "infantry".
-   * Terrain is considered impassable if the movement modifier is -10 or less.
+   * Passable unless the terrain category's `impassable` flag is set for the
+   * unit category (or via the `*` wildcard).
    */
   public isPassable(
     terrainType: TerrainType,
     unitCategory: UnitCategoryId,
   ): boolean {
-    const modifier = this.getMovementModifier(terrainType, unitCategory);
-    return modifier > GameDataManager.IMPASSABLE_THRESHOLD;
+    const category = this.getCategoryByTerrain(terrainType);
+    const terrainCategory = this.terrainCategories![category];
+    return !terrainCategory?.impassable?.[unitCategory];
   }
 
   /**

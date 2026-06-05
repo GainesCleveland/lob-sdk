@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "镜头敏感度（PC）"
   },
+  "rotationSensibility": {
+    "title": "旋转敏感度"
+  },
   "replaySpeed": {
     "title": "回放速度"
   },
@@ -153,6 +156,8 @@
     "title": "显示聊天栏"
   },
   "keybindings": {
+    "rotateCameraContinuous": "旋转镜头（按住）",
+    "rotateCameraSnap": "旋转镜头 90°",
     "title": "键位绑定",
     "pressAKey": "按下一个按键……",
     "moveUp": "向上移动",

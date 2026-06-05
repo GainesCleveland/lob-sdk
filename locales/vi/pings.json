@@ -6,7 +6,10 @@
     "retreat": "Rút lui",
     "missing": "Mất dấu",
     "onMyWay": "Đang tới",
-    "bait": "Mồi nhử",
-    "hold": "Giữ vị trí"
-  }
+    "focusFire": "Tập trung hỏa lực",
+    "hold": "Giữ vị trí",
+    "bait": "Mồi nhử"
+  },
+  "mute": "Tắt ping",
+  "unmute": "Bật ping"
 }

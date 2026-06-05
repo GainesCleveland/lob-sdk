@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "حساسية الكاميرا (أجهزة الكمبيوتر)"
   },
+  "rotationSensibility": {
+    "title": "حساسية الدوران"
+  },
   "replaySpeed": {
     "title": "سرعة إعادة التشغيل"
   },
@@ -149,6 +152,8 @@
     "title": "إظهار الدردشة"
   },
   "keybindings": {
+    "rotateCameraContinuous": "تدوير الكاميرا (استمر بالضغط)",
+    "rotateCameraSnap": "تدوير الكاميرا 90°",
     "title": "ربط المفاتيح",
     "pressAKey": "اضغط على مفتاح...",
     "moveUp": "التحرك لأعلى",

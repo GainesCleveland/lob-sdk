@@ -1,6 +1,6 @@
 {
   "eraName": "II Wojna Światowa",
-  "eraDescription": "Wczesna eksperymentalna beta zastosowania silnika Lines of Battle do gry o II Wojnie Światowej na poziomie operacyjnym; ustaw linie fortyfikacji, planuj wokół ograniczeń zaopatrzenia i twórz okrążenia dywizjami pancernymi.",
+  "eraDescription": "Eksperymentalne podejście rozszerzające silnik Lines of Battle na II wojnę światową na poziomie operacyjnym: ustaw linie fortyfikacji, planuj wokół zaopatrzenia i twórz okrążenia dywizjami pancernymi. To poboczny eksperyment, którym dzielimy się w obecnej postaci, bardziej zapowiedź tego, co potrafi silnik, niż tryb, który aktywnie rozwijamy.",
   "unitName": {
     "1": "Piechota",
     "2": "Pancerna",

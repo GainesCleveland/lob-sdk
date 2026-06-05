@@ -300,17 +300,18 @@ describe("GameDataManager", () => {
       const terrainCategories = gameDataManager.getTerrainCategories();
       const unitCategories = gameDataManager.getUnitCategories();
 
-      // Check deepWater category (pure wildcard)
+      // Check deepWater category (pure wildcard, an impassable flag)
       const deepWater = terrainCategories.deepWater;
       expect(deepWater).toBeDefined();
-      if (deepWater && deepWater.movementModifier) {
-        // All unit categories should have the -10 modifier
-        unitCategories.forEach((category) => {
-          expect(deepWater.movementModifier![category.id]).toBe(-10);
-        });
-        // Wildcard remains in the map for better JIT optimization
-        expect("*" in deepWater.movementModifier).toBe(true);
-      }
+      expect(deepWater.impassable).toBeDefined();
+      // All unit categories should be impassable, except ships which sail it
+      // (an explicit "ship": false overrides the wildcard).
+      unitCategories.forEach((category) => {
+        expect(deepWater.impassable![category.id]).toBe(category.id !== "ship");
+      });
+      expect(deepWater.impassable!.ship).toBe(false);
+      // Wildcard remains in the map for better JIT optimization
+      expect("*" in deepWater.impassable!).toBe(true);
 
       // Check path category (wildcard + explicit overrides)
       const path = terrainCategories.path;

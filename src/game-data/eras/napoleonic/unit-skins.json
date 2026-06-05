@@ -3617,5 +3617,47 @@
       }
     },
     "discount": 0.2
+  },
+  {
+    "id": 220,
+    "name": "gold-rifles",
+    "tier": 2,
+    "premiumPrice": 250,
+    "unitType": 17,
+    "attackColor": "FFD700",
+    "formations": {
+      "skirmish": {
+        "overlay": "gold-rifles"
+      }
+    },
+    "discount": 0.2
+  },
+  {
+    "id": 221,
+    "name": "gold-4lb-artillery",
+    "tier": 2,
+    "premiumPrice": 250,
+    "unitType": 15,
+    "attackColor": "FFD700",
+    "formations": {
+      "artillery": {
+        "overlay": "gold-4lb-artillery"
+      }
+    },
+    "discount": 0.2
+  },
+  {
+    "id": 222,
+    "name": "gold-6lb-artillery",
+    "tier": 2,
+    "premiumPrice": 250,
+    "unitType": 18,
+    "attackColor": "FFD700",
+    "formations": {
+      "artillery": {
+        "overlay": "gold-6lb-artillery"
+      }
+    },
+    "discount": 0.2
   }
 ]

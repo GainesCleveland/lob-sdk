@@ -60,6 +60,9 @@
   "cameraSensibility": {
     "title": "Độ nhạy camera (PC)"
   },
+  "rotationSensibility": {
+    "title": "Độ nhạy xoay"
+  },
   "replaySpeed": {
     "title": "Tốc độ replay"
   },
@@ -149,6 +152,8 @@
     "title": "Hiển thị trò chuyện"
   },
   "keybindings": {
+    "rotateCameraContinuous": "Xoay camera (giữ)",
+    "rotateCameraSnap": "Xoay camera 90°",
     "title": "Phím tắt",
     "pressAKey": "Nhấn một phím...",
     "moveUp": "Di chuyển lên",

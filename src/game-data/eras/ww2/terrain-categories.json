@@ -142,9 +142,11 @@
     "color": "#3e5b7e",
     "staminaCostModifier": 1,
     "movementModifier": {
-      "infantry": -0.8,
-      "armored": -10,
-      "motorized": -10
+      "infantry": -0.8
+    },
+    "impassable": {
+      "armored": true,
+      "motorized": true
     },
     "attackModifier": {
       "infantry": -0.8
@@ -164,16 +166,18 @@
   },
 
   "deepWater": {
-    "movementModifier": {
-      "*": -10
+    "impassable": {
+      "*": true
     }
   },
 
   "cliff": {
     "movementModifier": {
-      "infantry": -0.5,
-      "armored": -10,
-      "motorized": -10
+      "infantry": -0.5
+    },
+    "impassable": {
+      "armored": true,
+      "motorized": true
     }
   },
 

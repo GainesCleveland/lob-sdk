@@ -6,7 +6,10 @@
     "retreat": "Odwrót",
     "missing": "Zaginiony",
     "onMyWay": "Już idę",
-    "bait": "Przynęta",
-    "hold": "Trzymać pozycję"
-  }
+    "focusFire": "Skup ogień",
+    "hold": "Trzymać pozycję",
+    "bait": "Przynęta"
+  },
+  "mute": "Wycisz pingi",
+  "unmute": "Wyłącz wyciszenie pingów"
 }

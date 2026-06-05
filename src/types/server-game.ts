@@ -28,11 +28,16 @@ import {
   Size,
   UnitTemplate,
   FormationTemplate,
+  OrderTemplate,
+  OrderType,
 } from "@lob-sdk/types";
 import type {
   DamageTypeTemplate,
   UnitCategoryTemplate,
+  GameConstants,
+  GameRules,
 } from "../game-data-manager/types";
+import type { DeepPartial } from "../utils/object-merge";
 import type { CustomTerrainCategoryOverride, CustomSprite } from "./scenario";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
@@ -161,6 +166,12 @@ export interface GameMetadata {
   customTerrainCategories?: CustomTerrainCategoryOverride[];
   /** Uploaded sprites (inline base64) referenced by custom unit formations. */
   customSprites?: Record<string, CustomSprite>;
+  /** Sparse game-constant overrides layered on the era registry for this game. */
+  customGameConstants?: Partial<GameConstants>;
+  /** Sparse (deep-partial) game-rule overrides layered on the era registry for this game. */
+  customGameRules?: DeepPartial<GameRules>;
+  /** Sparse per-order overrides (keyed by OrderType id) deep-merged onto the era orders for this game. */
+  customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
 }
 
 /**

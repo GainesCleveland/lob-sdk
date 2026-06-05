@@ -6,7 +6,10 @@
     "retreat": "Retirada",
     "missing": "Desaparecido",
     "onMyWay": "Voy en camino",
-    "bait": "Cebo",
-    "hold": "Mantener"
-  }
+    "focusFire": "Fuego concentrado",
+    "hold": "Mantener",
+    "bait": "Cebo"
+  },
+  "mute": "Silenciar pings",
+  "unmute": "Reactivar pings"
 }

@@ -6,7 +6,10 @@
     "retreat": "Retraite",
     "missing": "Disparu",
     "onMyWay": "J’arrive",
-    "bait": "Appât",
-    "hold": "Tenir"
-  }
+    "focusFire": "Tir concentré",
+    "hold": "Tenir",
+    "bait": "Appât"
+  },
+  "mute": "Couper les pings",
+  "unmute": "Réactiver les pings"
 }

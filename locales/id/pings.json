@@ -6,7 +6,10 @@
     "retreat": "Mundur",
     "missing": "Hilang",
     "onMyWay": "Dalam perjalanan",
-    "bait": "Umpan",
-    "hold": "Bertahan"
-  }
+    "focusFire": "Pusatkan tembakan",
+    "hold": "Bertahan",
+    "bait": "Umpan"
+  },
+  "mute": "Bisukan ping",
+  "unmute": "Bunyikan ping"
 }

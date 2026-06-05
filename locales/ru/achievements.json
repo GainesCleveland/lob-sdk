@@ -1,49 +1,49 @@
 {
   "section": "Достижения",
-  "unlockedOn": "Открыто {{date}}",
+  "unlockedOn": "Получено:{{date}}",
   "locked": "Заблокировано",
   "tutorial-completed": {
-    "name": "Новичок Обучения",
+    "name": "Тяжело в учении...",
     "description": "Пройдите обучение."
   },
   "first-victory": {
-    "name": "Первая Победа",
-    "description": "Выиграйте 1 рейтинговую игру."
+    "name": "...Легко в бою!",
+    "description": "Победите в рейтинговой игре."
   },
   "veteran-i": {
     "name": "Ветеран I",
-    "description": "Выиграйте 10 рейтинговых игр."
+    "description": "Победите в 10 рейтинговых играх."
   },
   "veteran-ii": {
     "name": "Ветеран II",
-    "description": "Выиграйте 50 рейтинговых игр."
+    "description": "Победите в 50 рейтинговых играх."
   },
   "veteran-iii": {
     "name": "Ветеран III",
-    "description": "Выиграйте 100 рейтинговых игр."
+    "description": "Победите в 100 рейтинговых играх."
   },
   "arena-champion-i": {
-    "name": "Чемпион Арены I",
-    "description": "Выиграйте 1 арену."
+    "name": "Чемпион I",
+    "description": "Победите на арене."
   },
   "arena-champion-ii": {
-    "name": "Чемпион Арены II",
-    "description": "Выиграйте 5 арен."
+    "name": "Чемпион II",
+    "description": "Победите на 5 аренах."
   },
   "arena-champion-iii": {
-    "name": "Чемпион Арены III",
-    "description": "Выиграйте 25 арен."
+    "name": "Чемпион III",
+    "description": "Победите 25 аренах."
   },
   "league-platinum": {
-    "name": "Лига Платина",
-    "description": "Достигни лиги Платина в рейтинговых играх."
+    "name": "Платина",
+    "description": "Достигните лиги «Платина»."
   },
   "league-diamond": {
-    "name": "Лига Алмаз",
-    "description": "Достигни лиги Алмаз в рейтинговых играх."
+    "name": "Алмаз",
+    "description": "Достигните лиги «Алмаз»."
   },
   "league-emperor": {
-    "name": "Лига Император",
-    "description": "Достигни лиги Император в рейтинговых играх."
+    "name": "Император",
+    "description": "Достигните лиги «Император»."
   }
 }

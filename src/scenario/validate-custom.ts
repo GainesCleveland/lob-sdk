@@ -5,12 +5,17 @@ import {
   FormationTemplate,
   CustomTerrainCategoryOverride,
   CustomSprite,
+  OrderTemplate,
+  OrderType,
 } from "@lob-sdk/types";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import type {
   DamageTypeTemplate,
   UnitCategoryTemplate,
+  GameConstants,
+  GameRules,
 } from "../game-data-manager/types";
+import type { DeepPartial } from "../utils/object-merge";
 
 /**
  * Lowest unit-type id reserved for scenario-scoped custom unit templates.
@@ -29,6 +34,7 @@ export const MAX_CUSTOM_UNIT_FORMATIONS = 50;
 export const MAX_CUSTOM_UNIT_CATEGORIES = 50;
 export const MAX_CUSTOM_TERRAIN_CATEGORIES = 50;
 export const MAX_CUSTOM_SPRITES = 200;
+export const MAX_CUSTOM_ORDERS = 50;
 
 /**
  * Generous magnitude ceiling for any single numeric stat in a custom def. The
@@ -44,7 +50,10 @@ export interface CustomDefValidationError {
     | "unitFormation"
     | "unitCategory"
     | "terrainCategory"
-    | "customSprite";
+    | "customSprite"
+    | "gameConstants"
+    | "gameRules"
+    | "order";
   field?: string;
   message: string;
 }
@@ -66,6 +75,9 @@ export function validateScenarioCustomDefs(
   const customUnitCategories = scenario.customUnitCategories ?? [];
   const customTerrainCategories = scenario.customTerrainCategories ?? [];
   const customSprites = scenario.customSprites ?? {};
+  const customGameConstants = scenario.customGameConstants ?? {};
+  const customGameRules = scenario.customGameRules ?? {};
+  const customOrders = scenario.customOrders ?? {};
 
   const countLimits: Array<
     [number, number, CustomDefValidationError["scope"], string]
@@ -76,6 +88,7 @@ export function validateScenarioCustomDefs(
     [customUnitCategories.length, MAX_CUSTOM_UNIT_CATEGORIES, "unitCategory", "unit categories"],
     [customTerrainCategories.length, MAX_CUSTOM_TERRAIN_CATEGORIES, "terrainCategory", "terrain categories"],
     [Object.keys(customSprites).length, MAX_CUSTOM_SPRITES, "customSprite", "sprites"],
+    [Object.keys(customOrders).length, MAX_CUSTOM_ORDERS, "order", "order overrides"],
   ];
   for (const [count, max, scope, label] of countLimits) {
     if (count > max) {
@@ -101,6 +114,63 @@ export function validateScenarioCustomDefs(
     ),
   );
   errors.push(...validateCustomSprites(customSprites, customUnitTemplates));
+  errors.push(...validateGameConstantOverrides(customGameConstants));
+  errors.push(...validateGameRuleOverrides(customGameRules));
+  errors.push(...validateCustomOrders(customOrders, eraGameDataManager));
+
+  return errors;
+}
+
+/**
+ * Validates the sparse per-order overrides. Each key must name an existing era
+ * order (overrides modify built-ins; they cannot add new order types), the
+ * identity fields `id`/`name` must not be changed (they key the runtime
+ * lookups), and every numeric leaf must be in range.
+ */
+function validateCustomOrders(
+  customOrders: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>,
+  eraGameDataManager: GameDataManager,
+): CustomDefValidationError[] {
+  const errors: CustomDefValidationError[] = [];
+  const knownIds = new Set<number>(eraGameDataManager.getOrderTypes());
+
+  for (const [idStr, override] of Object.entries(customOrders)) {
+    const id = Number(idStr);
+    if (!Number.isInteger(id) || !knownIds.has(id)) {
+      errors.push({
+        scope: "order",
+        field: idStr,
+        message: `Order id "${idStr}" is not a known order for this era; only existing orders can be overridden`,
+      });
+      continue;
+    }
+    if (!override || typeof override !== "object") {
+      errors.push({
+        scope: "order",
+        field: idStr,
+        message: `Order override "${idStr}" must be an object`,
+      });
+      continue;
+    }
+    const eraName = eraGameDataManager.getOrderTemplate(id).name;
+    if (override.id !== undefined && override.id !== id) {
+      errors.push({
+        scope: "order",
+        field: idStr,
+        message: `Order override "${idStr}" must not change the order id`,
+      });
+    }
+    if (override.name !== undefined && override.name !== eraName) {
+      errors.push({
+        scope: "order",
+        field: idStr,
+        message: `Order override "${idStr}" must not change the order name`,
+      });
+    }
+    for (const message of findOutOfRangeNumbers(override, "")) {
+      errors.push({ scope: "order", field: idStr, message });
+    }
+  }
 
   return errors;
 }
@@ -171,6 +241,49 @@ function findOutOfRangeNumbers(value: unknown, path: string): string[] {
   return [];
 }
 
+/**
+ * Game constants whose value drives tick/grid/divisor math; a zero or negative
+ * value crashes the editor preview and the sim. Every other constant stays
+ * freely editable (only NaN/Infinity/absurd magnitudes are rejected).
+ */
+const POSITIVE_GAME_CONSTANT_KEYS: Array<keyof GameConstants> = [
+  "TILE_SIZE",
+  "TICKS_PER_TURN",
+  "STAT_DISPLAY_DIVISOR",
+  "COLLISION_DETECTION_SUBTICKS",
+  "DEFAULT_MAP_WIDTH",
+  "DEFAULT_MAP_HEIGHT",
+];
+
+function validateGameConstantOverrides(
+  customGameConstants: Partial<GameConstants>,
+): CustomDefValidationError[] {
+  const errors: CustomDefValidationError[] = [];
+  for (const message of findOutOfRangeNumbers(customGameConstants, "")) {
+    errors.push({ scope: "gameConstants", message });
+  }
+  for (const key of POSITIVE_GAME_CONSTANT_KEYS) {
+    const value = customGameConstants[key];
+    if (value !== undefined && (typeof value !== "number" || value <= 0)) {
+      errors.push({
+        scope: "gameConstants",
+        field: key,
+        message: `${key} must be a positive number`,
+      });
+    }
+  }
+  return errors;
+}
+
+function validateGameRuleOverrides(
+  customGameRules: DeepPartial<GameRules>,
+): CustomDefValidationError[] {
+  return findOutOfRangeNumbers(customGameRules, "").map((message) => ({
+    scope: "gameRules" as const,
+    message,
+  }));
+}
+
 function validateCustomDamageTypes(
   customDamageTypes: DamageTypeTemplate[],
   eraGameDataManager: GameDataManager,
@@ -238,6 +351,19 @@ function validateCustomDamageTypes(
         scope: "damageType",
         field: dt.name,
         message: `Ranged damage type "${dt.name}" needs at least one range bracket`,
+      });
+    }
+    // angleOffset re-centers the firing arc relative to the front; keep it
+    // within a full turn so a typo can't point a battery off into nonsense.
+    if (
+      dt.ranged === true &&
+      dt.angleOffset !== undefined &&
+      (dt.angleOffset < -360 || dt.angleOffset > 360)
+    ) {
+      errors.push({
+        scope: "damageType",
+        field: dt.name,
+        message: `Ranged damage type "${dt.name}" angleOffset must be between -360 and 360 degrees`,
       });
     }
     for (const message of findOutOfRangeNumbers(dt, "")) {
@@ -451,6 +577,20 @@ function validateCustomUnitTemplates(
         field: template.name,
         message: `defaultFormation "${template.defaultFormation}" must match one of the unit's formations (${templateFormations.map((f) => f.id).join(", ") || "<empty>"})`,
       });
+    }
+
+    // Only runnable units read runCost/walkMovement (and NaN-freeze without them);
+    // immobile units (walls, static artillery) legitimately omit them.
+    if ((template.runMovement ?? 0) > 0) {
+      for (const key of ["runCost", "walkMovement"] as const) {
+        if (typeof template[key] !== "number") {
+          errors.push({
+            scope: "unitTemplate",
+            field: template.name,
+            message: `${key} is required for a unit that can run (runMovement > 0); a missing value freezes stamina with NaN`,
+          });
+        }
+      }
     }
 
     for (const message of findOutOfRangeNumbers(template, "")) {

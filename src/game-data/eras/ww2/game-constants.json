@@ -101,6 +101,6 @@
   "DEFAULT_SCENARIO": "fields",
   "DEFAULT_BATTLE_TYPE": "operational",
   "ROUTING_FORMATION": "dispersed",
-  "BETA": true,
+  "PROTOTYPE": true,
   "STAT_DISPLAY_DIVISOR": 100
 }

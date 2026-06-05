@@ -49,6 +49,9 @@
   "cameraSensibility": {
     "title": "Sensitivitas kamera (PC)"
   },
+  "rotationSensibility": {
+    "title": "Sensitivitas rotasi"
+  },
   "replaySpeed": {
     "title": "Kecepatan Tayangan Ulang"
   },
@@ -122,6 +125,8 @@
     "description": "Mati: hanya unit tanpa perintah. Nyala: juga unit yang masih memiliki perintah giliran lalu jika Anda tidak mengubahnya di giliran ini."
   },
   "keybindings": {
+    "rotateCameraContinuous": "Putar kamera (tahan)",
+    "rotateCameraSnap": "Putar kamera 90°",
     "title": "Tombol Pintasan",
     "pressAKey": "Tekan Tombol...",
     "moveUp": "Gerak Ke Atas",

@@ -59,6 +59,8 @@ export interface TerrainCategoryConfig {
   heightOffset?: number;
   visionAbsorption?: number;
   movementModifier?: Partial<Record<UnitCategoryId, number>>;
+  /** A `true` entry (or `*`) makes the terrain impassable for that unit category. */
+  impassable?: Partial<Record<UnitCategoryId, boolean>>;
   attackModifier?: Partial<Record<UnitCategoryId, number>>;
   defenseModifier?: Partial<Record<UnitCategoryId, number>>;
   rangedAttackModifier?: Partial<Record<UnitCategoryId, number>>;

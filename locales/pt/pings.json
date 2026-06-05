@@ -6,7 +6,10 @@
     "retreat": "Recuar",
     "missing": "Desaparecido",
     "onMyWay": "A caminho",
-    "bait": "Isca",
-    "hold": "Manter posição"
-  }
+    "focusFire": "Fogo concentrado",
+    "hold": "Manter posição",
+    "bait": "Isca"
+  },
+  "mute": "Silenciar pings",
+  "unmute": "Reativar pings"
 }

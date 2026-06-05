@@ -103,6 +103,22 @@ export interface UnitCategoryTemplate {
    * Grazing hits weaken the projectile but don't deal damage.
    */
   grazingAltitude?: number;
+  /**
+   * If true, units of this category move only along their heading: velocity is
+   * projected onto the facing direction (forward, or astern on fallback) instead
+   * of pointing straight at the target, and rotation is applied only on ticks
+   * where the unit advanced, so they steer with a turning circle and cannot
+   * strafe or pivot in place. Models ships. Default (undefined/false) keeps the
+   * normal holonomic move-straight-to-target, rotate-in-place behavior.
+   */
+  forwardOnlyMovement?: boolean;
+
+  /**
+   * Rotation, in degrees, applied to this category's sprite in the unit
+   * portrait. Sprite art faces right (0deg); the portrait default makes units
+   * face up. Use 0 to keep them facing right (e.g. ships). Default: -90.
+   */
+  portraitRotation?: number;
 }
 
 export interface GameConstants {
@@ -334,9 +350,9 @@ export interface GameConstants {
   ROUTING_FORMATION: string;
 
   /**
-   * Whether the era is in beta.
+   * Whether the era is an experimental prototype.
    */
-  BETA: boolean;
+  PROTOTYPE: boolean;
 
   /**
    * Divisor for converting internal stat precision to display values.
@@ -456,8 +472,22 @@ export interface RangedDamageTypeTemplate {
   reorgDebuff?: number;
   attackEffectDuration?: number;
   extendRange?: boolean;
+  /**
+   * Mounting angle of this battery in degrees, relative to the unit's front
+   * (same unit and convention as the formation `shootingAngle`). 0 (default) =
+   * faces front. A ship's broadsides would use +90 / -90 so each side fires at
+   * targets on that flank. The arc width still comes from the formation; this
+   * only re-centers the arc.
+   */
+  angleOffset?: number;
   /** Use this in case you want to use the image of another damage type */
   imageAlias?: string;
+  /**
+   * Overrides the color of this battery's range arc (CSS hex, e.g. "#ffc55c").
+   * A ship's two broadsides set the same color so both cones match; without it
+   * the arc falls back to the per-damage-type palette by index.
+   */
+  rangeColor?: string;
 }
 
 export type DamageTypeTemplate =

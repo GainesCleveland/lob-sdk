@@ -6,7 +6,10 @@
     "retreat": "Visszavonulás",
     "missing": "Eltűnt",
     "onMyWay": "Úton vagyok",
-    "bait": "Csali",
-    "hold": "Tartás"
-  }
+    "focusFire": "Összpontosított tűz",
+    "hold": "Tartás",
+    "bait": "Csali"
+  },
+  "mute": "Pingek némítása",
+  "unmute": "Némítás feloldása"
 }

@@ -52,6 +52,9 @@
   "cameraSensibility": {
     "title": "Sensibilidad de Cámara (PC)"
   },
+  "rotationSensibility": {
+    "title": "Sensibilidad de Rotación"
+  },
   "replaySpeed": {
     "title": "Velocidad de Repetición"
   },
@@ -125,6 +128,8 @@
     "title": "Mostrar chat"
   },
   "keybindings": {
+    "rotateCameraContinuous": "Rotar cámara (mantener)",
+    "rotateCameraSnap": "Rotar cámara 90°",
     "title": "Atajos de teclado",
     "pressAKey": "Presiona una tecla...",
     "moveUp": "Mover hacia arriba",

@@ -6,7 +6,10 @@
     "retreat": "Geri çekil",
     "missing": "Kayıp",
     "onMyWay": "Yoldayım",
-    "bait": "Yem",
-    "hold": "Tut"
-  }
+    "focusFire": "Yoğun ateş",
+    "hold": "Tut",
+    "bait": "Yem"
+  },
+  "mute": "Pingleri sustur",
+  "unmute": "Pingleri aç"
 }

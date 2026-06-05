@@ -6,7 +6,10 @@
     "retreat": "撤退",
     "missing": "目标消失",
     "onMyWay": "正在赶来",
-    "bait": "诱敌",
-    "hold": "坚守"
-  }
+    "focusFire": "集中火力",
+    "hold": "坚守",
+    "bait": "诱敌"
+  },
+  "mute": "屏蔽标记",
+  "unmute": "取消屏蔽标记"
 }

@@ -75,9 +75,9 @@
       "baseSpeed": "run"
     },
     "damageTypeResistances": {
-      "bayonet": -0.3,
-      "cavalry-sabre": 0.1,
-      "cavalry-lance": 0.35,
+      "bayonet": 0,
+      "cavalry-sabre": 0,
+      "cavalry-lance": 0.3,
       "musket": -0.5,
       "marksman-musket": -0.35,
       "rifle": -0.35,
@@ -126,10 +126,6 @@
     },
     "damageTypeResistances": {
       "bayonet": -0.5,
-      "cavalry-sabre": -0.4,
-      "cavalry-lance": -0.4,
-      "cavalry-sword": -0.4,
-      "dragoon-sword": -0.4,
       "musket": -0.7,
       "marksman-musket": -0.25,
       "rifle": -0.25,
@@ -186,10 +182,10 @@
       "baseSpeed": "run"
     },
     "damageTypeResistances": {
-      "bayonet": -0.5,
-      "cavalry-lance": 0.4,
-      "dragoon-sword": -0.2,
-      "cavalry-sword": -0.3,
+      "bayonet": 0,
+      "cavalry-lance": 0.3,
+      "dragoon-sword": 0,
+      "cavalry-sword": 0,
       "musket": -0.6,
       "marksman-musket": -0.4,
       "rifle": -0.4,
@@ -236,11 +232,11 @@
       "baseSpeed": "run"
     },
     "damageTypeResistances": {
-      "bayonet": -0.5,
-      "cavalry-lance": 0.4,
-      "cavalry-sword": -0.25,
-      "dragoon-sword": -0.2,
-      "cavalry-sabre": -0.1,
+      "bayonet": 0,
+      "cavalry-lance": 0.3,
+      "cavalry-sword": 0,
+      "dragoon-sword": 0,
+      "cavalry-sabre": 0,
       "musket": -0.4,
       "marksman-musket": -0.3,
       "rifle": -0.3,
@@ -287,10 +283,10 @@
       "baseSpeed": "run"
     },
     "damageTypeResistances": {
-      "bayonet": -0.1,
-      "cavalry-sabre": 0.05,
-      "cavalry-lance": 0.45,
-      "dragoon-sword": 0.1,
+      "bayonet": 0,
+      "cavalry-sabre": 0,
+      "cavalry-lance": 0.3,
+      "dragoon-sword": 0,
       "musket": -0.5,
       "marksman-musket": -0.35,
       "rifle": -0.35,
@@ -421,6 +417,26 @@
       "placeEntity",
       "fallback",
       "rotate"
+    ]
+  },
+  {
+    "id": "ship",
+    "deploymentSection": "front",
+    "firingAltitude": 0.98,
+    "allyCollisionLevel": 2,
+    "enemyCollisionLevel": 2,
+    "routingBehavior": {
+      "fleeWhenRouted": false
+    },
+    "impactAltitude": 0.99,
+    "grazingAltitude": 1.99,
+    "forwardOnlyMovement": true,
+    "portraitRotation": 0,
+    "allowedOrders": [
+      "walk",
+      "shoot",
+      "fireAndAdvance",
+      "fallback"
     ]
   }
 ]

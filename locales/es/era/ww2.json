@@ -1,6 +1,6 @@
 {
   "eraName": "Segunda Guerra Mundial",
-  "eraDescription": "Una beta experimental temprana en la aplicación del motor de Lines of Battle a un juego de la Segunda Guerra Mundial a nivel operacional; establece líneas de fortificaciones, planifica en torno a limitaciones de suministro y teje cercos con divisiones blindadas.",
+  "eraDescription": "Una versión experimental que lleva el motor de Lines of Battle a una Segunda Guerra Mundial a nivel operacional: establece líneas de fortificaciones, planifica en torno al suministro y teje cercos con divisiones blindadas. Es un experimento paralelo que compartimos tal cual, más una muestra de lo que el motor puede hacer que un modo que estemos desarrollando activamente.",
   "unitName": {
     "1": "Infantería",
     "2": "Blindados",

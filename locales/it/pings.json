@@ -6,7 +6,10 @@
     "retreat": "Ritirata",
     "missing": "Scomparso",
     "onMyWay": "Sto arrivando",
-    "bait": "Esca",
-    "hold": "Tieni la posizione"
-  }
+    "focusFire": "Fuoco concentrato",
+    "hold": "Tieni la posizione",
+    "bait": "Esca"
+  },
+  "mute": "Silenzia ping",
+  "unmute": "Riattiva ping"
 }

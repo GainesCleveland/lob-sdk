@@ -6,7 +6,10 @@
     "retreat": "Retreat",
     "missing": "Missing",
     "onMyWay": "On my way",
-    "bait": "Bait",
-    "hold": "Hold"
-  }
+    "focusFire": "Focus fire",
+    "hold": "Hold",
+    "bait": "Bait"
+  },
+  "mute": "Mute pings",
+  "unmute": "Unmute pings"
 }
