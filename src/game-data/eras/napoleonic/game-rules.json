@@ -25,7 +25,7 @@
     "maxHpConsumptionReduction": -0.5,
     "ammoReserve": {
       "micro": 90000,
-      "clash": 110000,
+      "clash": 140000,
       "combat": 225000,
       "battle": 330000,
       "grand_battle": 500000
@@ -43,8 +43,8 @@
   },
   "allyCollision": {
     "collisionBounceScale": 0.005,
-    "overlapStopCharge": 0.3,
-    "maxSpeedPenalty": -0.5,
+    "overlapStopCharge": 0.4,
+    "maxSpeedPenalty": -0.4,
     "maxOrgDamageReceived": 0.3,
     "maxMeleeAttackPenalty": -0.5,
     "maxRangedAttackPenalty": -0.5,
