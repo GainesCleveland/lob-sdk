@@ -1,25 +1,18 @@
 import { Point2 } from "@lob-sdk/vector";
 
 /**
- * Simplifies a path using the Douglas-Peucker algorithm.
- *
- * Tuning `epsilon`: it's the max distance (in coordinate units, e.g. px or
- * tiles) a removed point may deviate from the simplified path. Higher
- * epsilon → more aggressive simplification, fewer points. Lower epsilon →
- * more detail kept. 0 only removes perfectly collinear points.
- *
- * Safety: iterative (no recursion, no stack overflow on long paths), never
- * mutates the input, and handles closed loops / duplicate points
- * (zero-length segments) without division by zero.
+ * Simplifies a path with the Douglas-Peucker algorithm: drops points that lie within `epsilon`
+ * (coordinate units) of the simplified path. Iterative (no recursion), never mutates the input,
+ * and handles zero-length segments (duplicate points / closed loops) without dividing by zero.
  *
  * @param path - Points to simplify. Not mutated.
- * @param epsilon - Max allowed deviation; finite and >= 0. Default 0.5.
+ * @param epsilon - Max allowed deviation; must be finite and >= 0.
  * @returns New simplified array, points in original order.
  * @throws RangeError if epsilon is negative, NaN, or infinite.
  */
 export function douglasPeucker<T extends Point2>(
   path: readonly T[],
-  epsilon: number = 0.25,
+  epsilon: number = 0.5,
 ): T[] {
   if (!Number.isFinite(epsilon) || epsilon < 0) {
     throw new RangeError(`epsilon must be finite and >= 0, got ${epsilon}`);

@@ -146,8 +146,6 @@ export type GameUserResult = "win" | "lose" | "tie";
 export interface GameMetadata {
   /** Whether the game ended with a conquest victory. */
   conquestVictory?: boolean;
-  /** When true, teams are auto-balanced by rating at game start and the lobby hides team choice. */
-  autoBalance?: boolean;
   /** Language locales used in the game. */
   locales?: GameLocales;
   /** Custom variables for game tracking. */
@@ -656,12 +654,6 @@ export interface IServerGame {
    * @returns Array of all units
    */
   getUnits(): BaseUnit[];
-  /**
-   * Gets the set of unit types owned by a player
-   * @param playerNumber - The player number
-   * @returns Set of unit types
-   */
-  getUnitTypesOf(playerNumber: number): Set<UnitType>;
   /**
    * Gets all players in the game
    * @returns Array of all players
