@@ -89,18 +89,9 @@ export interface UnitCategoryTemplate {
   enfiladeFire?: EnfiladeFireConfig;
   rearFire?: RearFireConfig;
 
-  /**
-   * Multiplier applied to the charge backlash (the counter-hit a defender of
-   * this category deals back to a charger). Standing ranged categories (formed
-   * infantry, artillery) brace and hit back harder; cavalry and melee
-   * categories hit back less. Falls back to the engine default when omitted.
-   */
+  /** Charge backlash multiplier (counter-hit dealt back to a charger); ranged categories brace harder, cavalry/melee less. Defaults to 1. */
   chargeBacklashMultiplier?: number;
-  /**
-   * Charge backlash multiplier used when the defender has already run (the
-   * HasRan effect) and so cannot brace. Falls back to chargeBacklashMultiplier
-   * when omitted.
-   */
+  /** Backlash multiplier when the defender has run (HasRan) and can't brace; falls back to chargeBacklashMultiplier. */
   runChargeBacklashMultiplier?: number;
 
   /**
