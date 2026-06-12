@@ -2,6 +2,7 @@ import { Entity, EntityType } from "@lob-sdk/entity";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
+  CollisionShape,
   EntityId,
   OrderType,
   UnitCategoryId,
@@ -281,18 +282,20 @@ export abstract class BaseUnit extends Entity {
     return this.gameDataManager.getDamageTypeByName<MeleeDamageTypeTemplate>(this.meleeDamageType);
   }
 
-  private getCorners(): Point2[] {
-    // Get unit dimensions from formation template
-    const dimensions = this.gameDataManager.getUnitDimensions(this.type, this.currentFormation);
-    
-    // Calculate the half-width and half-height
+  /**
+   * World-space corners of the unit's oriented bounding box (rotated rectangle)
+   * at the given position. Front is the +X edge; height spans the frontage.
+   */
+  calculateObbCorners(position: Point2 = this.position): Point2[] {
+    const dimensions = this.gameDataManager.getUnitDimensions(
+      this.type,
+      this.currentFormation,
+    );
     const halfWidth = dimensions.width / 2;
     const halfHeight = dimensions.height / 2;
-    // Calculate the sin and cos of the rotation angle
     const sinAngle = Math.sin(this.rotation);
     const cosAngle = Math.cos(this.rotation);
 
-    // Define the original corner points relative to the center
     const corners: Point2[] = [
       { x: -halfWidth, y: -halfHeight },
       { x: halfWidth, y: -halfHeight },
@@ -300,12 +303,22 @@ export abstract class BaseUnit extends Entity {
       { x: -halfWidth, y: halfHeight },
     ];
 
-    // Rotate and translate each corner point
-    return corners.map((corner) => {
-      const rotatedX = corner.x * cosAngle - corner.y * sinAngle;
-      const rotatedY = corner.x * sinAngle + corner.y * cosAngle;
-      return { x: rotatedX + this.position.x, y: rotatedY + this.position.y };
-    });
+    return corners.map((corner) => ({
+      x: corner.x * cosAngle - corner.y * sinAngle + position.x,
+      y: corner.x * sinAngle + corner.y * cosAngle + position.y,
+    }));
+  }
+
+  private getCorners(): Point2[] {
+    return this.calculateObbCorners();
+  }
+
+  /** True when this formation collides as a rotated rectangle (Obb) rather than circles. */
+  usesObbCollision(): boolean {
+    const formation = this.gameDataManager
+      .getFormationManager()
+      .getTemplate(this.currentFormation);
+    return formation?.collisionShape === CollisionShape.Obb;
   }
 
   getClosestCorner(unit: BaseUnit) {
