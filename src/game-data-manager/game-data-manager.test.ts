@@ -1,5 +1,10 @@
 import { GameDataManager } from "@lob-sdk/game-data-manager";
-import { LeagueType, UnitType, TerrainType } from "@lob-sdk/types";
+import {
+  LeagueType,
+  UnitType,
+  TerrainType,
+  FormationTemplate,
+} from "@lob-sdk/types";
 import { DamageTypeTemplate } from "@lob-sdk/game-data-manager";
 import { generateDefaultArmy } from "@lob-sdk/army-deployer";
 
@@ -442,6 +447,50 @@ describe("GameDataManager", () => {
       expect(() => manager.getAmmoReserve("operational")).not.toThrow();
       expect(manager.getAmmoReserve("operational")).toBe(0);
       expect(manager.getGoldToAmmoRate("operational")).toBe(0);
+    });
+  });
+
+  describe("getUnitDimensions", () => {
+    const utm = gameDataManager.getUnitTemplateManager();
+    const unitType = utm.getTemplates()[0]!.type;
+    const builtInFormation = utm.getTemplates()[0]!.formations[0]!;
+
+    const cloneFormation = (
+      overrides: Partial<FormationTemplate>,
+    ): FormationTemplate => ({
+      ...(JSON.parse(JSON.stringify(builtInFormation)) as FormationTemplate),
+      id: "obb-dims-test",
+      ...overrides,
+    });
+
+    it("prefers first-class frontage/depth (width=depth, height=frontage)", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customUnitFormations: [cloneFormation({ frontage: 120, depth: 18 })],
+      });
+      expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
+        width: 18,
+        height: 120,
+      });
+    });
+
+    it("falls back to the collision-circle layout when frontage/depth are absent", () => {
+      const m = GameDataManager.createWithCustomDefs("napoleonic", {
+        customUnitFormations: [
+          cloneFormation({
+            collisionCircles: 3,
+            collisionCircleSize: 20,
+            collisionCircleDistance: 10,
+            collisionCirclesVertical: false,
+            frontage: undefined,
+            depth: undefined,
+          }),
+        ],
+      });
+      // span = (3-1)*10 + 20 = 40; horizontal layout ⇒ width=size, height=span.
+      expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
+        width: 20,
+        height: 40,
+      });
     });
   });
 });

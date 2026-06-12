@@ -968,6 +968,13 @@ export class GameDataManager {
     // Get dimensions from formation template
     const formationTemplate = this._formationManager.getTemplate(formationId);
     if (formationTemplate) {
+      // First-class rectangle size takes precedence over the circle layout.
+      // width = depth (local X), height = frontage (local Y).
+      const { frontage, depth } = formationTemplate;
+      if (frontage != null && depth != null) {
+        return { width: depth, height: frontage };
+      }
+
       const collisionCircles = formationTemplate.collisionCircles;
       const collisionCircleSize = formationTemplate.collisionCircleSize;
       const collisionCircleDistance =
