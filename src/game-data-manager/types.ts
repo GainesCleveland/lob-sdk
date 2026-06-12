@@ -90,6 +90,20 @@ export interface UnitCategoryTemplate {
   rearFire?: RearFireConfig;
 
   /**
+   * Multiplier applied to the charge backlash (the counter-hit a defender of
+   * this category deals back to a charger). Standing ranged categories (formed
+   * infantry, artillery) brace and hit back harder; cavalry and melee
+   * categories hit back less. Falls back to the engine default when omitted.
+   */
+  chargeBacklashMultiplier?: number;
+  /**
+   * Charge backlash multiplier used when the defender has already run (the
+   * HasRan effect) and so cannot brace. Falls back to chargeBacklashMultiplier
+   * when omitted.
+   */
+  runChargeBacklashMultiplier?: number;
+
+  /**
    * List of allowed order names for this category.
    */
   allowedOrders?: string[];
@@ -207,10 +221,11 @@ export interface GameConstants {
 
   OFFER_DRAW_COOLDOWN: number;
   MAX_ENTITY_NAME_LENGTH: number;
-  CHARGE_BACKLASH_RESIST_MOD: number; // The % of charge resist that can be used to mitigate backlash damage
-  CHARGE_BACKLASH_MAX_REDUCTION: number; // The % of backlash that can be mitigated from a front-charge
-  CHARGE_BACKLASH_DEFENDER_CHARGE_BONUS_MULTIPLIER: number;
-  CHARGE_BACKLASH_DEFENDER_RESISTANCE_MULTIPLIER: number;
+  // Charge backlash magnitude scales off the defender's chargeBonus and
+  // meleeDefense, weighted by these factors (a counter-charger hits back via
+  // chargeBonus, a hard target via meleeDefense).
+  CHARGE_BONUS_SCALING_FACTOR: number;
+  MELEE_DEFENSE_SCALING_FACTOR: number;
 
   HAS_TAKEN_FIRE_SPEED_MODIFIER: number;
 
