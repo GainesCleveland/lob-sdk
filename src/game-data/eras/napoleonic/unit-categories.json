@@ -1,6 +1,7 @@
 [
   {
     "id": "infantry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 1.5,
     "runChargeBacklashMultiplier": 0.75,
     "deploymentSection": "center",
@@ -32,6 +33,7 @@
   },
   {
     "id": "guardsInfantry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 1.5,
     "runChargeBacklashMultiplier": 0.75,
     "deploymentSection": "center",
@@ -63,6 +65,7 @@
   },
   {
     "id": "midCavalry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
@@ -116,6 +119,7 @@
   },
   {
     "id": "artillery",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 1.5,
     "runChargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
@@ -175,6 +179,7 @@
   },
   {
     "id": "scoutCavalry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
@@ -227,6 +232,7 @@
   },
   {
     "id": "lightCavalry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
@@ -279,6 +285,7 @@
   },
   {
     "id": "heavyCavalry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
@@ -331,6 +338,7 @@
   },
   {
     "id": "militiaInfantry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 1.5,
     "runChargeBacklashMultiplier": 0.75,
     "deploymentSection": "center",
@@ -372,6 +380,7 @@
   },
   {
     "id": "skirmishInfantry",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
@@ -430,6 +439,7 @@
   },
   {
     "id": "ship",
+    "chargeStaminaCost": 10000,
     "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
