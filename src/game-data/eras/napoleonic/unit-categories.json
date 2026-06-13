@@ -430,7 +430,7 @@
   },
   {
     "id": "ship",
-    "chargeBacklashMultiplier": 1.5,
+    "chargeBacklashMultiplier": 0.75,
     "deploymentSection": "front",
     "firingAltitude": 0.98,
     "allyCollisionLevel": 2,
