@@ -72,6 +72,16 @@
   "unranked": "Nem Rangsorolt",
   "cancel": "Mégsem",
   "change": "Módosítás",
+  "opponentLeagues": {
+    "modalTitle": "Speciális beállítások",
+    "title": "Ellenfél ligák",
+    "tooltip": "Speciális beállítások",
+    "auto": "Automatikus (alapértelmezett)",
+    "autoDescription": "A keresési tartomány idővel bővül, amíg meccset nem talál.",
+    "fixed": "Rögzített liga tartomány",
+    "fixedDescription": "Csak a kiválasztott ligák ellenfelei.",
+    "done": "Kész"
+  },
   "matchmakingQueue": {
     "inQueue": "Sikeresen felkerültél a várólistára! A rendszerünk most olyan ellenfelet keres neked, aki az általad kiválaszott módban és alkalmas beállítások mellett szeretne játszani.",
     "matchFound": "Amint találtunk alkalmas ellenfelet, átleszel irányítva a csatára.",
@@ -92,6 +102,7 @@
     "rapid": "Gyors",
     "marathon": "Maraton"
   },
+  "maps": "Térképek",
   "battleType": "Csata típusa",
   "matchmaking": "Meccskeresés",
   "addMatchmakingConfig": "Meccskeresési beállítás hozzáadása",

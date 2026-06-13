@@ -73,6 +73,16 @@
   "unranked": "Nierankingowe",
   "cancel": "Anuluj",
   "change": "Zmień",
+  "opponentLeagues": {
+    "modalTitle": "Ustawienia zaawansowane",
+    "title": "Ligi przeciwników",
+    "tooltip": "Opcje zaawansowane",
+    "auto": "Auto (domyślnie)",
+    "autoDescription": "Zakres wyszukiwania poszerza się z czasem, aż znajdzie przeciwnika.",
+    "fixed": "Stały zakres lig",
+    "fixedDescription": "Tylko przeciwnicy z wybranych lig.",
+    "done": "Gotowe"
+  },
   "matchmakingQueue": {
     "inQueue": "Jesteś teraz w kolejce do losowej partii! System szuka gracza, który wybrał te same ustawienia co ty.",
     "matchFound": "Gdy partia zostanie znaleziona, system przekieruje cię do partii.",
@@ -93,6 +103,7 @@
     "rapid": "Szybka",
     "marathon": "Maraton"
   },
+  "maps": "Mapy",
   "battleType": "Tryb bitwy",
   "matchmaking": "Losowa Partia",
   "addMatchmakingConfig": "Dodaj konfigurację matchmakingu",

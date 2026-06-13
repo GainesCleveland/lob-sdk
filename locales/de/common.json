@@ -72,6 +72,16 @@
   "unranked": "Unbewertet",
   "cancel": "Abbrechen",
   "change": "Ändern",
+  "opponentLeagues": {
+    "modalTitle": "Erweiterte Einstellungen",
+    "title": "Gegnerische Ligen",
+    "tooltip": "Erweiterte Optionen",
+    "auto": "Automatisch (Standard)",
+    "autoDescription": "Der Suchbereich erweitert sich mit der Zeit, bis ein Gegner gefunden wird.",
+    "fixed": "Fester Liga-Bereich",
+    "fixedDescription": "Nur Gegner aus den gewählten Ligen.",
+    "done": "Fertig"
+  },
   "matchmakingQueue": {
     "inQueue": "Sie sind nun in der Warteschlange für das Spielsuche. Das System sucht einen anderen Spieler, der die gleichen Optionen gewählt hat wie Sie.",
     "matchFound": "Sobald ein Spiel gefunden wurde, werden Sie zu diesem weitergeleitet.",
@@ -92,6 +102,7 @@
     "rapid": "Schnell",
     "marathon": "Marathon"
   },
+  "maps": "Karten",
   "battleType": "Schlachttypen",
   "matchmaking": "Spielsuche",
   "addMatchmakingConfig": "Matchmaking-Konfiguration hinzufügen",

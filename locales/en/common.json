@@ -69,6 +69,16 @@
   "or": "Or",
   "cancel": "Cancel",
   "change": "Change",
+  "opponentLeagues": {
+    "modalTitle": "Advanced settings",
+    "title": "Opponent leagues",
+    "tooltip": "Advanced options",
+    "auto": "Auto (default)",
+    "autoDescription": "The search range widens over time until a match is found.",
+    "fixed": "Fixed league range",
+    "fixedDescription": "Only match opponents in the chosen leagues.",
+    "done": "Done"
+  },
   "matchmakingQueue": {
     "inQueue": "You are now in the matchmaking queue! The system is searching for another player who has selected the same settings as you.",
     "matchFound": "Once a match is found, you will be redirected to the game.",
@@ -89,6 +99,7 @@
     "rapid": "Rapid",
     "marathon": "Marathon"
   },
+  "maps": "Maps",
   "battleType": "Battle type",
   "matchmaking": "Matchmaking",
   "addMatchmakingConfig": "Add matchmaking configuration",

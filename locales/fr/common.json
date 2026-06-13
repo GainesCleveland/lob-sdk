@@ -61,6 +61,16 @@
   "unranked": "Non Classé",
   "cancel": "Annulez",
   "change": "Changer",
+  "opponentLeagues": {
+    "modalTitle": "Paramètres avancés",
+    "title": "Ligues adverses",
+    "tooltip": "Options avancées",
+    "auto": "Auto (par défaut)",
+    "autoDescription": "La plage de recherche s'élargit avec le temps jusqu'à trouver un adversaire.",
+    "fixed": "Plage de ligues fixe",
+    "fixedDescription": "N'affronter que des adversaires des ligues choisies.",
+    "done": "Terminé"
+  },
   "matchmakingQueue": {
     "inQueue": "Vous êtes désormais dans la file d'attente ! Nous recherchons un adversaire qui a choisi les mêmes paramètres que vous.",
     "matchFound": "Lorsque ce sera fait, vous rejoindrez automatiquement la partie.",
@@ -81,6 +91,7 @@
     "rapid": "Rapide",
     "marathon": "Marathon"
   },
+  "maps": "Cartes",
   "battleType": "Type de bataille",
   "matchmaking": "Partie classée",
   "addMatchmakingConfig": "Ajouter une configuration d'appariement",

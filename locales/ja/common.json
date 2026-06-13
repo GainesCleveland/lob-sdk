@@ -69,6 +69,16 @@
   "or": "または",
   "cancel": "キャンセル",
   "change": "変更",
+  "opponentLeagues": {
+    "modalTitle": "詳細設定",
+    "title": "対戦相手のリーグ",
+    "tooltip": "詳細設定",
+    "auto": "自動（デフォルト）",
+    "autoDescription": "マッチが見つかるまで、検索範囲が時間とともに広がります。",
+    "fixed": "固定リーグ範囲",
+    "fixedDescription": "選択したリーグの相手のみと対戦します。",
+    "done": "完了"
+  },
   "matchmakingQueue": {
     "inQueue": "現在マッチメイキングキューにいます。同じ設定を選択したプレイヤーを探しています。",
     "matchFound": "マッチが見つかると、自動的にゲームに移動します。",
@@ -89,6 +99,7 @@
     "rapid": "ラピッド",
     "marathon": "マラソン"
   },
+  "maps": "マップ",
   "battleType": "戦闘タイプ",
   "matchmaking": "マッチメイキング",
   "addMatchmakingConfig": "マッチメイキング設定を追加",

@@ -73,6 +73,16 @@
   "unranked": "Tidak Berperingkat",
   "cancel": "Batal",
   "change": "Ubah",
+  "opponentLeagues": {
+    "modalTitle": "Pengaturan lanjutan",
+    "title": "Liga lawan",
+    "tooltip": "Opsi lanjutan",
+    "auto": "Otomatis (bawaan)",
+    "autoDescription": "Rentang pencarian melebar seiring waktu hingga menemukan lawan.",
+    "fixed": "Rentang liga tetap",
+    "fixedDescription": "Hanya lawan dari liga yang dipilih.",
+    "done": "Selesai"
+  },
   "matchmakingQueue": {
     "inQueue": "Kamu sekarang berada dalam antrean! Sistem sedang mencari pemain lain yang telah memilih pengaturan yang sama dengan kamu.",
     "matchFound": "Ketika permainan telah ditemukan, kamu akan diarahkan ke permainan.",
@@ -93,6 +103,7 @@
     "rapid": "Cepat",
     "marathon": "Maraton"
   },
+  "maps": "Peta",
   "battleType": "Jenis pertempuran",
   "matchmaking": "Pencarian Permainan",
   "addMatchmakingConfig": "Tambah konfigurasi pencarian permainan",

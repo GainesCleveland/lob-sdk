@@ -72,6 +72,16 @@
   "unranked": "Sırasız",
   "cancel": "İptal",
   "change": "Değiştir",
+  "opponentLeagues": {
+    "modalTitle": "Gelişmiş ayarlar",
+    "title": "Rakip ligleri",
+    "tooltip": "Gelişmiş seçenekler",
+    "auto": "Otomatik (varsayılan)",
+    "autoDescription": "Arama aralığı, bir eşleşme bulunana kadar zamanla genişler.",
+    "fixed": "Sabit lig aralığı",
+    "fixedDescription": "Yalnızca seçilen liglerden rakiplerle eşleş.",
+    "done": "Tamam"
+  },
   "matchmakingQueue": {
     "inQueue": "Şimdi eşleştirme kuyruğundasınız! Sistem, sizinle aynı ayarları seçmiş başka bir oyuncu arıyor.",
     "matchFound": "Bir eşleşme bulunduğunda, oyuna yönlendirileceksiniz.",
@@ -92,6 +102,7 @@
     "rapid": "Hızlı",
     "marathon": "Maraton"
   },
+  "maps": "Haritalar",
   "battleType": "Savaş türü",
   "matchmaking": "Eşleştirme",
   "addMatchmakingConfig": "Eşleştirme yapılandırması ekle",

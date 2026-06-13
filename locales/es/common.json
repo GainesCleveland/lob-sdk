@@ -61,6 +61,16 @@
   "unranked": "No Clasificado",
   "cancel": "Cancelar",
   "change": "Cambiar",
+  "opponentLeagues": {
+    "modalTitle": "Configuración avanzada",
+    "title": "Ligas rivales",
+    "tooltip": "Opciones avanzadas",
+    "auto": "Automático (por defecto)",
+    "autoDescription": "El rango de búsqueda se amplía con el tiempo hasta encontrar partida.",
+    "fixed": "Rango de ligas fijo",
+    "fixedDescription": "Solo te enfrentas a rivales de las ligas elegidas.",
+    "done": "Listo"
+  },
   "matchmakingQueue": {
     "inQueue": "¡Ahora estás en la cola de emparejamiento! El sistema está buscando otro jugador que haya seleccionado las mismas configuraciones que tú.",
     "matchFound": "Una vez que se encuentre un emparejamiento, serás redirigido al juego.",
@@ -81,6 +91,7 @@
     "rapid": "Rápido",
     "marathon": "Maratón"
   },
+  "maps": "Mapas",
   "battleType": "Tipo de batalla",
   "matchmaking": "Emparejamiento",
   "addMatchmakingConfig": "Agregar configuración de matchmaking",

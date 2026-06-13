@@ -72,6 +72,16 @@
   "unranked": "Non Classificato",
   "cancel": "Annulla",
   "change": "Cambia",
+  "opponentLeagues": {
+    "modalTitle": "Impostazioni avanzate",
+    "title": "Leghe avversarie",
+    "tooltip": "Opzioni avanzate",
+    "auto": "Auto (predefinito)",
+    "autoDescription": "L'intervallo di ricerca si allarga nel tempo finché non trova una partita.",
+    "fixed": "Intervallo di leghe fisso",
+    "fixedDescription": "Affronta solo avversari delle leghe scelte.",
+    "done": "Fatto"
+  },
   "matchmakingQueue": {
     "inQueue": "Sei ora nella coda di matchmaking! Il sistema sta cercando un altro giocatore che ha selezionato le stesse impostazioni di te.",
     "matchFound": "Una volta trovato un avversario, sarai reindirizzato al gioco.",
@@ -92,6 +102,7 @@
     "rapid": "Rapido",
     "marathon": "Maratona"
   },
+  "maps": "Mappe",
   "battleType": "Tipo di battaglia",
   "matchmaking": "Matchmaking",
   "addMatchmakingConfig": "Aggiungi configurazione matchmaking",
