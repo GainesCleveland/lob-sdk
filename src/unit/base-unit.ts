@@ -289,7 +289,7 @@ export abstract class BaseUnit extends Entity {
   calculateObbCorners(position: Point2 = this.position): Point2[] {
     const dimensions = this.gameDataManager.getUnitDimensions(
       this.type,
-      this.currentFormation,
+      this.effectiveFormation,
     );
     const halfWidth = dimensions.width / 2;
     const halfHeight = dimensions.height / 2;
@@ -317,7 +317,7 @@ export abstract class BaseUnit extends Entity {
   usesObbCollision(): boolean {
     const formation = this.gameDataManager
       .getFormationManager()
-      .getTemplate(this.currentFormation);
+      .getTemplate(this.effectiveFormation);
     return formation?.collisionShape === CollisionShape.Obb;
   }
 
@@ -400,7 +400,7 @@ export abstract class BaseUnit extends Entity {
   }
 
   calculateCollisionShapes(position = this.position): Circle[] {
-    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
 
     let collisionCircles: number;
     let collisionCircleSize: number;
