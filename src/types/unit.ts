@@ -324,13 +324,6 @@ export interface FireEdge {
   arc?: number;
   /** Damage type fired from this edge. Default: the unit's first ranged type. */
   damageType?: string;
-  /**
-   * How many targets this edge can engage at once. Default 1 (a directional
-   * face fires forward at one target); an omni edge (arc 360) may set more.
-   * The unit's total fire capacity (max targets and firepower split) is the sum
-   * across its fire edges, replacing the legacy shootingMaxTargets/shootingSides.
-   */
-  maxTargets?: number;
 }
 
 export interface FormationTemplate {
