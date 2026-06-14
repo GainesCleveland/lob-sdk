@@ -313,6 +313,19 @@ export enum CollisionShape {
   Obb = 2,
 }
 
+/**
+ * A ranged-fire emitter mounted on one edge of the unit's OBB (edge-fire model).
+ * Edge index follows the OBB corner order: 0 = -Y side, 1 = +X front,
+ * 2 = +Y side, 3 = -X back.
+ */
+export interface FireEdge {
+  edge: number;
+  /** Fire arc in degrees (full angle), centred on the edge's outward normal. Default 90. */
+  arc?: number;
+  /** Damage type fired from this edge. Default: the unit's first ranged type. */
+  damageType?: string;
+}
+
 export interface FormationTemplate {
   id: string;
   frontBackArc: number;
@@ -408,6 +421,12 @@ export interface FormationTemplate {
    * whichever is greater. Default is 1.
    */
   shootingSides?: number;
+
+  /**
+   * OBB edges that emit ranged fire (edge-fire model). Empty or absent keeps the
+   * legacy single-origin centre fire. Will replace shootingAngle/Sides/MaxTargets.
+   */
+  fireEdges?: FireEdge[];
 
   /**
    * Time in ticks to form this formation.

@@ -9,6 +9,7 @@
     "collisionShape": 2,
     "frontage": 24,
     "depth": 12,
+    "fireEdges": [{ "edge": 1, "arc": 90 }],
     "checkPoints": [
       { "x": 0, "y": 0, "weight": 2 },
       { "x": 0, "y": -10, "weight": 1 },
@@ -36,6 +37,7 @@
     "collisionShape": 2,
     "frontage": 12,
     "depth": 24,
+    "fireEdges": [{ "edge": 1, "arc": 90 }],
     "checkPoints": [
       { "x": 0, "y": 0, "weight": 2 },
       { "x": -10, "y": 0, "weight": 1 },
@@ -68,6 +70,7 @@
     "collisionShape": 2,
     "frontage": 40,
     "depth": 10,
+    "fireEdges": [{ "edge": 1, "arc": 100 }],
     "checkPoints": [
       { "x": 0, "y": -15, "weight": 1 },
       { "x": 0, "y": -5, "weight": 1 },
@@ -100,6 +103,12 @@
     "collisionShape": 2,
     "frontage": 20,
     "depth": 20,
+    "fireEdges": [
+      { "edge": 0, "arc": 90 },
+      { "edge": 1, "arc": 90 },
+      { "edge": 2, "arc": 90 },
+      { "edge": 3, "arc": 90 }
+    ],
     "movementModifier": -1,
     "runMovementModifier": -1,
     "rotationSpeedModifier": 20,
@@ -133,6 +142,7 @@
     "collisionShape": 2,
     "frontage": 24,
     "depth": 12,
+    "fireEdges": [{ "edge": 1, "arc": 90 }],
     "checkPoints": [
       { "x": 0, "y": 0, "weight": 2 },
       { "x": 0, "y": -10, "weight": 1 },
@@ -158,6 +168,7 @@
     "collisionShape": 2,
     "frontage": 40,
     "depth": 10,
+    "fireEdges": [{ "edge": 1, "arc": 100 }],
     "checkPoints": [
       { "x": 0, "y": -15, "weight": 1 },
       { "x": 0, "y": -5, "weight": 1 },
@@ -218,6 +229,7 @@
     "collisionShape": 2,
     "frontage": 24,
     "depth": 12,
+    "fireEdges": [{ "edge": 1, "arc": 360 }],
     "shootingSides": 2,
     "disablesFlankMelee": true,
     "disablesEnfiladeFire": true,
@@ -264,6 +276,7 @@
     "collisionShape": 2,
     "frontage": 24,
     "depth": 12,
+    "fireEdges": [{ "edge": 1, "arc": 360 }],
     "checkPoints": [
       { "x": 0, "y": 0, "weight": 2 },
       { "x": 0, "y": -10, "weight": 1 },
@@ -294,6 +307,7 @@
     "collisionShape": 2,
     "frontage": 24,
     "depth": 12,
+    "fireEdges": [{ "edge": 1, "arc": 360 }],
     "shootingAngle": 360,
     "rangedAttackModifier": 0.8,
     "shootingMaxTargets": 1,
