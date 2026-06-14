@@ -219,6 +219,9 @@ export interface GameConstants {
   // chargeBonus, a hard target via meleeDefense).
   CHARGE_BONUS_SCALING_FACTOR: number;
   MELEE_DEFENSE_SCALING_FACTOR: number;
+  // Backlash divisor floor: backlash /= max(this, defender charge resistance),
+  // so high-resistance targets hit back less and low-resistance ones are capped.
+  CHARGE_BACKLASH_RESIST_FLOOR: number;
 
   HAS_TAKEN_FIRE_SPEED_MODIFIER: number;
 
