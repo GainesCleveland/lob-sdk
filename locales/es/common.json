@@ -1,4 +1,5 @@
 {
+  "searchByName": "Buscar por nombre",
   "spectatorDisabledModal": {
     "title": "Modo espectador limitado",
     "message": "Esta partida ya está en curso. Para evitar trampas, el modo espectador en vivo está deshabilitado, por lo que no verás las unidades. Podrás ver la repetición completa cuando la partida termine."
