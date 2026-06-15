@@ -2,7 +2,8 @@ import { Entity, EntityType } from "@lob-sdk/entity";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
-  CollisionShapeType,
+  getCollisionConfig,
+  isCircleCollision,
   EntityId,
   OrderType,
   UnitCategoryId,
@@ -318,32 +319,28 @@ export abstract class BaseUnit extends Entity {
     return this.calculateObbCorners();
   }
 
-  /** True when this formation collides as a rotated rectangle (Obb) rather than circles. */
+  /** True when this formation collides as a rotated rectangle (Obb) rather than a circle. */
   usesObbCollision(): boolean {
     const formation = this.gameDataManager
       .getFormationManager()
       .getTemplate(this.effectiveFormation);
-    return formation?.collisionShape === CollisionShapeType.Obb;
+    return !!formation && !isCircleCollision(getCollisionConfig(formation));
   }
 
   /**
-   * The unit's collision footprint as a single shape: a rotated rectangle (Obb) for
-   * formations that opt in (napoleonic), otherwise a circle sized to the formation's
-   * footprint (radius = half its larger dimension). The narrow phase resolves overlap
-   * per shape pair.
+   * The unit's collision footprint as a single shape: a rotated rectangle (Obb) sized
+   * by the formation's frontage/depth, or a circle of the formation's radius. The
+   * narrow phase resolves overlap per shape pair.
    */
   getCollisionShape(position: Point2 = this.position): CollisionShape {
-    if (this.usesObbCollision()) {
-      return new ObbShape(this.calculateObbCorners(position));
+    const formation = this.gameDataManager
+      .getFormationManager()
+      .getTemplate(this.effectiveFormation);
+    const config = formation ? getCollisionConfig(formation) : { radius: 8 };
+    if (isCircleCollision(config)) {
+      return new CircleShape({ x: position.x, y: position.y }, config.radius);
     }
-    const { width, height } = this.gameDataManager.getUnitDimensions(
-      this.type,
-      this.effectiveFormation,
-    );
-    return new CircleShape(
-      { x: position.x, y: position.y },
-      Math.max(width, height) / 2,
-    );
+    return new ObbShape(this.calculateObbCorners(position));
   }
 
   getClosestCorner(unit: BaseUnit) {
@@ -424,69 +421,48 @@ export abstract class BaseUnit extends Entity {
     return this.team === unit.team;
   }
 
+  /**
+   * Circles approximating the unit's footprint, turned with the unit. Used by the
+   * soft tests (shot line-of-sight, AoE, edge contact). For a circle formation it is
+   * the single circle; for an Obb it is circles spaced along the longer side (radius =
+   * half the shorter side), which reproduces the legacy tuned multi-circle layout
+   * from frontage/depth instead of explicit knobs.
+   */
   calculateCollisionShapes(position = this.position): Circle[] {
-    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
+    const formation = this.gameDataManager
+      .getFormationManager()
+      .getTemplate(this.effectiveFormation);
+    const config = formation ? getCollisionConfig(formation) : { radius: 8 };
 
-    let collisionCircles: number;
-    let collisionCircleSize: number;
-    let collisionCircleDistance: number;
-    let collisionCirclesVertical: boolean;
-
-    if (formationTemplate) {
-      // Use formation-specific collision data
-      collisionCircles = formationTemplate.collisionCircles;
-      collisionCircleSize = formationTemplate.collisionCircleSize;
-      collisionCircleDistance = formationTemplate.collisionCircleDistance ?? formationTemplate.collisionCircleSize;
-      collisionCirclesVertical = formationTemplate.collisionCirclesVertical ?? false;
-    } else {
-      // Fallback
-      collisionCircles = 1;
-      collisionCircleSize = 16;
-      collisionCircleDistance = 16;
-      collisionCirclesVertical = false;
+    if (isCircleCollision(config)) {
+      return config.radius > 0
+        ? [new Circle(position.x, position.y, config.radius)]
+        : [];
     }
 
-    // Either knob at 0 means "no collision" (flying/ghost units). Bail out
-    // before generating zero-radius circles, which downstream collision
-    // checks can still touch and would skew totalOverlap calcs.
-    if (collisionCircles <= 0 || collisionCircleSize <= 0) {
-      return [];
-    }
+    const { frontage, depth } = config;
+    if (frontage <= 0 || depth <= 0) return [];
+    const longer = Math.max(frontage, depth);
+    const shorter = Math.min(frontage, depth);
+    const radius = shorter / 2;
+    const count = Math.max(1, Math.round(longer / shorter));
+    const alongDepth = depth > frontage; // local X for a deep formation, else local Y
+    const span = (count - 1) * shorter;
 
-    const { x: dx, y: dy } = position;
-    const radius = collisionCircleSize / 2;
+    const cos = Math.cos(this.rotation);
+    const sin = Math.sin(this.rotation);
     const circles: Circle[] = [];
-
-    // Generate circles based on configuration
-    for (let i = 0; i < collisionCircles; i++) {
-      // Calculate center position for this circle
-      // Space circles based on their size to create proper overlap
-      let centerX = 0;
-      let centerY = 0;
-      if (collisionCircles > 1) {
-        // Use the circle distance to determine spacing
-        // For overlapping circles, space them at the specified distance
-        const totalSpan = (collisionCircles - 1) * collisionCircleDistance;
-        const offset = -totalSpan / 2 + i * collisionCircleDistance;
-        if (collisionCirclesVertical) {
-          // Arrange circles vertically (along X axis)
-          centerX = offset;
-        } else {
-          // Arrange circles horizontally (along Y axis) - default behavior
-          centerY = offset;
-        }
-      }
-
-      const center = { x: centerX, y: centerY };
-
-      // Use -this.rotation to reverse the rotation direction
-      const cosTheta = Math.cos(-this.rotation);
-      const sinTheta = Math.sin(-this.rotation);
-
-      // Rotate center around (0, 0)
-      const rotatedX = dx + center.x * cosTheta + center.y * sinTheta;
-      const rotatedY = dy + -center.x * sinTheta + center.y * cosTheta;
-      circles.push(new Circle(rotatedX, rotatedY, radius));
+    for (let i = 0; i < count; i++) {
+      const offset = count > 1 ? -span / 2 + i * shorter : 0;
+      const localX = alongDepth ? offset : 0;
+      const localY = alongDepth ? 0 : offset;
+      circles.push(
+        new Circle(
+          position.x + localX * cos - localY * sin,
+          position.y + localX * sin + localY * cos,
+          radius,
+        ),
+      );
     }
     return circles;
   }

@@ -304,14 +304,13 @@ export interface FormationCheckPointWithProportion extends FormationCheckPoint {
 }
 
 /**
- * Collision shape strategy for a formation. Circles (default) uses the legacy
- * multi-circle footprint; Obb uses a single rotated rectangle (oriented
- * bounding box) sized by frontage/depth.
+ * A formation's collision footprint, discriminated by which fields are present: a
+ * rotated rectangle (`{ frontage, depth }`, turns with the unit) or a circle
+ * (`{ radius }`). One shape per unit; resolve it through `getCollisionConfig`.
  */
-export enum CollisionShapeType {
-  Circles = 1,
-  Obb = 2,
-}
+export type CollisionShapeConfig =
+  | { frontage: number; depth: number }
+  | { radius: number };
 
 /**
  * A ranged-fire emitter mounted on one edge of the unit's OBB (edge-fire model).
@@ -337,37 +336,23 @@ export interface FormationTemplate {
   maxFlankAngle: number;
 
   /**
-   * Number of collision circles for this formation.
+   * The collision footprint: a rotated rectangle (`{ frontage, depth }`) or a circle
+   * (`{ radius }`). Read it through `getCollisionConfig`, which falls back to the
+   * deprecated flat fields below for older custom-scenario formations.
    */
-  collisionCircles: number;
-  /**
-   * Size of each collision circle in pixels.
-   */
-  collisionCircleSize: number;
-  /**
-   * Distance between collision circles. Defaults to collisionCircleSize if not specified.
-   */
-  collisionCircleDistance?: number;
-  /**
-   * If true, collision circles are arranged vertically (along X axis).
-   * If false or undefined, collision circles are arranged horizontally (along Y axis).
-   * Defaults to false (horizontal).
-   */
-  collisionCirclesVertical?: boolean;
-  /**
-   * Collision shape for this formation. Defaults to Circles (legacy footprint).
-   * Obb collides as a single rotated rectangle sized by frontage/depth.
-   */
-  collisionShape?: CollisionShapeType;
-  /**
-   * Frontage in pixels: extent across the front (local Y). First-class size for
-   * Obb collision and edge-fire; falls back to the collision-circle layout when omitted.
-   */
+  collisionShape?: CollisionShapeConfig;
+  /** @deprecated Use `collisionShape: { frontage, depth }`. Kept for legacy data. */
   frontage?: number;
-  /**
-   * Depth in pixels: front-to-back extent (local X). See frontage.
-   */
+  /** @deprecated Use `collisionShape: { frontage, depth }`. Kept for legacy data. */
   depth?: number;
+  /** @deprecated Superseded by `collisionShape`; the LoS circles now derive from frontage/depth. */
+  collisionCircles?: number;
+  /** @deprecated Superseded by `collisionShape`. */
+  collisionCircleSize?: number;
+  /** @deprecated Superseded by `collisionShape`. */
+  collisionCircleDistance?: number;
+  /** @deprecated Superseded by `collisionShape`. */
+  collisionCirclesVertical?: boolean;
   /**
    * Points used to check what terrain the unit is on.
    * Each point has an offset relative to the formation center and a weight
