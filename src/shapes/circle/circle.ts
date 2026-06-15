@@ -1,15 +1,15 @@
-import { Polygon } from "../polygon";
 import { BoundingBox, ShapeType } from "../types";
 import { Point2, Vector2 } from "@lob-sdk/vector";
+import { CollisionShape, ObbShape } from "../collision-shape";
 
-export class Circle {
+export class Circle implements CollisionShape {
   readonly shapeType = ShapeType.Circle;
   public position: Vector2;
   public radius: number;
 
   constructor(centerX: number, centerY: number, radius: number) {
-    if (radius <= 0) {
-      throw new Error("Radius must be greater than 0");
+    if (radius < 0) {
+      throw new Error("Radius must not be negative");
     }
     this.position = new Vector2(centerX, centerY);
     this.radius = radius;
@@ -59,45 +59,6 @@ export class Circle {
     const distanceSquared = dx * dx + dy * dy;
 
     return distanceSquared <= this.radius * this.radius;
-  }
-
-  /**
-   * Check if this circle intersects with a polygon
-   */
-  intersectsWithPolygon(polygon: Polygon): boolean {
-    // Quick check using bounding boxes
-    const polyBox = polygon.getBoundingBox();
-    if (
-      this.boundingBox.minX > polyBox.maxX ||
-      this.boundingBox.maxX < polyBox.minX ||
-      this.boundingBox.minY > polyBox.maxY ||
-      this.boundingBox.maxY < polyBox.minY
-    ) {
-      return false;
-    }
-
-    // Check if the circle's center is inside the polygon
-    if (polygon.isPointInside(this.position)) {
-      return true;
-    }
-
-    // Check if any vertex of the polygon is inside the circle
-    const vertices = polygon.getVertices();
-    for (const vertex of vertices) {
-      if (this.isPointInside(vertex)) {
-        return true;
-      }
-    }
-
-    // Check if circle intersects with any edge of the polygon
-    for (let i = 0; i < vertices.length; i++) {
-      const j = (i + 1) % vertices.length;
-      if (this.intersectsWithLine(vertices[i], vertices[j])) {
-        return true;
-      }
-    }
-
-    return false;
   }
 
   /**
@@ -208,5 +169,118 @@ export class Circle {
       }
     }
     return false;
+  }
+
+  // --- CollisionShape: a unit footprint whose overlap is resolved by shape pair ---
+
+  get center(): Point2 {
+    return this.position;
+  }
+
+  boundingRadius(): number {
+    return this.radius;
+  }
+
+  overlapRatio(other: CollisionShape): number {
+    if (other instanceof Circle) {
+      return this.overlapWithCircle(other);
+    }
+    if (other instanceof ObbShape) {
+      return this.overlapWithObb(other);
+    }
+    return 0;
+  }
+
+  /**
+   * Overlap with another circle as a fraction (0..1) of the smaller disc's area: 0
+   * when disjoint, 1 when the smaller sits fully inside the larger, the lens-area
+   * fraction in between. A zero-radius circle (no-collision) overlaps nothing.
+   */
+  private overlapWithCircle(other: Circle): number {
+    const r1 = this.radius;
+    const r2 = other.radius;
+    if (r1 <= 0 || r2 <= 0) return 0;
+    const d = Math.hypot(
+      other.position.x - this.position.x,
+      other.position.y - this.position.y,
+    );
+    if (d >= r1 + r2) return 0;
+    if (d <= Math.abs(r1 - r2)) return 1;
+
+    const r1s = r1 * r1;
+    const r2s = r2 * r2;
+    const a1 = Math.acos((d * d + r1s - r2s) / (2 * d * r1));
+    const a2 = Math.acos((d * d + r2s - r1s) / (2 * d * r2));
+    const lens =
+      r1s * a1 +
+      r2s * a2 -
+      0.5 *
+        Math.sqrt(
+          Math.max(0, (-d + r1 + r2) * (d + r1 - r2) * (d - r1 + r2) * (d + r1 + r2)),
+        );
+    const minArea = Math.PI * Math.min(r1, r2) ** 2;
+    return Math.min(lens / minArea, 1);
+  }
+
+  /**
+   * Overlap with a rotated rectangle as a fraction (0..1) of the smaller footprint.
+   * The circle stays exact: move it into the rectangle's local frame so the box is
+   * axis-aligned, then measure the circle-AABB intersection area. Public so
+   * `ObbShape.overlapRatio` can delegate the cross-shape pair here.
+   */
+  overlapWithObb(obb: ObbShape): number {
+    const r = this.radius;
+    if (r <= 0) return 0;
+    const corners = obb.corners;
+    const c0 = corners[0];
+    const c2 = corners[2];
+    let ux = corners[1].x - c0.x;
+    let uy = corners[1].y - c0.y;
+    let vx = corners[3].x - c0.x;
+    let vy = corners[3].y - c0.y;
+    const lu = Math.hypot(ux, uy) || 1;
+    const lv = Math.hypot(vx, vy) || 1;
+    ux /= lu;
+    uy /= lu;
+    vx /= lv;
+    vy /= lv;
+
+    const cx = (c0.x + c2.x) / 2;
+    const cy = (c0.y + c2.y) / 2;
+    const relX = this.position.x - cx;
+    const relY = this.position.y - cy;
+    const lx = relX * ux + relY * uy;
+    const ly = relX * vx + relY * vy;
+    const hu = lu / 2;
+    const hv = lv / 2;
+
+    const inter = Circle.circleAabbArea(r, -hu - lx, -hv - ly, hu - lx, hv - ly);
+    const minArea = Math.min(Math.PI * r * r, lu * lv);
+    return minArea > 0 ? Math.min(inter / minArea, 1) : 0;
+  }
+
+  /** Intersection area of a disc (radius r at the origin) and the box [x0,x1]x[y0,y1]. */
+  private static circleAabbArea(
+    r: number,
+    x0: number,
+    y0: number,
+    x1: number,
+    y1: number,
+  ): number {
+    const xa = Math.max(x0, -r);
+    const xb = Math.min(x1, r);
+    if (xa >= xb) return 0;
+
+    const strips = 64;
+    const dx = (xb - xa) / strips;
+    let area = 0;
+    for (let i = 0; i < strips; i++) {
+      const x = xa + (i + 0.5) * dx;
+      const h = Math.sqrt(Math.max(0, r * r - x * x));
+      const lo = Math.max(y0, -h);
+      const hi = Math.min(y1, h);
+      if (hi > lo) area += (hi - lo) * dx;
+    }
+    return area;
   }
 }
