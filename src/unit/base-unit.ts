@@ -2,7 +2,7 @@ import { Entity, EntityType } from "@lob-sdk/entity";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
-  CollisionShape,
+  CollisionShapeType,
   EntityId,
   OrderType,
   UnitCategoryId,
@@ -28,6 +28,11 @@ import {
   getMaxOrgProportionDebuff,
 } from "@lob-sdk/utils";
 import { Circle } from "@lob-sdk/shapes/circle";
+import {
+  CollisionShape,
+  ObbShape,
+  CircleShape,
+} from "@lob-sdk/shapes/collision-shape";
 import {
   BaseUnitEffect,
   BeenInMelee,
@@ -318,7 +323,27 @@ export abstract class BaseUnit extends Entity {
     const formation = this.gameDataManager
       .getFormationManager()
       .getTemplate(this.effectiveFormation);
-    return formation?.collisionShape === CollisionShape.Obb;
+    return formation?.collisionShape === CollisionShapeType.Obb;
+  }
+
+  /**
+   * The unit's collision footprint as a single shape: a rotated rectangle (Obb) for
+   * formations that opt in (napoleonic), otherwise a circle sized to the formation's
+   * footprint (radius = half its larger dimension). The narrow phase resolves overlap
+   * per shape pair.
+   */
+  getCollisionShape(position: Point2 = this.position): CollisionShape {
+    if (this.usesObbCollision()) {
+      return new ObbShape(this.calculateObbCorners(position));
+    }
+    const { width, height } = this.gameDataManager.getUnitDimensions(
+      this.type,
+      this.effectiveFormation,
+    );
+    return new CircleShape(
+      { x: position.x, y: position.y },
+      Math.max(width, height) / 2,
+    );
   }
 
   getClosestCorner(unit: BaseUnit) {

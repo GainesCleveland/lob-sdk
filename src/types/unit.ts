@@ -308,7 +308,7 @@ export interface FormationCheckPointWithProportion extends FormationCheckPoint {
  * multi-circle footprint; Obb uses a single rotated rectangle (oriented
  * bounding box) sized by frontage/depth.
  */
-export enum CollisionShape {
+export enum CollisionShapeType {
   Circles = 1,
   Obb = 2,
 }
@@ -358,7 +358,7 @@ export interface FormationTemplate {
    * Collision shape for this formation. Defaults to Circles (legacy footprint).
    * Obb collides as a single rotated rectangle sized by frontage/depth.
    */
-  collisionShape?: CollisionShape;
+  collisionShape?: CollisionShapeType;
   /**
    * Frontage in pixels: extent across the front (local Y). First-class size for
    * Obb collision and edge-fire; falls back to the collision-circle layout when omitted.
