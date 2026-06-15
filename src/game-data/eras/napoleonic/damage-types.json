@@ -92,7 +92,7 @@
     "enfiladeFire": true,
     "projectilePenetration": 0,
     "shotSound": "musket-volley",
-    "shotAnim": "musketVolley",
+    "shotAnim": "muzzleSmoke",
     "extendRange": true
   },
   {
@@ -133,7 +133,7 @@
     "enfiladeFire": true,
     "projectilePenetration": 0,
     "shotSound": "musket-volley",
-    "shotAnim": "musketVolley",
+    "shotAnim": "muzzleSmoke",
     "extendRange": false
   },
   {
@@ -167,7 +167,7 @@
     "enfiladeFire": true,
     "projectilePenetration": 0,
     "shotSound": "musket-volley",
-    "shotAnim": "musketVolley",
+    "shotAnim": "muzzleSmoke",
     "extendRange": false
   },
   {
