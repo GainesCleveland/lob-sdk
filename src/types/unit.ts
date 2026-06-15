@@ -285,25 +285,6 @@ export type UnitTemplate = Readonly<BaseUnitTemplate | RangeUnitTemplate>;
 export type UnitTemplates = Record<UnitType, UnitTemplate>;
 
 /**
- * Points used to check what terrain the unit is on.
- * Each point has an offset relative to the formation center and a weight
- * that determines how much that point influences the terrain check.
- * If not specified, defaults to checking only at the unit's center position.
- */
-export interface FormationCheckPoint {
-  /** Offset in pixels relative to formation center */
-  x: number;
-  /** Offset in pixels relative to formation center */
-  y: number;
-  /** Integer weight (higher = more influence) */
-  weight: number;
-}
-
-export interface FormationCheckPointWithProportion extends FormationCheckPoint {
-  proportion: number;
-}
-
-/**
  * A formation's collision footprint, discriminated by which fields are present: a
  * rotated rectangle (`{ frontage, depth }`, turns with the unit) or a circle
  * (`{ radius }`). One shape per unit; resolve it through `getCollisionConfig`.
@@ -337,30 +318,11 @@ export interface FormationTemplate {
 
   /**
    * The collision footprint: a rotated rectangle (`{ frontage, depth }`) or a circle
-   * (`{ radius }`). Read it through `getCollisionConfig`, which falls back to the
-   * deprecated flat fields below for older custom-scenario formations.
+   * (`{ radius }`). Read it through `getCollisionConfig`, which also upgrades older
+   * custom-scenario formations that predate this field (they carried flat
+   * frontage/depth or collision-circle fields, still honoured by the normaliser).
    */
   collisionShape?: CollisionShapeConfig;
-  /** @deprecated Use `collisionShape: { frontage, depth }`. Kept for legacy data. */
-  frontage?: number;
-  /** @deprecated Use `collisionShape: { frontage, depth }`. Kept for legacy data. */
-  depth?: number;
-  /** @deprecated Superseded by `collisionShape`; the LoS circles now derive from frontage/depth. */
-  collisionCircles?: number;
-  /** @deprecated Superseded by `collisionShape`. */
-  collisionCircleSize?: number;
-  /** @deprecated Superseded by `collisionShape`. */
-  collisionCircleDistance?: number;
-  /** @deprecated Superseded by `collisionShape`. */
-  collisionCirclesVertical?: boolean;
-  /**
-   * Points used to check what terrain the unit is on.
-   * Each point has an offset relative to the formation center and a weight
-   * that determines how much that point influences the terrain check.
-   * If not specified, defaults to checking only at the unit's center position.
-   */
-  checkPoints?: Array<FormationCheckPoint>;
-
   movementModifier?: number;
   runMovementModifier?: number;
   rotationSpeedModifier?: number;

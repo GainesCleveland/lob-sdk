@@ -217,7 +217,7 @@ describe("validateScenarioCustomDefs", () => {
       const errors = validateScenarioCustomDefs(
         makeScenario({
           customUnitFormations: [
-            makeFormation({ id: "my-formation", collisionCircleSize: Infinity }),
+            makeFormation({ id: "my-formation", movementModifier: Infinity }),
           ],
         }),
         era,
@@ -226,7 +226,7 @@ describe("validateScenarioCustomDefs", () => {
         errors.some(
           (e) =>
             e.scope === "unitFormation" &&
-            /collisionCircleSize must be a finite number/.test(e.message),
+            /movementModifier must be a finite number/.test(e.message),
         ),
       ).toBe(true);
     });

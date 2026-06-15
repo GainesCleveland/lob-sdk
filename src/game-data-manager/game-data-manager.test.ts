@@ -463,9 +463,11 @@ describe("GameDataManager", () => {
       ...overrides,
     });
 
-    it("prefers first-class frontage/depth (width=depth, height=frontage)", () => {
+    it("uses an Obb footprint's frontage/depth (width=depth, height=frontage)", () => {
       const m = GameDataManager.createWithCustomDefs("napoleonic", {
-        customUnitFormations: [cloneFormation({ frontage: 120, depth: 18 })],
+        customUnitFormations: [
+          cloneFormation({ collisionShape: { frontage: 120, depth: 18 } }),
+        ],
       });
       expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
         width: 18,
@@ -473,22 +475,12 @@ describe("GameDataManager", () => {
       });
     });
 
-    it("falls back to the collision-circle layout when frontage/depth are absent", () => {
+    it("uses a circle footprint's diameter for both dimensions", () => {
       const m = GameDataManager.createWithCustomDefs("napoleonic", {
-        customUnitFormations: [
-          cloneFormation({
-            collisionCircles: 3,
-            collisionCircleSize: 20,
-            collisionCircleDistance: 10,
-            collisionCirclesVertical: false,
-            frontage: undefined,
-            depth: undefined,
-          }),
-        ],
+        customUnitFormations: [cloneFormation({ collisionShape: { radius: 20 } })],
       });
-      // span = (3-1)*10 + 20 = 40; horizontal layout ⇒ width=size, height=span.
       expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
-        width: 20,
+        width: 40,
         height: 40,
       });
     });
