@@ -324,6 +324,8 @@ export interface FireEdge {
   arc?: number;
   /** Damage type fired from this edge. Default: the unit's first ranged type. */
   damageType?: string;
+  /** Fixed number of fire emitters along this edge. Default: derived from edge length / spacing. */
+  emitters?: number;
 }
 
 export interface FormationTemplate {
