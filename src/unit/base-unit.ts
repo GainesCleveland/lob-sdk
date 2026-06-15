@@ -32,6 +32,7 @@ import { Circle } from "@lob-sdk/shapes/circle";
 import {
   CollisionShape,
   ObbShape,
+  CircleShape,
 } from "@lob-sdk/shapes/collision-shape";
 import {
   BaseUnitEffect,
@@ -337,7 +338,7 @@ export abstract class BaseUnit extends Entity {
       .getTemplate(this.effectiveFormation);
     const config = formation ? getCollisionConfig(formation) : { radius: 8 };
     if (isCircleCollision(config)) {
-      return new Circle(position.x, position.y, config.radius);
+      return new CircleShape({ x: position.x, y: position.y }, config.radius);
     }
     return new ObbShape(this.calculateObbCorners(position));
   }
