@@ -260,6 +260,69 @@ describe("validateScenarioCustomDefs", () => {
     });
   });
 
+  describe("collisionShape and fireEdges", () => {
+    // JSON.parse stands in for untrusted imported scenario data, which is exactly
+    // what the validator guards (the types alone cannot, since it runs on raw JSON).
+    const formationErrors = (formation: Partial<FormationTemplate>) =>
+      validateScenarioCustomDefs(
+        makeScenario({ customUnitFormations: [makeFormation(formation)] }),
+        era,
+      ).filter((e) => e.scope === "unitFormation");
+
+    it("rejects a collisionShape with frontage but no depth (would yield NaN corners)", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"frontage":24}'),
+      });
+      expect(errors.some((e) => /frontage and depth/.test(e.message))).toBe(true);
+    });
+
+    it("rejects a collisionShape mixing radius with frontage/depth", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"radius":8,"frontage":24,"depth":12}'),
+      });
+      expect(errors.some((e) => /not a mix/.test(e.message))).toBe(true);
+    });
+
+    it("rejects a negative radius", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"radius":-4}'),
+      });
+      expect(
+        errors.some((e) => /radius must be a finite number >= 0/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects a fire edge without an explicit emitter count", () => {
+      const errors = formationErrors({
+        collisionShape: { frontage: 24, depth: 12 },
+        fireEdges: JSON.parse('[{"edge":1,"arc":40}]'),
+      });
+      expect(
+        errors.some((e) => /emitters must be a positive integer/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects an out-of-range fire edge index", () => {
+      const errors = formationErrors({
+        collisionShape: { frontage: 24, depth: 12 },
+        fireEdges: JSON.parse('[{"edge":7,"emitters":2}]'),
+      });
+      expect(
+        errors.some((e) =>
+          /edge must be an integer between 0 and 3/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
+    it("accepts a valid rectangle shape with pinned emitters", () => {
+      const errors = formationErrors({
+        collisionShape: { frontage: 24, depth: 12 },
+        fireEdges: [{ edge: 1, arc: 40, emitters: 2 }],
+      });
+      expect(errors).toEqual([]);
+    });
+  });
+
   describe("custom damage types", () => {
     it("accepts a custom damage type that overrides a built-in (id AND name both match)", () => {
       const builtIn = era.getDamageTypes()[0]!;

@@ -397,6 +397,58 @@ function validateCustomUnitFormations(
     for (const message of findOutOfRangeNumbers(formation, "")) {
       errors.push({ scope: "unitFormation", field: formation.id, message });
     }
+
+    const pushErr = (message: string) =>
+      errors.push({ scope: "unitFormation", field: formation.id, message });
+
+    // collisionShape must be exactly a rectangle { frontage>0, depth>0 } or a circle
+    // { radius>=0 }. A half-specified shape (e.g. frontage without depth) is treated as
+    // an OBB with an undefined extent, producing NaN corners that silently break
+    // collision and rendering for the whole match.
+    const shape = formation.collisionShape;
+    if (shape !== undefined) {
+      if ("radius" in shape) {
+        if ("frontage" in shape || "depth" in shape) {
+          pushErr(
+            "collisionShape must be either { radius } or { frontage, depth }, not a mix",
+          );
+        } else if (!Number.isFinite(shape.radius) || shape.radius < 0) {
+          pushErr("collisionShape.radius must be a finite number >= 0");
+        }
+      } else if (
+        !Number.isFinite(shape.frontage) ||
+        shape.frontage <= 0 ||
+        !Number.isFinite(shape.depth) ||
+        shape.depth <= 0
+      ) {
+        pushErr(
+          "collisionShape must have a finite frontage and depth greater than 0",
+        );
+      }
+    }
+
+    // Each fire edge needs a valid edge index, an in-range arc, and an explicit
+    // positive emitter count (the firepower and the simultaneous-target cap).
+    if (formation.fireEdges !== undefined) {
+      if (!Array.isArray(formation.fireEdges)) {
+        pushErr("fireEdges must be an array");
+      } else {
+        formation.fireEdges.forEach((fe, i) => {
+          if (!Number.isInteger(fe.edge) || fe.edge < 0 || fe.edge > 3) {
+            pushErr(`fireEdges[${i}].edge must be an integer between 0 and 3`);
+          }
+          if (
+            fe.arc !== undefined &&
+            (!Number.isFinite(fe.arc) || fe.arc < 0 || fe.arc > 360)
+          ) {
+            pushErr(`fireEdges[${i}].arc must be between 0 and 360`);
+          }
+          if (!Number.isInteger(fe.emitters) || fe.emitters <= 0) {
+            pushErr(`fireEdges[${i}].emitters must be a positive integer`);
+          }
+        });
+      }
+    }
   }
 
   return errors;

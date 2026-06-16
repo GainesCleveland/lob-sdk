@@ -304,8 +304,12 @@ export interface FireEdge {
   arc?: number;
   /** Damage type fired from this edge. Default: the unit's first ranged type. */
   damageType?: string;
-  /** Fixed number of fire emitters along this edge. Default: derived from edge length / spacing. */
-  emitters?: number;
+  /**
+   * Number of fire emitters along this edge (also the per-edge target cap). Required
+   * and explicit: it is the firepower and the simultaneous-target capacity, so it is
+   * always pinned per formation rather than derived from the edge length.
+   */
+  emitters: number;
 }
 
 export interface FormationTemplate {

@@ -478,14 +478,16 @@ export abstract class BaseUnit extends Entity {
 
   getDirectionToPoint(point: Vector2, frontBackArc?: number) {
     if (frontBackArc === undefined) {
-      const formation = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+      // effectiveFormation (pending ?? current), like the collision OBB and fire
+      // emitters, so direction/flank/FF track the formation the unit is forming into.
+      const formation = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
       frontBackArc = formation?.frontBackArc ? degreesToRadians(formation.frontBackArc) : degreesToRadians(90);
     }
     return getDirectionToPoint(this.position, point, this.rotation, frontBackArc);
   }
 
   getFlankMod(attackerPoint: Vector2) {
-    const formation = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const formation = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
     if (!formation) return 0;
     const minFlank = degreesToRadians(formation.minFlankAngle);
     const maxFlank = degreesToRadians(formation.maxFlankAngle);
@@ -504,7 +506,7 @@ export abstract class BaseUnit extends Entity {
   }
 
   isFriendlyFireImmune(damageType: string): boolean {
-    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
     return formationTemplate?.friendlyFireImmuneDamageTypes?.includes(damageType) ?? false;
   }
 
