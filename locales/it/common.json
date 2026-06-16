@@ -753,10 +753,13 @@
   "profileAnalytics": {
     "title": "Statistiche avanzate",
     "byBattleType": "Prestazioni per tipo di battaglia",
-    "topUnits": "Unità più usate",
+    "byUnitType": "Prestazioni per tipo di unità",
     "games": "Partite",
     "noData": "Ancora nessuna partita classificata",
-    "locked": "Sblocca le statistiche avanzate"
+    "locked": "Sblocca le statistiche avanzate",
+    "damageDealt": "Inflitti",
+    "damageReceived": "Subiti",
+    "winrate": "Winrate"
   },
   "league": {
     "title": "Lega",

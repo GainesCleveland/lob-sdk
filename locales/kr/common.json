@@ -965,10 +965,13 @@
   "profileAnalytics": {
     "title": "상세 통계",
     "byBattleType": "전투 유형별 성적",
-    "topUnits": "가장 많이 사용한 유닛",
+    "byUnitType": "유닛 유형별 성적",
     "games": "게임",
     "noData": "아직 랭크 게임이 없습니다",
-    "locked": "상세 통계 잠금 해제"
+    "locked": "상세 통계 잠금 해제",
+    "damageDealt": "입힘",
+    "damageReceived": "받음",
+    "winrate": "승률"
   },
   "tutorialSummary": {
     "heading": "튜토리얼 요약",

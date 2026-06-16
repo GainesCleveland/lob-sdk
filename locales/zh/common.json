@@ -987,10 +987,13 @@
   "profileAnalytics": {
     "title": "高级统计",
     "byBattleType": "按战斗类型的表现",
-    "topUnits": "最常使用的单位",
+    "byUnitType": "按单位类型的表现",
     "games": "场次",
     "noData": "暂无排位对战",
-    "locked": "解锁高级统计"
+    "locked": "解锁高级统计",
+    "damageDealt": "造成",
+    "damageReceived": "承受",
+    "winrate": "胜率"
   },
   "tutorialSummary": {
     "heading": "教程摘要",

@@ -980,10 +980,13 @@
   "profileAnalytics": {
     "title": "إحصاءات متقدمة",
     "byBattleType": "الأداء حسب نوع المعركة",
-    "topUnits": "الوحدات الأكثر استخدامًا",
+    "byUnitType": "الأداء حسب نوع الوحدة",
     "games": "المباريات",
     "noData": "لا توجد مباريات مصنّفة بعد",
-    "locked": "فتح الإحصاءات المتقدمة"
+    "locked": "فتح الإحصاءات المتقدمة",
+    "damageDealt": "ملحق",
+    "damageReceived": "متلقى",
+    "winrate": "نسبة الفوز"
   },
   "tutorialSummary": {
     "heading": "ملخص الدليل التعليمي",

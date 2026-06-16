@@ -752,10 +752,13 @@
   "profileAnalytics": {
     "title": "Gelişmiş istatistikler",
     "byBattleType": "Savaş türüne göre performans",
-    "topUnits": "En çok kullanılan birlikler",
+    "byUnitType": "Birim türüne göre performans",
     "games": "Oyunlar",
     "noData": "Henüz dereceli oyun yok",
-    "locked": "Gelişmiş istatistiklerin kilidini aç"
+    "locked": "Gelişmiş istatistiklerin kilidini aç",
+    "damageDealt": "Verilen",
+    "damageReceived": "Alınan",
+    "winrate": "Galibiyet"
   },
   "league": {
     "title": "Lig",

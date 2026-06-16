@@ -765,10 +765,13 @@
   "profileAnalytics": {
     "title": "Statistiques avancées",
     "byBattleType": "Performance par type de bataille",
-    "topUnits": "Unités les plus jouées",
+    "byUnitType": "Performance par type d'unité",
     "games": "Parties",
     "noData": "Aucune partie classée pour l'instant",
-    "locked": "Débloquer les statistiques avancées"
+    "locked": "Débloquer les statistiques avancées",
+    "damageDealt": "Infligés",
+    "damageReceived": "Subis",
+    "winrate": "Winrate"
   },
   "league": {
     "title": "Ligue",

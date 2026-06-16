@@ -709,10 +709,13 @@
   "profileAnalytics": {
     "title": "Speciális statisztikák",
     "byBattleType": "Teljesítmény csatatípus szerint",
-    "topUnits": "Legtöbbet használt egységek",
+    "byUnitType": "Teljesítmény egységtípus szerint",
     "games": "Játszmák",
     "noData": "Még nincs rangsorolt játszma",
-    "locked": "Speciális statisztikák feloldása"
+    "locked": "Speciális statisztikák feloldása",
+    "damageDealt": "Okozott",
+    "damageReceived": "Elszenvedett",
+    "winrate": "Győzelem"
   },
   "league": {
     "title": "Liga",

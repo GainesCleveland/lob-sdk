@@ -901,10 +901,13 @@
   "profileAnalytics": {
     "title": "Statystyki zaawansowane",
     "byBattleType": "Wyniki według typu bitwy",
-    "topUnits": "Najczęściej grane jednostki",
+    "byUnitType": "Wyniki według typu jednostki",
     "games": "Gry",
     "noData": "Brak gier rankingowych",
-    "locked": "Odblokuj zaawansowane statystyki"
+    "locked": "Odblokuj zaawansowane statystyki",
+    "damageDealt": "Zadane",
+    "damageReceived": "Otrzymane",
+    "winrate": "Winrate"
   },
   "tutorialSummary": {
     "heading": "Podsumowanie samouczka",

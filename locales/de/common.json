@@ -752,10 +752,13 @@
   "profileAnalytics": {
     "title": "Erweiterte Statistiken",
     "byBattleType": "Leistung nach Schlachttyp",
-    "topUnits": "Meistgespielte Einheiten",
+    "byUnitType": "Leistung nach Einheitentyp",
     "games": "Spiele",
     "noData": "Noch keine gewerteten Spiele",
-    "locked": "Erweiterte Statistiken freischalten"
+    "locked": "Erweiterte Statistiken freischalten",
+    "damageDealt": "Verursacht",
+    "damageReceived": "Erhalten",
+    "winrate": "Siegrate"
   },
   "league": {
     "title": "Liga",

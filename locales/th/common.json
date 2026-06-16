@@ -80,10 +80,13 @@
   "profileAnalytics": {
     "title": "สถิติขั้นสูง",
     "byBattleType": "ผลงานตามประเภทการรบ",
-    "topUnits": "หน่วยที่ใช้บ่อยที่สุด",
+    "byUnitType": "ผลงานตามประเภทหน่วย",
     "games": "เกม",
     "noData": "ยังไม่มีเกมจัดอันดับ",
-    "locked": "ปลดล็อกสถิติขั้นสูง"
+    "locked": "ปลดล็อกสถิติขั้นสูง",
+    "damageDealt": "ที่ทำ",
+    "damageReceived": "ที่รับ",
+    "winrate": "ชนะ"
   },
   "tutorialSummary": {
     "heading": "สรุปโหมดฝึกสอน..."

@@ -753,10 +753,13 @@
   "profileAnalytics": {
     "title": "Estatísticas avançadas",
     "byBattleType": "Desempenho por tipo de batalha",
-    "topUnits": "Unidades mais usadas",
+    "byUnitType": "Desempenho por tipo de unidade",
     "games": "Partidas",
     "noData": "Ainda não há partidas ranqueadas",
-    "locked": "Desbloquear estatísticas avançadas"
+    "locked": "Desbloquear estatísticas avançadas",
+    "damageDealt": "Causado",
+    "damageReceived": "Recebido",
+    "winrate": "Vitórias"
   },
   "league": {
     "title": "Liga",

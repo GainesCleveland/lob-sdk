@@ -969,10 +969,13 @@
   "profileAnalytics": {
     "title": "Thống kê nâng cao",
     "byBattleType": "Hiệu suất theo loại trận",
-    "topUnits": "Đơn vị dùng nhiều nhất",
+    "byUnitType": "Hiệu suất theo loại đơn vị",
     "games": "Trận",
     "noData": "Chưa có trận xếp hạng",
-    "locked": "Mở khóa thống kê nâng cao"
+    "locked": "Mở khóa thống kê nâng cao",
+    "damageDealt": "Gây ra",
+    "damageReceived": "Nhận",
+    "winrate": "Thắng"
   },
   "tutorialSummary": {
     "heading": "Tóm tắt hướng dẫn",

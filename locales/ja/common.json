@@ -990,10 +990,13 @@
   "profileAnalytics": {
     "title": "詳細統計",
     "byBattleType": "バトルタイプ別の成績",
-    "topUnits": "最も使用したユニット",
+    "byUnitType": "ユニットタイプ別の成績",
     "games": "ゲーム数",
     "noData": "ランク戦の記録がありません",
-    "locked": "詳細統計をアンロック"
+    "locked": "詳細統計をアンロック",
+    "damageDealt": "与えた",
+    "damageReceived": "受けた",
+    "winrate": "勝率"
   },
   "tutorialSummary": {
     "heading": "チュートリアル概要",

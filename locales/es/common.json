@@ -865,10 +865,13 @@
   "profileAnalytics": {
     "title": "Estadísticas avanzadas",
     "byBattleType": "Rendimiento por tipo de batalla",
-    "topUnits": "Unidades más usadas",
+    "byUnitType": "Rendimiento por tipo de unidad",
     "games": "Partidas",
     "noData": "Todavía no hay partidas clasificatorias",
-    "locked": "Desbloquear estadísticas avanzadas"
+    "locked": "Desbloquear estadísticas avanzadas",
+    "damageDealt": "Infligido",
+    "damageReceived": "Recibido",
+    "winrate": "Winrate"
   },
   "tutorialSummary": {
     "heading": "Resumen del tutorial",

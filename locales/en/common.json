@@ -990,10 +990,13 @@
   "profileAnalytics": {
     "title": "Advanced stats",
     "byBattleType": "Performance by battle type",
-    "topUnits": "Most-played units",
+    "byUnitType": "Performance by unit type",
     "games": "Games",
     "noData": "No ranked games yet",
-    "locked": "Unlock advanced stats"
+    "locked": "Unlock advanced stats",
+    "damageDealt": "Dealt",
+    "damageReceived": "Taken",
+    "winrate": "Winrate"
   },
   "tutorialSummary": {
     "heading": "Tutorial summary",

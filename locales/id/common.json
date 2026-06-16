@@ -756,10 +756,13 @@
   "profileAnalytics": {
     "title": "Statistik lanjutan",
     "byBattleType": "Performa menurut tipe pertempuran",
-    "topUnits": "Unit paling sering dipakai",
+    "byUnitType": "Performa menurut tipe unit",
     "games": "Permainan",
     "noData": "Belum ada game peringkat",
-    "locked": "Buka statistik lanjutan"
+    "locked": "Buka statistik lanjutan",
+    "damageDealt": "Diberikan",
+    "damageReceived": "Diterima",
+    "winrate": "Menang"
   },
   "league": {
     "title": "Liga",
