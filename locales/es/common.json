@@ -862,6 +862,14 @@
     "totalArenas_one": "1 arena",
     "totalArenas_other": "{{count}} arenas"
   },
+  "profileAnalytics": {
+    "title": "Estadísticas avanzadas",
+    "byBattleType": "Rendimiento por tipo de batalla",
+    "topUnits": "Unidades más usadas",
+    "games": "Partidas",
+    "noData": "Todavía no hay partidas clasificatorias",
+    "locked": "Desbloquear estadísticas avanzadas"
+  },
   "tutorialSummary": {
     "heading": "Resumen del tutorial",
     "count": "Se mostraron {{seen}}/{{total}} lecciones",

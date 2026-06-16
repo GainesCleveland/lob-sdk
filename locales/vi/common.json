@@ -966,6 +966,14 @@
     "totalGames_other": "{{count}} trận",
     "totalArenas_other": "{{count}} đấu trường"
   },
+  "profileAnalytics": {
+    "title": "Thống kê nâng cao",
+    "byBattleType": "Hiệu suất theo loại trận",
+    "topUnits": "Đơn vị dùng nhiều nhất",
+    "games": "Trận",
+    "noData": "Chưa có trận xếp hạng",
+    "locked": "Mở khóa thống kê nâng cao"
+  },
   "tutorialSummary": {
     "heading": "Tóm tắt hướng dẫn",
     "count": "Đã hiển thị {{seen}} / {{total}} bài học",

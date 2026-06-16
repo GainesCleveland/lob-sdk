@@ -987,6 +987,14 @@
     "totalArenas_one": "1アリーナ",
     "totalArenas_other": "{{count}} アリーナ"
   },
+  "profileAnalytics": {
+    "title": "詳細統計",
+    "byBattleType": "バトルタイプ別の成績",
+    "topUnits": "最も使用したユニット",
+    "games": "ゲーム数",
+    "noData": "ランク戦の記録がありません",
+    "locked": "詳細統計をアンロック"
+  },
   "tutorialSummary": {
     "heading": "チュートリアル概要",
     "count": "{{total}} 中 {{seen}} レッスンを表示",

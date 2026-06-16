@@ -765,6 +765,14 @@
     "totalArenas_many": "{{count}} арен",
     "totalArenas_other": "{{count}} арени"
   },
+  "profileAnalytics": {
+    "title": "Розширена статистика",
+    "byBattleType": "Результати за типом бою",
+    "topUnits": "Найуживаніші загони",
+    "games": "Ігри",
+    "noData": "Ще немає рейтингових ігор",
+    "locked": "Розблокувати розширену статистику"
+  },
   "league": {
     "title": "Ліга",
     "emperor": "Імператор",

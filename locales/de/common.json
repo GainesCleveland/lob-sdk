@@ -749,6 +749,14 @@
     "totalArenas_one": "1 Arena",
     "totalArenas_other": "{{count}} Arenen"
   },
+  "profileAnalytics": {
+    "title": "Erweiterte Statistiken",
+    "byBattleType": "Leistung nach Schlachttyp",
+    "topUnits": "Meistgespielte Einheiten",
+    "games": "Spiele",
+    "noData": "Noch keine gewerteten Spiele",
+    "locked": "Erweiterte Statistiken freischalten"
+  },
   "league": {
     "title": "Liga",
     "emperor": "Imperator",

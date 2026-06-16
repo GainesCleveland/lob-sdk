@@ -762,6 +762,14 @@
     "totalArenas_one": "1 arène",
     "totalArenas_other": "{{count}} arènes"
   },
+  "profileAnalytics": {
+    "title": "Statistiques avancées",
+    "byBattleType": "Performance par type de bataille",
+    "topUnits": "Unités les plus jouées",
+    "games": "Parties",
+    "noData": "Aucune partie classée pour l'instant",
+    "locked": "Débloquer les statistiques avancées"
+  },
   "league": {
     "title": "Ligue",
     "emperor": "Empereur",

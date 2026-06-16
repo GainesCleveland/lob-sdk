@@ -977,6 +977,14 @@
     "totalArenas_many": "{{count}} ساحة",
     "totalArenas_other": "{{count}} ساحة"
   },
+  "profileAnalytics": {
+    "title": "إحصاءات متقدمة",
+    "byBattleType": "الأداء حسب نوع المعركة",
+    "topUnits": "الوحدات الأكثر استخدامًا",
+    "games": "المباريات",
+    "noData": "لا توجد مباريات مصنّفة بعد",
+    "locked": "فتح الإحصاءات المتقدمة"
+  },
   "tutorialSummary": {
     "heading": "ملخص الدليل التعليمي",
     "count": "{{seen}} من {{total}} درس معروض",

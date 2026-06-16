@@ -706,6 +706,14 @@
     "totalArenas_one": "1 aréna",
     "totalArenas_other": "{{count}} aréna"
   },
+  "profileAnalytics": {
+    "title": "Speciális statisztikák",
+    "byBattleType": "Teljesítmény csatatípus szerint",
+    "topUnits": "Legtöbbet használt egységek",
+    "games": "Játszmák",
+    "noData": "Még nincs rangsorolt játszma",
+    "locked": "Speciális statisztikák feloldása"
+  },
   "league": {
     "title": "Liga",
     "emperor": "Császár",

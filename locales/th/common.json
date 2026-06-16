@@ -77,6 +77,14 @@
     "totalArenas_one": "1 อารีน่า",
     "totalArenas_other": "{{count}} อารีน่า"
   },
+  "profileAnalytics": {
+    "title": "สถิติขั้นสูง",
+    "byBattleType": "ผลงานตามประเภทการรบ",
+    "topUnits": "หน่วยที่ใช้บ่อยที่สุด",
+    "games": "เกม",
+    "noData": "ยังไม่มีเกมจัดอันดับ",
+    "locked": "ปลดล็อกสถิติขั้นสูง"
+  },
   "tutorialSummary": {
     "heading": "สรุปโหมดฝึกสอน..."
   }

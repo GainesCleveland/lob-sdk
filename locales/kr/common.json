@@ -962,6 +962,14 @@
     "totalGames_other": "{{count}}게임",
     "totalArenas_other": "{{count}}아레나"
   },
+  "profileAnalytics": {
+    "title": "상세 통계",
+    "byBattleType": "전투 유형별 성적",
+    "topUnits": "가장 많이 사용한 유닛",
+    "games": "게임",
+    "noData": "아직 랭크 게임이 없습니다",
+    "locked": "상세 통계 잠금 해제"
+  },
   "tutorialSummary": {
     "heading": "튜토리얼 요약",
     "count": "{{total}}개 중 {{seen}}개 레슨 표시됨",

@@ -987,6 +987,14 @@
     "totalArenas_one": "1 arena",
     "totalArenas_other": "{{count}} arenas"
   },
+  "profileAnalytics": {
+    "title": "Advanced stats",
+    "byBattleType": "Performance by battle type",
+    "topUnits": "Most-played units",
+    "games": "Games",
+    "noData": "No ranked games yet",
+    "locked": "Unlock advanced stats"
+  },
   "tutorialSummary": {
     "heading": "Tutorial summary",
     "count": "{{seen}} of {{total}} lessons shown",

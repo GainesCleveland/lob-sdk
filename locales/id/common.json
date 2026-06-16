@@ -753,6 +753,14 @@
     "totalGames_other": "{{count}} permainan",
     "totalArenas_other": "{{count}} arena"
   },
+  "profileAnalytics": {
+    "title": "Statistik lanjutan",
+    "byBattleType": "Performa menurut tipe pertempuran",
+    "topUnits": "Unit paling sering dipakai",
+    "games": "Permainan",
+    "noData": "Belum ada game peringkat",
+    "locked": "Buka statistik lanjutan"
+  },
   "league": {
     "title": "Liga",
     "emperor": "Kaisar",

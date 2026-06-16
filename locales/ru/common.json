@@ -990,6 +990,14 @@
     "totalArenas_many": "{{count}} арен",
     "totalArenas_other": "{{count}} арены"
   },
+  "profileAnalytics": {
+    "title": "Расширенная статистика",
+    "byBattleType": "Результаты по типу боя",
+    "topUnits": "Самые используемые юниты",
+    "games": "Игры",
+    "noData": "Пока нет рейтинговых игр",
+    "locked": "Открыть расширенную статистику"
+  },
   "tutorialSummary": {
     "heading": "Итоги обучения",
     "count": "Показано {{seen}} из {{total}} уроков",

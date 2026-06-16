@@ -898,6 +898,14 @@
     "totalArenas_many": "{{count}} aren",
     "totalArenas_other": "{{count}} areny"
   },
+  "profileAnalytics": {
+    "title": "Statystyki zaawansowane",
+    "byBattleType": "Wyniki według typu bitwy",
+    "topUnits": "Najczęściej grane jednostki",
+    "games": "Gry",
+    "noData": "Brak gier rankingowych",
+    "locked": "Odblokuj zaawansowane statystyki"
+  },
   "tutorialSummary": {
     "heading": "Podsumowanie samouczka",
     "count": "{{seen}} z {{total}} lekcji pokazanych",

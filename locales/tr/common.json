@@ -749,6 +749,14 @@
     "totalGames_other": "{{count}} oyun",
     "totalArenas_other": "{{count}} arena"
   },
+  "profileAnalytics": {
+    "title": "Gelişmiş istatistikler",
+    "byBattleType": "Savaş türüne göre performans",
+    "topUnits": "En çok kullanılan birlikler",
+    "games": "Oyunlar",
+    "noData": "Henüz dereceli oyun yok",
+    "locked": "Gelişmiş istatistiklerin kilidini aç"
+  },
   "league": {
     "title": "Lig",
     "emperor": "İmparator",

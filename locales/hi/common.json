@@ -969,6 +969,14 @@
     "totalArenas_one": "1 अरेना",
     "totalArenas_other": "{{count}} अरेना"
   },
+  "profileAnalytics": {
+    "title": "उन्नत आँकड़े",
+    "byBattleType": "युद्ध प्रकार के अनुसार प्रदर्शन",
+    "topUnits": "सबसे अधिक उपयोग की गई इकाइयाँ",
+    "games": "खेल",
+    "noData": "अभी तक कोई रैंक मैच नहीं",
+    "locked": "उन्नत आँकड़े अनलॉक करें"
+  },
   "tutorialSummary": {
     "heading": "ट्यूटोरियल सारांश",
     "count": "{{total}} में से {{seen}} पाठ दिखाए गए",
