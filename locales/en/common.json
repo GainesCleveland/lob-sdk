@@ -989,6 +989,7 @@
   },
   "profileAnalytics": {
     "title": "Advanced stats",
+    "last90Days": "Ranked games in the last 90 days",
     "byBattleType": "Performance by battle type",
     "byUnitType": "Performance by unit type",
     "games": "Games",
