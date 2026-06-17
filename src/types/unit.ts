@@ -386,12 +386,6 @@ export interface FormationTemplate {
   shootingAngleMargin?: number;
 
   /**
-   * The damage will be split by the number of sides or the number of shots,
-   * whichever is greater. Default is 1.
-   */
-  shootingSides?: number;
-
-  /**
    * OBB edges that emit ranged fire (edge-fire model). Empty or absent keeps the
    * legacy single-origin centre fire. Will replace shootingAngle/Sides/MaxTargets.
    */
