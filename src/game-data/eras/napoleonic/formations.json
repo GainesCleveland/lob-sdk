@@ -260,10 +260,10 @@
     "maxFlankAngle": 180,
     "collisionShape": { "type": 1, "frontage": 12, "depth": 24 },
     "fireEdges": [
-      { "edge": 2, "arc": 45, "emitters": 2, "damageType": "ship-cannon-port" },
-      { "edge": 0, "arc": 45, "emitters": 2, "damageType": "ship-cannon-starboard" }
+      { "edge": 2, "arc": 45, "emitters": 2 },
+      { "edge": 0, "arc": 45, "emitters": 2 }
     ],
-    "independentFireEdges": true,
+    "firepowerPooling": 1,
     "disablesFlankMelee": true,
     "disable180Turnaround": true,
     "minMovementModifier": -0.25

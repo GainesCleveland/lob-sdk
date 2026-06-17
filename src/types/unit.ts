@@ -318,14 +318,23 @@ export interface FireEdge {
   edge: number;
   /** Fire arc in degrees (full angle), centred on the edge's outward normal. Default 90. */
   arc?: number;
-  /** Damage type fired from this edge. Default: the unit's first ranged type. */
-  damageType?: string;
   /**
    * Number of fire emitters along this edge (also the per-edge target cap). Required
    * and explicit: it is the firepower and the simultaneous-target capacity, so it is
    * always pinned per formation rather than derived from the edge length.
    */
   emitters: number;
+}
+
+/**
+ * How a formation's firepower is split across its fire edges. `Shared` (default): one
+ * pool for the whole unit, divided among all emitters (an infantry square's four faces
+ * each fire a fraction). `PerEdge`: each edge is its own full pool (a ship's port and
+ * starboard broadsides each fire a complete volley).
+ */
+export enum FirepowerPooling {
+  Shared,
+  PerEdge,
 }
 
 export interface FormationTemplate {
@@ -373,12 +382,11 @@ export interface FormationTemplate {
   fireEdges?: FireEdge[];
 
   /**
-   * When true, each fire edge is an independent firepower pool (a full volley per
-   * edge), for units with separate batteries like a ship's port/starboard broadsides.
-   * Default (false) shares the unit's single firepower across all edges, so a
-   * multi-edge defensive formation (an infantry square) fires each face at a fraction.
+   * How firepower is split across the fire edges. Default `Shared` (one pool for the
+   * whole unit, an infantry square's faces each at a fraction); `PerEdge` gives each
+   * edge its own full pool (a ship's port/starboard broadsides each a complete volley).
    */
-  independentFireEdges?: boolean;
+  firepowerPooling?: FirepowerPooling;
 
   /**
    * Time in ticks to form this formation.
