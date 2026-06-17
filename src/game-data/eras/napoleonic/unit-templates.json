@@ -1506,7 +1506,7 @@
     "meleeAttack": 400,
     "meleeDefense": 800,
     "meleeDamageType": "artillery-sabre",
-    "rangedDamageTypes": ["ship-cannon-port", "ship-cannon-starboard"],
+    "rangedDamageTypes": ["ship-cannon"],
     "chargeBonus": 0,
     "walkMovement": 70,
     "runStartUpMovement": 0,

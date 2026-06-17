@@ -55,20 +55,6 @@ export function localObbCorners(width: number, height: number): Point2[] {
 }
 
 /**
- * Closest point on an OBB (corners in corner order) to `from`: projects `from` onto the
- * box's axes, clamps to the half-extents and reconstructs, so a shot can aim at the
- * nearest face rather than the centre. Pure.
- */
-export function closestPointOnObb(corners: Point2[], from: Point2): Point2 {
-  const { cx, cy, ux, uy, vx, vy, hu, hv } = obbLocalFrame(corners);
-  const dx = from.x - cx;
-  const dy = from.y - cy;
-  const pu = Math.max(-hu, Math.min(hu, dx * ux + dy * uy));
-  const pv = Math.max(-hv, Math.min(hv, dx * vx + dy * vy));
-  return { x: cx + pu * ux + pv * vx, y: cy + pu * uy + pv * vy };
-}
-
-/**
  * Outline (flat [x0,y0,...]) of the region a fire edge [a,b] (outward unit normal nx,ny,
  * half-arc `halfArc`) reaches out to `maxRadius`: each corner fans to maxRadius along its
  * flank ray (normal +/- halfArc), an arc sweeps up to dead-ahead, and a flat top spans the
