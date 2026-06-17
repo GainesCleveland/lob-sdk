@@ -379,13 +379,6 @@ export interface FormationTemplate {
   shootingMaxTargets?: number;
 
   /**
-   * The angle margin is the minimum angle difference there must be
-   * between the current target and the rest of the targets to be shot.
-   * Default is 0.
-   */
-  shootingAngleMargin?: number;
-
-  /**
    * OBB edges that emit ranged fire (edge-fire model). Empty or absent keeps the
    * legacy single-origin centre fire. Will replace shootingAngle/Sides/MaxTargets.
    */
