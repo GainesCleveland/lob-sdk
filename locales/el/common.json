@@ -220,6 +220,7 @@
   "forUnit": "Για {{unit}}",
   "maxUnitSkinsSelected": "Έως {{max}} skins ανά τύπο",
   "select": "Επιλέξτε",
+  "edit": "Επεξεργασία",
   "selectAll": "Επιλογή όλων",
   "deselect": "Αποεπιλογή",
   "removeFromSelectionTooltip": "Αφαίρεση από την επιλογή – κλικ σε μονάδα για αφαίρεση",
@@ -482,11 +483,6 @@
   },
   "offline": "Εκτός σύνδεσης",
   "offlineDescription": "Εξασκηθείτε ενάντια σε bots και παίξτε hotseat με φίλους στην ίδια συσκευή!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Leaderboard",
-    "subtitle": "Ποιος έχει τα περισσότερα <premiumCurrency/>;",
-    "description": "Θέλεις να είσαι ο πρώτος; <storeLink>Πηγαίνε στο κατάστημα</storeLink> και πάρε <premiumCurrency/>!"
-  },
   "team": "Ομάδα",
   "teams": "Ομάδες",
   "playerType": "Τύπος παίκτη",
@@ -918,6 +914,18 @@
     "totalGames_other": "{{count}} παιχνίδια",
     "totalArenas_one": "1 αρένα",
     "totalArenas_other": "{{count}} αρένες"
+  },
+  "profileAnalytics": {
+    "title": "Προηγμένα στατιστικά",
+    "last90Days": "Βαθμολογημένα παιχνίδια τις τελευταίες 90 ημέρες",
+    "byBattleType": "Επιδόσεις ανά τύπο μάχης",
+    "byUnitType": "Επιδόσεις ανά τύπο μονάδας",
+    "games": "Παιχνίδια",
+    "noData": "Δεν υπάρχουν ακόμη βαθμολογημένα παιχνίδια",
+    "locked": "Ξεκλείδωμα προηγμένων στατιστικών",
+    "damageDealt": "Προκληθείσα",
+    "damageReceived": "Ληφθείσα",
+    "winrate": "Νίκες"
   },
   "tutorialSummary": {
     "heading": "Σύνοψη εκπαίδευσης",

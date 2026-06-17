@@ -221,6 +221,7 @@
   "forUnit": "Cho {{unit}}",
   "maxUnitSkinsSelected": "Tối đa {{max}} skin mỗi loại",
   "select": "Chọn",
+  "edit": "Chỉnh sửa",
   "selectAll": "Chọn tất cả",
   "deselect": "Bỏ chọn",
   "removeFromSelectionTooltip": "Loại khỏi vùng chọn – nhấp vào đơn vị để loại",
@@ -493,11 +494,6 @@
   },
   "offline": "Ngoại tuyến",
   "offlineDescription": "Luyện tập chống lại bot và chơi hotseat với bạn bè trên cùng thiết bị!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Bảng xếp hạng <premiumCurrency/>",
-    "subtitle": "Ai có nhiều <premiumCurrency/> nhất?",
-    "description": "Muốn đứng đầu? <storeLink>Đến cửa hàng</storeLink> và lấy <premiumCurrency/>!"
-  },
   "team": "Đội",
   "teams": "Các đội",
   "playerType": "Loại người chơi",
@@ -965,6 +961,18 @@
     "losses": "Thua",
     "totalGames_other": "{{count}} trận",
     "totalArenas_other": "{{count}} đấu trường"
+  },
+  "profileAnalytics": {
+    "title": "Thống kê nâng cao",
+    "last90Days": "Trận xếp hạng trong 90 ngày qua",
+    "byBattleType": "Hiệu suất theo loại trận",
+    "byUnitType": "Hiệu suất theo loại đơn vị",
+    "games": "Trận",
+    "noData": "Chưa có trận xếp hạng",
+    "locked": "Mở khóa thống kê nâng cao",
+    "damageDealt": "Gây ra",
+    "damageReceived": "Nhận",
+    "winrate": "Thắng"
   },
   "tutorialSummary": {
     "heading": "Tóm tắt hướng dẫn",

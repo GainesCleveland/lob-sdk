@@ -209,6 +209,7 @@
   "forUnit": "Költség {{unit}}",
   "maxUnitSkinsSelected": "Max. {{max}} skin típusonként",
   "select": "Kiválasztás",
+  "edit": "Szerkesztés",
   "selectAll": "Összes kiválasztása",
   "deselect": "Visszaállítás",
   "removeFromSelectionTooltip": "Eltávolítás a kijelölésből – kattints egy egységre az eltávolításhoz",
@@ -449,11 +450,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Gyakorolj offline botok ellen vagy játssz barátaiddal egy készülékén!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Ranglista",
-    "subtitle": "Kinek van a legtöbb <premiumCurrency/>-zse?",
-    "description": "Szeretnél az első lenni? <storeLink>Látogasd meg az Áruházat</storeLink> és szerezz <premiumCurrency/>-et!"
-  },
   "team": "Csapat",
   "teams": "Csapatok",
   "playerType": "Irányító típusa",
@@ -705,6 +701,18 @@
     "totalGames_other": "{{count}} játék",
     "totalArenas_one": "1 aréna",
     "totalArenas_other": "{{count}} aréna"
+  },
+  "profileAnalytics": {
+    "title": "Speciális statisztikák",
+    "last90Days": "Rangsorolt játszmák az elmúlt 90 napban",
+    "byBattleType": "Teljesítmény csatatípus szerint",
+    "byUnitType": "Teljesítmény egységtípus szerint",
+    "games": "Játszmák",
+    "noData": "Még nincs rangsorolt játszma",
+    "locked": "Speciális statisztikák feloldása",
+    "damageDealt": "Okozott",
+    "damageReceived": "Elszenvedett",
+    "winrate": "Győzelem"
   },
   "league": {
     "title": "Liga",

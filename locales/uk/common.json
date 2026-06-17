@@ -209,6 +209,7 @@
   "forUnit": "Для {{unit}}",
   "maxUnitSkinsSelected": "Макс. {{max}} скінів на тип",
   "select": "Вибрати",
+  "edit": "Редагувати",
   "selectAll": "Вибрати все",
   "deselect": "Скасувати вибір",
   "removeFromSelectionTooltip": "Вилучити з вибору – натисніть на юніт, щоб вилучити",
@@ -466,11 +467,6 @@
   },
   "offline": "Офлайн",
   "offlineDescription": "Тренуйтеся проти ботів і грайте з друзями в режимі hotseat на одному пристрої!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Таблиця лідерів",
-    "subtitle": "Хто ж найбагатший на <premiumCurrency/>?",
-    "description": "Хочеш бути першим у списку? <storeLink>Завітай до крамниці</storeLink> та розживись на <premiumCurrency/>!"
-  },
   "team": "Команда",
   "teams": "Команди",
   "playerType": "Тип гравця",
@@ -764,6 +760,18 @@
     "totalArenas_few": "{{count}} арени",
     "totalArenas_many": "{{count}} арен",
     "totalArenas_other": "{{count}} арени"
+  },
+  "profileAnalytics": {
+    "title": "Розширена статистика",
+    "last90Days": "Рейтингові ігри за останні 90 днів",
+    "byBattleType": "Результати за типом бою",
+    "byUnitType": "Результати за типом загону",
+    "games": "Ігри",
+    "noData": "Ще немає рейтингових ігор",
+    "locked": "Розблокувати розширену статистику",
+    "damageDealt": "Завдано",
+    "damageReceived": "Отримано",
+    "winrate": "Вінрейт"
   },
   "league": {
     "title": "Ліга",

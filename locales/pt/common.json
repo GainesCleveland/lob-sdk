@@ -209,6 +209,7 @@
   "forUnit": "Para {{unit}}",
   "maxUnitSkinsSelected": "Máx. {{max}} skins por tipo",
   "select": "Selecionar",
+  "edit": "Editar",
   "selectAll": "Selecionar Tudo",
   "deselect": "Desmarcar",
   "removeFromSelectionTooltip": "Remover da seleção – clique numa unidade para removê-la",
@@ -449,11 +450,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Pratique contra bots e jogue hotseat com amigos no mesmo dispositivo!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Tabela de Líderes de <premiumCurrency/>",
-    "subtitle": "Quem tem o maior <premiumCurrency/>?",
-    "description": "Quer ser o primeiro? <storeLink>Vá para a loja</storeLink> e pegue <premiumCurrency/>!"
-  },
   "team": "Equipe",
   "teams": "Equipes",
   "playerType": "Tipo de jogador",
@@ -749,6 +745,18 @@
     "totalGames_other": "{{count}} partidas",
     "totalArenas_one": "1 arena",
     "totalArenas_other": "{{count}} arenas"
+  },
+  "profileAnalytics": {
+    "title": "Estatísticas avançadas",
+    "last90Days": "Partidas ranqueadas nos últimos 90 dias",
+    "byBattleType": "Desempenho por tipo de batalha",
+    "byUnitType": "Desempenho por tipo de unidade",
+    "games": "Partidas",
+    "noData": "Ainda não há partidas ranqueadas",
+    "locked": "Desbloquear estatísticas avançadas",
+    "damageDealt": "Causado",
+    "damageReceived": "Recebido",
+    "winrate": "Vitórias"
   },
   "league": {
     "title": "Liga",

@@ -221,6 +221,7 @@
   "forUnit": "Для: {{unit}}",
   "maxUnitSkinsSelected": "Макс. {{max}} скинов на тип",
   "select": "Выбрать",
+  "edit": "Изменить",
   "selectAll": "Выбрать все",
   "deselect": "Отменить выбор",
   "removeFromSelectionTooltip": "Убрать из выделения – нажмите на юнит, чтобы убрать",
@@ -496,11 +497,6 @@
   },
   "offline": "Оффлайн",
   "offlineDescription": "Тренируйтесь против ботов или играйте с друзьями на одном устройстве!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Рейтинг <premiumCurrency/>",
-    "subtitle": "У кого больше всего <premiumCurrency/>?",
-    "description": "Хотите быть первым? <storeLink>Перейдите в магазин</storeLink> и получите <premiumCurrency/>!"
-  },
   "team": "Команда",
   "teams": "Команды",
   "playerType": "Тип игрока",
@@ -989,6 +985,18 @@
     "totalArenas_few": "{{count}} арены",
     "totalArenas_many": "{{count}} арен",
     "totalArenas_other": "{{count}} арены"
+  },
+  "profileAnalytics": {
+    "title": "Расширенная статистика",
+    "last90Days": "Рейтинговые игры за последние 90 дней",
+    "byBattleType": "Результаты по типу боя",
+    "byUnitType": "Результаты по типу юнита",
+    "games": "Игры",
+    "noData": "Пока нет рейтинговых игр",
+    "locked": "Открыть расширенную статистику",
+    "damageDealt": "Нанесён",
+    "damageReceived": "Получен",
+    "winrate": "Винрейт"
   },
   "tutorialSummary": {
     "heading": "Итоги обучения",

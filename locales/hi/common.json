@@ -221,6 +221,7 @@
   "forUnit": "{{unit}} के लिए",
   "maxUnitSkinsSelected": "प्रति प्रकार अधिकतम {{max}} स्किन",
   "select": "चुनें",
+  "edit": "संपादित करें",
   "selectAll": "सभी चुनें",
   "deselect": "अचयनित करें",
   "removeFromSelectionTooltip": "चयन से हटाएं – हटाने के लिए इकाई पर क्लिक करें",
@@ -494,11 +495,6 @@
   },
   "offline": "ऑफलाइन",
   "offlineDescription": "बॉट्स के खिलाफ अभ्यास करें और एक ही डिवाइस पर दोस्तों के साथ हॉटसीट खेलें!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> लीडरबोर्ड",
-    "subtitle": "किसके पास सबसे अधिक <premiumCurrency/> है?",
-    "description": "पहले बनना चाहते हैं? <storeLink>स्टोर पर जाएं</storeLink> और <premiumCurrency/> प्राप्त करें!"
-  },
   "team": "टीम",
   "teams": "टीमें",
   "playerType": "खिलाड़ी प्रकार",
@@ -968,6 +964,18 @@
     "totalGames_other": "{{count}} गेम",
     "totalArenas_one": "1 अरेना",
     "totalArenas_other": "{{count}} अरेना"
+  },
+  "profileAnalytics": {
+    "title": "उन्नत आँकड़े",
+    "last90Days": "पिछले 90 दिनों के रैंक मैच",
+    "byBattleType": "युद्ध प्रकार के अनुसार प्रदर्शन",
+    "byUnitType": "इकाई प्रकार के अनुसार प्रदर्शन",
+    "games": "खेल",
+    "noData": "अभी तक कोई रैंक मैच नहीं",
+    "locked": "उन्नत आँकड़े अनलॉक करें",
+    "damageDealt": "दिया गया",
+    "damageReceived": "प्राप्त",
+    "winrate": "जीत दर"
   },
   "tutorialSummary": {
     "heading": "ट्यूटोरियल सारांश",

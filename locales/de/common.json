@@ -209,6 +209,7 @@
   "forUnit": "Für {{unit}}",
   "maxUnitSkinsSelected": "Max. {{max}} Skins pro Typ",
   "select": "Auswählen",
+  "edit": "Bearbeiten",
   "selectAll": "Alle auswählen",
   "deselect": "Abwählen",
   "removeFromSelectionTooltip": "Aus Auswahl entfernen – Einheit anklicken zum Entfernen",
@@ -449,11 +450,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Übe gegen Bots und spiele Hotseat mit Freunden auf dem gleichen Gerät!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Bestenliste",
-    "subtitle": "Wer hat am meisten <premiumCurrency/>?",
-    "description": "Sie wollen der allerbeste sein? <storeLink>Gehe Sie zum Laden</storeLink> und holen Sie sich<premiumCurrency/>!"
-  },
   "team": "Team",
   "teams": "Teams",
   "playerType": "Spielertyp",
@@ -748,6 +744,18 @@
     "totalGames_other": "{{count}} Spiele",
     "totalArenas_one": "1 Arena",
     "totalArenas_other": "{{count}} Arenen"
+  },
+  "profileAnalytics": {
+    "title": "Erweiterte Statistiken",
+    "last90Days": "Gewertete Spiele der letzten 90 Tage",
+    "byBattleType": "Leistung nach Schlachttyp",
+    "byUnitType": "Leistung nach Einheitentyp",
+    "games": "Spiele",
+    "noData": "Noch keine gewerteten Spiele",
+    "locked": "Erweiterte Statistiken freischalten",
+    "damageDealt": "Verursacht",
+    "damageReceived": "Erhalten",
+    "winrate": "Siegrate"
   },
   "league": {
     "title": "Liga",

@@ -209,6 +209,7 @@
   "forUnit": "Per {{unit}}",
   "maxUnitSkinsSelected": "Max {{max}} skin per tipo",
   "select": "Seleziona",
+  "edit": "Modifica",
   "selectAll": "Seleziona tutto",
   "deselect": "Deseleziona",
   "removeFromSelectionTooltip": "Rimuovi dalla selezione – clicca su un'unità per rimuoverla",
@@ -449,11 +450,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Esercitati contro i bot e gioca in modalità hotseat con amici sullo stesso dispositivo!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Classifica",
-    "subtitle": "Chi ha il maggior numero di <premiumCurrency/>?",
-    "description": "Vuoi essere il primo? <storeLink>Vai al negozio</storeLink> e ottieni <premiumCurrency/>!"
-  },
   "team": "Squadra",
   "teams": "Squadre",
   "playerType": "Tipo di giocatore",
@@ -749,6 +745,18 @@
     "totalGames_other": "{{count}} partite",
     "totalArenas_one": "1 arena",
     "totalArenas_other": "{{count}} arene"
+  },
+  "profileAnalytics": {
+    "title": "Statistiche avanzate",
+    "last90Days": "Partite classificate degli ultimi 90 giorni",
+    "byBattleType": "Prestazioni per tipo di battaglia",
+    "byUnitType": "Prestazioni per tipo di unità",
+    "games": "Partite",
+    "noData": "Ancora nessuna partita classificata",
+    "locked": "Sblocca le statistiche avanzate",
+    "damageDealt": "Inflitti",
+    "damageReceived": "Subiti",
+    "winrate": "Winrate"
   },
   "league": {
     "title": "Lega",

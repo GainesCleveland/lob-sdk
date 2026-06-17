@@ -209,6 +209,7 @@
   "forUnit": "{{unit}} için",
   "maxUnitSkinsSelected": "Tür başına en fazla {{max}} skin",
   "select": "Seç",
+  "edit": "Düzenle",
   "selectAll": "Tümünü Seç",
   "deselect": "Seçimi Kaldır",
   "removeFromSelectionTooltip": "Seçimden çıkar – çıkarmak için birliğe tıklayın",
@@ -450,11 +451,6 @@
   },
   "offline": "Çevrimdışı",
   "offlineDescription": "Botlara karşı pratik yapın ve aynı cihazda arkadaşlarınızla hotseat oynayın!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Lider Tablosu",
-    "subtitle": "En fazla <premiumCurrency/> kimde?",
-    "description": "İlk olmak ister misiniz? <storeLink>Mağazaya gidin</storeLink> ve <premiumCurrency/> alın!"
-  },
   "team": "Takım",
   "teams": "Takımlar",
   "playerType": "Oyuncu türü",
@@ -748,6 +744,18 @@
     "losses": "Mağlubiyetler",
     "totalGames_other": "{{count}} oyun",
     "totalArenas_other": "{{count}} arena"
+  },
+  "profileAnalytics": {
+    "title": "Gelişmiş istatistikler",
+    "last90Days": "Son 90 gündeki dereceli oyunlar",
+    "byBattleType": "Savaş türüne göre performans",
+    "byUnitType": "Birim türüne göre performans",
+    "games": "Oyunlar",
+    "noData": "Henüz dereceli oyun yok",
+    "locked": "Gelişmiş istatistiklerin kilidini aç",
+    "damageDealt": "Verilen",
+    "damageReceived": "Alınan",
+    "winrate": "Galibiyet"
   },
   "league": {
     "title": "Lig",

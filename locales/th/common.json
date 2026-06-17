@@ -1,4 +1,5 @@
 {
+  "edit": "แก้ไข",
   "searchByName": "ค้นหาตามชื่อ",
   "spectatorDisabledModal": {
     "title": "จำกัดการเข้าชมเกม",
@@ -76,6 +77,18 @@
     "totalGames_other": "{{count}} เกม",
     "totalArenas_one": "1 อารีน่า",
     "totalArenas_other": "{{count}} อารีน่า"
+  },
+  "profileAnalytics": {
+    "title": "สถิติขั้นสูง",
+    "last90Days": "เกมจัดอันดับใน 90 วันที่ผ่านมา",
+    "byBattleType": "ผลงานตามประเภทการรบ",
+    "byUnitType": "ผลงานตามประเภทหน่วย",
+    "games": "เกม",
+    "noData": "ยังไม่มีเกมจัดอันดับ",
+    "locked": "ปลดล็อกสถิติขั้นสูง",
+    "damageDealt": "ที่ทำ",
+    "damageReceived": "ที่รับ",
+    "winrate": "ชนะ"
   },
   "tutorialSummary": {
     "heading": "สรุปโหมดฝึกสอน..."

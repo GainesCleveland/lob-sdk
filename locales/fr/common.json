@@ -198,6 +198,7 @@
   "forUnit": "Pour {{unit}}",
   "maxUnitSkinsSelected": "Max. {{max}} skins par type",
   "select": "Selectionner",
+  "edit": "Modifier",
   "selectAll": "Tout sélectionner",
   "deselect": "Désélectionner",
   "removeFromSelectionTooltip": "Retirer de la sélection – cliquer sur une unité pour la retirer",
@@ -440,11 +441,6 @@
   },
   "offline": "Hors ligne",
   "offlineDescription": "Entraînez-vous contre des ordinateurs et jouez en mode hotseat avec des amis sur le même appareil !",
-  "premiumCurrencyLeaderboard": {
-    "title": "Classement <premiumCurrency/>",
-    "subtitle": "Qui possède le plus de <premiumCurrency/> ?",
-    "description": "Vous voulez être premier ? <storeLink>Allez dans la boutique</storeLink> et obtenez <premiumCurrency/> !"
-  },
   "team": "Équipe",
   "teams": "Équipes",
   "playerType": "Type de joueur",
@@ -761,6 +757,18 @@
     "totalGames_other": "{{count}} parties",
     "totalArenas_one": "1 arène",
     "totalArenas_other": "{{count}} arènes"
+  },
+  "profileAnalytics": {
+    "title": "Statistiques avancées",
+    "last90Days": "Parties classées des 90 derniers jours",
+    "byBattleType": "Performance par type de bataille",
+    "byUnitType": "Performance par type d'unité",
+    "games": "Parties",
+    "noData": "Aucune partie classée pour l'instant",
+    "locked": "Débloquer les statistiques avancées",
+    "damageDealt": "Infligés",
+    "damageReceived": "Subis",
+    "winrate": "Winrate"
   },
   "league": {
     "title": "Ligue",

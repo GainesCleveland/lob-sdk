@@ -221,6 +221,7 @@
   "forUnit": "适用于{{unit}}",
   "maxUnitSkinsSelected": "每类型最多{{max}}个皮肤",
   "select": "选择",
+  "edit": "编辑",
   "selectAll": "全选",
   "deselect": "取消选择",
   "removeFromSelectionTooltip": "从选择中移除 – 点击单位以移除",
@@ -496,11 +497,6 @@
   },
   "offline": "离线",
   "offlineDescription": "对着电脑控制的敌人练习或是和朋友在同一个设备上玩热座模式！",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/>排行榜",
-    "subtitle": "谁拥有最多的<premiumCurrency/>？",
-    "description": "想当榜一？<storeLink>前往商店</storeLink>并充值<premiumCurrency/>！"
-  },
   "team": "团队",
   "teams": "团队",
   "playerType": "玩家种类",
@@ -983,6 +979,18 @@
     "losses": "失败",
     "totalGames_other": "{{count}} 场",
     "totalArenas_other": "{{count}} 场竞技场"
+  },
+  "profileAnalytics": {
+    "title": "高级统计",
+    "last90Days": "过去90天的排位对战",
+    "byBattleType": "按战斗类型的表现",
+    "byUnitType": "按单位类型的表现",
+    "games": "场次",
+    "noData": "暂无排位对战",
+    "locked": "解锁高级统计",
+    "damageDealt": "造成",
+    "damageReceived": "承受",
+    "winrate": "胜率"
   },
   "tutorialSummary": {
     "heading": "教程摘要",

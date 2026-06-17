@@ -212,6 +212,7 @@
   "forUnit": "Dla {{unit}}",
   "maxUnitSkinsSelected": "Maks. {{max}} skiny na typ",
   "select": "Wybierz",
+  "edit": "Edytuj",
   "selectAll": "Zaznacz wszystko",
   "deselect": "Anuluj Wybór",
   "removeFromSelectionTooltip": "Usuń z zaznaczenia – kliknij jednostkę, aby ją usunąć",
@@ -470,11 +471,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Ćwicz z botami i graj ze znajomymi na tym samym urządzeniu!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Tabela <premiumCurrency/>",
-    "subtitle": "Kto ma najwięcej <premiumCurrency/>?",
-    "description": "Chcesz być na pierwszym miejscu? <storeLink>Wejdź do sklepu</storeLink> i kup <premiumCurrency/>!"
-  },
   "team": "Drużyna",
   "teams": "Drużyny",
   "playerType": "Rodzaj Gracza",
@@ -897,6 +893,18 @@
     "totalArenas_few": "{{count}} areny",
     "totalArenas_many": "{{count}} aren",
     "totalArenas_other": "{{count}} areny"
+  },
+  "profileAnalytics": {
+    "title": "Statystyki zaawansowane",
+    "last90Days": "Gry rankingowe z ostatnich 90 dni",
+    "byBattleType": "Wyniki według typu bitwy",
+    "byUnitType": "Wyniki według typu jednostki",
+    "games": "Gry",
+    "noData": "Brak gier rankingowych",
+    "locked": "Odblokuj zaawansowane statystyki",
+    "damageDealt": "Zadane",
+    "damageReceived": "Otrzymane",
+    "winrate": "Winrate"
   },
   "tutorialSummary": {
     "heading": "Podsumowanie samouczka",
