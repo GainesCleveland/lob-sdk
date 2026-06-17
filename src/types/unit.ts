@@ -367,20 +367,8 @@ export interface FormationTemplate {
   rangedOrgResistance?: number;
 
   /**
-   * The shooting angle is the angle in degrees that the unit can shoot at.
-   * Default is 90.
-   */
-  shootingAngle?: number;
-
-  /**
-   * The maximum number of targets that the unit can shoot at.
-   * Default is 1.
-   */
-  shootingMaxTargets?: number;
-
-  /**
-   * OBB edges that emit ranged fire (edge-fire model). Empty or absent keeps the
-   * legacy single-origin centre fire. Will replace shootingAngle/Sides/MaxTargets.
+   * OBB edges that emit ranged fire (edge-fire model). A formation with no fire edges
+   * fires a default single front edge; circle formations do not fire.
    */
   fireEdges?: FireEdge[];
 
