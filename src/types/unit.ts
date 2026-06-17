@@ -78,6 +78,16 @@ export interface UnitDto {
   f?: string;
 
   /**
+   * Pending formation id, set while a formation change is in progress.
+   */
+  pf?: string;
+
+  /**
+   * Remaining ticks until the pending formation change completes.
+   */
+  pft?: number;
+
+  /**
    * Entrenchment level.
    */
   en?: number;
