@@ -54,7 +54,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 0.72,
     "attackEffectDuration": 8,
-    "projectileWidth": 20,
+    "projectileWidth": 10,
     "damageModifierByTargetHp": {
       "start": 0.8,
       "end": 0.5,
@@ -102,7 +102,7 @@
     "orgDamageRatio": 55000,
     "reorgDebuff": 0.72,
     "attackEffectDuration": 12,
-    "projectileWidth": 16,
+    "projectileWidth": 8,
     "damageModifierByTargetHp": {
       "start": 0.8,
       "end": 0.5,
@@ -143,7 +143,7 @@
     "orgDamageRatio": 55000,
     "reorgDebuff": 0.72,
     "attackEffectDuration": 12,
-    "projectileWidth": 16,
+    "projectileWidth": 8,
     "damageModifierByTargetHp": {
       "start": 0.8,
       "end": 0.5,
@@ -177,7 +177,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -228,7 +228,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -260,7 +260,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -312,7 +312,7 @@
     "orgDamageRatio": 27500,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -371,7 +371,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -422,7 +422,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -454,7 +454,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -506,7 +506,7 @@
     "orgDamageRatio": 27500,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -565,7 +565,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -597,7 +597,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.74,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -649,7 +649,7 @@
     "orgDamageRatio": 27500,
     "reorgDebuff": 0.74,
     "attackEffectDuration": 16,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -708,7 +708,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -740,7 +740,7 @@
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.74,
     "attackEffectDuration": 12,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -792,7 +792,7 @@
     "orgDamageRatio": 25000,
     "reorgDebuff": 0.74,
     "attackEffectDuration": 12,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -851,7 +851,7 @@
     "orgDamageRatio": 21500,
     "reorgDebuff": 0.85,
     "attackEffectDuration": 10,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -900,7 +900,7 @@
     "orgDamageRatio": 21500,
     "reorgDebuff": 0.75,
     "attackEffectDuration": 10,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -949,7 +949,7 @@
     "orgDamageRatio": 28000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 10,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "damageModifierByTargetHp": {
       "start": 0.9,
       "end": 0.5,
@@ -1005,7 +1005,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 18,
+    "projectileWidth": 12,
     "ranges": [
       {
         "start": 0,
@@ -1037,7 +1037,7 @@
     "orgDamageRatio": 32000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -1069,7 +1069,7 @@
     "orgDamageRatio": 35000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "ranges": [
       {
         "start": 0,
@@ -1094,7 +1094,7 @@
     "orgDamageRatio": 22500,
     "reorgDebuff": 0.72,
     "attackEffectDuration": 12,
-    "projectileWidth": 16,
+    "projectileWidth": 8,
     "damageModifierByTargetHp": {
       "start": 0.8,
       "end": 0.5,
@@ -1136,7 +1136,7 @@
     "orgDamageRatio": 200000,
     "reorgDebuff": 1.0,
     "attackEffectDuration": 6,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "orgModifierByTargetOrg": {
       "start": 0.9,
       "end": 0.4,
@@ -1187,7 +1187,7 @@
     "orgDamageRatio": 150000,
     "reorgDebuff": 0.9,
     "attackEffectDuration": 8,
-    "projectileWidth": 22,
+    "projectileWidth": 14,
     "orgModifierByTargetOrg": {
       "start": 0.9,
       "end": 0.4,

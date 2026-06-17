@@ -285,6 +285,11 @@
     "minFlankAngle": 180,
     "maxFlankAngle": 180,
     "collisionShape": { "type": 1, "frontage": 12, "depth": 24 },
+    "fireEdges": [
+      { "edge": 2, "arc": 45, "emitters": 2 },
+      { "edge": 0, "arc": 45, "emitters": 2 }
+    ],
+    "independentFireEdges": true,
     "disablesFlankMelee": true,
     "disable180Turnaround": true,
     "shootingAngle": 45,

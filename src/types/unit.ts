@@ -398,6 +398,14 @@ export interface FormationTemplate {
   fireEdges?: FireEdge[];
 
   /**
+   * When true, each fire edge is an independent firepower pool (a full volley per
+   * edge), for units with separate batteries like a ship's port/starboard broadsides.
+   * Default (false) shares the unit's single firepower across all edges, so a
+   * multi-edge defensive formation (an infantry square) fires each face at a fraction.
+   */
+  independentFireEdges?: boolean;
+
+  /**
    * Time in ticks to form this formation.
    */
   timeToForm?: number;

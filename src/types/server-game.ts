@@ -738,12 +738,16 @@ export interface IServerGame {
    * @param gameDataManager - The game data manager
    * @param unit - The unit shooting
    * @param targetPosition - The target position
+   * @param proportion - Fraction of the unit's firepower this shot carries
+   * @param origin - Where the shot leaves the unit (the firing emitter, or the centre)
    * @returns The shoot result, or null if shot is invalid
    */
   shoot(
     gameDataManager: GameDataManager,
     unit: BaseUnit,
     targetPosition: Vector2,
+    proportion: number,
+    origin: Vector2,
   ): ShootResult | null;
   /**
    * Calculates ranged damage between a shooter and target
@@ -751,6 +755,7 @@ export interface IServerGame {
    * @param target - The target unit
    * @param damageType - The type of damage
    * @param stepStrength - The step strength modifier
+   * @param origin - Where the shot leaves the unit; the range falloff is measured from here
    * @returns The damage hit result
    */
   calculateRangedDamage(
@@ -758,6 +763,7 @@ export interface IServerGame {
     target: BaseUnit,
     damageType: string,
     stepStrength: number,
+    origin: Vector2,
   ): DamageHit;
   /**
    * Calculates melee damage between an attacker and defender
