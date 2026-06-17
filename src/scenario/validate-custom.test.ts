@@ -321,6 +321,31 @@ describe("validateScenarioCustomDefs", () => {
       });
       expect(errors).toEqual([]);
     });
+
+    it("rejects a non-object collisionShape instead of throwing", () => {
+      expect(() =>
+        formationErrors({ collisionShape: JSON.parse("null") }),
+      ).not.toThrow();
+      const errors = formationErrors({ collisionShape: JSON.parse("5") });
+      expect(
+        errors.some((e) => /collisionShape must be an object/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects a null fireEdges element instead of throwing", () => {
+      const errors = formationErrors({
+        collisionShape: { frontage: 24, depth: 12 },
+        fireEdges: JSON.parse("[null]"),
+      });
+      expect(
+        errors.some((e) => /fireEdges\[0\] must be an object/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("accepts a valid circle radius with no fire edges", () => {
+      const errors = formationErrors({ collisionShape: { radius: 16 } });
+      expect(errors).toEqual([]);
+    });
   });
 
   describe("custom damage types", () => {

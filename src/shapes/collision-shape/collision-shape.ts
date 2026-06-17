@@ -2,6 +2,46 @@ import { Point2 } from "@lob-sdk/vector";
 import { ShapeType } from "../types";
 import { convexOverlapRatio } from "../polygon/utils";
 
+/** An OBB's centre, unit local axes and half-extents, derived from its corners. */
+export interface ObbLocalFrame {
+  cx: number;
+  cy: number;
+  /** Unit axis along corners[0]->corners[1] (the box's local X). */
+  ux: number;
+  uy: number;
+  /** Unit axis along corners[0]->corners[3] (the box's local Y). */
+  vx: number;
+  vy: number;
+  /** Half-extents along u and v. */
+  hu: number;
+  hv: number;
+}
+
+/**
+ * Resolve an OBB's centre, unit axes and half-extents from its four corners, so a
+ * point can be projected into the box's local frame (local x = rel onto u, y = onto v).
+ */
+export function obbLocalFrame(corners: Point2[]): ObbLocalFrame {
+  const c0 = corners[0];
+  const c2 = corners[2];
+  const ux = corners[1].x - c0.x;
+  const uy = corners[1].y - c0.y;
+  const vx = corners[3].x - c0.x;
+  const vy = corners[3].y - c0.y;
+  const lu = Math.hypot(ux, uy) || 1;
+  const lv = Math.hypot(vx, vy) || 1;
+  return {
+    cx: (c0.x + c2.x) / 2,
+    cy: (c0.y + c2.y) / 2,
+    ux: ux / lu,
+    uy: uy / lu,
+    vx: vx / lv,
+    vy: vy / lv,
+    hu: lu / 2,
+    hv: lv / 2,
+  };
+}
+
 /**
  * A unit's collision footprint as a single convex primitive. Two implementations,
  * `ObbShape` (a rotated rectangle, napoleonic) and `CircleShape` (WW2), share this
@@ -117,33 +157,16 @@ export class CircleShape implements CollisionShape {
   overlapWithObb(obb: ObbShape): number {
     const r = this.radius;
     if (r <= 0) return 0;
-    const corners = obb.corners;
-    const c0 = corners[0];
-    const c2 = corners[2];
-    let ux = corners[1].x - c0.x;
-    let uy = corners[1].y - c0.y;
-    let vx = corners[3].x - c0.x;
-    let vy = corners[3].y - c0.y;
-    const lu = Math.hypot(ux, uy) || 1;
-    const lv = Math.hypot(vx, vy) || 1;
-    ux /= lu;
-    uy /= lu;
-    vx /= lv;
-    vy /= lv;
-
-    const cx = (c0.x + c2.x) / 2;
-    const cy = (c0.y + c2.y) / 2;
+    const { cx, cy, ux, uy, vx, vy, hu, hv } = obbLocalFrame(obb.corners);
     const relX = this.center.x - cx;
     const relY = this.center.y - cy;
     // Circle centre in the box's local frame.
     const lx = relX * ux + relY * uy;
     const ly = relX * vx + relY * vy;
-    const hu = lu / 2;
-    const hv = lv / 2;
 
     // Translate so the circle sits at the origin; the box spans [-hu-lx, hu-lx] x ...
     const inter = CircleShape.circleAabbArea(r, -hu - lx, -hv - ly, hu - lx, hv - ly);
-    const minArea = Math.min(Math.PI * r * r, lu * lv);
+    const minArea = Math.min(Math.PI * r * r, 2 * hu * (2 * hv));
     return minArea > 0 ? Math.min(inter / minArea, 1) : 0;
   }
 

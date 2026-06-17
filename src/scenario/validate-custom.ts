@@ -43,6 +43,11 @@ export const MAX_CUSTOM_ORDERS = 50;
  */
 export const MAX_ABS_STAT = 1e9;
 
+/** Runtime guard for untrusted imported JSON: rejects null/primitives before property access. */
+function isObject(value: unknown): boolean {
+  return value !== null && typeof value === "object";
+}
+
 export interface CustomDefValidationError {
   scope:
     | "unitTemplate"
@@ -407,7 +412,9 @@ function validateCustomUnitFormations(
     // collision and rendering for the whole match.
     const shape = formation.collisionShape;
     if (shape !== undefined) {
-      if ("radius" in shape) {
+      if (!isObject(shape)) {
+        pushErr("collisionShape must be an object { radius } or { frontage, depth }");
+      } else if ("radius" in shape) {
         if ("frontage" in shape || "depth" in shape) {
           pushErr(
             "collisionShape must be either { radius } or { frontage, depth }, not a mix",
@@ -434,6 +441,10 @@ function validateCustomUnitFormations(
         pushErr("fireEdges must be an array");
       } else {
         formation.fireEdges.forEach((fe, i) => {
+          if (!isObject(fe)) {
+            pushErr(`fireEdges[${i}] must be an object`);
+            return;
+          }
           if (!Number.isInteger(fe.edge) || fe.edge < 0 || fe.edge > 3) {
             pushErr(`fireEdges[${i}].edge must be an integer between 0 and 3`);
           }
