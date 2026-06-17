@@ -6,6 +6,7 @@ import {
 } from "./validate-custom";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
+  CollisionShapeType,
   CustomTerrainCategoryOverride,
   FormationTemplate,
   OrderType,
@@ -217,7 +218,7 @@ describe("validateScenarioCustomDefs", () => {
       const errors = validateScenarioCustomDefs(
         makeScenario({
           customUnitFormations: [
-            makeFormation({ id: "my-formation", collisionCircleSize: Infinity }),
+            makeFormation({ id: "my-formation", movementModifier: Infinity }),
           ],
         }),
         era,
@@ -226,7 +227,7 @@ describe("validateScenarioCustomDefs", () => {
         errors.some(
           (e) =>
             e.scope === "unitFormation" &&
-            /collisionCircleSize must be a finite number/.test(e.message),
+            /movementModifier must be a finite number/.test(e.message),
         ),
       ).toBe(true);
     });
@@ -257,6 +258,98 @@ describe("validateScenarioCustomDefs", () => {
       expect(
         errors.some((e) => /finite number|magnitude/.test(e.message)),
       ).toBe(false);
+    });
+  });
+
+  describe("collisionShape and fireEdges", () => {
+    // JSON.parse stands in for untrusted imported scenario data, which is exactly
+    // what the validator guards (the types alone cannot, since it runs on raw JSON).
+    const formationErrors = (formation: Partial<FormationTemplate>) =>
+      validateScenarioCustomDefs(
+        makeScenario({ customUnitFormations: [makeFormation(formation)] }),
+        era,
+      ).filter((e) => e.scope === "unitFormation");
+
+    it("rejects an Obb collisionShape with frontage but no depth (would yield NaN corners)", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"type":1,"frontage":24}'),
+      });
+      expect(errors.some((e) => /frontage and depth/.test(e.message))).toBe(true);
+    });
+
+    it("rejects an unknown collisionShape type", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"type":5,"radius":8}'),
+      });
+      expect(
+        errors.some((e) => /type must be 0 \(circle\) or 1 \(obb\)/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects a negative radius", () => {
+      const errors = formationErrors({
+        collisionShape: JSON.parse('{"type":0,"radius":-4}'),
+      });
+      expect(
+        errors.some((e) => /radius must be a finite number >= 0/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects a fire edge without an explicit emitter count", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Obb, frontage: 24, depth: 12 },
+        fireEdges: JSON.parse('[{"edge":1,"arc":40}]'),
+      });
+      expect(
+        errors.some((e) => /emitters must be a positive integer/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects an out-of-range fire edge index", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Obb, frontage: 24, depth: 12 },
+        fireEdges: JSON.parse('[{"edge":7,"emitters":2}]'),
+      });
+      expect(
+        errors.some((e) =>
+          /edge must be an integer between 0 and 3/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
+    it("accepts a valid rectangle shape with pinned emitters", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Obb, frontage: 24, depth: 12 },
+        fireEdges: [{ edge: 1, arc: 40, emitters: 2 }],
+      });
+      expect(errors).toEqual([]);
+    });
+
+    it("rejects a non-object collisionShape instead of throwing", () => {
+      expect(() =>
+        formationErrors({ collisionShape: JSON.parse("null") }),
+      ).not.toThrow();
+      const errors = formationErrors({ collisionShape: JSON.parse("5") });
+      expect(
+        errors.some((e) => /collisionShape must be an object/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("rejects a null fireEdges element instead of throwing", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Obb, frontage: 24, depth: 12 },
+        fireEdges: JSON.parse("[null]"),
+      });
+      expect(
+        errors.some((e) => /fireEdges\[0\] must be an object/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("accepts a valid circle radius with no fire edges", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Circle, radius: 16 },
+      });
+      expect(errors).toEqual([]);
     });
   });
 

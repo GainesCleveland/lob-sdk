@@ -294,23 +294,38 @@ export interface RangeUnitTemplate extends BaseUnitTemplate {
 export type UnitTemplate = Readonly<BaseUnitTemplate | RangeUnitTemplate>;
 export type UnitTemplates = Record<UnitType, UnitTemplate>;
 
-/**
- * Points used to check what terrain the unit is on.
- * Each point has an offset relative to the formation center and a weight
- * that determines how much that point influences the terrain check.
- * If not specified, defaults to checking only at the unit's center position.
- */
-export interface FormationCheckPoint {
-  /** Offset in pixels relative to formation center */
-  x: number;
-  /** Offset in pixels relative to formation center */
-  y: number;
-  /** Integer weight (higher = more influence) */
-  weight: number;
+/** Discriminates a collision footprint: a circle or a rotated rectangle (OBB). */
+export enum CollisionShapeType {
+  Circle,
+  Obb,
 }
 
-export interface FormationCheckPointWithProportion extends FormationCheckPoint {
-  proportion: number;
+/**
+ * A formation's collision footprint, discriminated by `type`: a rotated rectangle
+ * (`Obb`, `{ frontage, depth }`, turns with the unit) or a circle (`Circle`,
+ * `{ radius }`). One shape per unit; resolve it through `getCollisionConfig`.
+ */
+export type CollisionShapeConfig =
+  | { type: CollisionShapeType.Obb; frontage: number; depth: number }
+  | { type: CollisionShapeType.Circle; radius: number };
+
+/**
+ * A ranged-fire emitter mounted on one edge of the unit's OBB (edge-fire model).
+ * Edge index follows the OBB corner order: 0 = -Y side, 1 = +X front,
+ * 2 = +Y side, 3 = -X back.
+ */
+export interface FireEdge {
+  edge: number;
+  /** Fire arc in degrees (full angle), centred on the edge's outward normal. Default 90. */
+  arc?: number;
+  /** Damage type fired from this edge. Default: the unit's first ranged type. */
+  damageType?: string;
+  /**
+   * Number of fire emitters along this edge (also the per-edge target cap). Required
+   * and explicit: it is the firepower and the simultaneous-target capacity, so it is
+   * always pinned per formation rather than derived from the edge length.
+   */
+  emitters: number;
 }
 
 export interface FormationTemplate {
@@ -322,31 +337,12 @@ export interface FormationTemplate {
   maxFlankAngle: number;
 
   /**
-   * Number of collision circles for this formation.
+   * The collision footprint: a rotated rectangle (`{ frontage, depth }`) or a circle
+   * (`{ radius }`). Read it through `getCollisionConfig`, which also upgrades older
+   * custom-scenario formations that predate this field (they carried flat
+   * frontage/depth or collision-circle fields, still honoured by the normaliser).
    */
-  collisionCircles: number;
-  /**
-   * Size of each collision circle in pixels.
-   */
-  collisionCircleSize: number;
-  /**
-   * Distance between collision circles. Defaults to collisionCircleSize if not specified.
-   */
-  collisionCircleDistance?: number;
-  /**
-   * If true, collision circles are arranged vertically (along X axis).
-   * If false or undefined, collision circles are arranged horizontally (along Y axis).
-   * Defaults to false (horizontal).
-   */
-  collisionCirclesVertical?: boolean;
-  /**
-   * Points used to check what terrain the unit is on.
-   * Each point has an offset relative to the formation center and a weight
-   * that determines how much that point influences the terrain check.
-   * If not specified, defaults to checking only at the unit's center position.
-   */
-  checkPoints?: Array<FormationCheckPoint>;
-
+  collisionShape?: CollisionShapeConfig;
   movementModifier?: number;
   runMovementModifier?: number;
   rotationSpeedModifier?: number;
@@ -394,6 +390,12 @@ export interface FormationTemplate {
    * whichever is greater. Default is 1.
    */
   shootingSides?: number;
+
+  /**
+   * OBB edges that emit ranged fire (edge-fire model). Empty or absent keeps the
+   * legacy single-origin centre fire. Will replace shootingAngle/Sides/MaxTargets.
+   */
+  fireEdges?: FireEdge[];
 
   /**
    * Time in ticks to form this formation.

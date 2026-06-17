@@ -106,7 +106,13 @@ import ww2France from "@lob-sdk/game-data/eras/ww2/scenarios/battle-of-france.js
 
 // Shared
 import gameConstantCategories from "@lob-sdk/game-data/shared/game-constant-categories.json";
-import { FormationTemplate, OrderTemplate, OrderType } from "@lob-sdk/types";
+import {
+  FormationTemplate,
+  OrderTemplate,
+  OrderType,
+  getCollisionConfig,
+  isCircleCollision,
+} from "@lob-sdk/types";
 import { FormationManager } from "./formation-manager";
 import { UnitTemplateManager } from "./unit-template-manager";
 import { degreesToRadians, deepMerge, type DeepPartial } from "@lob-sdk/utils";
@@ -968,30 +974,13 @@ export class GameDataManager {
     // Get dimensions from formation template
     const formationTemplate = this._formationManager.getTemplate(formationId);
     if (formationTemplate) {
-      const collisionCircles = formationTemplate.collisionCircles;
-      const collisionCircleSize = formationTemplate.collisionCircleSize;
-      const collisionCircleDistance =
-        formationTemplate.collisionCircleDistance ?? collisionCircleSize;
-      const collisionCirclesVertical =
-        formationTemplate.collisionCirclesVertical ?? false;
-
-      // Calculate the span of all collision circles
-      const span =
-        collisionCircles > 1
-          ? (collisionCircles - 1) * collisionCircleDistance +
-            collisionCircleSize
-          : collisionCircleSize;
-
-      if (collisionCirclesVertical) {
-        return {
-          width: span,
-          height: collisionCircleSize,
-        };
+      const config = getCollisionConfig(formationTemplate);
+      if (isCircleCollision(config)) {
+        const diameter = config.radius * 2;
+        return { width: diameter, height: diameter };
       }
-      return {
-        width: collisionCircleSize,
-        height: span,
-      };
+      // width = depth (local X), height = frontage (local Y).
+      return { width: config.depth, height: config.frontage };
     }
     // Fallback
     return { width: 32, height: 32 };

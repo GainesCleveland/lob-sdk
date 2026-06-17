@@ -2,6 +2,10 @@ import { Entity, EntityType } from "@lob-sdk/entity";
 import { Point2, Vector2 } from "@lob-sdk/vector";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import {
+  getCollisionConfig,
+  isCircleCollision,
+  CollisionShapeConfig,
+  CollisionShapeType,
   EntityId,
   OrderType,
   UnitCategoryId,
@@ -27,6 +31,12 @@ import {
   getMaxOrgProportionDebuff,
 } from "@lob-sdk/utils";
 import { Circle } from "@lob-sdk/shapes/circle";
+import {
+  CollisionShape,
+  ObbShape,
+  CircleShape,
+  localObbCorners,
+} from "@lob-sdk/shapes/collision-shape";
 import {
   BaseUnitEffect,
   BeenInMelee,
@@ -281,31 +291,72 @@ export abstract class BaseUnit extends Entity {
     return this.gameDataManager.getDamageTypeByName<MeleeDamageTypeTemplate>(this.meleeDamageType);
   }
 
+  /**
+   * World-space corners of the unit's oriented bounding box (rotated rectangle)
+   * at the given position and rotation. Front is the +X edge; height spans the frontage.
+   */
+  calculateObbCorners(
+    position: Point2 = this.position,
+    rotation: number = this.rotation,
+  ): Point2[] {
+    const dimensions = this.gameDataManager.getUnitDimensions(
+      this.type,
+      this.effectiveFormation,
+    );
+    const sinAngle = Math.sin(rotation);
+    const cosAngle = Math.cos(rotation);
+
+    return localObbCorners(dimensions.width, dimensions.height).map((corner) => ({
+      x: corner.x * cosAngle - corner.y * sinAngle + position.x,
+      y: corner.x * sinAngle + corner.y * cosAngle + position.y,
+    }));
+  }
+
   private getCorners(): Point2[] {
-    // Get unit dimensions from formation template
-    const dimensions = this.gameDataManager.getUnitDimensions(this.type, this.currentFormation);
-    
-    // Calculate the half-width and half-height
-    const halfWidth = dimensions.width / 2;
-    const halfHeight = dimensions.height / 2;
-    // Calculate the sin and cos of the rotation angle
-    const sinAngle = Math.sin(this.rotation);
-    const cosAngle = Math.cos(this.rotation);
+    return this.calculateObbCorners();
+  }
 
-    // Define the original corner points relative to the center
-    const corners: Point2[] = [
-      { x: -halfWidth, y: -halfHeight },
-      { x: halfWidth, y: -halfHeight },
-      { x: halfWidth, y: halfHeight },
-      { x: -halfWidth, y: halfHeight },
-    ];
+  /**
+   * The unit formation's collision config, or a small default circle when the unit
+   * has no formation template. The single source of the null-formation fallback.
+   */
+  private resolveCollisionConfig(): CollisionShapeConfig {
+    const formation = this.gameDataManager
+      .getFormationManager()
+      .getTemplate(this.effectiveFormation);
+    return formation
+      ? getCollisionConfig(formation)
+      : { type: CollisionShapeType.Circle, radius: 8 };
+  }
 
-    // Rotate and translate each corner point
-    return corners.map((corner) => {
-      const rotatedX = corner.x * cosAngle - corner.y * sinAngle;
-      const rotatedY = corner.x * sinAngle + corner.y * cosAngle;
-      return { x: rotatedX + this.position.x, y: rotatedY + this.position.y };
-    });
+  /** True when this formation collides as a rotated rectangle (Obb) rather than a circle. */
+  usesObbCollision(): boolean {
+    return !isCircleCollision(this.resolveCollisionConfig());
+  }
+
+  /**
+   * The unit's collision footprint as a single shape: a rotated rectangle (Obb) sized
+   * by the formation's frontage/depth, or a circle of the formation's radius. The
+   * narrow phase resolves overlap per shape pair.
+   */
+  getCollisionShape(position: Point2 = this.position): CollisionShape {
+    const config = this.resolveCollisionConfig();
+    if (isCircleCollision(config)) {
+      return new CircleShape({ x: position.x, y: position.y }, config.radius);
+    }
+    return new ObbShape(this.calculateObbCorners(position));
+  }
+
+  /**
+   * Bounding-circle radius of the collision footprint (no allocation): the circle
+   * radius, or the OBB half-diagonal. For a cheap broad-phase reject before the
+   * exact overlap test.
+   */
+  getCollisionBoundingRadius(): number {
+    const config = this.resolveCollisionConfig();
+    return isCircleCollision(config)
+      ? config.radius
+      : Math.hypot(config.frontage, config.depth) / 2;
   }
 
   getClosestCorner(unit: BaseUnit) {
@@ -386,69 +437,45 @@ export abstract class BaseUnit extends Entity {
     return this.team === unit.team;
   }
 
+  /**
+   * Circles approximating the unit's footprint, turned with the unit. Used by the
+   * soft tests (shot line-of-sight, AoE, edge contact). For a circle formation it is
+   * the single circle; for an Obb it is circles spaced along the longer side (radius =
+   * half the shorter side), which reproduces the legacy tuned multi-circle layout
+   * from frontage/depth instead of explicit knobs.
+   */
   calculateCollisionShapes(position = this.position): Circle[] {
-    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const config = this.resolveCollisionConfig();
 
-    let collisionCircles: number;
-    let collisionCircleSize: number;
-    let collisionCircleDistance: number;
-    let collisionCirclesVertical: boolean;
-
-    if (formationTemplate) {
-      // Use formation-specific collision data
-      collisionCircles = formationTemplate.collisionCircles;
-      collisionCircleSize = formationTemplate.collisionCircleSize;
-      collisionCircleDistance = formationTemplate.collisionCircleDistance ?? formationTemplate.collisionCircleSize;
-      collisionCirclesVertical = formationTemplate.collisionCirclesVertical ?? false;
-    } else {
-      // Fallback
-      collisionCircles = 1;
-      collisionCircleSize = 16;
-      collisionCircleDistance = 16;
-      collisionCirclesVertical = false;
+    if (isCircleCollision(config)) {
+      return config.radius > 0
+        ? [new Circle(position.x, position.y, config.radius)]
+        : [];
     }
 
-    // Either knob at 0 means "no collision" (flying/ghost units). Bail out
-    // before generating zero-radius circles, which downstream collision
-    // checks can still touch and would skew totalOverlap calcs.
-    if (collisionCircles <= 0 || collisionCircleSize <= 0) {
-      return [];
-    }
+    const { frontage, depth } = config;
+    if (frontage <= 0 || depth <= 0) return [];
+    const longer = Math.max(frontage, depth);
+    const shorter = Math.min(frontage, depth);
+    const radius = shorter / 2;
+    const count = Math.max(1, Math.round(longer / shorter));
+    const alongDepth = depth > frontage; // local X for a deep formation, else local Y
+    const span = (count - 1) * shorter;
 
-    const { x: dx, y: dy } = position;
-    const radius = collisionCircleSize / 2;
+    const cos = Math.cos(this.rotation);
+    const sin = Math.sin(this.rotation);
     const circles: Circle[] = [];
-
-    // Generate circles based on configuration
-    for (let i = 0; i < collisionCircles; i++) {
-      // Calculate center position for this circle
-      // Space circles based on their size to create proper overlap
-      let centerX = 0;
-      let centerY = 0;
-      if (collisionCircles > 1) {
-        // Use the circle distance to determine spacing
-        // For overlapping circles, space them at the specified distance
-        const totalSpan = (collisionCircles - 1) * collisionCircleDistance;
-        const offset = -totalSpan / 2 + i * collisionCircleDistance;
-        if (collisionCirclesVertical) {
-          // Arrange circles vertically (along X axis)
-          centerX = offset;
-        } else {
-          // Arrange circles horizontally (along Y axis) - default behavior
-          centerY = offset;
-        }
-      }
-
-      const center = { x: centerX, y: centerY };
-
-      // Use -this.rotation to reverse the rotation direction
-      const cosTheta = Math.cos(-this.rotation);
-      const sinTheta = Math.sin(-this.rotation);
-
-      // Rotate center around (0, 0)
-      const rotatedX = dx + center.x * cosTheta + center.y * sinTheta;
-      const rotatedY = dy + -center.x * sinTheta + center.y * cosTheta;
-      circles.push(new Circle(rotatedX, rotatedY, radius));
+    for (let i = 0; i < count; i++) {
+      const offset = count > 1 ? -span / 2 + i * shorter : 0;
+      const localX = alongDepth ? offset : 0;
+      const localY = alongDepth ? 0 : offset;
+      circles.push(
+        new Circle(
+          position.x + localX * cos - localY * sin,
+          position.y + localX * sin + localY * cos,
+          radius,
+        ),
+      );
     }
     return circles;
   }
@@ -464,14 +491,16 @@ export abstract class BaseUnit extends Entity {
 
   getDirectionToPoint(point: Vector2, frontBackArc?: number) {
     if (frontBackArc === undefined) {
-      const formation = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+      // effectiveFormation (pending ?? current), like the collision OBB and fire
+      // emitters, so direction/flank/FF track the formation the unit is forming into.
+      const formation = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
       frontBackArc = formation?.frontBackArc ? degreesToRadians(formation.frontBackArc) : degreesToRadians(90);
     }
     return getDirectionToPoint(this.position, point, this.rotation, frontBackArc);
   }
 
   getFlankMod(attackerPoint: Vector2) {
-    const formation = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const formation = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
     if (!formation) return 0;
     const minFlank = degreesToRadians(formation.minFlankAngle);
     const maxFlank = degreesToRadians(formation.maxFlankAngle);
@@ -490,7 +519,7 @@ export abstract class BaseUnit extends Entity {
   }
 
   isFriendlyFireImmune(damageType: string): boolean {
-    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.currentFormation);
+    const formationTemplate = this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
     return formationTemplate?.friendlyFireImmuneDamageTypes?.includes(damageType) ?? false;
   }
 
