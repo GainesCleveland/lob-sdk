@@ -6,6 +6,7 @@ import {
   FormationTemplate,
   getCollisionConfig,
   isCircleCollision,
+  CollisionShapeType,
 } from "@lob-sdk/types";
 import { DamageTypeTemplate, GameEra } from "@lob-sdk/game-data-manager";
 import { generateDefaultArmy } from "@lob-sdk/army-deployer";
@@ -468,7 +469,13 @@ describe("GameDataManager", () => {
     it("uses an Obb footprint's frontage/depth (width=depth, height=frontage)", () => {
       const m = GameDataManager.createWithCustomDefs("napoleonic", {
         customUnitFormations: [
-          cloneFormation({ collisionShape: { frontage: 120, depth: 18 } }),
+          cloneFormation({
+            collisionShape: {
+              type: CollisionShapeType.Obb,
+              frontage: 120,
+              depth: 18,
+            },
+          }),
         ],
       });
       expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
@@ -479,7 +486,11 @@ describe("GameDataManager", () => {
 
     it("uses a circle footprint's diameter for both dimensions", () => {
       const m = GameDataManager.createWithCustomDefs("napoleonic", {
-        customUnitFormations: [cloneFormation({ collisionShape: { radius: 20 } })],
+        customUnitFormations: [
+          cloneFormation({
+            collisionShape: { type: CollisionShapeType.Circle, radius: 20 },
+          }),
+        ],
       });
       expect(m.getUnitDimensions(unitType, "obb-dims-test")).toEqual({
         width: 40,

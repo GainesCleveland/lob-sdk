@@ -42,6 +42,71 @@ export function obbLocalFrame(corners: Point2[]): ObbLocalFrame {
   };
 }
 
+/** Unit-local corners of a `width` x `height` box in OBB corner order (front = +X). */
+export function localObbCorners(width: number, height: number): Point2[] {
+  const hw = width / 2;
+  const hh = height / 2;
+  return [
+    { x: -hw, y: -hh },
+    { x: hw, y: -hh },
+    { x: hw, y: hh },
+    { x: -hw, y: hh },
+  ];
+}
+
+/**
+ * Closest point on an OBB (corners in corner order) to `from`: projects `from` onto the
+ * box's axes, clamps to the half-extents and reconstructs, so a shot can aim at the
+ * nearest face rather than the centre. Pure.
+ */
+export function closestPointOnObb(corners: Point2[], from: Point2): Point2 {
+  const { cx, cy, ux, uy, vx, vy, hu, hv } = obbLocalFrame(corners);
+  const dx = from.x - cx;
+  const dy = from.y - cy;
+  const pu = Math.max(-hu, Math.min(hu, dx * ux + dy * uy));
+  const pv = Math.max(-hv, Math.min(hv, dx * vx + dy * vy));
+  return { x: cx + pu * ux + pv * vx, y: cy + pu * uy + pv * vy };
+}
+
+/**
+ * Outline (flat [x0,y0,...]) of the region a fire edge [a,b] (outward unit normal nx,ny,
+ * half-arc `halfArc`) reaches out to `maxRadius`: each corner fans to maxRadius along its
+ * flank ray (normal +/- halfArc), an arc sweeps up to dead-ahead, and a flat top spans the
+ * frontage. A degenerate edge (a equals b) collapses to one cone. Directional arcs only
+ * (the caller draws an omni face as a ring). Pure.
+ */
+export function fireEdgeRegionPolygon(
+  a: Point2,
+  b: Point2,
+  nx: number,
+  ny: number,
+  halfArc: number,
+  maxRadius: number,
+): number[] {
+  if (maxRadius <= 0) return [];
+
+  // Clamp to <90 so the flank rays stay in front of the face.
+  const half = Math.min(halfArc, Math.PI / 2 - 1e-3);
+  const nAng = Math.atan2(ny, nx);
+  const steps = Math.max(6, Math.ceil((half * 48) / Math.PI));
+
+  const pts: number[] = [a.x, a.y];
+  // a-corner arc: flank ray (nAng - half) sweeping up to dead-ahead (nAng).
+  for (let i = 0; i <= steps; i++) {
+    const ang = nAng - half + (half * i) / steps;
+    pts.push(a.x + Math.cos(ang) * maxRadius, a.y + Math.sin(ang) * maxRadius);
+  }
+  // Flat top at maxRadius spanning the frontage (a-side dead-ahead -> b-side).
+  pts.push(b.x + nx * maxRadius, b.y + ny * maxRadius);
+  // b-corner arc: dead-ahead (nAng) sweeping out to flank ray (nAng + half).
+  for (let i = 1; i <= steps; i++) {
+    const ang = nAng + (half * i) / steps;
+    pts.push(b.x + Math.cos(ang) * maxRadius, b.y + Math.sin(ang) * maxRadius);
+  }
+  pts.push(b.x, b.y);
+  return pts;
+}
+
 /**
  * A unit's collision footprint as a single convex primitive. Two implementations,
  * `ObbShape` (a rotated rectangle, napoleonic) and `CircleShape` (WW2), share this
