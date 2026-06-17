@@ -209,6 +209,7 @@
   "forUnit": "Költség {{unit}}",
   "maxUnitSkinsSelected": "Max. {{max}} skin típusonként",
   "select": "Kiválasztás",
+  "edit": "Szerkesztés",
   "selectAll": "Összes kiválasztása",
   "deselect": "Visszaállítás",
   "removeFromSelectionTooltip": "Eltávolítás a kijelölésből – kattints egy egységre az eltávolításhoz",

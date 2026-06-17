@@ -209,6 +209,7 @@
   "forUnit": "Para {{unit}}",
   "maxUnitSkinsSelected": "Máx. {{max}} skins por tipo",
   "select": "Selecionar",
+  "edit": "Editar",
   "selectAll": "Selecionar Tudo",
   "deselect": "Desmarcar",
   "removeFromSelectionTooltip": "Remover da seleção – clique numa unidade para removê-la",

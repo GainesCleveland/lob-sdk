@@ -221,6 +221,7 @@
   "forUnit": "{{unit}} के लिए",
   "maxUnitSkinsSelected": "प्रति प्रकार अधिकतम {{max}} स्किन",
   "select": "चुनें",
+  "edit": "संपादित करें",
   "selectAll": "सभी चुनें",
   "deselect": "अचयनित करें",
   "removeFromSelectionTooltip": "चयन से हटाएं – हटाने के लिए इकाई पर क्लिक करें",

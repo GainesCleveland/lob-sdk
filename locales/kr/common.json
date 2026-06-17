@@ -218,6 +218,7 @@
   "forUnit": "{{unit}} 외형",
   "maxUnitSkinsSelected": "유형당 최대 {{max}}개 스킨",
   "select": "선택",
+  "edit": "편집",
   "selectAll": "모두 선택",
   "deselect": "선택 해제",
   "removeFromSelectionTooltip": "선택에서 제거 – 제거할 유닛을 클릭하세요",

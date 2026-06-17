@@ -222,6 +222,7 @@
   "forUnit": "{{unit}} 用",
   "maxUnitSkinsSelected": "種別ごとに最大{{max}}スキン",
   "select": "選択",
+  "edit": "編集",
   "selectAll": "すべて選択",
   "deselect": "選択解除",
   "removeFromSelectionTooltip": "選択から削除 – ユニットをクリックして削除",

@@ -209,6 +209,7 @@
   "forUnit": "{{unit}} için",
   "maxUnitSkinsSelected": "Tür başına en fazla {{max}} skin",
   "select": "Seç",
+  "edit": "Düzenle",
   "selectAll": "Tümünü Seç",
   "deselect": "Seçimi Kaldır",
   "removeFromSelectionTooltip": "Seçimden çıkar – çıkarmak için birliğe tıklayın",

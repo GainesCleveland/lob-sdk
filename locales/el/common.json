@@ -220,6 +220,7 @@
   "forUnit": "Για {{unit}}",
   "maxUnitSkinsSelected": "Έως {{max}} skins ανά τύπο",
   "select": "Επιλέξτε",
+  "edit": "Επεξεργασία",
   "selectAll": "Επιλογή όλων",
   "deselect": "Αποεπιλογή",
   "removeFromSelectionTooltip": "Αφαίρεση από την επιλογή – κλικ σε μονάδα για αφαίρεση",

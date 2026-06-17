@@ -221,6 +221,7 @@
   "forUnit": "Для: {{unit}}",
   "maxUnitSkinsSelected": "Макс. {{max}} скинов на тип",
   "select": "Выбрать",
+  "edit": "Изменить",
   "selectAll": "Выбрать все",
   "deselect": "Отменить выбор",
   "removeFromSelectionTooltip": "Убрать из выделения – нажмите на юнит, чтобы убрать",

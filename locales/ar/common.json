@@ -221,6 +221,7 @@
   "forUnit": "للوحدة {{unit}}",
   "maxUnitSkinsSelected": "حد أقصى {{max}} مظهر لكل نوع",
   "select": "اختيار",
+  "edit": "تعديل",
   "selectAll": "تحديد الكل",
   "deselect": "إلغاء الاختيار",
   "removeFromSelectionTooltip": "إزالة من التحديد – انقر على الوحدة لإزالتها",
