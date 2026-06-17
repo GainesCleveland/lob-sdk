@@ -496,11 +496,6 @@
   },
   "offline": "离线",
   "offlineDescription": "对着电脑控制的敌人练习或是和朋友在同一个设备上玩热座模式！",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/>排行榜",
-    "subtitle": "谁拥有最多的<premiumCurrency/>？",
-    "description": "想当榜一？<storeLink>前往商店</storeLink>并充值<premiumCurrency/>！"
-  },
   "team": "团队",
   "teams": "团队",
   "playerType": "玩家种类",
@@ -986,6 +981,7 @@
   },
   "profileAnalytics": {
     "title": "高级统计",
+    "last90Days": "过去90天的排位对战",
     "byBattleType": "按战斗类型的表现",
     "byUnitType": "按单位类型的表现",
     "games": "场次",

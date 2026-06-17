@@ -466,11 +466,6 @@
   },
   "offline": "Офлайн",
   "offlineDescription": "Тренуйтеся проти ботів і грайте з друзями в режимі hotseat на одному пристрої!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Таблиця лідерів",
-    "subtitle": "Хто ж найбагатший на <premiumCurrency/>?",
-    "description": "Хочеш бути першим у списку? <storeLink>Завітай до крамниці</storeLink> та розживись на <premiumCurrency/>!"
-  },
   "team": "Команда",
   "teams": "Команди",
   "playerType": "Тип гравця",
@@ -767,6 +762,7 @@
   },
   "profileAnalytics": {
     "title": "Розширена статистика",
+    "last90Days": "Рейтингові ігри за останні 90 днів",
     "byBattleType": "Результати за типом бою",
     "byUnitType": "Результати за типом загону",
     "games": "Ігри",

@@ -494,11 +494,6 @@
   },
   "offline": "ऑफलाइन",
   "offlineDescription": "बॉट्स के खिलाफ अभ्यास करें और एक ही डिवाइस पर दोस्तों के साथ हॉटसीट खेलें!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> लीडरबोर्ड",
-    "subtitle": "किसके पास सबसे अधिक <premiumCurrency/> है?",
-    "description": "पहले बनना चाहते हैं? <storeLink>स्टोर पर जाएं</storeLink> और <premiumCurrency/> प्राप्त करें!"
-  },
   "team": "टीम",
   "teams": "टीमें",
   "playerType": "खिलाड़ी प्रकार",
@@ -971,6 +966,7 @@
   },
   "profileAnalytics": {
     "title": "उन्नत आँकड़े",
+    "last90Days": "पिछले 90 दिनों के रैंक मैच",
     "byBattleType": "युद्ध प्रकार के अनुसार प्रदर्शन",
     "byUnitType": "इकाई प्रकार के अनुसार प्रदर्शन",
     "games": "खेल",

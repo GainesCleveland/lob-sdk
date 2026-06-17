@@ -496,11 +496,6 @@
   },
   "offline": "Оффлайн",
   "offlineDescription": "Тренируйтесь против ботов или играйте с друзьями на одном устройстве!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Рейтинг <premiumCurrency/>",
-    "subtitle": "У кого больше всего <premiumCurrency/>?",
-    "description": "Хотите быть первым? <storeLink>Перейдите в магазин</storeLink> и получите <premiumCurrency/>!"
-  },
   "team": "Команда",
   "teams": "Команды",
   "playerType": "Тип игрока",
@@ -992,6 +987,7 @@
   },
   "profileAnalytics": {
     "title": "Расширенная статистика",
+    "last90Days": "Рейтинговые игры за последние 90 дней",
     "byBattleType": "Результаты по типу боя",
     "byUnitType": "Результаты по типу юнита",
     "games": "Игры",

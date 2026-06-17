@@ -493,11 +493,6 @@
   },
   "offline": "Ngoại tuyến",
   "offlineDescription": "Luyện tập chống lại bot và chơi hotseat với bạn bè trên cùng thiết bị!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Bảng xếp hạng <premiumCurrency/>",
-    "subtitle": "Ai có nhiều <premiumCurrency/> nhất?",
-    "description": "Muốn đứng đầu? <storeLink>Đến cửa hàng</storeLink> và lấy <premiumCurrency/>!"
-  },
   "team": "Đội",
   "teams": "Các đội",
   "playerType": "Loại người chơi",
@@ -968,6 +963,7 @@
   },
   "profileAnalytics": {
     "title": "Thống kê nâng cao",
+    "last90Days": "Trận xếp hạng trong 90 ngày qua",
     "byBattleType": "Hiệu suất theo loại trận",
     "byUnitType": "Hiệu suất theo loại đơn vị",
     "games": "Trận",

@@ -497,11 +497,6 @@
   },
   "offline": "オフライン",
   "offlineDescription": "ボットと練習したり、同じデバイスで友達とホットシートプレイをしたりできます！",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> リーダーボード",
-    "subtitle": "最も多くの<premiumCurrency/>を持っているのは誰ですか？",
-    "description": "最初になりたいですか？<storeLink>ストアへ行く</storeLink>と<premiumCurrency/>をゲット！"
-  },
   "team": "チーム",
   "teams": "チーム",
   "playerType": "プレイヤータイプ",
@@ -989,6 +984,7 @@
   },
   "profileAnalytics": {
     "title": "詳細統計",
+    "last90Days": "過去90日間のランク戦",
     "byBattleType": "バトルタイプ別の成績",
     "byUnitType": "ユニットタイプ別の成績",
     "games": "ゲーム数",

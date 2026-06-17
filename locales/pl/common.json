@@ -470,11 +470,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Ćwicz z botami i graj ze znajomymi na tym samym urządzeniu!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Tabela <premiumCurrency/>",
-    "subtitle": "Kto ma najwięcej <premiumCurrency/>?",
-    "description": "Chcesz być na pierwszym miejscu? <storeLink>Wejdź do sklepu</storeLink> i kup <premiumCurrency/>!"
-  },
   "team": "Drużyna",
   "teams": "Drużyny",
   "playerType": "Rodzaj Gracza",
@@ -900,6 +895,7 @@
   },
   "profileAnalytics": {
     "title": "Statystyki zaawansowane",
+    "last90Days": "Gry rankingowe z ostatnich 90 dni",
     "byBattleType": "Wyniki według typu bitwy",
     "byUnitType": "Wyniki według typu jednostki",
     "games": "Gry",

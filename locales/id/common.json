@@ -452,11 +452,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Berlatih melawan bot dan bermain hotseat bersama teman-teman di perangkat yang sama!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Papan Peringkat",
-    "subtitle": "Siapa yang punya <premiumCurrency/> terbanyak?",
-    "description": "Ingin jadi yang pertama? <storeLink>Buka toko</storeLink> dan dapatkan <premiumCurrency/>!"
-  },
   "team": "Tim",
   "teams": "Tim",
   "playerType": "Tipe Player",
@@ -755,6 +750,7 @@
   },
   "profileAnalytics": {
     "title": "Statistik lanjutan",
+    "last90Days": "Game peringkat dalam 90 hari terakhir",
     "byBattleType": "Performa menurut tipe pertempuran",
     "byUnitType": "Performa menurut tipe unit",
     "games": "Permainan",

@@ -482,11 +482,6 @@
   },
   "offline": "Εκτός σύνδεσης",
   "offlineDescription": "Εξασκηθείτε ενάντια σε bots και παίξτε hotseat με φίλους στην ίδια συσκευή!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Leaderboard",
-    "subtitle": "Ποιος έχει τα περισσότερα <premiumCurrency/>;",
-    "description": "Θέλεις να είσαι ο πρώτος; <storeLink>Πηγαίνε στο κατάστημα</storeLink> και πάρε <premiumCurrency/>!"
-  },
   "team": "Ομάδα",
   "teams": "Ομάδες",
   "playerType": "Τύπος παίκτη",
@@ -921,6 +916,7 @@
   },
   "profileAnalytics": {
     "title": "Προηγμένα στατιστικά",
+    "last90Days": "Βαθμολογημένα παιχνίδια τις τελευταίες 90 ημέρες",
     "byBattleType": "Επιδόσεις ανά τύπο μάχης",
     "byUnitType": "Επιδόσεις ανά τύπο μονάδας",
     "games": "Παιχνίδια",

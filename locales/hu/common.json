@@ -449,11 +449,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Gyakorolj offline botok ellen vagy játssz barátaiddal egy készülékén!",
-  "premiumCurrencyLeaderboard": {
-    "title": "<premiumCurrency/> Ranglista",
-    "subtitle": "Kinek van a legtöbb <premiumCurrency/>-zse?",
-    "description": "Szeretnél az első lenni? <storeLink>Látogasd meg az Áruházat</storeLink> és szerezz <premiumCurrency/>-et!"
-  },
   "team": "Csapat",
   "teams": "Csapatok",
   "playerType": "Irányító típusa",
@@ -708,6 +703,7 @@
   },
   "profileAnalytics": {
     "title": "Speciális statisztikák",
+    "last90Days": "Rangsorolt játszmák az elmúlt 90 napban",
     "byBattleType": "Teljesítmény csatatípus szerint",
     "byUnitType": "Teljesítmény egységtípus szerint",
     "games": "Játszmák",

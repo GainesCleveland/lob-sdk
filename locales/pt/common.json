@@ -449,11 +449,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Pratique contra bots e jogue hotseat com amigos no mesmo dispositivo!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Tabela de Líderes de <premiumCurrency/>",
-    "subtitle": "Quem tem o maior <premiumCurrency/>?",
-    "description": "Quer ser o primeiro? <storeLink>Vá para a loja</storeLink> e pegue <premiumCurrency/>!"
-  },
   "team": "Equipe",
   "teams": "Equipes",
   "playerType": "Tipo de jogador",
@@ -752,6 +747,7 @@
   },
   "profileAnalytics": {
     "title": "Estatísticas avançadas",
+    "last90Days": "Partidas ranqueadas nos últimos 90 dias",
     "byBattleType": "Desempenho por tipo de batalha",
     "byUnitType": "Desempenho por tipo de unidade",
     "games": "Partidas",

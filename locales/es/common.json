@@ -451,11 +451,6 @@
   },
   "offline": "Offline",
   "offlineDescription": "Practica contra bots y juega en modo hotseat con amigos en el mismo dispositivo!",
-  "premiumCurrencyLeaderboard": {
-    "title": "Clasificación de <premiumCurrency/>",
-    "subtitle": "¿Quién tiene más <premiumCurrency/>?",
-    "description": "¿Quieres ser el primero? <storeLink>Ve a la tienda</storeLink> y consigue <premiumCurrency/>!"
-  },
   "team": "Equipo",
   "playerType": "Tipo de jugador",
   "human": "Humano",
@@ -864,6 +859,7 @@
   },
   "profileAnalytics": {
     "title": "Estadísticas avanzadas",
+    "last90Days": "Partidas clasificatorias de los últimos 90 días",
     "byBattleType": "Rendimiento por tipo de batalla",
     "byUnitType": "Rendimiento por tipo de unidad",
     "games": "Partidas",
