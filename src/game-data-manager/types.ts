@@ -432,6 +432,19 @@ export interface DamageTypeRange {
   name?: string;
 }
 
+/**
+ * Which point on the target a ranged shot aims at — and measures range/falloff from.
+ * `TargetCenter` (default) aims at the target's centre, which keeps a circular blast
+ * centred on it. `NearestBody` aims at the nearest point of the target's body, so direct
+ * fire and forward-spreading (trapezoidal) blasts strike the near face and a deep
+ * formation gets no range protection from its depth. Applied consistently to aim, AoE,
+ * range-gating and damage falloff.
+ */
+export enum ShotAimMode {
+  TargetCenter,
+  NearestBody,
+}
+
 export interface RangedDamageTypeTemplate {
   id: number;
   name: string;
@@ -473,6 +486,11 @@ export interface RangedDamageTypeTemplate {
    * guard with `if (areaOfEffect)`.
    */
   areaOfEffect?: AoeConfig;
+  /**
+   * Which point on the target the shot aims at and measures range/falloff from.
+   * Defaults to `TargetCenter`. See `ShotAimMode`.
+   */
+  aimMode?: ShotAimMode;
   enfiladeFire?: boolean;
   cannotUseAfterRun?: boolean;
   projectilePenetration?: number;
