@@ -144,8 +144,6 @@ export interface GameConstants {
    */
   COLLISION_PUSH_MAX_ANGLE_RANGE_DEGREES: number;
 
-  UNIT_RANGE_MARGIN: number;
-
   TILE_SIZE: number;
 
   DEFAULT_MAX_TURN: number;
