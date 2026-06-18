@@ -25,6 +25,13 @@ import type { DeepPartial } from "../utils/object-merge";
 export const CUSTOM_UNIT_TYPE_MIN = 10000;
 
 /**
+ * Upper bound on a custom formation's OBB dimensions (px). Presets top out at 40;
+ * this generous ceiling rejects pathological sizes that would make per-tile terrain
+ * sampling (obbTileCoverage) clip hundreds of tiles per unit per tick.
+ */
+const MAX_FORMATION_DIMENSION = 256;
+
+/**
  * Hard safety ceilings on how many custom defs a single scenario may carry.
  * Abuse bounds (independent of tier gating), enforced server-side so a crafted
  * import can't pack thousands of defs that get re-parsed per game.
@@ -417,6 +424,13 @@ function validateCustomUnitFormations(
         ) {
           pushErr(
             "collisionShape must have a finite frontage and depth greater than 0",
+          );
+        } else if (
+          shape.frontage > MAX_FORMATION_DIMENSION ||
+          shape.depth > MAX_FORMATION_DIMENSION
+        ) {
+          pushErr(
+            `collisionShape frontage and depth must each be <= ${MAX_FORMATION_DIMENSION}`,
           );
         }
       } else {

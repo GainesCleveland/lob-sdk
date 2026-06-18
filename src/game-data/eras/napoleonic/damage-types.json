@@ -1251,7 +1251,6 @@
     "imageAlias": "8lb-cannon-ball",
     "ranged": true,
     "aimMode": 1,
-    "rangeColor": "#ffc55c",
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
     "attackEffectDuration": 16,

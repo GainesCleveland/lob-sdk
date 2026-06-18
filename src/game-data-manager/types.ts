@@ -503,12 +503,6 @@ export interface RangedDamageTypeTemplate {
   extendRange?: boolean;
   /** Use this in case you want to use the image of another damage type */
   imageAlias?: string;
-  /**
-   * Overrides the color of this battery's range arc (CSS hex, e.g. "#ffc55c").
-   * A ship's two broadsides set the same color so both cones match; without it
-   * the arc falls back to the per-damage-type palette by index.
-   */
-  rangeColor?: string;
 }
 
 export type DamageTypeTemplate =
