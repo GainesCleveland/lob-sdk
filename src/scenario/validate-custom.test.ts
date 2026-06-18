@@ -325,6 +325,16 @@ describe("validateScenarioCustomDefs", () => {
       expect(errors).toEqual([]);
     });
 
+    it("rejects fire edges on a circle collision shape (a circle never fires)", () => {
+      const errors = formationErrors({
+        collisionShape: { type: CollisionShapeType.Circle, radius: 16 },
+        fireEdges: [{ edge: 1, arc: 40, emitters: 2 }],
+      });
+      expect(
+        errors.some((e) => /fireEdges require a rectangular \(obb\)/.test(e.message)),
+      ).toBe(true);
+    });
+
     it("rejects a non-object collisionShape instead of throwing", () => {
       expect(() =>
         formationErrors({ collisionShape: JSON.parse("null") }),

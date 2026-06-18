@@ -8,6 +8,8 @@ import {
   OrderTemplate,
   OrderType,
   CollisionShapeType,
+  isCircleCollision,
+  getCollisionConfig,
 } from "@lob-sdk/types";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import type {
@@ -462,6 +464,18 @@ function validateCustomUnitFormations(
             pushErr(`fireEdges[${i}].emitters must be a positive integer`);
           }
         });
+      }
+
+      // Edge-fire is gated on an OBB collision shape: a circle never fires. fireEdges on a
+      // circle formation would silently produce no ranged fire, so reject the combination.
+      if (
+        Array.isArray(formation.fireEdges) &&
+        formation.fireEdges.length > 0 &&
+        isCircleCollision(getCollisionConfig(formation))
+      ) {
+        pushErr(
+          "fireEdges require a rectangular (obb) collisionShape; a circle formation never fires",
+        );
       }
     }
   }
