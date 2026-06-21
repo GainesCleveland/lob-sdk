@@ -790,5 +790,6 @@
     "message": "La tua partita lenta è pronta.",
     "goToGame": "Vai alla partita",
     "ignore": "Ignora"
-  }
+  },
+  "max": "Massimo"
 }

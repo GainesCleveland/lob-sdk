@@ -748,5 +748,6 @@
     "ignore": "Mellőz"
   },
   "kills": "Megsemmisítések",
-  "rewards": "Jutalmak"
+  "rewards": "Jutalmak",
+  "max": "Maximális"
 }

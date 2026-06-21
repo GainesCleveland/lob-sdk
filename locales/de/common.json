@@ -789,5 +789,6 @@
     "message": "Dein langsames Spiel ist spielbereit.",
     "goToGame": "Zum Spiel",
     "ignore": "Ignorieren"
-  }
+  },
+  "max": "Maximal"
 }

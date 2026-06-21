@@ -802,5 +802,6 @@
     "message": "Ta partie lente est prête.",
     "goToGame": "Aller à la partie",
     "ignore": "Ignorer"
-  }
+  },
+  "max": "Maximal"
 }

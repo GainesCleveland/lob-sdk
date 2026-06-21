@@ -873,5 +873,6 @@
     "description": "Cada lección cubre una situación que vale la pena conocer.",
     "allSeen": "Viste todas las lecciones del tutorial.",
     "viewMissed": "Ver lecciones que faltan"
-  }
+  },
+  "max": "Máximo"
 }

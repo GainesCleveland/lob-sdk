@@ -267,6 +267,11 @@ export interface DamageHit {
   damage: number;
   /** Organization bonus/penalty applied. */
   orgBonus: number;
+  /**
+   * Per-band override of the damage type's `orgDamageRatio`, resolved at shot time from the
+   * firing distance. Falls back to the damage type's `orgDamageRatio` when absent.
+   */
+  orgDamageRatio?: number;
   /** Type of damage dealt. */
   damageType: string;
   /** Optional backlash hit if the attack caused a counter-attack. */
@@ -724,14 +729,12 @@ export interface IServerGame {
    * @param unit - The unit shooting
    * @param targetPosition - The target position
    * @param ignoreEffects - Whether to ignore unit effects
-   * @param forAutofire - Whether this is for autofire calculation
    * @returns The shot trajectory data
    */
   getShotTrajectory(
     unit: BaseUnit,
     targetPosition: Vector2,
     ignoreEffects?: boolean,
-    forAutofire?: boolean,
   ): any;
   /**
    * Executes a shot from a unit to a target position

@@ -909,5 +909,6 @@
     "description": "Każda lekcja obejmuje sytuację, którą warto poznać.",
     "allSeen": "Zobaczyłeś wszystkie lekcje samouczka.",
     "viewMissed": "Zobacz pominięte lekcje"
-  }
+  },
+  "max": "Maksymalny"
 }

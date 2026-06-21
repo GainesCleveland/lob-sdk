@@ -789,5 +789,6 @@
     "message": "Yavaş maçın oynamaya hazır.",
     "goToGame": "Maça git",
     "ignore": "Yoksay"
-  }
+  },
+  "max": "Maksimum"
 }
