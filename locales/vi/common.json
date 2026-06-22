@@ -402,6 +402,8 @@
   "selectOrder": "Chọn lệnh",
   "orderType": "Loại lệnh",
   "autofire": "Tự động bắn",
+  "autofireClose": "Gần",
+  "autofireRange": "Tầm bắn tự động",
   "allowFireWhenMoving": "Cho phép bắn khi di chuyển",
   "meleeDamage": "Sát thương cận chiến",
   "rangedDamage": "Sát thương tầm xa",

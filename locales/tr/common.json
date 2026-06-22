@@ -361,6 +361,8 @@
   "selectOrder": "Emir Seç",
   "orderType": "Emir türü",
   "autofire": "Otomatik ateş",
+  "autofireClose": "Yakın",
+  "autofireRange": "Otomatik ateş menzili",
   "allowFireWhenMoving": "Hareket ederken ateşe izin ver",
   "meleeDamage": "Yakın dövüş hasarı",
   "rangedDamage": "Uzak mesafe hasarı",

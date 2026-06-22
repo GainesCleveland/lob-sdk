@@ -96,5 +96,7 @@
   "low": "ต่ำ",
   "medium": "ปานกลาง",
   "max": "สูงสุด",
-  "autofire": "ยิงอัตโนมัติ"
+  "autofire": "ยิงอัตโนมัติ",
+  "autofireClose": "ใกล้",
+  "autofireRange": "ระยะยิงอัตโนมัติ"
 }

@@ -378,6 +378,8 @@
   "selectOrder": "Wybierz Rozkaz",
   "orderType": "Typ rozkazu",
   "autofire": "Automatyczny ogień",
+  "autofireClose": "Blisko",
+  "autofireRange": "Zasięg automatycznego ognia",
   "allowFireWhenMoving": "Pozwala strzelać podczas ruchu",
   "meleeDamage": "Obrażenia wręcz",
   "rangedDamage": "Obrażenia dystansowe",

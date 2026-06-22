@@ -361,6 +361,8 @@
   "selectOrder": "Selecionar Ordem",
   "orderType": "Tipo de ordem",
   "autofire": "Tiro automático",
+  "autofireClose": "Perto",
+  "autofireRange": "Alcance do tiro automático",
   "allowFireWhenMoving": "Permitir fogo ao mover",
   "meleeDamage": "Dano corpo a corpo",
   "rangedDamage": "Dano à distância",

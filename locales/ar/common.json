@@ -402,6 +402,8 @@
   "selectOrder": "اختيار الأمر",
   "orderType": "نوع الأمر",
   "autofire": "إطلاق تلقائي",
+  "autofireClose": "قريب",
+  "autofireRange": "مدى الإطلاق التلقائي",
   "allowFireWhenMoving": "السماح بالإطلاق أثناء الحركة",
   "meleeDamage": "ضرر قريب",
   "rangedDamage": "ضرر بعيد",

@@ -398,6 +398,8 @@
   "selectOrder": "명령 선택",
   "orderType": "명령 유형",
   "autofire": "자동 사격",
+  "autofireClose": "근접",
+  "autofireRange": "자동 사격 사거리",
   "allowFireWhenMoving": "이동 중 사격 허용",
   "meleeDamage": "근접전투력",
   "rangedDamage": "사격공격력",

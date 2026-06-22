@@ -379,6 +379,8 @@
   "selectOrder": "Обреріть наказ",
   "orderType": "Тип наказу",
   "autofire": "Автоматичний вогонь",
+  "autofireClose": "Близько",
+  "autofireRange": "Дальність автоматичного вогню",
   "allowFireWhenMoving": "Дозволити вогонь під час руху",
   "meleeDamage": "Ушкодження в ближньому бою",
   "rangedDamage": "Ушкодження в дальньому бою",

@@ -408,6 +408,8 @@
   "selectOrder": "命令を選択",
   "orderType": "命令タイプ",
   "autofire": "自動射撃",
+  "autofireClose": "近",
+  "autofireRange": "自動射撃の射程",
   "allowFireWhenMoving": "移動中の射撃を許可",
   "meleeDamage": "白兵戦ダメージ",
   "rangedDamage": "遠距離ダメージ",

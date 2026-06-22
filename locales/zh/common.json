@@ -407,6 +407,8 @@
   "selectOrder": "选择指令",
   "orderType": "指令类型",
   "autofire": "自动开火",
+  "autofireClose": "近",
+  "autofireRange": "自动开火距离",
   "allowFireWhenMoving": "允许移动射击",
   "meleeDamage": "近战伤害",
   "rangedDamage": "远程伤害",

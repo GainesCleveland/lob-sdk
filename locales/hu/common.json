@@ -361,6 +361,8 @@
   "selectOrder": "Utasítás Kiválasztása",
   "orderType": "Parancs típusa",
   "autofire": "Automatikus tüzelés",
+  "autofireClose": "Közel",
+  "autofireRange": "Automatikus tüzelés hatótávja",
   "allowFireWhenMoving": "Lőhet mozgás közben",
   "meleeDamage": "Közelharci sebzés",
   "rangedDamage": "Távolsági sebzés",

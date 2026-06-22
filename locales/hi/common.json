@@ -402,6 +402,8 @@
   "selectOrder": "आदेश चुनें",
   "orderType": "आदेश प्रकार",
   "autofire": "स्वचालित आग",
+  "autofireClose": "नज़दीक",
+  "autofireRange": "स्वचालित आग रेंज",
   "allowFireWhenMoving": "चलते समय आग की अनुमति दें",
   "meleeDamage": "हाथापाई क्षति",
   "rangedDamage": "दूरस्थ क्षति",

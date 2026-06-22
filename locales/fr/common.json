@@ -350,6 +350,8 @@
   "selectOrder": "Sélectionner un ordre",
   "orderType": "Type d'ordre",
   "autofire": "Tir automatique",
+  "autofireClose": "Proche",
+  "autofireRange": "Portée du tir automatique",
   "allowFireWhenMoving": "Permet de tirer en avançant",
   "meleeDamage": "Dégâts de mêlée",
   "rangedDamage": "Dégâts à distance",

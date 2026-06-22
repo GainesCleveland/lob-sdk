@@ -361,6 +361,8 @@
   "selectOrder": "Befehl auswählen",
   "orderType": "Befehlstyp",
   "autofire": "Automatisches Feuern",
+  "autofireClose": "Nah",
+  "autofireRange": "Autofeuer-Reichweite",
   "allowFireWhenMoving": "Erlaube Feuern während der Bewegung",
   "meleeDamage": "Nahkampfschaden",
   "rangedDamage": "Fernkampfschaden",
