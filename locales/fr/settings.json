@@ -150,7 +150,7 @@
     "toggleFowPerspective": "Basculer la perspective de brouillard de guerre",
     "toggleMultiTurnPathOrders": "Basculer les ordres de chemin multi-tours",
     "openChat": "Ouvrir le chat",
-    "openFormationModal": "Ouvrir la fenêtre de formation",
+    "openTacticsModal": "Ouvrir le menu tactique",
     "showBattleOverview": "Maintenir pour le résumé de bataille",
     "formation1": "Formation 1",
     "formation2": "Formation 2",

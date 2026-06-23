@@ -50,6 +50,7 @@
   "settings": "การตั้งค่า",
   "leagueDescription": "ลีกของคุณสะท้อนถึงระดับฝีมือ เอาชนะเกมเพื่อสะสมความคืบหน้าภายในลีก",
   "formations": "กระบวนทัพ",
+  "tactics": "ยุทธวิธี",
   "disablesFlankMelee": "ปิดการโจมตีประชิดจากด้านข้าง",
   "disablesRearMelee": "ปิดการโจมตีประชิดจากด้านหลัง",
   "disablesEnfiladeFire": "ปิดการระดมยิงแนวยาวด้านข้าง (Enfilade fire)",
@@ -98,5 +99,7 @@
   "max": "สูงสุด",
   "autofire": "ยิงอัตโนมัติ",
   "autofireClose": "ใกล้",
+  "autofireEffective": "ระยะยิงหวังผล",
+  "autofireMaxAmmoWarning": "ในระยะไกล ความเสียหายน้อยมากแต่ยังเปลืองกระสุน ใช้ต่อเมื่อคุณรู้ว่ากำลังทำอะไรอยู่",
   "autofireRange": "ระยะยิงอัตโนมัติ"
 }

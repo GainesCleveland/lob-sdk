@@ -48,7 +48,7 @@ describe("GameDataManager custom defs", () => {
     it("makes the new category resolvable via getUnitCategoryTemplate", () => {
       const m = GameDataManager.createWithCustomDefs("napoleonic", {
         customUnitCategories: [
-          { id: "drone", firingAltitude: 12, allyCollisionLevel: 0 },
+          { id: "drone", firingAltitude: 12 },
         ],
       });
       const t = m.getUnitCategoryTemplate("drone");

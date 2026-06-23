@@ -232,6 +232,24 @@ describe("validateScenarioCustomDefs", () => {
       ).toBe(true);
     });
 
+    it("flags a fractional formation collision level", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customUnitFormations: [
+            makeFormation({ id: "my-formation", allyCollisionLevel: 1.5 }),
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) =>
+            e.scope === "unitFormation" &&
+            /allyCollisionLevel must be an integer/.test(e.message),
+        ),
+      ).toBe(true);
+    });
+
     it("flags a non-finite unit-category stat", () => {
       const errors = validateScenarioCustomDefs(
         makeScenario({

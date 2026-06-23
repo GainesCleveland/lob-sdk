@@ -348,6 +348,16 @@ export interface FormationTemplate {
    * frontage/depth or collision-circle fields, still honoured by the normaliser).
    */
   collisionShape?: CollisionShapeConfig;
+
+  /**
+   * Collision strength vs allies / enemies, compared pairwise via `checkCollision`:
+   * `-1` (NO_COLLISION_LEVEL) is soft overlap / pass-through (skirmishers, artillery),
+   * `0`+ are solid tiers that block an equal-or-lower level. Unset defaults to solid.
+   * Read through the unit's `allyCollisionLevel` / `enemyCollisionLevel` getters.
+   */
+  allyCollisionLevel?: number;
+  enemyCollisionLevel?: number;
+
   movementModifier?: number;
   runMovementModifier?: number;
   rotationSpeedModifier?: number;

@@ -36,9 +36,9 @@
     "title": "Mở modal chọn lệnh",
     "description": "Bật tùy chọn này để hiển thị modal để chọn lệnh trong quá trình chơi."
   },
-  "openSelectFormationModal": {
-    "title": "Mở modal chọn đội hình",
-    "description": "Bật tùy chọn này để hiển thị modal để chọn đội hình trong quá trình chơi."
+  "openSelectTacticsModal": {
+    "title": "Mở menu chiến thuật",
+    "description": "Bật tùy chọn này để hiển thị menu chiến thuật khi chơi."
   },
   "showPlayableGamesAvailableModal": {
     "title": "Hiển thị modal trò chơi có thể chơi"
@@ -177,7 +177,7 @@
     "toggleFowPerspective": "Chuyển đổi góc nhìn sương mù chiến tranh",
     "toggleMultiTurnPathOrders": "Chuyển đổi lệnh đường đi đa lượt",
     "openChat": "Mở trò chuyện",
-    "openFormationModal": "Mở cửa sổ đội hình",
+    "openTacticsModal": "Mở menu chiến thuật",
     "showBattleOverview": "Giữ phím để xem tóm tắt trận đánh",
     "formation1": "Đội hình 1",
     "formation2": "Đội hình 2",

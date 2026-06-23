@@ -408,6 +408,8 @@
   "orderType": "指令类型",
   "autofire": "自动开火",
   "autofireClose": "近",
+  "autofireEffective": "有效射程",
+  "autofireMaxAmmoWarning": "远距离伤害极低，但仍会消耗弹药。请在清楚后果时再使用。",
   "autofireRange": "自动开火距离",
   "allowFireWhenMoving": "允许移动射击",
   "meleeDamage": "近战伤害",
@@ -951,6 +953,7 @@
     "continueAnyway": "依旧继续"
   },
   "formations": "阵型",
+  "tactics": "战术",
   "disablesFlankMelee": "近战侧击无效",
   "disablesRearMelee": "近战后击无效",
   "disablesEnfiladeFire": "侧翼射击无效",

@@ -167,8 +167,12 @@ export abstract class BaseUnit extends Entity {
 
   // --- Category Statistics ---
   get captureSpeed(): number { return this.categoryTemplate.captureSpeed ?? 0; }
-  get allyCollisionLevel(): number { return this.categoryTemplate.allyCollisionLevel ?? MIN_COLLISION_LEVEL; }
-  get enemyCollisionLevel(): number { return this.categoryTemplate.enemyCollisionLevel ?? MIN_COLLISION_LEVEL; }
+  // Collision levels are formation-derived (see FormationTemplate); default solid.
+  get allyCollisionLevel(): number { return this.effectiveFormationTemplate?.allyCollisionLevel ?? MIN_COLLISION_LEVEL; }
+  get enemyCollisionLevel(): number { return this.effectiveFormationTemplate?.enemyCollisionLevel ?? MIN_COLLISION_LEVEL; }
+  private get effectiveFormationTemplate() {
+    return this.gameDataManager.getFormationManager().getTemplate(this.effectiveFormation);
+  }
   get firingAltitude(): number { return this.categoryTemplate.firingAltitude ?? 0; }
   /**
    * Naval-style steering: the unit moves only along its heading (forward, or
@@ -177,6 +181,8 @@ export abstract class BaseUnit extends Entity {
    */
   get forwardOnlyMovement(): boolean { return this.categoryTemplate.forwardOnlyMovement === true; }
   get autofirePriority(): Partial<Record<UnitCategoryId, number>> | null { return this.categoryTemplate.autofirePriority ?? null; }
+  /** Default autofire engagement tier for this category (see `autofireRange`); `Max` when unset. */
+  get defaultAutofireRange(): EngagementRange { return this.categoryTemplate.defaultAutofireRange ?? EngagementRange.Max; }
   
   get enfiladeFireDamageModifier(): number { return this.categoryTemplate.enfiladeFire?.damageModifier ?? 0; }
   get enfiladeFireOrgModifier(): number { return this.categoryTemplate.enfiladeFire?.orgModifier ?? 0; }

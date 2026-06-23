@@ -12,6 +12,7 @@ import {
   getCollisionConfig,
 } from "@lob-sdk/types";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
+import { NO_COLLISION_LEVEL } from "@lob-sdk/constants";
 import type {
   DamageTypeTemplate,
   UnitCategoryTemplate,
@@ -439,6 +440,22 @@ function validateCustomUnitFormations(
         pushErr("collisionShape.type must be 0 (circle) or 1 (obb)");
       }
     }
+
+    // Collision levels are discrete tiers compared by checkCollision; -1
+    // (NO_COLLISION_LEVEL) is the soft-overlap sentinel and the lowest valid value.
+    const checkCollisionLevel = (
+      key: "allyCollisionLevel" | "enemyCollisionLevel",
+    ) => {
+      const level = formation[key];
+      if (
+        level !== undefined &&
+        (!Number.isInteger(level) || level < NO_COLLISION_LEVEL)
+      ) {
+        pushErr(`${key} must be an integer >= ${NO_COLLISION_LEVEL}`);
+      }
+    };
+    checkCollisionLevel("allyCollisionLevel");
+    checkCollisionLevel("enemyCollisionLevel");
 
     // Each fire edge needs a valid edge index, an in-range arc, and an explicit
     // positive emitter count (the firepower and the simultaneous-target cap).

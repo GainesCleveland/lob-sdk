@@ -36,9 +36,9 @@
     "title": "Открывать окно выбора приказа",
     "description": "Если активно, во время игры будет показываться окно выбора приказа."
   },
-  "openSelectFormationModal": {
-    "title": "Открывать окно выбора боевого построения",
-    "description": "Если активно, во время игры будет показываться окно выбора боевого построения."
+  "openSelectTacticsModal": {
+    "title": "Открыть меню тактики",
+    "description": "Включите эту опцию, чтобы показывать меню тактики во время игры."
   },
   "showPlayableGamesAvailableModal": {
     "title": "Показывать сообщение об активных играх"
@@ -181,7 +181,7 @@
     "toggleFowPerspective": "Перспектива тумана войны",
     "toggleMultiTurnPathOrders": "Переключить многоходовые приказы движения",
     "openChat": "Открыть чат",
-    "openFormationModal": "Окно выбора построения",
+    "openTacticsModal": "Открыть меню тактики",
     "showBattleOverview": "Удерживать для обзора боя",
     "formation1": "Построение 1",
     "formation2": "Построение 2",

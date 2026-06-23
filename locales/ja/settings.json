@@ -150,7 +150,7 @@
     "toggleFowPerspective": "戦争の霧の視点切り替え",
     "toggleMultiTurnPathOrders": "複数ターン経路の指令の切り替え",
     "openChat": "チャットを開く",
-    "openFormationModal": "陣形ウィンドウを開く",
+    "openTacticsModal": "戦術メニューを開く",
     "showBattleOverview": "押している間は戦闘概要を表示",
     "formation1": "陣形 1",
     "formation2": "陣形 2",

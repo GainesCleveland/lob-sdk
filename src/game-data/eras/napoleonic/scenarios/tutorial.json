@@ -3596,11 +3596,11 @@
           {
             "copy": "tutorial.deploy.openFormationInfantry",
             "highlight": {
-              "targetId": "hud-formation",
+              "targetId": "hud-tactics",
               "style": "spotlight"
             },
             "placement": "top",
-            "advanceOn": "formationModalOpened",
+            "advanceOn": "tacticsModalOpened",
             "unitCategory": "infantry",
             "formationId": "column"
           },
@@ -4431,7 +4431,7 @@
               },
               "style": "ring"
             },
-            "formationModalOverride": {
+            "tacticsModalOverride": {
               "situation": "infantryShouldFormLineAny",
               "ifMatchSelected": {
                 "targetId": "formation-option-line"
@@ -4440,7 +4440,7 @@
                 "targetId": "modal-close-button"
               },
               "whenClosedAndMatchSelected": {
-                "targetId": "hud-formation"
+                "targetId": "hud-tactics"
               }
             },
             "bubbleLayer": "aboveModals"
@@ -4566,7 +4566,7 @@
           },
           {
             "copy": "tutorial.situational.infantryVsCavalryFlank.openFormationMenu",
-            "advanceOn": "formationModalOpened",
+            "advanceOn": "tacticsModalOpened",
             "unitCategory": [
               "infantry",
               "guardsInfantry",
@@ -4574,7 +4574,7 @@
             ],
             "formationId": "square",
             "highlight": {
-              "targetId": "hud-formation",
+              "targetId": "hud-tactics",
               "style": "spotlight"
             },
             "placement": "top"
@@ -5747,7 +5747,7 @@
           },
           {
             "copy": "tutorial.situational.infantryBayonetCharge.openFormationMenu",
-            "advanceOn": "formationModalOpened",
+            "advanceOn": "tacticsModalOpened",
             "unitCategory": [
               "infantry",
               "guardsInfantry",
@@ -5759,7 +5759,7 @@
               "situation": "infantryBayonetCharge"
             },
             "highlight": {
-              "targetId": "hud-formation",
+              "targetId": "hud-tactics",
               "style": "ring"
             },
             "placement": "top"
@@ -6195,7 +6195,7 @@
           },
           {
             "copy": "tutorial.situational.infantryColumnMarch.openFormationMenu",
-            "advanceOn": "formationModalOpened",
+            "advanceOn": "tacticsModalOpened",
             "unitCategory": [
               "infantry",
               "guardsInfantry",
@@ -6203,7 +6203,7 @@
             ],
             "formationId": "column",
             "highlight": {
-              "targetId": "hud-formation",
+              "targetId": "hud-tactics",
               "style": "spotlight"
             },
             "placement": "top"

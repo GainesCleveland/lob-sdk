@@ -79,12 +79,16 @@ export interface UnitCategoryTemplate {
    * Default value: "center"
    */
   deploymentSection?: DeploymentSection;
-  allyCollisionLevel?: number;
-  enemyCollisionLevel?: number;
   damageTypeResistances?: Partial<Record<string, number>>;
   firingAltitude: number;
   captureSpeed?: number;
   autofirePriority?: Partial<Record<UnitCategoryId, number>>;
+  /**
+   * Default autofire engagement tier (EngagementRange) for units of this category.
+   * Falls back to `Max` when unset. Artillery uses `Medium` so it opens fire at its
+   * effective range instead of wasting shots at the near-useless long range.
+   */
+  defaultAutofireRange?: EngagementRange;
   routingBehavior?: RoutingBehavior;
   enfiladeFire?: EnfiladeFireConfig;
   rearFire?: RearFireConfig;

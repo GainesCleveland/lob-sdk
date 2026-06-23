@@ -409,6 +409,8 @@
   "orderType": "命令タイプ",
   "autofire": "自動射撃",
   "autofireClose": "近",
+  "autofireEffective": "有効射程",
+  "autofireMaxAmmoWarning": "遠距離ではダメージはごくわずかですが、弾薬は消費します。理解したうえで使用してください。",
   "autofireRange": "自動射撃の射程",
   "allowFireWhenMoving": "移動中の射撃を許可",
   "meleeDamage": "白兵戦ダメージ",
@@ -954,6 +956,7 @@
     "continueAnyway": "とにかく続行"
   },
   "formations": "隊形",
+  "tactics": "戦術",
   "disablesFlankMelee": "側面白兵攻撃補正を無効化",
   "disablesRearMelee": "後方白兵攻撃補正を無効化",
   "disablesEnfiladeFire": "側面射撃補正を無効化",

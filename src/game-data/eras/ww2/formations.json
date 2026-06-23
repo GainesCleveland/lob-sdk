@@ -2,11 +2,15 @@
   {
     "id": "default",
     "collisionShape": { "type": 0, "radius": 16 },
+    "allyCollisionLevel": 2,
+    "enemyCollisionLevel": 2,
     "minMovementModifier": -0.8
   },
   {
     "id": "dispersed",
     "collisionShape": { "type": 0, "radius": 16 },
+    "allyCollisionLevel": 2,
+    "enemyCollisionLevel": 2,
     "minMovementModifier": -0.8
   }
 ]
