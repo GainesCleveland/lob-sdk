@@ -238,6 +238,7 @@
     "stamina": "体力",
     "supply": "补给",
     "walkMovement": "行进",
+    "runMovement": "奔跑",
     "movement": "移动力",
     "meleeAttack": "近战攻击",
     "meleeDefense": "近战防御",
@@ -266,7 +267,8 @@
     "shattersAtOrg": "瓦解所需组织度",
     "routesAtOrg": "溃退所需组织度",
     "recoversAtOrg": "恢复所需组织度",
-    "ralliesAtOrg": "重整所需组织度"
+    "ralliesAtOrg": "重整所需组织度",
+    "unlimberTime": "展开时间"
   },
   "category": "类别",
   "routingBehavior": "寻路行为",
@@ -1000,5 +1002,8 @@
     "description": "每节课都涵盖一个值得了解的情境。",
     "allSeen": "你已查看教程中的所有课程。",
     "viewMissed": "查看错过的课程"
-  }
+  },
+  "noAmmoRegain": "弹药不可补充",
+  "flankMeleeOrgModifier": "侧翼近战组织度修正",
+  "rearCharge": "背后冲锋"
 }

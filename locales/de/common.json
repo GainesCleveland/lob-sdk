@@ -225,6 +225,7 @@
     "org": "Organisation",
     "stamina": "Ausdauer",
     "movement": "Fortbewegung",
+    "runMovement": "Laufen",
     "meleeAttack": "Nahkampfangriff",
     "meleeDefense": "Nahkampfverteidigung",
     "chargeBonus": "Ansturmbonus",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Zerbricht Bei Org",
     "routesAtOrg": "Flieht Bei Org",
     "recoversAtOrg": "Erholt Sich Bei Org",
-    "ralliesAtOrg": "Sammelt Sich Bei Org"
+    "ralliesAtOrg": "Sammelt Sich Bei Org",
+    "unlimberTime": "Aufbauzeit"
   },
   "category": "Kategorie",
   "damageResistances": "Wiederstandsfähigkeiten gegen Schaden",
@@ -286,6 +288,7 @@
   "to": "an",
   "lBy": "von",
   "terrainHitboxHeight": "Höhe der Geländehitbox",
+  "Terrain": "Gelände",
   "statusEffects": "Statuseffekte",
   "projectileAbsorption": "Projektileabsorption",
   "terrainPName": "Gelände: {{name}}",
@@ -795,5 +798,8 @@
     "goToGame": "Zum Spiel",
     "ignore": "Ignorieren"
   },
-  "max": "Maximal"
+  "max": "Maximal",
+  "noAmmoRegain": "Keine Munitionsregeneration",
+  "flankMeleeOrgModifier": "Flankennahkampf-Org-Modifikator",
+  "rearCharge": "Angriff von hinten"
 }

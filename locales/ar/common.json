@@ -237,6 +237,7 @@
     "org": "التنظيم",
     "stamina": "التحمل",
     "walkMovement": "المشي",
+    "runMovement": "ركض",
     "movement": "الحركة",
     "meleeAttack": "هجوم قريب",
     "meleeDefense": "دفاع قريب",
@@ -263,7 +264,8 @@
     "shattersAtOrg": "ينهار عند التنظيم",
     "routesAtOrg": "يفر عند التنظيم",
     "recoversAtOrg": "يتعافى عند التنظيم",
-    "ralliesAtOrg": "يتجمع عند التنظيم"
+    "ralliesAtOrg": "يتجمع عند التنظيم",
+    "unlimberTime": "وقت النشر"
   },
   "category": "الفئة",
   "routingBehavior": "سلوك الفرار",
@@ -993,5 +995,8 @@
     "description": "كل درس يغطي موقفاً يستحق المعرفة.",
     "allSeen": "لقد شاهدت كل دروس الدليل التعليمي.",
     "viewMissed": "عرض الدروس الفائتة"
-  }
+  },
+  "noAmmoRegain": "لا استعادة للذخيرة",
+  "flankMeleeOrgModifier": "معدل تنظيم القتال القريب الجانبي",
+  "rearCharge": "هجوم من الخلف"
 }

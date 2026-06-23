@@ -237,6 +237,7 @@
     "org": "Tổ chức",
     "stamina": "Thể lực",
     "walkMovement": "Đi bộ",
+    "runMovement": "Chạy",
     "movement": "Di chuyển",
     "meleeAttack": "Tấn công cận chiến",
     "meleeDefense": "Phòng thủ cận chiến",
@@ -263,7 +264,8 @@
     "shattersAtOrg": "Tan Rã Ở Org",
     "routesAtOrg": "Bỏ Chạy Ở Org",
     "recoversAtOrg": "Phục Hồi Ở Org",
-    "ralliesAtOrg": "Tập Hợp Ở Org"
+    "ralliesAtOrg": "Tập Hợp Ở Org",
+    "unlimberTime": "Thời gian triển khai"
   },
   "category": "Danh mục",
   "routingBehavior": "Hành vi rút lui",
@@ -982,5 +984,8 @@
     "description": "Mỗi bài học đề cập một tình huống đáng biết.",
     "allSeen": "Bạn đã xem tất cả bài học của hướng dẫn.",
     "viewMissed": "Xem bài học đã bỏ lỡ"
-  }
+  },
+  "noAmmoRegain": "Không hồi đạn",
+  "flankMeleeOrgModifier": "Hệ số tổ chức cận chiến sườn",
+  "rearCharge": "Đột kích từ phía sau"
 }

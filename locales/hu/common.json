@@ -225,6 +225,7 @@
     "org": "Organizáció",
     "stamina": "Kitartás",
     "movement": "Mozgás",
+    "runMovement": "Futás",
     "meleeAttack": "Közelharci támadás",
     "meleeDefense": "Közelharci védekezés",
     "chargeBonus": "Roham-bónusz",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Szétesik Org-nál",
     "routesAtOrg": "Futamodik Org-nál",
     "recoversAtOrg": "Felépül Org-nál",
-    "ralliesAtOrg": "Összegyűlik Org-nál"
+    "ralliesAtOrg": "Összegyűlik Org-nál",
+    "unlimberTime": "Felállási idő"
   },
   "category": "Kategória",
   "damageResistances": "Sebzés ellenállás",
@@ -286,6 +288,7 @@
   "to": "to",
   "lBy": "by",
   "terrainHitboxHeight": "Környezet Hitboxjának Magassága",
+  "Terrain": "Terep",
   "statusEffects": "Státusz Effektek",
   "projectileAbsorption": "Lövedékelnyelés",
   "terrainPName": "Terep: {{name}}",
@@ -754,5 +757,8 @@
   },
   "kills": "Megsemmisítések",
   "rewards": "Jutalmak",
-  "max": "Maximális"
+  "max": "Maximális",
+  "noAmmoRegain": "Nincs lőszer-visszanyerés",
+  "flankMeleeOrgModifier": "Szárnyi közelharci org módosító",
+  "rearCharge": "Hátba támadás"
 }

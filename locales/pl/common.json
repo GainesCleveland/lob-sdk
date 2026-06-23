@@ -228,6 +228,7 @@
     "org": "Organizacja",
     "stamina": "Wytrzymałość",
     "walkMovement": "Marsz",
+    "runMovement": "Bieg",
     "movement": "Ruch",
     "meleeAttack": "Atak Wręcz",
     "meleeDefense": "Obrona Wręcz",
@@ -253,7 +254,8 @@
     "shattersAtOrg": "Rozpada Się Przy Org",
     "routesAtOrg": "Ucieka Przy Org",
     "recoversAtOrg": "Odzyskuje Przy Org",
-    "ralliesAtOrg": "Zbiera Się Przy Org"
+    "ralliesAtOrg": "Zbiera Się Przy Org",
+    "unlimberTime": "Czas rozstawienia"
   },
   "category": "Kategoria",
   "damageResistances": "Odporność na Obrażenia",
@@ -289,6 +291,7 @@
   "damageModifierByTargetHp": "Modyfikator Obrażeń według HP Celu",
   "lBy": "przez",
   "terrainHitboxHeight": "Wysokość Hitboxa Terenu",
+  "Terrain": "Teren",
   "statusEffects": "Efekty",
   "projectileAbsorption": "Absorpcja Pocisków",
   "terrainPName": "Teren: {{name}}",
@@ -915,5 +918,8 @@
     "allSeen": "Zobaczyłeś wszystkie lekcje samouczka.",
     "viewMissed": "Zobacz pominięte lekcje"
   },
-  "max": "Maksymalny"
+  "max": "Maksymalny",
+  "noAmmoRegain": "Brak odzyskiwania amunicji",
+  "flankMeleeOrgModifier": "Modyfikator org. wręcz z flanki",
+  "rearCharge": "Szarża od tyłu"
 }

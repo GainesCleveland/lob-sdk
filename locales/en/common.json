@@ -239,6 +239,7 @@
     "stamina": "Stamina",
     "supply": "Supply",
     "walkMovement": "Walk",
+    "runMovement": "Run",
     "movement": "Movement",
     "meleeAttack": "Melee Attack",
     "meleeDefense": "Melee Defense",
@@ -267,7 +268,8 @@
     "shattersAtOrg": "Shatters At Org",
     "routesAtOrg": "Routes At Org",
     "recoversAtOrg": "Recovers At Org",
-    "ralliesAtOrg": "Rallies At Org"
+    "ralliesAtOrg": "Rallies At Org",
+    "unlimberTime": "Unlimber Time"
   },
   "category": "Category",
   "routingBehavior": "Routing Behavior",
@@ -1003,5 +1005,8 @@
     "description": "Each lesson covers a situation worth knowing.",
     "allSeen": "You saw every lesson the tutorial has to offer.",
     "viewMissed": "View missed lessons"
-  }
+  },
+  "noAmmoRegain": "No ammo regain",
+  "flankMeleeOrgModifier": "Flank melee org modifier",
+  "rearCharge": "Rear charge"
 }

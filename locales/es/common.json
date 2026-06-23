@@ -223,6 +223,7 @@
     "org": "Organización",
     "stamina": "Resistencia",
     "walkMovement": "Caminar",
+    "runMovement": "Correr",
     "movement": "Movimiento",
     "meleeAttack": "Ataque cuerpo a cuerpo",
     "meleeDefense": "Defensa cuerpo a cuerpo",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Se Desintegra En Org",
     "routesAtOrg": "Huye En Org",
     "recoversAtOrg": "Se Recupera En Org",
-    "ralliesAtOrg": "Se Reagrupa En Org"
+    "ralliesAtOrg": "Se Reagrupa En Org",
+    "unlimberTime": "Tiempo de despliegue"
   },
   "category": "Categoría",
   "damageResistances": "Resistencias al Daño",
@@ -285,6 +287,7 @@
   "to": "a",
   "lBy": "por",
   "terrainHitboxHeight": "Altura de la hitbox del terreno",
+  "Terrain": "Terreno",
   "statusEffects": "Efectos de estado",
   "projectileAbsorption": "Absorción de proyectiles",
   "terrainPName": "Terreno: {{name}}",
@@ -879,5 +882,8 @@
     "allSeen": "Viste todas las lecciones del tutorial.",
     "viewMissed": "Ver lecciones que faltan"
   },
-  "max": "Máximo"
+  "max": "Máximo",
+  "noAmmoRegain": "Sin recuperación de munición",
+  "flankMeleeOrgModifier": "Modificador de org en cuerpo a cuerpo de flanco",
+  "rearCharge": "Carga por retaguardia"
 }

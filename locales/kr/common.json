@@ -234,6 +234,7 @@
     "org": "조직력",
     "stamina": "활력",
     "walkMovement": "보행",
+    "runMovement": "달리기",
     "movement": "기동력",
     "meleeAttack": "근접전투력",
     "meleeDefense": "근접방어력",
@@ -260,7 +261,8 @@
     "shattersAtOrg": "조직력에서 붕괴",
     "routesAtOrg": "조직력에서 패주",
     "recoversAtOrg": "조직력에서 회복",
-    "ralliesAtOrg": "조직력에서 재편성"
+    "ralliesAtOrg": "조직력에서 재편성",
+    "unlimberTime": "전개 시간"
   },
   "category": "유형",
   "routingBehavior": "궤멸 중 행동",
@@ -978,5 +980,8 @@
     "description": "각 레슨은 알아둘 만한 상황을 다룹니다.",
     "allSeen": "튜토리얼의 모든 레슨을 보셨습니다.",
     "viewMissed": "놓친 레슨 보기"
-  }
+  },
+  "noAmmoRegain": "탄약 보충 없음",
+  "flankMeleeOrgModifier": "측면 근접 조직력 수정치",
+  "rearCharge": "후방 돌격"
 }

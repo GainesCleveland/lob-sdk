@@ -225,6 +225,7 @@
     "org": "Organizasyon",
     "stamina": "Dayanıklılık",
     "movement": "Hareket",
+    "runMovement": "Koşu",
     "meleeAttack": "Yakın Saldırı",
     "meleeDefense": "Yakın Savunma",
     "chargeBonus": "Hücum Bonusu",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Org'da Parçalanır",
     "routesAtOrg": "Org'da Kaçar",
     "recoversAtOrg": "Org'da İyileşir",
-    "ralliesAtOrg": "Org'da Toplanır"
+    "ralliesAtOrg": "Org'da Toplanır",
+    "unlimberTime": "Konuşlanma süresi"
   },
   "category": "Kategori",
   "damageResistances": "Hasar Dirençleri",
@@ -286,6 +288,7 @@
   "to": "e",
   "lBy": "tarafından",
   "terrainHitboxHeight": "Arazi Çarpışma Kutusu Yüksekliği",
+  "Terrain": "Arazi",
   "statusEffects": "Durum Etkileri",
   "projectileAbsorption": "Mermi Emilimi",
   "terrainPName": "Arazi: {{name}}",
@@ -795,5 +798,8 @@
     "goToGame": "Maça git",
     "ignore": "Yoksay"
   },
-  "max": "Maksimum"
+  "max": "Maksimum",
+  "noAmmoRegain": "Cephane yenilenmez",
+  "flankMeleeOrgModifier": "Flank yakın dövüş org değiştirici",
+  "rearCharge": "Arkadan hücum"
 }

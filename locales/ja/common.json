@@ -239,6 +239,7 @@
     "stamina": "スタミナ",
     "supply": "補給",
     "walkMovement": "歩行",
+    "runMovement": "走行",
     "movement": "移動",
     "meleeAttack": "白兵攻撃",
     "meleeDefense": "白兵防御",
@@ -267,7 +268,8 @@
     "shattersAtOrg": "組織度で崩壊",
     "routesAtOrg": "組織度で敗走",
     "recoversAtOrg": "組織度で回復",
-    "ralliesAtOrg": "組織度で再編成"
+    "ralliesAtOrg": "組織度で再編成",
+    "unlimberTime": "展開時間"
   },
   "category": "カテゴリー",
   "routingBehavior": "敗走時の行動",
@@ -1003,5 +1005,8 @@
     "description": "各レッスンは知っておくべき状況を扱います。",
     "allSeen": "チュートリアルのすべてのレッスンを見ました。",
     "viewMissed": "見逃したレッスンを表示"
-  }
+  },
+  "noAmmoRegain": "弾薬の補充なし",
+  "flankMeleeOrgModifier": "側面白兵組織修正",
+  "rearCharge": "背後からの突撃"
 }

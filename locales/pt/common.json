@@ -225,6 +225,7 @@
     "org": "Organização",
     "stamina": "Resistência",
     "movement": "Movimento",
+    "runMovement": "Correr",
     "meleeAttack": "Ataque Corpo a Corpo",
     "meleeDefense": "Defesa Corpo a Corpo",
     "chargeBonus": "Bônus de Carga",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Desintegra Em Org",
     "routesAtOrg": "Foge Em Org",
     "recoversAtOrg": "Recupera Em Org",
-    "ralliesAtOrg": "Reagrupa Em Org"
+    "ralliesAtOrg": "Reagrupa Em Org",
+    "unlimberTime": "Tempo de posicionamento"
   },
   "category": "Categoria",
   "damageResistances": "Resistências a Dano",
@@ -286,6 +288,7 @@
   "to": "para",
   "lBy": "por",
   "terrainHitboxHeight": "Altura da Hitbox do Terreno",
+  "Terrain": "Terreno",
   "statusEffects": "Efeitos de Status",
   "projectileAbsorption": "Absorção de Projéteis",
   "terrainPName": "Terreno: {{name}}",
@@ -796,5 +799,8 @@
     "goToGame": "Ir para a partida",
     "ignore": "Ignorar"
   },
-  "max": "Máximo"
+  "max": "Máximo",
+  "noAmmoRegain": "Sem recuperação de munição",
+  "flankMeleeOrgModifier": "Modificador org. corpo a corpo de flanco",
+  "rearCharge": "Carga pela retaguarda"
 }

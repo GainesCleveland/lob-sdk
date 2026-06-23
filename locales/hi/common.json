@@ -237,6 +237,7 @@
     "org": "संगठन",
     "stamina": "सहनशक्ति",
     "walkMovement": "चलना",
+    "runMovement": "दौड़",
     "movement": "गति",
     "meleeAttack": "हाथापाई हमला",
     "meleeDefense": "हाथापाई रक्षा",
@@ -263,7 +264,8 @@
     "shattersAtOrg": "संगठन पर विघटित होता है",
     "routesAtOrg": "संगठन पर भाग जाता है",
     "recoversAtOrg": "संगठन पर ठीक होता है",
-    "ralliesAtOrg": "संगठन पर इकट्ठा होता है"
+    "ralliesAtOrg": "संगठन पर इकट्ठा होता है",
+    "unlimberTime": "तैनाती समय"
   },
   "category": "श्रेणी",
   "routingBehavior": "भागने का व्यवहार",
@@ -985,5 +987,8 @@
     "description": "हर पाठ जानने योग्य स्थिति को कवर करता है.",
     "allSeen": "आपने ट्यूटोरियल के सभी पाठ देख लिए.",
     "viewMissed": "छूटे हुए पाठ देखें"
-  }
+  },
+  "noAmmoRegain": "गोला-बारूद पुनः नहीं मिलता",
+  "flankMeleeOrgModifier": "फ्लैंक हाथापाई संगठन संशोधक",
+  "rearCharge": "पीछे से आक्रमण"
 }

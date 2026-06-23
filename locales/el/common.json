@@ -236,6 +236,7 @@
     "org": "Οργάνωση",
     "stamina": "Σθένος",
     "walkMovement": "Περπάτημα",
+    "runMovement": "Τρέξιμο",
     "movement": "Κίνηση",
     "meleeAttack": "Melee Attack",
     "meleeDefense": "Melee Defense",
@@ -262,7 +263,8 @@
     "shattersAtOrg": "Καταρρέει Στο Org",
     "routesAtOrg": "Τρέπει Στο Org",
     "recoversAtOrg": "Αναρρώνει Στο Org",
-    "ralliesAtOrg": "Συγκεντρώνεται Στο Org"
+    "ralliesAtOrg": "Συγκεντρώνεται Στο Org",
+    "unlimberTime": "Χρόνος ανάπτυξης"
   },
   "category": "Κατηγορία",
   "damageResistances": "Αντιστάσεις σε φθορές",
@@ -298,6 +300,7 @@
   "damageModifierByTargetHp": "Τροποποιητής Ζημιάς από Target HP",
   "lBy": "Από",
   "terrainHitboxHeight": "Ύψος Hitbox εδάφους",
+  "Terrain": "Έδαφος",
   "statusEffects": "Εφέ κατάστασης",
   "projectileAbsorption": "Απορρόφηση Βλημάτων",
   "terrainPName": "Εδαφος: {{name}}",
@@ -936,5 +939,8 @@
     "allSeen": "Είδες όλα τα μαθήματα της εκπαίδευσης.",
     "viewMissed": "Δες τα μαθήματα που έχασες"
   },
-  "max": "Μέγιστο"
+  "max": "Μέγιστο",
+  "noAmmoRegain": "Χωρίς ανάκτηση πυρομαχικών",
+  "flankMeleeOrgModifier": "Τροποποιητής org πλευρικής μάχης",
+  "rearCharge": "Επίθεση από τα νώτα"
 }

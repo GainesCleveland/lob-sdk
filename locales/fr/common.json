@@ -214,6 +214,7 @@
     "org": "Organisation",
     "stamina": "Endurance",
     "movement": "Mouvement",
+    "runMovement": "Course",
     "meleeAttack": "Attaque en mêlée",
     "meleeDefense": "Défense en mêlée",
     "chargeBonus": "Bonus en charge",
@@ -237,7 +238,8 @@
     "shattersAtOrg": "Se Désintègre À Org",
     "routesAtOrg": "Fuit À Org",
     "recoversAtOrg": "Se Rétablit À Org",
-    "ralliesAtOrg": "Se Rassemble À Org"
+    "ralliesAtOrg": "Se Rassemble À Org",
+    "unlimberTime": "Temps de mise en batterie"
   },
   "category": "Catégorie",
   "damageResistances": "Résistances aux dégâts",
@@ -275,6 +277,7 @@
   "to": "vers",
   "lBy": "par",
   "terrainHitboxHeight": "Hauteur du masque de collision du terrain",
+  "Terrain": "Terrain",
   "statusEffects": "Effets de statuts",
   "projectileAbsorption": "Absorption des projectiles",
   "terrainPName": "Terrain: {{name}}",
@@ -808,5 +811,8 @@
     "goToGame": "Aller à la partie",
     "ignore": "Ignorer"
   },
-  "max": "Maximal"
+  "max": "Maximal",
+  "noAmmoRegain": "Pas de regain de munitions",
+  "flankMeleeOrgModifier": "Modificateur org. mêlée de flanc",
+  "rearCharge": "Charge par l'arrière"
 }

@@ -225,6 +225,7 @@
     "org": "Бойовий дух",
     "stamina": "Витривалість",
     "movement": "Рух",
+    "runMovement": "Біг",
     "meleeAttack": "Рукопашна атака",
     "meleeDefense": "Рукопашний захист",
     "chargeBonus": "Бонус при натиску",
@@ -248,7 +249,8 @@
     "shattersAtOrg": "Руйнується При Org",
     "routesAtOrg": "Тікає При Org",
     "recoversAtOrg": "Відновлюється При Org",
-    "ralliesAtOrg": "Збирається При Org"
+    "ralliesAtOrg": "Збирається При Org",
+    "unlimberTime": "Час розгортання"
   },
   "category": "Категорія",
   "damageResistances": "Стійкість до ушкоджень",
@@ -286,6 +288,7 @@
   "to": "до",
   "lBy": "від",
   "terrainHitboxHeight": "Висота Колізійної Зони Місцевості",
+  "Terrain": "Місцевість",
   "statusEffects": "Ефекти статусу",
   "projectileAbsorption": "Поглинання Снарядів",
   "terrainPName": "Ландшафт: {{name}}",
@@ -811,5 +814,8 @@
     "goToGame": "До гри",
     "ignore": "Ігнорувати"
   },
-  "max": "Макс."
+  "max": "Макс.",
+  "noAmmoRegain": "Без поповнення боєприпасів",
+  "flankMeleeOrgModifier": "Модифікатор бойового духу при фланговому бої",
+  "rearCharge": "Атака з тилу"
 }

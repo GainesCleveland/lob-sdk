@@ -226,6 +226,7 @@
     "org": "Organisasi",
     "stamina": "Stamina",
     "movement": "Pergerakan",
+    "runMovement": "Lari",
     "meleeAttack": "Serangan Jarak Dekat",
     "meleeDefense": "Ketahanan Jarak Dekat",
     "chargeBonus": "Bonus Serangan",
@@ -249,7 +250,8 @@
     "shattersAtOrg": "Hancur Di Org",
     "routesAtOrg": "Kabur Di Org",
     "recoversAtOrg": "Pulih Di Org",
-    "ralliesAtOrg": "Berkumpul Di Org"
+    "ralliesAtOrg": "Berkumpul Di Org",
+    "unlimberTime": "Waktu penyiapan"
   },
   "category": "Kategori",
   "damageResistances": "Resistensi Kerusakan",
@@ -287,6 +289,7 @@
   "to": "ke",
   "lBy": "oleh",
   "terrainHitboxHeight": "Ketinggian Hitbox Medan",
+  "Terrain": "Medan",
   "statusEffects": "Status Efek",
   "projectileAbsorption": "Proyektil Absorption",
   "terrainPName": "Medan: {{name}}",
@@ -799,5 +802,8 @@
     "goToGame": "Buka pertandingan",
     "ignore": "Abaikan"
   },
-  "max": "Maksimal"
+  "max": "Maksimal",
+  "noAmmoRegain": "Tanpa pemulihan amunisi",
+  "flankMeleeOrgModifier": "Modifier org jarak dekat sisi",
+  "rearCharge": "Serangan dari belakang"
 }
