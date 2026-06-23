@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Priority weight per target unit category. Higher values are preferred targets for autofire.",
-      "fieldLabel": "Priority by target category"
+      "fieldLabel": "Priority by target category",
+      "defaultRange": "Default range",
+      "warnOnMax": "Warn that Max wastes ammo",
+      "warnOnMaxHint": "Shows an ammo-waste warning on the Max tier (e.g. artillery)."
     },
     "allowedOrders": {
       "legend": "Allowed orders",

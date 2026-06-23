@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Peso di priorità per categoria di unità bersaglio. I valori più alti sono bersagli preferiti per il fuoco automatico.",
-      "fieldLabel": "Priorità per categoria bersaglio"
+      "fieldLabel": "Priorità per categoria bersaglio",
+      "defaultRange": "Gittata predefinita",
+      "warnOnMax": "Avvisa che Massimo spreca munizioni",
+      "warnOnMaxHint": "Mostra un avviso di spreco di munizioni sul livello Massimo (es. artiglieria)."
     },
     "allowedOrders": {
       "legend": "Ordini consentiti",

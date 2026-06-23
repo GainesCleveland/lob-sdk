@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Prioritási súly célpont-egységkategóriánként. A magasabb értékek előnyben részesített célpontok az automatikus tüzeléshez.",
-      "fieldLabel": "Prioritás célkategória szerint"
+      "fieldLabel": "Prioritás célkategória szerint",
+      "defaultRange": "Alapértelmezett hatótáv",
+      "warnOnMax": "Figyelmeztessen, hogy a Maximális lőszert pazarol",
+      "warnOnMaxHint": "Lőszerpazarlási figyelmeztetést jelenít meg a Maximális fokozaton (pl. tüzérség)."
     },
     "allowedOrders": {
       "legend": "Engedélyezett parancsok",

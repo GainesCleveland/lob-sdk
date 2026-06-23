@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Poids de priorité par catégorie d'unité cible. Les valeurs plus élevées sont des cibles préférées pour le tir automatique.",
-      "fieldLabel": "Priorité par catégorie de cible"
+      "fieldLabel": "Priorité par catégorie de cible",
+      "defaultRange": "Portée par défaut",
+      "warnOnMax": "Avertir que Maximal gaspille des munitions",
+      "warnOnMaxHint": "Affiche un avertissement de gaspillage de munitions au niveau Maximal (par ex. artillerie)."
     },
     "allowedOrders": {
       "legend": "Ordres autorisés",

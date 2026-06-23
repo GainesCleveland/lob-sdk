@@ -89,6 +89,11 @@ export interface UnitCategoryTemplate {
    * effective range instead of wasting shots at the near-useless long range.
    */
   defaultAutofireRange?: EngagementRange;
+  /**
+   * When true, the autofire selector warns that the `Max` tier spends ammo for
+   * minimal damage (e.g. artillery). Independent of `defaultAutofireRange`.
+   */
+  warnOnMaxAutofire?: boolean;
   routingBehavior?: RoutingBehavior;
   enfiladeFire?: EnfiladeFireConfig;
   rearFire?: RearFireConfig;

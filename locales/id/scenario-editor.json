@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Bobot prioritas per kategori unit target. Nilai lebih tinggi adalah target yang lebih diutamakan untuk tembak otomatis.",
-      "fieldLabel": "Prioritas menurut kategori target"
+      "fieldLabel": "Prioritas menurut kategori target",
+      "defaultRange": "Jarak default",
+      "warnOnMax": "Peringatkan bahwa Maksimal memboroskan amunisi",
+      "warnOnMaxHint": "Menampilkan peringatan pemborosan amunisi pada tingkat Maksimal (mis. artileri)."
     },
     "allowedOrders": {
       "legend": "Perintah yang diizinkan",

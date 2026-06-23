@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Waga priorytetu dla każdej kategorii celu. Wyższe wartości to preferowane cele ognia automatycznego.",
-      "fieldLabel": "Priorytet według kategorii celu"
+      "fieldLabel": "Priorytet według kategorii celu",
+      "defaultRange": "Domyślny zasięg",
+      "warnOnMax": "Ostrzegaj, że Maksymalny marnuje amunicję",
+      "warnOnMaxHint": "Pokazuje ostrzeżenie o marnowaniu amunicji na poziomie Maksymalny (np. artyleria)."
     },
     "allowedOrders": {
       "legend": "Dozwolone rozkazy",

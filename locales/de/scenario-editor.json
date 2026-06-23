@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Prioritätsgewicht pro Ziel-Einheitenkategorie. Höhere Werte sind bevorzugte Ziele für Autofeuer.",
-      "fieldLabel": "Priorität nach Zielkategorie"
+      "fieldLabel": "Priorität nach Zielkategorie",
+      "defaultRange": "Standardreichweite",
+      "warnOnMax": "Warnen, dass Maximal Munition verschwendet",
+      "warnOnMaxHint": "Zeigt auf der Stufe „Maximal“ eine Munitionsverschwendungs-Warnung (z. B. Artillerie)."
     },
     "allowedOrders": {
       "legend": "Erlaubte Befehle",

@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "对每个目标单位类别的优先级权重。数值越高越优先被自动开火选为目标。",
-      "fieldLabel": "按目标类别的优先级"
+      "fieldLabel": "按目标类别的优先级",
+      "defaultRange": "默认距离",
+      "warnOnMax": "提示“最大”会浪费弹药",
+      "warnOnMaxHint": "在“最大”档位显示弹药浪费提示（例如炮兵）。"
     },
     "allowedOrders": {
       "legend": "允许指令",

@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Trọng số ưu tiên theo từng danh mục đơn vị mục tiêu. Giá trị cao hơn là mục tiêu ưu tiên cho tự động bắn.",
-      "fieldLabel": "Ưu tiên theo danh mục mục tiêu"
+      "fieldLabel": "Ưu tiên theo danh mục mục tiêu",
+      "defaultRange": "Tầm bắn mặc định",
+      "warnOnMax": "Cảnh báo rằng Tối đa lãng phí đạn",
+      "warnOnMaxHint": "Hiển thị cảnh báo lãng phí đạn ở mức Tối đa (vd. pháo binh)."
     },
     "allowedOrders": {
       "legend": "Lệnh được phép",

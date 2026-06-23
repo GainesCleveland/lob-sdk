@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "표적 부대 유형별 우선 순위 가중치. 값이 높을수록 자동 사격이 선호하는 표적입니다.",
-      "fieldLabel": "표적 유형별 우선 순위"
+      "fieldLabel": "표적 유형별 우선 순위",
+      "defaultRange": "기본 사거리",
+      "warnOnMax": "최대 단계가 탄약을 낭비한다고 경고",
+      "warnOnMaxHint": "최대 단계에서 탄약 낭비 경고를 표시합니다 (예: 포병)."
     },
     "allowedOrders": {
       "legend": "허용 명령",

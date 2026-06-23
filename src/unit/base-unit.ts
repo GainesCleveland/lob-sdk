@@ -183,6 +183,8 @@ export abstract class BaseUnit extends Entity {
   get autofirePriority(): Partial<Record<UnitCategoryId, number>> | null { return this.categoryTemplate.autofirePriority ?? null; }
   /** Default autofire engagement tier for this category (see `autofireRange`); `Max` when unset. */
   get defaultAutofireRange(): EngagementRange { return this.categoryTemplate.defaultAutofireRange ?? EngagementRange.Max; }
+  /** Whether the autofire selector should warn that the `Max` tier wastes ammo for this category. */
+  get warnsOnMaxAutofire(): boolean { return this.categoryTemplate.warnOnMaxAutofire === true; }
   
   get enfiladeFireDamageModifier(): number { return this.categoryTemplate.enfiladeFire?.damageModifier ?? 0; }
   get enfiladeFireOrgModifier(): number { return this.categoryTemplate.enfiladeFire?.orgModifier ?? 0; }

@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "対象ユニットカテゴリーごとの優先度の重み。値が高いほど自動射撃で優先される対象です。",
-      "fieldLabel": "対象カテゴリー別の優先度"
+      "fieldLabel": "対象カテゴリー別の優先度",
+      "defaultRange": "既定の射程",
+      "warnOnMax": "「最大」は弾薬を浪費すると警告する",
+      "warnOnMaxHint": "「最大」段階で弾薬浪費の警告を表示します（例：砲兵）。"
     },
     "allowedOrders": {
       "legend": "許可される命令",

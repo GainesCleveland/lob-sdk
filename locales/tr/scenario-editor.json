@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Hedef birim kategorisi başına öncelik ağırlığı. Yüksek değerler otomatik ateş için tercih edilen hedeflerdir.",
-      "fieldLabel": "Hedef kategorisine göre öncelik"
+      "fieldLabel": "Hedef kategorisine göre öncelik",
+      "defaultRange": "Varsayılan menzil",
+      "warnOnMax": "Maksimum cephane harcadığını uyar",
+      "warnOnMaxHint": "Maksimum kademesinde cephane israfı uyarısı gösterir (ör. topçu)."
     },
     "allowedOrders": {
       "legend": "İzin verilen emirler",

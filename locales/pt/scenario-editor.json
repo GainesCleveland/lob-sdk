@@ -271,7 +271,10 @@
     },
     "autofire": {
       "description": "Peso de prioridade por categoria de unidade alvo. Valores maiores são alvos preferidos para o tiro automático.",
-      "fieldLabel": "Prioridade por categoria de alvo"
+      "fieldLabel": "Prioridade por categoria de alvo",
+      "defaultRange": "Alcance padrão",
+      "warnOnMax": "Avisar que Máximo desperdiça munição",
+      "warnOnMaxHint": "Mostra um aviso de desperdício de munição no nível Máximo (ex.: artilharia)."
     },
     "allowedOrders": {
       "legend": "Ordens permitidas",
