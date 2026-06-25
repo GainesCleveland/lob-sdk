@@ -6,6 +6,7 @@
     "OAUTH_ACCOUNT": "该账号已使用谷歌账号注册过。请使用谷歌账号登录。"
   },
   "USER_IS_BANNED": "用户被封禁",
+  "PARTY_REQUIRES_TEAM_MODE": "你的队伍只能在团队模式中排队。请选择一个支持团队游戏的模式。",
   "NOT_CUSTOM_GAME": "只有自定义对局可以在大厅未满时开始。",
   "GAME_ALREADY_STARTED": "本场对局已开始。",
   "GAME_ALREADY_FINISHED": "本场对局已结束。",

@@ -3,6 +3,7 @@
   "INCORRECT_PASSWORD": "Mật khẩu không đúng",
   "START_TIME_MUST_BE_IN_THE_FUTURE": "Thời gian bắt đầu phải ở tương lai",
   "USER_IS_BANNED": "Người dùng bị cấm",
+  "PARTY_REQUIRES_TEAM_MODE": "Nhóm của bạn chỉ có thể vào hàng chờ ở các chế độ theo đội. Hãy chọn một chế độ hỗ trợ chơi theo đội.",
   "auth": {
     "OAUTH_ACCOUNT": "Tài khoản này đã được đăng ký với Google. Vui lòng sử dụng phương thức đăng nhập Google."
   },

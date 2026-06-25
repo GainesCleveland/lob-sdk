@@ -3,6 +3,7 @@
   "INCORRECT_PASSWORD": "Incorrect password",
   "START_TIME_MUST_BE_IN_THE_FUTURE": "Start time must be in the future",
   "USER_IS_BANNED": "User is banned",
+  "PARTY_REQUIRES_TEAM_MODE": "Your party can only queue team modes. Pick a mode that supports team play.",
   "auth": {
     "OAUTH_ACCOUNT": "This account was registered with Google. Please use the Google login method."
   },

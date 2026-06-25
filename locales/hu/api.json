@@ -1,5 +1,6 @@
 {
   "USER_REGISTERED": "A regisztrációd befejeződött! Ellenőrizd az emailjeidet egy megerősítő linkért. Ha nem találod meg azonnal, nézd meg a spam mappádat.",
+  "PARTY_REQUIRES_TEAM_MODE": "A csapatod csak csapatmódokra állhat sorba. Válassz olyan módot, amely támogatja a csapatjátékot.",
   "NOT_CUSTOM_GAME": "Csak egyéni játékok indíthatók a lobby megtelte előtt.",
   "GAME_ALREADY_STARTED": "Ez a játék már elkezdődött.",
   "GAME_ALREADY_FINISHED": "Ez a játék már véget ért.",

@@ -1,5 +1,6 @@
 {
   "USER_REGISTERED": "Votre inscription est terminée ! Vérifiez votre boîte de réception pour un lien de confirmation. Si vous ne le trouvez pas immédiatement, vérifiez votre dossier de spam.",
+  "PARTY_REQUIRES_TEAM_MODE": "Votre groupe ne peut rejoindre la file que pour les modes en équipe. Choisissez un mode qui prend en charge le jeu en équipe.",
   "NOT_CUSTOM_GAME": "Seules les parties personnalisées peuvent être lancées avant que le salon soit plein.",
   "GAME_ALREADY_STARTED": "Cette partie a déjà commencé.",
   "GAME_ALREADY_FINISHED": "Cette partie est déjà terminée.",

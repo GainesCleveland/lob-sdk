@@ -26,6 +26,7 @@ import {
   PlayerBattleMetadata,
   UnitDto,
   Size,
+  TeamSize,
   UnitTemplate,
   FormationTemplate,
   OrderTemplate,
@@ -118,6 +119,11 @@ export interface BattleTypeTemplate {
   maxTurn?: number;
   /** Whether this battle type is allowed in ranked matchmaking (defaults to false when omitted). */
   ranked?: boolean;
+  /**
+   * Fixed team size (players per side) for this battle type in matchmaking.
+   * Defaults to 1v1 when omitted; read via GameDataManager.getBattleTypeTeamSize.
+   */
+  teamSize?: TeamSize;
 }
 
 /**

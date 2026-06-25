@@ -1,5 +1,6 @@
 {
   "USER_REGISTERED": "Kaydınız tamamlandı! Onay bağlantısı için e-postanızı kontrol edin. Eğer hemen bulamazsanız, spam klasörünüze bakın.",
+  "PARTY_REQUIRES_TEAM_MODE": "Grubun yalnızca takım modlarında sıraya girebilir. Takım oyununu destekleyen bir mod seç.",
   "NOT_CUSTOM_GAME": "Lobisi dolmadan önce yalnızca özel oyunlar başlatılabilir.",
   "GAME_ALREADY_STARTED": "Bu oyun zaten başladı.",
   "GAME_ALREADY_FINISHED": "Bu oyun zaten bitti.",

@@ -11,6 +11,7 @@ import {
   TerrainType,
   TerrainConfig,
   Size,
+  TeamSize,
   CustomTerrainCategoryOverride,
 } from "@lob-sdk/types";
 import { RawScenarioInput, normalizeScenario } from "@lob-sdk/scenario";
@@ -737,6 +738,17 @@ export class GameDataManager {
       ? this.tryGetBattleType(battleType)?.maxTurn
       : undefined;
     return fromBattleType ?? this.getGameConstants().DEFAULT_MAX_TURN;
+  }
+
+  /**
+   * Gets the fixed team size (players per side) for a battle type, defaulting
+   * to 1v1 when the battle type has no explicit teamSize. Team size in
+   * matchmaking is a property of the battle type, not a separate user choice.
+   * @param battleType - The dynamic battle type.
+   * @returns The team size for this battle type.
+   */
+  public getBattleTypeTeamSize(battleType: DynamicBattleType): TeamSize {
+    return this.tryGetBattleType(battleType)?.teamSize ?? TeamSize.OneVsOne;
   }
 
   /**

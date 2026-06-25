@@ -20,7 +20,8 @@
     "mapSize": ["s"],
     "premiumCurrencyChance": 2,
     "maxTurn": 32,
-    "ranked": false
+    "ranked": true,
+    "teamSize": "2v2"
   },
   "clash": {
     "manpower": 3450,

@@ -3,6 +3,7 @@
   "INCORRECT_PASSWORD": "गलत पासवर्ड",
   "START_TIME_MUST_BE_IN_THE_FUTURE": "शुरुआती समय भविष्य में होना चाहिए",
   "USER_IS_BANNED": "उपयोगकर्ता प्रतिबंधित है",
+  "PARTY_REQUIRES_TEAM_MODE": "आपका समूह केवल टीम मोड में कतार में लग सकता है। ऐसा मोड चुनें जो टीम खेल का समर्थन करता हो।",
   "auth": {
     "OAUTH_ACCOUNT": "यह खाता Google के साथ पंजीकृत था। कृपया Google लॉगिन विधि का उपयोग करें।"
   },

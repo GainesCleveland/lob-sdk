@@ -1,5 +1,6 @@
 {
   "USER_REGISTERED": "Seu registro está concluído! Verifique seu e-mail para um link de confirmação. Se não o encontrar imediatamente, verifique sua pasta de spam.",
+  "PARTY_REQUIRES_TEAM_MODE": "Seu grupo só pode entrar na fila em modos de equipe. Escolha um modo que suporte o jogo em equipe.",
   "NOT_CUSTOM_GAME": "Apenas partidas personalizadas podem ser iniciadas antes do lobby encher.",
   "GAME_ALREADY_STARTED": "Esta partida já começou.",
   "GAME_ALREADY_FINISHED": "Esta partida já terminou.",

@@ -3,6 +3,7 @@
   "INCORRECT_PASSWORD": "Hasło niepoprawne",
   "START_TIME_MUST_BE_IN_THE_FUTURE": "Czas rozpoczęcia musi być w przyszłości",
   "USER_IS_BANNED": "Użytkownik zablokowany",
+  "PARTY_REQUIRES_TEAM_MODE": "Twoja drużyna może dołączyć do kolejki tylko w trybach drużynowych. Wybierz tryb obsługujący grę zespołową.",
   "auth": {
     "OAUTH_ACCOUNT": "To konto zostało zarejestrowane przez Google. Proszę użyć logowania przez Google"
   },

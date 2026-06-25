@@ -1,5 +1,6 @@
 {
   "USER_REGISTERED": "Pendaftaran Anda telah selesai! Periksa email Anda untuk mendapatkan tautan konfirmasi. Jika Anda tidak segera menemukannya, periksa folder spam Anda.",
+  "PARTY_REQUIRES_TEAM_MODE": "Party Anda hanya bisa antre di mode tim. Pilih mode yang mendukung permainan tim.",
   "NOT_CUSTOM_GAME": "Hanya game kustom yang bisa dimulai sebelum lobi penuh.",
   "GAME_ALREADY_STARTED": "Permainan ini sudah dimulai.",
   "GAME_ALREADY_FINISHED": "Permainan ini sudah selesai.",
