@@ -2,7 +2,6 @@
   "version": 1,
   "name": "name",
   "description": "description",
-  "ranked": true,
   "baseTerrain": 0,
   "instructions": [
     {
