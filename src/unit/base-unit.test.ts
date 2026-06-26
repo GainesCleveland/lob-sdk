@@ -293,15 +293,30 @@ describe("BaseUnit", () => {
   });
 
   describe("calculateObbCorners()", () => {
-    // "line" collides as a 32x8 OBB -> getUnitDimensions { width:8, height:32 }.
-    const makeLineUnit = () => {
-      const u = new TestUnit(20, gameDataManager);
-      u.currentFormation = "line";
+    // A fixed mock OBB (frontage 32, depth 8 -> getUnitDimensions { width:8,
+    // height:32 }) so these geometry assertions don't read the live `line`
+    // formation: change the real formation sizes and this test stays green.
+    const makeObbUnit = () => {
+      const manager = GameDataManager.createWithCustomDefs("napoleonic", {
+        customUnitFormations: [
+          {
+            id: "test-obb",
+            baseSprite: "infantry/line",
+            collisionShape: {
+              type: CollisionShapeType.Obb,
+              frontage: 32,
+              depth: 8,
+            },
+          } as never,
+        ],
+      });
+      const u = new TestUnit(20, manager);
+      u.currentFormation = "test-obb";
       return u;
     };
 
     it("puts the front on +X (depth) and the frontage on Y at rotation 0", () => {
-      const u = makeLineUnit();
+      const u = makeObbUnit();
       u.rotation = 0;
       expect(u.calculateObbCorners()).toEqual([
         { x: -4, y: -16 },
@@ -312,7 +327,7 @@ describe("BaseUnit", () => {
     });
 
     it("rotates the corners by the unit's rotation (90deg maps local (x,y) -> (-y,x))", () => {
-      const u = makeLineUnit();
+      const u = makeObbUnit();
       u.rotation = Math.PI / 2;
       const [c0, , c2] = u.calculateObbCorners();
       expect(c0.x).toBeCloseTo(16);
@@ -322,7 +337,7 @@ describe("BaseUnit", () => {
     });
 
     it("honours an explicit rotation override, ignoring the unit's own", () => {
-      const u = makeLineUnit();
+      const u = makeObbUnit();
       u.rotation = 0;
       const [c0] = u.calculateObbCorners({ x: 0, y: 0 }, Math.PI / 2);
       expect(c0.x).toBeCloseTo(16);
