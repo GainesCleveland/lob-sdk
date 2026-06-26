@@ -115,6 +115,7 @@
     "objectivesSummary": "Objetivos {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Posição ao traçar linha (menor = à frente)",
     "title": "Editar formação personalizada",
     "collision": "Colisão",
     "collisionHelp": "Forma da área ocupada: um círculo (raio) ou um retângulo (frente ao longo da linha de frente, profundidade da frente para trás). Use raio 0 para nenhuma colisão (voo / fantasma).",

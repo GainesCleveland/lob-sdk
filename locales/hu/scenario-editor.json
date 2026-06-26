@@ -115,6 +115,7 @@
     "objectivesSummary": "Objektívák {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Vonalrajzolási rang (kisebb = elöl)",
     "title": "Egyéni formáció szerkesztése",
     "collision": "Ütközés",
     "collisionHelp": "Talajfelület alakja: kör (sugár) vagy téglalap (frontszélesség elöl, mélység elöl-hátra). Használj 0 sugarat, ha nincs ütközés (repülő / szellem).",

@@ -115,6 +115,7 @@
     "objectivesSummary": "Cele {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Ranga przy rysowaniu linii (niżej = z przodu)",
     "title": "Edytuj niestandardową formację",
     "collision": "Kolizja",
     "collisionHelp": "Kształt obszaru: okrąg (promień) lub prostokąt (szerokość frontu, głębokość od przodu do tyłu). Użyj promienia 0, aby wyłączyć kolizję (latanie / duch).",

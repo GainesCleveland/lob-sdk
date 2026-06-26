@@ -115,6 +115,7 @@
     "objectivesSummary": "Objectives {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Draw-line rank (lower = front)",
     "title": "Edit custom formation",
     "collision": "Collision",
     "collisionHelp": "Footprint shape: a circle (radius) or a rectangle (frontage across the front, depth front-to-back). Use radius 0 for no collision (flying / ghost).",

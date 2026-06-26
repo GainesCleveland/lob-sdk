@@ -115,6 +115,7 @@
     "objectivesSummary": "Objectifs {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Rang de tracé de ligne (plus bas = devant)",
     "title": "Modifier la formation personnalisée",
     "collision": "Collision",
     "collisionHelp": "Forme de l'empreinte : un cercle (rayon) ou un rectangle (front sur la largeur, profondeur d'avant en arrière). Utilisez un rayon de 0 pour aucune collision (vol / fantôme).",

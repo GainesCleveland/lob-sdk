@@ -115,6 +115,7 @@
     "objectivesSummary": "지점목표 {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "라인 그리기 순위 (낮을수록 앞열)",
     "title": "사용자 지정 진형 편집",
     "collision": "충돌",
     "collisionHelp": "점유 형태: 원(반지름) 또는 직사각형(정면 너비, 전후 깊이). 충돌이 없으려면(비행/유령) 반지름을 0으로 설정하세요.",

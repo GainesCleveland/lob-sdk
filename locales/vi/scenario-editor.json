@@ -115,6 +115,7 @@
     "objectivesSummary": "Mục tiêu {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Thứ hạng khi vẽ hàng (thấp hơn = phía trước)",
     "title": "Chỉnh sửa đội hình tùy chỉnh",
     "collision": "Va chạm",
     "collisionHelp": "Hình dạng vùng chiếm: hình tròn (bán kính) hoặc hình chữ nhật (mặt trận theo chiều trước, chiều sâu trước-sau). Dùng bán kính 0 để không va chạm (bay / bóng ma).",

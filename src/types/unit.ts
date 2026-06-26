@@ -433,6 +433,16 @@ export interface FormationTemplate {
   projectilePassThrough?: number;
 
   /**
+   * Rank of this formation when the draw-line control arranges a mixed selection
+   * into role-based ranks (lower = closer to the front of the drawn line). Units
+   * are grouped by this value and stacked front-to-back; empty ranks collapse, so a
+   * uniform selection lays out like a plain line. Unset sorts to the back. Because
+   * formation ids do not overlap across unit classes, this doubles as a per-class
+   * layer (e.g. `skirmish` ahead of `line`).
+   */
+  drawLineRank?: number;
+
+  /**
    * Effects applied when a unit switches to this formation.
    */
   effects?: Array<{

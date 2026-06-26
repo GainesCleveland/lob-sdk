@@ -115,6 +115,7 @@
     "objectivesSummary": "目標 {{pct}}%（{{vp}} VP）"
   },
   "formationModal": {
+    "drawLineRank": "ライン描画の序列（小さいほど前列）",
     "title": "カスタム隊形を編集",
     "collision": "衝突",
     "collisionHelp": "占有形状: 円（半径）または矩形（前面の正面幅、前後の奥行き）。衝突なし（飛行／ゴースト）にするには半径0を使用します。",

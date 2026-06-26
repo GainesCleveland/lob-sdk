@@ -1,6 +1,7 @@
 [
   {
     "id": "column",
+    "drawLineRank": 3,
     "collisionShape": { "type": 1, "frontage": 14, "depth": 18 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
@@ -22,6 +23,7 @@
   },
   {
     "id": "line",
+    "drawLineRank": 2,
     "collisionShape": { "type": 1, "frontage": 32, "depth": 8 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
@@ -41,6 +43,7 @@
   },
   {
     "id": "square",
+    "drawLineRank": 3,
     "collisionShape": { "type": 1, "frontage": 16, "depth": 16 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
@@ -71,6 +74,7 @@
   },
   {
     "id": "militia_column",
+    "drawLineRank": 3,
     "collisionShape": { "type": 1, "frontage": 14, "depth": 18 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
@@ -92,6 +96,7 @@
   },
   {
     "id": "militia_line",
+    "drawLineRank": 2,
     "collisionShape": { "type": 1, "frontage": 32, "depth": 8 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
@@ -111,6 +116,7 @@
   },
   {
     "id": "artillery",
+    "drawLineRank": 1,
     "collisionShape": { "type": 1, "frontage": 24, "depth": 12 },
     "allyCollisionLevel": -1,
     "enemyCollisionLevel": 1,
@@ -126,6 +132,7 @@
   },
   {
     "id": "skirmish",
+    "drawLineRank": 0,
     "collisionShape": { "type": 1, "frontage": 24, "depth": 8 },
     "allyCollisionLevel": -1,
     "enemyCollisionLevel": 1,
@@ -160,6 +167,7 @@
   },
   {
     "id": "cavalry",
+    "drawLineRank": 3,
     "collisionShape": { "type": 1, "frontage": 24, "depth": 12 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,

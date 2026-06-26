@@ -115,6 +115,7 @@
     "objectivesSummary": "Obiettivi {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Rango nel tracciare la linea (minore = davanti)",
     "title": "Modifica formazione personalizzata",
     "collision": "Collisione",
     "collisionHelp": "Forma dell'ingombro: un cerchio (raggio) o un rettangolo (frontale lungo il fronte, profondità da fronte a retro). Usa raggio 0 per nessuna collisione (volante / fantasma).",

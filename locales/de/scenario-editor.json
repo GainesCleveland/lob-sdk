@@ -115,6 +115,7 @@
     "objectivesSummary": "Ziele {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Linienzug-Rang (niedriger = vorne)",
     "title": "Benutzerdefinierte Formation bearbeiten",
     "collision": "Kollision",
     "collisionHelp": "Grundrissform: ein Kreis (Radius) oder ein Rechteck (Frontbreite quer zur Front, Tiefe von vorne nach hinten). Verwende Radius 0 für keine Kollision (fliegend / Geist).",

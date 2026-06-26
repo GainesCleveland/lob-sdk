@@ -115,6 +115,7 @@
     "objectivesSummary": "Objektif {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Peringkat garis (lebih kecil = depan)",
     "title": "Edit formasi kustom",
     "collision": "Tabrakan",
     "collisionHelp": "Bentuk jejak: lingkaran (radius) atau persegi panjang (frontage di sepanjang depan, depth dari depan ke belakang). Gunakan radius 0 untuk tanpa tabrakan (terbang / hantu).",

@@ -115,6 +115,7 @@
     "objectivesSummary": "目标点 {{pct}}%（{{vp}} VP）"
   },
   "formationModal": {
+    "drawLineRank": "画线排序（越小越靠前）",
     "title": "编辑自定义阵型",
     "collision": "碰撞",
     "collisionHelp": "占地形状：圆形（半径）或矩形（正面宽度为 frontage，纵深为 depth 即前后方向）。半径设为 0 表示无碰撞（飞行 / 幽灵）。",

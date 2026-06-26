@@ -115,6 +115,7 @@
     "objectivesSummary": "Hedefler {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Çizgi çizim sırası (düşük = önde)",
     "title": "Özel formasyonu düzenle",
     "collision": "Çarpışma",
     "collisionHelp": "Taban şekli: bir daire (yarıçap) veya bir dikdörtgen (cephe boyunca ön, önden arkaya derinlik). Çarpışma olmaması için yarıçap 0 kullanın (uçan / hayalet).",

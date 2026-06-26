@@ -115,6 +115,7 @@
     "objectivesSummary": "Objetivos {{pct}}% ({{vp}} VP)"
   },
   "formationModal": {
+    "drawLineRank": "Rango al dibujar línea (menor = al frente)",
     "title": "Editar formación personalizada",
     "collision": "Colisión",
     "collisionHelp": "Forma de la huella: un círculo (radio) o un rectángulo (frente a lo ancho, profundidad de adelante hacia atrás). Usa radio 0 para no tener colisión (volador / fantasma).",
