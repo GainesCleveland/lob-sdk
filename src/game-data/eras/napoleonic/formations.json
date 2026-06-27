@@ -116,7 +116,7 @@
   },
   {
     "id": "artillery",
-    "drawLineRank": 1,
+    "drawLineRank": 2,
     "collisionShape": { "type": 1, "frontage": 24, "depth": 12 },
     "allyCollisionLevel": -1,
     "enemyCollisionLevel": 1,
@@ -167,7 +167,7 @@
   },
   {
     "id": "cavalry",
-    "drawLineRank": 3,
+    "drawLineRank": 4,
     "collisionShape": { "type": 1, "frontage": 24, "depth": 12 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
