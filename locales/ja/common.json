@@ -440,7 +440,6 @@
   "removeUnitOrders": "ユニット命令を削除",
   "info": "情報",
   "meleePerformance": "白兵戦のパフォーマンス",
-  "speedByOrg": "組織力による移動速度",
   "turnsLeft": "ターン残り",
   "battleOverview": {
     "title": "戦闘概要",

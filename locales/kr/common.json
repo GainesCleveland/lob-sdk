@@ -430,7 +430,6 @@
   "removeUnitOrders": "부대 명령 철회",
   "info": "정보",
   "meleePerformance": "근접방어력",
-  "speedByOrg": "조직력에 의한 속도",
   "turnsLeft": "남은 턴",
   "battleOverview": {
     "title": "전투 개요",

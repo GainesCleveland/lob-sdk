@@ -439,7 +439,6 @@
   "removeUnitOrders": "去除单位的指令",
   "info": "信息",
   "meleePerformance": "近战表现",
-  "speedByOrg": "基于组织度的速度",
   "turnsLeft": "剩余回合数",
   "battleOverview": {
     "title": "战斗总览",
