@@ -44,7 +44,7 @@
   {
     "id": "square",
     "drawLineRank": 3,
-    "collisionShape": { "type": 1, "frontage": 20, "depth": 20 },
+    "collisionShape": { "type": 1, "frontage": 18, "depth": 18 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
     "fireEdges": [
