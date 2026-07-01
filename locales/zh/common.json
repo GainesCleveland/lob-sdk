@@ -317,7 +317,6 @@
   "damageModifierByTargetHp": "基于目标HP的伤害修正",
   "lBy": "修正",
   "terrainHitboxHeight": "地形遮蔽高度",
-  "statusEffects": "状态效果",
   "projectileAbsorption": "枪炮弹抗性",
   "terrainPName": "地形：{{name}}",
   "effects": "效果",

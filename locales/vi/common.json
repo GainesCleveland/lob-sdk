@@ -314,7 +314,6 @@
   "damageModifierByTargetHp": "Sửa đổi sát thương theo HP mục tiêu",
   "lBy": "bởi",
   "terrainHitboxHeight": "Chiều cao hitbox địa hình",
-  "statusEffects": "Hiệu ứng trạng thái",
   "projectileAbsorption": "Hấp thụ đạn",
   "terrainPName": "Địa hình: {{name}}",
   "effects": "Hiệu ứng",

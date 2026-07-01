@@ -314,7 +314,6 @@
   "damageModifierByTargetHp": "تعديل الضرر حسب صحة الهدف",
   "lBy": "بواسطة",
   "terrainHitboxHeight": "ارتفاع صندوق التصادم للتضاريس",
-  "statusEffects": "تأثيرات الحالة",
   "projectileAbsorption": "امتصاص المقذوفات",
   "terrainPName": "التضاريس: {{name}}",
   "effects": "التأثيرات",

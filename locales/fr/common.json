@@ -284,7 +284,6 @@
   "lBy": "par",
   "terrainHitboxHeight": "Hauteur du masque de collision du terrain",
   "Terrain": "Terrain",
-  "statusEffects": "Effets de statuts",
   "projectileAbsorption": "Absorption des projectiles",
   "terrainPName": "Terrain: {{name}}",
   "effects": "Effets",

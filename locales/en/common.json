@@ -318,7 +318,6 @@
   "damageModifierByTargetHp": "Damage Modifier by Target HP",
   "lBy": "by",
   "terrainHitboxHeight": "Terrain Hitbox Height",
-  "statusEffects": "Status Effects",
   "projectileAbsorption": "Projectile Absorption",
   "terrainPName": "Terrain: {{name}}",
   "effects": "Effects",

@@ -318,7 +318,6 @@
   "damageModifierByTargetHp": "標的のHPによるダメージ修正",
   "lBy": "によって",
   "terrainHitboxHeight": "地形ヒットボックスの高さ",
-  "statusEffects": "ステータス効果",
   "projectileAbsorption": "弾丸吸収",
   "terrainPName": "地形: {{name}}",
   "effects": "効果",

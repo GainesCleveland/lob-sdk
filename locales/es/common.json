@@ -294,7 +294,6 @@
   "lBy": "por",
   "terrainHitboxHeight": "Altura de la hitbox del terreno",
   "Terrain": "Terreno",
-  "statusEffects": "Efectos de estado",
   "projectileAbsorption": "Absorción de proyectiles",
   "terrainPName": "Terreno: {{name}}",
   "effects": "Efectos",

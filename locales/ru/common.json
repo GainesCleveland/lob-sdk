@@ -317,7 +317,6 @@
   "damageModifierByTargetHp": "Модификатор Урона от боеспособности цели",
   "lBy": "на",
   "terrainHitboxHeight": "Высота объектов местности",
-  "statusEffects": "Эффекты статуса",
   "projectileAbsorption": "Поглощение снарядов",
   "terrainPName": "Местность: {{name}}",
   "effects": "Эффекты",
