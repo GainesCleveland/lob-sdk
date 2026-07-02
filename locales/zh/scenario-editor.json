@@ -612,5 +612,21 @@
     "invalidJsonFile": "无效的 JSON 文件。请检查文件格式。",
     "confirmOverwriteWarning": "请确认你了解这将覆盖地形。",
     "selectedNotProcedural": "所选战役剧本不是程序生成模板。"
+  },
+  "randomDeployment": {
+    "title": "部署区域",
+    "explanation": "各队单位的起始位置，以地图百分比表示。保持对称以进行公平对战，或取消勾选以分别设置每一方。",
+    "symmetric": "对称地图（上下镜像）",
+    "topSide": "上方",
+    "bottomSide": "下方",
+    "bothSides": "双方",
+    "noZones": "无区域 — 生成器使用默认值。",
+    "addZone": "添加区域",
+    "fields": {
+      "xMin": "X 最小",
+      "xMax": "X 最大",
+      "yMin": "Y 最小",
+      "yMax": "Y 最大"
+    }
   }
 }

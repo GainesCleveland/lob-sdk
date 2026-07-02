@@ -613,5 +613,21 @@
     "invalidJsonFile": "Fichier JSON invalide. Veuillez vérifier le format du fichier.",
     "confirmOverwriteWarning": "Veuillez confirmer que vous comprenez que cela écrasera le terrain.",
     "selectedNotProcedural": "Le scénario sélectionné n'est pas un modèle procédural."
+  },
+  "randomDeployment": {
+    "title": "Zones de déploiement",
+    "explanation": "Où commencent les unités de chaque équipe, en pourcentages de la carte. Gardez la symétrie pour une partie équitable, ou décochez pour définir chaque côté.",
+    "symmetric": "Carte symétrique (miroir haut-bas)",
+    "topSide": "Côté haut",
+    "bottomSide": "Côté bas",
+    "bothSides": "Les deux côtés",
+    "noZones": "Aucune zone — le générateur utilise les valeurs par défaut.",
+    "addZone": "Ajouter une zone",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   }
 }

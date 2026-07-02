@@ -5,7 +5,6 @@ import {
   InstructionType,
   LegacyPresetScenario,
   LegacyRandomScenario,
-  RandomTeamDeploymentZones,
   Scenario,
   TerrainType,
 } from "@lob-sdk/types";
@@ -72,13 +71,6 @@ const buildHybrid = (
   map: buildSmallMap(),
   ...overrides,
 });
-
-const sampleZones: RandomTeamDeploymentZones = {
-  topMainDeploymentZone: { minX: 0, maxX: 50, minY: 0, maxY: 25, width: 30, height: 20 },
-  topForwardDeploymentZone: { minX: 0, maxX: 50, minY: 25, maxY: 50, width: 30, height: 20 },
-  bottomMainDeploymentZone: { minX: 50, maxX: 100, minY: 75, maxY: 100, width: 30, height: 20 },
-  bottomForwardDeploymentZone: { minX: 50, maxX: 100, minY: 50, maxY: 75, width: 30, height: 20 },
-};
 
 const buildRandom = (
   overrides: Partial<LegacyRandomScenario> = {},
@@ -238,26 +230,6 @@ describe("normalizeScenario", () => {
       expect(result.instructions).toHaveLength(1);
       expect(result.instructions?.[0].type).toBe(InstructionType.HeightNoise);
       expect(result.map).toBeUndefined();
-    });
-
-    it("maps defaultDeploymentZones => randomDeploymentZones", () => {
-      const result = normalizeScenario(
-        buildRandom({ defaultDeploymentZones: sampleZones }),
-      );
-      expect(result.randomDeploymentZones).toEqual(sampleZones);
-    });
-
-    it("preserves scaledDeploymentZones", () => {
-      const scaled = {
-        0: sampleZones,
-        1: sampleZones,
-        2: sampleZones,
-        3: sampleZones,
-      };
-      const result = normalizeScenario(
-        buildRandom({ scaledDeploymentZones: scaled as any }),
-      );
-      expect(result.scaledDeploymentZones).toEqual(scaled);
     });
   });
 

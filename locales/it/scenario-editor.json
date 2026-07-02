@@ -613,5 +613,21 @@
     "invalidJsonFile": "File JSON non valido. Controlla il formato del file.",
     "confirmOverwriteWarning": "Conferma di aver compreso che questo sovrascriverà il terreno.",
     "selectedNotProcedural": "Lo scenario selezionato non è un modello procedurale."
+  },
+  "randomDeployment": {
+    "title": "Zone di schieramento",
+    "explanation": "Dove iniziano le unità di ogni squadra, in percentuali della mappa. Mantieni la simmetria per una partita equa, o deseleziona per definire ogni lato.",
+    "symmetric": "Mappa simmetrica (specchia dall'alto in basso)",
+    "topSide": "Lato superiore",
+    "bottomSide": "Lato inferiore",
+    "bothSides": "Entrambi i lati",
+    "noZones": "Nessuna zona — il generatore usa i valori predefiniti.",
+    "addZone": "Aggiungi zona",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   }
 }

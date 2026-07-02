@@ -612,5 +612,21 @@
     "invalidJsonFile": "Tệp JSON không hợp lệ. Vui lòng kiểm tra định dạng tệp.",
     "confirmOverwriteWarning": "Vui lòng xác nhận rằng bạn hiểu việc này sẽ ghi đè địa hình.",
     "selectedNotProcedural": "Kịch bản đã chọn không phải là mẫu theo thủ tục."
+  },
+  "randomDeployment": {
+    "title": "Khu vực triển khai",
+    "explanation": "Nơi các đơn vị của mỗi đội bắt đầu, tính theo phần trăm bản đồ. Giữ đối xứng để trận đấu công bằng, hoặc bỏ chọn để thiết lập từng bên.",
+    "symmetric": "Bản đồ đối xứng (phản chiếu trên xuống dưới)",
+    "topSide": "Phía trên",
+    "bottomSide": "Phía dưới",
+    "bothSides": "Cả hai bên",
+    "noZones": "Không có khu vực — trình tạo dùng mặc định.",
+    "addZone": "Thêm khu vực",
+    "fields": {
+      "xMin": "X tối thiểu",
+      "xMax": "X tối đa",
+      "yMin": "Y tối thiểu",
+      "yMax": "Y tối đa"
+    }
   }
 }

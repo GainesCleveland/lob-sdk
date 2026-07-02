@@ -612,5 +612,21 @@
     "invalidJsonFile": "File JSON tidak valid. Harap periksa format file.",
     "confirmOverwriteWarning": "Harap konfirmasi bahwa Anda memahami ini akan menimpa medan.",
     "selectedNotProcedural": "Skenario terpilih bukan templat prosedural."
+  },
+  "randomDeployment": {
+    "title": "Zona penempatan",
+    "explanation": "Tempat unit tiap tim memulai, dalam persentase peta. Biarkan simetris untuk pertandingan adil, atau hapus centang untuk mengatur tiap sisi.",
+    "symmetric": "Peta simetris (cermin atas ke bawah)",
+    "topSide": "Sisi atas",
+    "bottomSide": "Sisi bawah",
+    "bothSides": "Kedua sisi",
+    "noZones": "Tidak ada zona — generator memakai nilai bawaan.",
+    "addZone": "Tambah zona",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X maks",
+      "yMin": "Y min",
+      "yMax": "Y maks"
+    }
   }
 }

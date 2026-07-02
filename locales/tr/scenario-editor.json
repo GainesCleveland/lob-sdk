@@ -613,5 +613,21 @@
     "invalidJsonFile": "Geçersiz JSON dosyası. Lütfen dosya biçimini kontrol edin.",
     "confirmOverwriteWarning": "Lütfen bunun araziyi üzerine yazacağını anladığınızı onaylayın.",
     "selectedNotProcedural": "Seçili senaryo prosedürel bir şablon değil."
+  },
+  "randomDeployment": {
+    "title": "Konuşlanma bölgeleri",
+    "explanation": "Her takımın birimlerinin başladığı yer, haritanın yüzdeleri olarak. Adil bir maç için simetrik bırakın ya da her tarafı ayrı ayarlamak için işareti kaldırın.",
+    "symmetric": "Simetrik harita (üstü alta yansıt)",
+    "topSide": "Üst taraf",
+    "bottomSide": "Alt taraf",
+    "bothSides": "Her iki taraf",
+    "noZones": "Bölge yok — üretici varsayılanları kullanır.",
+    "addZone": "Bölge ekle",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X maks",
+      "yMin": "Y min",
+      "yMax": "Y maks"
+    }
   }
 }

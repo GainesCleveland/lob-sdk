@@ -612,5 +612,21 @@
     "invalidJsonFile": "잘못된 JSON 파일입니다. 파일 형식을 확인하세요.",
     "confirmOverwriteWarning": "이 작업이 지형을 덮어쓴다는 점을 이해함을 확인하세요.",
     "selectedNotProcedural": "선택한 전역은 절차적 템플릿이 아닙니다."
+  },
+  "randomDeployment": {
+    "title": "배치 구역",
+    "explanation": "각 팀의 유닛이 시작하는 위치로, 맵의 백분율입니다. 공정한 대전을 위해 대칭으로 두거나, 체크를 해제해 각 진영을 직접 설정하세요.",
+    "symmetric": "대칭 맵 (위아래 미러링)",
+    "topSide": "위쪽",
+    "bottomSide": "아래쪽",
+    "bothSides": "양쪽",
+    "noZones": "구역 없음 — 생성기가 기본값을 사용합니다.",
+    "addZone": "구역 추가",
+    "fields": {
+      "xMin": "X 최소",
+      "xMax": "X 최대",
+      "yMin": "Y 최소",
+      "yMax": "Y 최대"
+    }
   }
 }

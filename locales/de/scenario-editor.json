@@ -613,5 +613,21 @@
     "invalidJsonFile": "Ungültige JSON-Datei. Bitte überprüfe das Dateiformat.",
     "confirmOverwriteWarning": "Bitte bestätige, dass du verstehst, dass dies das Gelände überschreibt.",
     "selectedNotProcedural": "Das ausgewählte Szenario ist keine prozedurale Vorlage."
+  },
+  "randomDeployment": {
+    "title": "Aufstellungszonen",
+    "explanation": "Wo die Einheiten jedes Teams starten, in Prozent der Karte. Symmetrisch lassen für ein faires Spiel, oder abwählen, um jede Seite einzeln festzulegen.",
+    "symmetric": "Symmetrische Karte (oben nach unten spiegeln)",
+    "topSide": "Obere Seite",
+    "bottomSide": "Untere Seite",
+    "bothSides": "Beide Seiten",
+    "noZones": "Keine Zonen — der Generator nutzt Standardwerte.",
+    "addZone": "Zone hinzufügen",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   }
 }

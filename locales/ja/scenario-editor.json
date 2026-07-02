@@ -612,5 +612,21 @@
     "invalidJsonFile": "無効なJSONファイルです。ファイル形式を確認してください。",
     "confirmOverwriteWarning": "これが地形を上書きすることを理解していることを確認してください。",
     "selectedNotProcedural": "選択したシナリオは自動生成テンプレートではありません。"
+  },
+  "randomDeployment": {
+    "title": "配置ゾーン",
+    "explanation": "各チームのユニットが開始する位置（マップに対する割合）。公平な対戦のため対称のままにするか、チェックを外して各サイドを設定します。",
+    "symmetric": "対称マップ（上下を反転）",
+    "topSide": "上側",
+    "bottomSide": "下側",
+    "bothSides": "両側",
+    "noZones": "ゾーンなし — ジェネレーターは既定値を使用します。",
+    "addZone": "ゾーンを追加",
+    "fields": {
+      "xMin": "X 最小",
+      "xMax": "X 最大",
+      "yMin": "Y 最小",
+      "yMax": "Y 最大"
+    }
   }
 }

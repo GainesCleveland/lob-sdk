@@ -98,8 +98,6 @@ const _fromRandom = (raw: LegacyRandomScenario): Scenario => ({
   ..._baseFields(raw),
   baseTerrain: raw.baseTerrain,
   instructions: raw.instructions,
-  randomDeploymentZones: raw.defaultDeploymentZones,
-  scaledDeploymentZones: raw.scaledDeploymentZones,
   allowDynamicArmy: true,
   allowDeploymentPhase: true,
   placeableObjectives: true,

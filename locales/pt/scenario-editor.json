@@ -613,5 +613,21 @@
     "invalidJsonFile": "Arquivo JSON inválido. Verifique o formato do arquivo.",
     "confirmOverwriteWarning": "Confirme que você entende que isto sobrescreverá o terreno.",
     "selectedNotProcedural": "O cenário selecionado não é um modelo procedural."
+  },
+  "randomDeployment": {
+    "title": "Zonas de posicionamento",
+    "explanation": "Onde as unidades de cada equipe começam, em porcentagens do mapa. Mantenha simétrico para uma partida justa, ou desmarque para definir cada lado.",
+    "symmetric": "Mapa simétrico (espelhar de cima para baixo)",
+    "topSide": "Lado superior",
+    "bottomSide": "Lado inferior",
+    "bothSides": "Ambos os lados",
+    "noZones": "Sem zonas — o gerador usa os padrões.",
+    "addZone": "Adicionar zona",
+    "fields": {
+      "xMin": "X mín",
+      "xMax": "X máx",
+      "yMin": "Y mín",
+      "yMax": "Y máx"
+    }
   }
 }

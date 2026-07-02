@@ -613,5 +613,21 @@
     "invalidJsonFile": "Invalid JSON file. Please check the file format.",
     "confirmOverwriteWarning": "Please confirm that you understand this will overwrite the terrain.",
     "selectedNotProcedural": "Selected scenario is not a procedural template."
+  },
+  "randomDeployment": {
+    "title": "Deployment zones",
+    "explanation": "Where each team's units start, as percentages of the map. Keep it symmetric for a fair match, or uncheck to author each side.",
+    "symmetric": "Symmetric map (mirror top to bottom)",
+    "topSide": "Top side",
+    "bottomSide": "Bottom side",
+    "bothSides": "Both sides",
+    "noZones": "No zones — the generator uses defaults.",
+    "addZone": "Add zone",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   }
 }

@@ -615,5 +615,21 @@
     "invalidJsonFile": "Nieprawidłowy plik JSON. Sprawdź format pliku.",
     "confirmOverwriteWarning": "Potwierdź, że rozumiesz, iż nadpisze to teren.",
     "selectedNotProcedural": "Wybrany scenariusz nie jest szablonem proceduralnym."
+  },
+  "randomDeployment": {
+    "title": "Strefy rozstawienia",
+    "explanation": "Gdzie zaczynają jednostki każdej drużyny, w procentach mapy. Zachowaj symetrię dla uczciwej gry lub odznacz, aby zdefiniować każdą stronę.",
+    "symmetric": "Mapa symetryczna (odbij górę na dół)",
+    "topSide": "Góra",
+    "bottomSide": "Dół",
+    "bothSides": "Obie strony",
+    "noZones": "Brak stref — generator używa wartości domyślnych.",
+    "addZone": "Dodaj strefę",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X maks",
+      "yMin": "Y min",
+      "yMax": "Y maks"
+    }
   }
 }

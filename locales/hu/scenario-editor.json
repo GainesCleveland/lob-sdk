@@ -613,5 +613,21 @@
     "invalidJsonFile": "Érvénytelen JSON fájl. Kérlek ellenőrizd a fájl formátumát.",
     "confirmOverwriteWarning": "Kérlek erősítsd meg, hogy megérted, ez felülírja a terepet.",
     "selectedNotProcedural": "A kiválasztott pálya nem eljárásos sablon."
+  },
+  "randomDeployment": {
+    "title": "Felállási zónák",
+    "explanation": "Ahol az egyes csapatok egységei indulnak, a térkép százalékában. Hagyd szimmetrikusan a tisztességes meccsért, vagy vedd ki a pipát az oldalankénti beállításhoz.",
+    "symmetric": "Szimmetrikus térkép (fentről lefelé tükrözés)",
+    "topSide": "Felső oldal",
+    "bottomSide": "Alsó oldal",
+    "bothSides": "Mindkét oldal",
+    "noZones": "Nincs zóna — a generátor az alapértékeket használja.",
+    "addZone": "Zóna hozzáadása",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   }
 }
