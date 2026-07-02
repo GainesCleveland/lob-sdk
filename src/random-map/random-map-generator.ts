@@ -266,20 +266,34 @@ export class RandomMapGenerator {
       height: this.percentToTiles(zone.height, tilesY) * tileSize,
     });
 
+    // Build team 2 (top) from its config, then derive team 1 (bottom) as an exact
+    // vertical mirror about the map centre. Mirroring rather than converting the
+    // bottom config independently guarantees the two zones are symmetric:
+    // percentToTiles floors every edge toward the top, which otherwise pulls the
+    // bottom team's zone toward the centre and hands team 1 a consistent
+    // first-side advantage.
+    const mapHeightPx = tilesY * tileSize;
+    const mirrorToBottom = (zone: TeamDeploymentZone): TeamDeploymentZone => ({
+      ...zone,
+      team: 1,
+      y: mapHeightPx - zone.y - zone.height,
+    });
+
+    const topMain = build(2, "main", deploymentZones.topMainDeploymentZone);
+    const topForward = build(
+      2,
+      "forward",
+      deploymentZones.topForwardDeploymentZone,
+    );
+
     return [
       {
         team: 1,
-        zones: [
-          build(1, "main", deploymentZones.bottomMainDeploymentZone),
-          build(1, "forward", deploymentZones.bottomForwardDeploymentZone),
-        ],
+        zones: [mirrorToBottom(topMain), mirrorToBottom(topForward)],
       },
       {
         team: 2,
-        zones: [
-          build(2, "main", deploymentZones.topMainDeploymentZone),
-          build(2, "forward", deploymentZones.topForwardDeploymentZone),
-        ],
+        zones: [topMain, topForward],
       },
     ];
   }

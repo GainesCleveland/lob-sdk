@@ -745,4 +745,38 @@ describe("RandomMapGenerator", () => {
       expect(result.map.deploymentZones).toEqual(tutorial.deploymentZones);
     });
   });
+
+  describe("deployment zone symmetry (regression)", () => {
+    it("generates vertically mirror-symmetric team deployment zones", () => {
+      const scenario = gameDataManager.getScenario("plains");
+      const result = new RandomMapGenerator().generate({
+        scenario,
+        dynamicBattleType: DEFAULT_BATTLE_TYPE,
+        maxPlayers: 2,
+        tileSize: TILE_SIZE,
+        era: "napoleonic",
+      });
+
+      const zones = result.map.deploymentZones ?? [];
+      expect(zones.length).toBe(2);
+
+      const team1 = zones[0];
+      const team2 = zones[1];
+      expect(team1.team).toBe(1);
+      expect(team2.team).toBe(2);
+      expect(team1.zones.length).toBe(team2.zones.length);
+
+      const mapHeight = result.map.height;
+      for (let i = 0; i < team1.zones.length; i++) {
+        const z1 = team1.zones[i];
+        const z2 = team2.zones[i];
+        expect(z1.type).toBe(z2.type);
+        expect(z1.x).toBe(z2.x);
+        expect(z1.width).toBe(z2.width);
+        expect(z1.height).toBe(z2.height);
+        // team 1 (bottom) must be the exact vertical mirror of team 2 (top).
+        expect(z1.y).toBe(mapHeight - z2.y - z2.height);
+      }
+    });
+  });
 });
