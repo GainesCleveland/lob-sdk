@@ -300,7 +300,9 @@
       "shotSound": "صوت الطلقة",
       "shotAnim": "رسم الطلقة",
       "extendRange": "تمديد المدى",
-      "aimMode": "وضع التصويب"
+      "aimMode": "وضع التصويب",
+      "maxRange": "المدى الأقصى",
+      "engagementTier": "مستوى الإطلاق التلقائي"
     },
     "aimMode": {
       "targetCenter": "مركز الهدف (انفجارات دائرية)",
@@ -309,8 +311,12 @@
     "range": {
       "start": "البداية",
       "end": "النهاية",
-      "startMod": "معدل البداية",
-      "endMod": "معدل النهاية"
+      "from": "من (%)",
+      "to": "إلى (%)",
+      "damageHeader": "معدّل الضرر (%)",
+      "orgHeader": "معدّل التنظيم (%)",
+      "near": "قريب",
+      "far": "بعيد"
     },
     "aoe": {
       "absorptionModifier": "معدل الامتصاص",
@@ -336,7 +342,15 @@
       "idBelongsToBuiltIn": "معرّف نوع الضرر {{id}} يخص المدمج \"{{name}}\". احتفظ بالاسم لتجاوزه، أو اختر معرّفاً مختلفاً.",
       "nameBelongsToBuiltIn": "الاسم \"{{name}}\" يخص المعرّف المدمج {{id}}. اضبط المعرّف على {{id}} لتجاوزه، أو اختر اسماً مختلفاً.",
       "orgDamageRatioRequired": "orgDamageRatio مطلوب",
-      "rangedNeedsBracket": "أنواع الضرر البعيد تحتاج إلى نطاق مدى واحد على الأقل"
+      "rangedNeedsBracket": "أنواع الضرر البعيد تحتاج إلى نطاق مدى واحد على الأقل",
+      "maxRangeRequired": "يجب أن يكون المدى الأقصى أكبر من 0",
+      "rangeBandBounds": "يجب أن تكون قيم «من/إلى» لكل نطاق بين 0 و100%، مع من ≤ إلى.",
+      "lastBandMustReachMax": "يجب أن يصل النطاق الأخير إلى 100% (المدى الأقصى)."
+    },
+    "engagementTier": {
+      "low": "منخفض (قريب)",
+      "medium": "فعّال (متوسط)",
+      "max": "الأقصى (افتراضي)"
     }
   },
   "terrainCategoryModal": {

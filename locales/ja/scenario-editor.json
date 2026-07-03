@@ -300,7 +300,9 @@
       "shotSound": "射撃音",
       "shotAnim": "射撃アニメーション",
       "extendRange": "射程を延長",
-      "aimMode": "照準モード"
+      "aimMode": "照準モード",
+      "maxRange": "最大射程",
+      "engagementTier": "自動射撃の段階"
     },
     "aimMode": {
       "targetCenter": "標的の中心（円形の爆発）",
@@ -309,8 +311,12 @@
     "range": {
       "start": "開始",
       "end": "終了",
-      "startMod": "開始修正",
-      "endMod": "終了修正"
+      "from": "開始 (%)",
+      "to": "終了 (%)",
+      "damageHeader": "ダメージ修正 (%)",
+      "orgHeader": "組織修正 (%)",
+      "near": "近",
+      "far": "遠"
     },
     "aoe": {
       "absorptionModifier": "吸収修正",
@@ -336,7 +342,15 @@
       "idBelongsToBuiltIn": "ダメージタイプID {{id}} は組み込みの「{{name}}」に属しています。上書きするには名前を維持するか、別のIDを選んでください。",
       "nameBelongsToBuiltIn": "名前「{{name}}」は組み込みID {{id}} に属しています。上書きするにはIDを {{id}} に設定するか、別の名前を選んでください。",
       "orgDamageRatioRequired": "orgDamageRatio は必須です",
-      "rangedNeedsBracket": "遠距離ダメージタイプには少なくとも1つの射程区分が必要です"
+      "rangedNeedsBracket": "遠距離ダメージタイプには少なくとも1つの射程区分が必要です",
+      "maxRangeRequired": "最大射程は0より大きくなければなりません",
+      "rangeBandBounds": "各バンドの開始/終了は0〜100%の範囲で、開始 ≤ 終了である必要があります。",
+      "lastBandMustReachMax": "最後のバンドは100%（最大射程）に達する必要があります。"
+    },
+    "engagementTier": {
+      "low": "低（近距離）",
+      "medium": "有効（中距離）",
+      "max": "最大（既定）"
     }
   },
   "terrainCategoryModal": {

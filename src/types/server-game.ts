@@ -286,10 +286,11 @@ export interface DamageHit {
   /** Organization bonus/penalty applied. */
   orgBonus: number;
   /**
-   * Per-band override of the damage type's `orgDamageRatio`, resolved at shot time from the
-   * firing distance. Falls back to the damage type's `orgDamageRatio` when absent.
+   * Relative org-damage modifier for this shot, interpolated from the firing distance across
+   * the range band (`orgDamageModifier` near/far). Applied as `orgDamageRatio * (1 + modifier)`;
+   * absent or 0 means the damage type's flat org ratio.
    */
-  orgDamageRatio?: number;
+  orgRangeModifier?: number;
   /**
    * Per-hit reorg-debuff magnitude, pre-scaled by how much of the nominal attack landed
    * (ranged: modifiers x `stepStrength`; melee: the modifier product), so a spent or

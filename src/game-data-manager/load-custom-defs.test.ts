@@ -218,7 +218,8 @@ describe("GameDataManager custom defs", () => {
       const eraSingleton = GameDataManager.get("napoleonic");
       const builtIn = eraSingleton.getDamageTypes()[0]!;
       const override: DamageTypeTemplate = {
-        ...builtIn,
+        id: builtIn.id,
+        name: builtIn.name,
         orgDamageRatio: (builtIn.orgDamageRatio ?? 0) + 0.5,
       };
 
@@ -313,7 +314,8 @@ describe("GameDataManager custom defs", () => {
         builtInUnit.meleeDamageType,
       );
       const dtOverride: DamageTypeTemplate = {
-        ...builtInDt,
+        id: builtInDt.id,
+        name: builtInDt.name,
         // Full override: id and name match the built-in, only stats change.
         orgDamageRatio: (builtInDt.orgDamageRatio ?? 0) + 0.7,
       };

@@ -300,7 +300,9 @@
       "shotSound": "Suara tembakan",
       "shotAnim": "Animasi tembakan",
       "extendRange": "Perluas jangkauan",
-      "aimMode": "Mode bidik"
+      "aimMode": "Mode bidik",
+      "maxRange": "Jangkauan maks.",
+      "engagementTier": "Tingkat tembak otomatis"
     },
     "aimMode": {
       "targetCenter": "Pusat target (ledakan melingkar)",
@@ -309,8 +311,12 @@
     "range": {
       "start": "Awal",
       "end": "Akhir",
-      "startMod": "Mod awal",
-      "endMod": "Mod akhir"
+      "from": "Dari (%)",
+      "to": "Sampai (%)",
+      "damageHeader": "Pengubah kerusakan (%)",
+      "orgHeader": "Pengubah org (%)",
+      "near": "dekat",
+      "far": "jauh"
     },
     "aoe": {
       "absorptionModifier": "Modifier penyerapan",
@@ -336,7 +342,15 @@
       "idBelongsToBuiltIn": "ID tipe kerusakan {{id}} milik bawaan \"{{name}}\". Pertahankan nama untuk menimpanya, atau pilih id berbeda.",
       "nameBelongsToBuiltIn": "Nama \"{{name}}\" milik id bawaan {{id}}. Atur id ke {{id}} untuk menimpanya, atau pilih nama berbeda.",
       "orgDamageRatioRequired": "orgDamageRatio wajib diisi",
-      "rangedNeedsBracket": "Tipe kerusakan jarak jauh memerlukan setidaknya satu rentang jarak"
+      "rangedNeedsBracket": "Tipe kerusakan jarak jauh memerlukan setidaknya satu rentang jarak",
+      "maxRangeRequired": "Jangkauan maks. harus lebih besar dari 0",
+      "rangeBandBounds": "Dari/Ke tiap pita harus antara 0 dan 100%, dengan Dari ≤ Ke.",
+      "lastBandMustReachMax": "Pita terakhir harus mencapai 100% (jangkauan maks)."
+    },
+    "engagementTier": {
+      "low": "Rendah (dekat)",
+      "medium": "Efektif (menengah)",
+      "max": "Maks (bawaan)"
     }
   },
   "terrainCategoryModal": {
