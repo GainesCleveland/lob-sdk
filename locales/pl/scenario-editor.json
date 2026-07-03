@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Pocisk",
       "rangeBrackets": "Przedziały zasięgu",
-      "areaOfEffect": "Obszar działania"
+      "areaOfEffect": "Obszar działania",
+      "targetStatModifiers": "Modyfikatory wg statystyki celu"
     },
     "fields": {
       "ranged": "Dystansowy",
@@ -351,6 +352,9 @@
       "low": "Niski (bliski)",
       "medium": "Skuteczny (średni)",
       "max": "Maks (domyślny)"
+    },
+    "targetStat": {
+      "helper": "W % statystyki celu. Brak efektu powyżej 'from'; pełne 'value' przy/poniżej 'to'. Rośnie, gdy HP/org celu spada."
     }
   },
   "terrainCategoryModal": {

@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Projektil",
       "rangeBrackets": "Reichweitenbereiche",
-      "areaOfEffect": "Wirkungsbereich"
+      "areaOfEffect": "Wirkungsbereich",
+      "targetStatModifiers": "Zielwert-Modifikatoren"
     },
     "fields": {
       "ranged": "Fernkampf",
@@ -351,6 +352,9 @@
       "low": "Niedrig (nah)",
       "medium": "Effektiv (mittel)",
       "max": "Max (Standard)"
+    },
+    "targetStat": {
+      "helper": "In % der Ziel-Stat. Keine Wirkung über 'from'; volles 'value' bei/unter 'to'. Wächst, wenn HP/Org des Ziels sinkt."
     }
   },
   "terrainCategoryModal": {

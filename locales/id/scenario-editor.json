@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Proyektil",
       "rangeBrackets": "Rentang jarak",
-      "areaOfEffect": "Area efek"
+      "areaOfEffect": "Area efek",
+      "targetStatModifiers": "Pengubah berdasarkan stat target"
     },
     "fields": {
       "ranged": "Jarak jauh",
@@ -351,6 +352,9 @@
       "low": "Rendah (dekat)",
       "medium": "Efektif (menengah)",
       "max": "Maks (bawaan)"
+    },
+    "targetStat": {
+      "helper": "Dalam % stat target. Tanpa efek di atas 'from'; 'value' penuh pada/di bawah 'to'. Meningkat saat HP/org target turun."
     }
   },
   "terrainCategoryModal": {

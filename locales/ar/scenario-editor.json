@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "المقذوف",
       "rangeBrackets": "نطاقات المدى",
-      "areaOfEffect": "منطقة التأثير"
+      "areaOfEffect": "منطقة التأثير",
+      "targetStatModifiers": "معدّلات حسب إحصاء الهدف"
     },
     "fields": {
       "ranged": "بعيد",
@@ -351,6 +352,9 @@
       "low": "منخفض (قريب)",
       "medium": "فعّال (متوسط)",
       "max": "الأقصى (افتراضي)"
+    },
+    "targetStat": {
+      "helper": "بنسبة % من إحصاء الهدف. لا تأثير فوق 'from'؛ 'value' كامل عند/تحت 'to'. يزداد كلما انخفض HP/تنظيم الهدف."
     }
   },
   "terrainCategoryModal": {

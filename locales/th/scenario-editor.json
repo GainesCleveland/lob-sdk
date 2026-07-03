@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "กระสุน",
       "rangeBrackets": "ช่วงระยะ",
-      "areaOfEffect": "พื้นที่ส่งผล"
+      "areaOfEffect": "พื้นที่ส่งผล",
+      "targetStatModifiers": "ตัวปรับตามสเตตัสของเป้าหมาย"
     },
     "fields": {
       "ranged": "ระยะไกล",
@@ -351,6 +352,9 @@
       "low": "ต่ำ (ใกล้)",
       "medium": "มีผล (กลาง)",
       "max": "สูงสุด (ค่าเริ่มต้น)"
+    },
+    "targetStat": {
+      "helper": "เป็น % ของสเตตัสเป้าหมาย ไม่มีผลเหนือ 'from'; 'value' เต็มที่ที่/ต่ำกว่า 'to' เพิ่มขึ้นเมื่อ HP/org ของเป้าหมายลดลง"
     }
   },
   "terrainCategoryModal": {

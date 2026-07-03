@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "발사체",
       "rangeBrackets": "사거리 구간",
-      "areaOfEffect": "유효 범위"
+      "areaOfEffect": "유효 범위",
+      "targetStatModifiers": "대상 스탯 기반 수정"
     },
     "fields": {
       "ranged": "사격",
@@ -351,6 +352,9 @@
       "low": "낮음 (근거리)",
       "medium": "유효 (중거리)",
       "max": "최대 (기본값)"
+    },
+    "targetStat": {
+      "helper": "대상 스탯의 %. 'from' 초과 시 효과 없음, 'to' 이하에서 'value' 최대. 대상의 HP/조직력이 낮을수록 증가."
     }
   },
   "terrainCategoryModal": {

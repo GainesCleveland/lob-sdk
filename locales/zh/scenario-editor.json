@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "弹丸",
       "rangeBrackets": "距离区段",
-      "areaOfEffect": "作用范围"
+      "areaOfEffect": "作用范围",
+      "targetStatModifiers": "基于目标属性的修正"
     },
     "fields": {
       "ranged": "远程",
@@ -351,6 +352,9 @@
       "low": "低（近）",
       "medium": "有效（中）",
       "max": "最大（默认）"
+    },
+    "targetStat": {
+      "helper": "按目标属性的百分比。高于'from'无效；在'to'及以下为完整'value'。随目标HP/组织度下降而增强。"
     }
   },
   "terrainCategoryModal": {

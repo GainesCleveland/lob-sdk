@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Đạn",
       "rangeBrackets": "Khoảng tầm bắn",
-      "areaOfEffect": "Vùng ảnh hưởng"
+      "areaOfEffect": "Vùng ảnh hưởng",
+      "targetStatModifiers": "Hệ số theo chỉ số mục tiêu"
     },
     "fields": {
       "ranged": "Tầm xa",
@@ -351,6 +352,9 @@
       "low": "Thấp (gần)",
       "medium": "Hiệu quả (trung)",
       "max": "Tối đa (mặc định)"
+    },
+    "targetStat": {
+      "helper": "Theo % chỉ số mục tiêu. Không hiệu lực trên 'from'; 'value' đầy đủ tại/dưới 'to'. Tăng khi HP/tổ chức của mục tiêu giảm."
     }
   },
   "terrainCategoryModal": {

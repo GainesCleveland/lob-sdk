@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Lövedék",
       "rangeBrackets": "Hatótáv-sávok",
-      "areaOfEffect": "Hatásterület"
+      "areaOfEffect": "Hatásterület",
+      "targetStatModifiers": "Célpont-statisztika módosítók"
     },
     "fields": {
       "ranged": "Távolsági",
@@ -351,6 +352,9 @@
       "low": "Alacsony (közel)",
       "medium": "Hatékony (közepes)",
       "max": "Max (alapértelmezett)"
+    },
+    "targetStat": {
+      "helper": "A célpont statisztikájának %-a. 'from' felett nincs hatás; teljes 'value' a 'to' értéknél/alatta. Nő, ahogy a célpont HP/Org csökken."
     }
   },
   "terrainCategoryModal": {

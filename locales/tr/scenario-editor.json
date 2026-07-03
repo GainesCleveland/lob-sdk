@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Mermi",
       "rangeBrackets": "Menzil aralıkları",
-      "areaOfEffect": "Etki alanı"
+      "areaOfEffect": "Etki alanı",
+      "targetStatModifiers": "Hedef istatistiğine göre değiştiriciler"
     },
     "fields": {
       "ranged": "Uzak mesafe",
@@ -351,6 +352,9 @@
       "low": "Düşük (yakın)",
       "medium": "Etkili (orta)",
       "max": "Maks (varsayılan)"
+    },
+    "targetStat": {
+      "helper": "Hedef istatistiğinin %'si. 'from' üzerinde etki yok; 'to' değerinde/altında tam 'value'. Hedefin HP/Org'u düştükçe artar."
     }
   },
   "terrainCategoryModal": {

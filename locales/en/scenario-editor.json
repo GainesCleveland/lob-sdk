@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Projectile",
       "rangeBrackets": "Range brackets",
-      "areaOfEffect": "Area of effect"
+      "areaOfEffect": "Area of effect",
+      "targetStatModifiers": "Target-stat modifiers"
     },
     "fields": {
       "ranged": "Ranged",
@@ -351,6 +352,9 @@
       "low": "Low (close)",
       "medium": "Effective (mid)",
       "max": "Max (default)"
+    },
+    "targetStat": {
+      "helper": "In % of the target's stat. No effect above 'from'; full 'value' at or below 'to'. Grows as the target's HP/org drops."
     }
   },
   "terrainCategoryModal": {

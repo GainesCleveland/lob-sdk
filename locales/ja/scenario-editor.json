@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "弾丸",
       "rangeBrackets": "射程区分",
-      "areaOfEffect": "効果範囲"
+      "areaOfEffect": "効果範囲",
+      "targetStatModifiers": "対象ステータス修正"
     },
     "fields": {
       "ranged": "遠距離",
@@ -351,6 +352,9 @@
       "low": "低（近距離）",
       "medium": "有効（中距離）",
       "max": "最大（既定）"
+    },
+    "targetStat": {
+      "helper": "対象ステータスの%。'from'超で効果なし、'to'以下で'value'が最大。対象のHP/組織が下がるほど増加。"
     }
   },
   "terrainCategoryModal": {

@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Proiettile",
       "rangeBrackets": "Fasce di gittata",
-      "areaOfEffect": "Area d'effetto"
+      "areaOfEffect": "Area d'effetto",
+      "targetStatModifiers": "Modificatori per stat del bersaglio"
     },
     "fields": {
       "ranged": "A distanza",
@@ -351,6 +352,9 @@
       "low": "Basso (vicino)",
       "medium": "Efficace (medio)",
       "max": "Max (predefinito)"
+    },
+    "targetStat": {
+      "helper": "In % della stat del bersaglio. Nessun effetto sopra 'from'; 'value' pieno a/sotto 'to'. Cresce al calare di HP/org del bersaglio."
     }
   },
   "terrainCategoryModal": {

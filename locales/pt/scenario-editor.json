@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Projétil",
       "rangeBrackets": "Faixas de alcance",
-      "areaOfEffect": "Área de efeito"
+      "areaOfEffect": "Área de efeito",
+      "targetStatModifiers": "Modificadores por stat do alvo"
     },
     "fields": {
       "ranged": "À distância",
@@ -351,6 +352,9 @@
       "low": "Baixo (perto)",
       "medium": "Efetivo (médio)",
       "max": "Máx (padrão)"
+    },
+    "targetStat": {
+      "helper": "Em % da stat do alvo. Sem efeito acima de 'from'; 'value' completo em/abaixo de 'to'. Cresce conforme HP/org do alvo cai."
     }
   },
   "terrainCategoryModal": {

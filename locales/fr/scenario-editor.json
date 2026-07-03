@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "Projectile",
       "rangeBrackets": "Tranches de portée",
-      "areaOfEffect": "Zone d'effet"
+      "areaOfEffect": "Zone d'effet",
+      "targetStatModifiers": "Modificateurs selon la stat de la cible"
     },
     "fields": {
       "ranged": "À distance",
@@ -351,6 +352,9 @@
       "low": "Faible (proche)",
       "medium": "Efficace (moyen)",
       "max": "Max (par défaut)"
+    },
+    "targetStat": {
+      "helper": "En % de la stat de la cible. Aucun effet au-dessus de 'from' ; 'value' complet à/en dessous de 'to'. Augmente quand les PV/org de la cible baissent."
     }
   },
   "terrainCategoryModal": {

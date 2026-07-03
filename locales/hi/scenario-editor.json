@@ -287,7 +287,8 @@
     "sections": {
       "projectile": "प्रोजेक्टाइल",
       "rangeBrackets": "रेंज ब्रैकेट",
-      "areaOfEffect": "प्रभाव क्षेत्र"
+      "areaOfEffect": "प्रभाव क्षेत्र",
+      "targetStatModifiers": "लक्ष्य स्टैट आधारित संशोधक"
     },
     "fields": {
       "ranged": "दूरस्थ",
@@ -351,6 +352,9 @@
       "low": "कम (निकट)",
       "medium": "प्रभावी (मध्यम)",
       "max": "अधिकतम (डिफ़ॉल्ट)"
+    },
+    "targetStat": {
+      "helper": "लक्ष्य के स्टैट का %। 'from' से ऊपर कोई प्रभाव नहीं; 'to' पर या नीचे पूरा 'value'। लक्ष्य का HP/संगठन घटने पर बढ़ता है।"
     }
   },
   "terrainCategoryModal": {
