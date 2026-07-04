@@ -119,8 +119,7 @@
       "4lb-canister-fire",
       "explosive-shell",
       "howitzer-canister",
-      "rocket",
-      "rocket-long"
+      "rocket"
     ]
   },
   {
@@ -184,8 +183,7 @@
       "4lb-canister-fire",
       "howitzer-canister",
       "horse-archer-bow",
-      "rocket",
-      "rocket-long"
+      "rocket"
     ],
     "effects": [
       {

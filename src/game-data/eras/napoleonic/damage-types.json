@@ -217,6 +217,7 @@
   {
     "id": 10,
     "name": "18lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
@@ -279,6 +280,7 @@
   {
     "id": 20,
     "name": "12lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -318,6 +320,7 @@
   {
     "id": 11,
     "name": "12lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
@@ -408,6 +411,7 @@
   {
     "id": 12,
     "name": "10lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
@@ -470,6 +474,7 @@
   {
     "id": 22,
     "name": "8lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -509,6 +514,7 @@
   {
     "id": 13,
     "name": "8lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,
@@ -599,6 +605,7 @@
   {
     "id": 23,
     "name": "6lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -638,6 +645,7 @@
   {
     "id": 14,
     "name": "6lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.74,
@@ -728,6 +736,7 @@
   {
     "id": 24,
     "name": "4lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -767,6 +776,7 @@
   {
     "id": 15,
     "name": "4lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.74,
@@ -857,6 +867,7 @@
   {
     "id": 16,
     "name": "18lb-explosive-shell",
+    "imageAlias": "explosive-shell",
     "ranged": true,
     "orgDamageRatio": 21500,
     "reorgDebuff": 0.85,
@@ -909,6 +920,7 @@
   {
     "id": 17,
     "name": "10lb-explosive-shell",
+    "imageAlias": "explosive-shell",
     "ranged": true,
     "orgDamageRatio": 21500,
     "reorgDebuff": 0.75,
@@ -1028,6 +1040,7 @@
   {
     "id": 19,
     "name": "18lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -1067,6 +1080,7 @@
   {
     "id": 21,
     "name": "10lb-canister-fire",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 32000,
     "reorgDebuff": 1,
@@ -1106,6 +1120,7 @@
   {
     "id": 25,
     "name": "howitzer-canister",
+    "imageAlias": "canister",
     "ranged": true,
     "orgDamageRatio": 35000,
     "reorgDebuff": 1,
@@ -1245,57 +1260,9 @@
     "extendRange": false
   },
   {
-    "id": 28,
-    "name": "rocket-long",
-    "imageAlias": "rocket",
-    "ranged": true,
-    "orgDamageRatio": 150000,
-    "reorgDebuff": 0.9,
-    "attackEffectDuration": 8,
-    "projectileWidth": 11,
-    "orgDamageModifierByTargetOrg": {
-      "from": 0.9,
-      "to": 0.4,
-      "value": -0.7
-    },
-    "maxRange": 360,
-    "ranges": [
-      {
-        "from": 0.33,
-        "to": 1,
-        "damageModifier": {
-          "near": 0,
-          "far": -0.6
-        },
-        "name": "long"
-      }
-    ],
-    "arcHeight": 4.5,
-    "cannotUseAfterRun": true,
-    "projectilePenetration": 0.4,
-    "areaOfEffect": {
-      "type": "circular",
-      "ranges": [
-        {
-          "start": 120,
-          "end": 360,
-          "startRadius": 22,
-          "endRadius": 35
-        }
-      ],
-      "edgeDamageModifier": -0.1,
-      "absorptionModifier": 1.25
-    },
-    "shotSound": "rocket-volley",
-    "shotAnim": "rocketVolley",
-    "shotImpactAnim": "shellImpact",
-    "ammoCost": 5000,
-    "extendRange": false
-  },
-  {
     "id": 33,
     "name": "ship-cannon",
-    "imageAlias": "8lb-cannon-ball",
+    "imageAlias": "cannon-ball",
     "ranged": true,
     "orgDamageRatio": 21000,
     "reorgDebuff": 0.76,

@@ -1100,7 +1100,7 @@
     "meleeAttack": 400,
     "meleeDefense": 467,
     "meleeDamageType": "artillery-sabre",
-    "rangedDamageTypes": ["rocket", "rocket-long"],
+    "rangedDamageTypes": ["rocket"],
     "panicFireDistance": 120,
     "chargeBonus": 500,
     "walkMovement": 52,
