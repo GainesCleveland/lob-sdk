@@ -856,5 +856,13 @@
     "description": "Cada lección cubre una situación que vale la pena conocer.",
     "allSeen": "Viste todas las lecciones del tutorial.",
     "viewMissed": "Ver lecciones que faltan"
+  },
+  "deleteAccount": "Eliminar cuenta",
+  "deleteAccountModal": {
+    "hint": "Esto programa la eliminación de tu cuenta. Puedes deshacerla volviendo a iniciar sesión durante el período de gracia.",
+    "title": "Eliminar cuenta",
+    "message": "Tu cuenta quedará programada para eliminarse en {{graceDays}} días. Puedes cancelar en cualquier momento antes volviendo a iniciar sesión. Después de eso, tu cuenta y tus datos personales se anonimizarán de forma permanente. ¿Estás seguro?",
+    "scheduled": "Tu cuenta está programada para eliminarse en {{graceDays}} días. Vuelve a iniciar sesión antes de ese plazo para cancelarla.",
+    "error": "No se pudo programar la eliminación de la cuenta. Inténtalo de nuevo."
   }
 }

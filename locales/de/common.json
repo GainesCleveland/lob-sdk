@@ -772,5 +772,13 @@
     "message": "Dein langsames Spiel ist spielbereit.",
     "goToGame": "Zum Spiel",
     "ignore": "Ignorieren"
+  },
+  "deleteAccount": "Konto löschen",
+  "deleteAccountModal": {
+    "hint": "Dies plant die Löschung deines Kontos. Du kannst sie rückgängig machen, indem du dich während der Kulanzfrist wieder anmeldest.",
+    "title": "Konto löschen",
+    "message": "Dein Konto wird in {{graceDays}} Tagen zur Löschung vorgemerkt. Du kannst dies jederzeit vorher abbrechen, indem du dich wieder anmeldest. Danach werden dein Konto und deine persönlichen Daten dauerhaft anonymisiert. Bist du sicher?",
+    "scheduled": "Dein Konto ist zur Löschung in {{graceDays}} Tagen vorgemerkt. Melde dich vorher wieder an, um sie abzubrechen.",
+    "error": "Kontolöschung konnte nicht geplant werden. Bitte versuche es erneut."
   }
 }

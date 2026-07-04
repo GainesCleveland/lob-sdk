@@ -785,5 +785,13 @@
     "message": "Ta partie lente est prête.",
     "goToGame": "Aller à la partie",
     "ignore": "Ignorer"
+  },
+  "deleteAccount": "Supprimer le compte",
+  "deleteAccountModal": {
+    "hint": "Ceci programme la suppression de votre compte. Vous pouvez l'annuler en vous reconnectant pendant le délai de grâce.",
+    "title": "Supprimer le compte",
+    "message": "Votre compte sera programmé pour suppression dans {{graceDays}} jours. Vous pouvez annuler à tout moment avant en vous reconnectant. Ensuite, votre compte et vos données personnelles seront anonymisés de façon permanente. Êtes-vous sûr ?",
+    "scheduled": "Votre compte est programmé pour suppression dans {{graceDays}} jours. Reconnectez-vous avant cette échéance pour l'annuler.",
+    "error": "Impossible de programmer la suppression du compte. Veuillez réessayer."
   }
 }

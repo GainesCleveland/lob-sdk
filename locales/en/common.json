@@ -981,5 +981,13 @@
     "description": "Each lesson covers a situation worth knowing.",
     "allSeen": "You saw every lesson the tutorial has to offer.",
     "viewMissed": "View missed lessons"
+  },
+  "deleteAccount": "Delete account",
+  "deleteAccountModal": {
+    "hint": "This schedules your account for deletion. You can undo it by logging back in during the grace period.",
+    "title": "Delete account",
+    "message": "Your account will be scheduled for deletion in {{graceDays}} days. You can cancel any time before then by logging back in. After that, your account and personal data are permanently anonymized. Are you sure?",
+    "scheduled": "Your account is scheduled for deletion in {{graceDays}} days. Log in again before then to cancel it.",
+    "error": "Could not schedule account deletion. Please try again."
   }
 }
