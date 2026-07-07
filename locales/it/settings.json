@@ -128,6 +128,10 @@
     "title": "La selezione delle unità inattive include ordini invariati",
     "description": "Spento: solo unità senza ordini. Acceso: anche unità che hanno ancora l'ordine del turno precedente se non lo hai modificato in questo turno."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Il tipo di ordine si applica alla selezione",
+    "description": "Attivo: cambiare il tipo di movimento lo riapplica agli ordini attuali delle unità selezionate e il pulsante degli ordini segue la selezione. Disattivo: imposta solo il tipo del prossimo ordine che disegni (classico)."
+  },
   "keybindings": {
     "rotateCameraContinuous": "Ruota camera (tieni premuto)",
     "rotateCameraSnap": "Ruota camera di 90°",

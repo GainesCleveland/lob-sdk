@@ -128,6 +128,10 @@
     "title": "Boştaki seçim değişmeyen emirleri kapsar",
     "description": "Kapalı: yalnızca emri olmayan birimler. Açık: bu turda değiştirmediysen önceki turun emrini hâlâ taşıyan birimler de dahil."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Emir türü seçime uygulanır",
+    "description": "Açık: hareket türünü değiştirmek, seçili birimlerin mevcut emirlerini yeniden atar ve emir düğmesi seçiminizi yansıtır. Kapalı: yalnızca çizeceğiniz sonraki emrin türünü belirler (klasik)."
+  },
   "keybindings": {
     "rotateCameraContinuous": "Kamerayı döndür (basılı tut)",
     "rotateCameraSnap": "Kamerayı 90° döndür",
