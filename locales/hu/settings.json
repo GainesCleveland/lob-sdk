@@ -128,6 +128,10 @@
     "title": "A tétlen kiválasztás a változatlan parancsokat is tartalmazza",
     "description": "Ki: csak parancs nélküli egységek. Be: azok az egységek is, amelyeknek még megvan az előző kör parancsa, ha ebben a körben nem módosítottad."
   },
+  "applyOrderTypeToSelection": {
+    "title": "A parancstípus a kijelölésre vonatkozik",
+    "description": "Be: a mozgástípus módosítása átállítja a kijelölt egységek jelenlegi parancsait, és a parancsgomb a kijelölést tükrözi. Ki: csak a következő megrajzolt parancs típusát állítja be (klasszikus)."
+  },
   "keybindings": {
     "rotateCameraContinuous": "Kamera forgatása (tartsd lenyomva)",
     "rotateCameraSnap": "Kamera forgatása 90°-kal",

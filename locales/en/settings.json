@@ -156,6 +156,10 @@
     "title": "Idle selection includes unchanged orders",
     "description": "Off: only units with no orders. On: also units that still have last turn's order if you did not change it this turn."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Order type applies to selection",
+    "description": "On: changing the movement type retypes the selected units' current orders and the order button follows your selection. Off: it only sets the type for the next order you draw (classic)."
+  },
   "showChat": {
     "title": "Show chat"
   },

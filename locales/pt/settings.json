@@ -128,6 +128,10 @@
     "title": "A seleção de ociosas inclui ordens inalteradas",
     "description": "Desligado: apenas unidades sem ordens. Ligado: também unidades que ainda têm a ordem do turno anterior se você não a alterou neste turno."
   },
+  "applyOrderTypeToSelection": {
+    "title": "O tipo de ordem aplica-se à seleção",
+    "description": "Ligado: mudar o tipo de movimento reaplica-o às ordens atuais das unidades selecionadas, e o botão de ordem segue a sua seleção. Desligado: apenas define o tipo da próxima ordem que desenhar (clássico)."
+  },
   "keybindings": {
     "rotateCameraContinuous": "Girar câmera (segurar)",
     "rotateCameraSnap": "Girar câmera 90°",

@@ -128,6 +128,10 @@
     "title": "Wybór bezczynnych obejmuje niezmienione rozkazy",
     "description": "Wył.: tylko jednostki bez rozkazów. Wł.: także jednostki, które nadal mają rozkaz z poprzedniej tury, jeśli nie zmieniłeś go w tej turze."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Typ rozkazu dotyczy zaznaczenia",
+    "description": "Wł.: zmiana typu ruchu zmienia bieżące rozkazy zaznaczonych jednostek, a przycisk rozkazu odzwierciedla zaznaczenie. Wył.: ustawia tylko typ następnego rysowanego rozkazu (klasycznie)."
+  },
   "keybindings": {
     "rotateCameraContinuous": "Obróć kamerę (przytrzymaj)",
     "rotateCameraSnap": "Obróć kamerę o 90°",

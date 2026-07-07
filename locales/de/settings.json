@@ -128,6 +128,10 @@
     "title": "Leerlaufauswahl schließt unveränderte Befehle ein",
     "description": "Aus: nur Einheiten ohne Befehle. Ein: auch Einheiten, die noch den Befehl der letzten Runde haben, wenn Sie ihn in dieser Runde nicht geändert haben."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Befehlstyp gilt für die Auswahl",
+    "description": "An: Das Ändern des Bewegungstyps wendet ihn auf die aktuellen Befehle der ausgewählten Einheiten an, und die Befehlsschaltfläche folgt deiner Auswahl. Aus: Legt nur den Typ für den nächsten gezeichneten Befehl fest (klassisch)."
+  },
   "showChat": {
     "title": "Chat anzeigen"
   },
