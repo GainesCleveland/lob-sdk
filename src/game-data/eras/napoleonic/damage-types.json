@@ -218,7 +218,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 10500,
+    "ammoCost": 11000,
     "extendRange": false
   },
   {
@@ -301,7 +301,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 10335,
+    "ammoCost": 11000,
     "extendRange": false
   },
   {
@@ -361,7 +361,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 10335,
+    "ammoCost": 11000,
     "extendRange": false
   },
   {
@@ -495,7 +495,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 9670,
+    "ammoCost": 10700,
     "extendRange": false
   },
   {
@@ -555,7 +555,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 9670,
+    "ammoCost": 10700,
     "extendRange": false
   },
   {
@@ -638,7 +638,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 10670,
+    "ammoCost": 10000,
     "extendRange": false
   },
   {
@@ -698,7 +698,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 10670,
+    "ammoCost": 10000,
     "extendRange": false
   },
   {
@@ -781,7 +781,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 11000,
+    "ammoCost": 10500,
     "extendRange": false
   },
   {
@@ -841,7 +841,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "cannonBallImpact",
-    "ammoCost": 11000,
+    "ammoCost": 10500,
     "extendRange": false
   },
   {
@@ -890,7 +890,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 10500,
+    "ammoCost": 11000,
     "extendRange": false
   },
   {
@@ -939,7 +939,7 @@
     "shotSound": "artillery-fire",
     "shotAnim": "cannonVolley",
     "shotImpactAnim": "shellImpact",
-    "ammoCost": 10000,
+    "ammoCost": 9500,
     "extendRange": false
   },
   {

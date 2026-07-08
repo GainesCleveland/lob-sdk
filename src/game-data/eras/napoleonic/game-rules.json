@@ -24,8 +24,8 @@
     "regenerationBonusRate": 0.16,
     "maxHpConsumptionReduction": -0.5,
     "ammoReserve": {
-      "micro": 90000,
-      "clash": 140000,
+      "micro": 75000,
+      "clash": 120000,
       "combat": 225000,
       "battle": 330000,
       "grand_battle": 500000
