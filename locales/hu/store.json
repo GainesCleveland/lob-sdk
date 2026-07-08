@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Szerezz <0/>-et!",
-    "subtitle": "Szerezz elképesztő kozmetikumokat, és tűnj ki a sorból!"
+    "subtitle": "Szerezz elképesztő kozmetikumokat, és tűnj ki a sorból!",
+    "unavailable": "Az áruház jelenleg nem érhető el. Kérjük, próbáld újra később."
   },
 
   "aboutCurrencies": "A fizetőeszközökről",

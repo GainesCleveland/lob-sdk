@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Lấy <0/>",
-    "subtitle": "Mở khóa các trang phục tuyệt vời và nổi bật giữa đám đông!"
+    "subtitle": "Mở khóa các trang phục tuyệt vời và nổi bật giữa đám đông!",
+    "unavailable": "Cửa hàng hiện không khả dụng. Vui lòng thử lại sau."
   },
 
   "aboutCurrencies": "Về tiền tệ",

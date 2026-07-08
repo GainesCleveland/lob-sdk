@@ -1,7 +1,8 @@
 ﻿{
   "currencyShop": {
     "title": "购买<0/>",
-    "subtitle": "解锁独特的装饰皮肤，于众生中脱颖而出！"
+    "subtitle": "解锁独特的装饰皮肤，于众生中脱颖而出！",
+    "unavailable": "商店目前无法使用，请稍后再试。"
   },
   "aboutCurrencies": "货币介绍",
   "currency": {

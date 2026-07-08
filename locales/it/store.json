@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Ottieni <0/>",
-    "subtitle": "Sblocca fantastici cosmetici e distinguiti dalla massa!"
+    "subtitle": "Sblocca fantastici cosmetici e distinguiti dalla massa!",
+    "unavailable": "Il negozio non è al momento disponibile. Riprova più tardi."
   },
 
   "aboutCurrencies": "Informazioni sulle valute",

@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "<0/> Münzen bekommen",
-    "subtitle": "Schalte unglaubliche Kosmetikartikel frei und stich aus der Menge hervor!"
+    "subtitle": "Schalte unglaubliche Kosmetikartikel frei und stich aus der Menge hervor!",
+    "unavailable": "Der Shop ist derzeit nicht verfügbar. Bitte versuche es später erneut."
   },
 
   "aboutCurrencies": "Über Währungen",

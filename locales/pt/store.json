@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Obtenha <0/>",
-    "subtitle": "Desbloqueie cosméticos incríveis e destaque-se da multidão!"
+    "subtitle": "Desbloqueie cosméticos incríveis e destaque-se da multidão!",
+    "unavailable": "A loja está indisponível no momento. Tente novamente mais tarde."
   },
 
   "aboutCurrencies": "Sobre Moedas",

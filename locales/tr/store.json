@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "<0/> Al",
-    "subtitle": "Harika kozmetiklerin kilidini aç ve kalabalığın arasından sıyrıl!"
+    "subtitle": "Harika kozmetiklerin kilidini aç ve kalabalığın arasından sıyrıl!",
+    "unavailable": "Mağaza şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
   },
 
   "aboutCurrencies": "Para Birimleri Hakkında",

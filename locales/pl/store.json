@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Kup <0/>",
-    "subtitle": "Odblokuj unikalne dodatki i odróżniaj się od innych!"
+    "subtitle": "Odblokuj unikalne dodatki i odróżniaj się od innych!",
+    "unavailable": "Sklep jest obecnie niedostępny. Spróbuj ponownie później."
   },
 
   "aboutCurrencies": "O walutach",
