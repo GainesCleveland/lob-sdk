@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Obtenir des <0/>",
-    "subtitle": "Débloquez des cosmétiques incroyables et démarquez-vous de la foule !"
+    "subtitle": "Débloquez des cosmétiques incroyables et démarquez-vous de la foule !",
+    "unavailable": "La boutique est indisponible pour le moment. Veuillez réessayer plus tard."
   },
 
   "aboutCurrencies": "À propos des monnaies",
