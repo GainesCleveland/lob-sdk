@@ -772,5 +772,13 @@
     "message": "Yavaş maçın oynamaya hazır.",
     "goToGame": "Maça git",
     "ignore": "Yoksay"
+  },
+  "deleteAccount": "Hesabı sil",
+  "deleteAccountModal": {
+    "hint": "Bu, hesabınızın silinmesini planlar. Ödemesiz dönem içinde tekrar giriş yaparak geri alabilirsiniz.",
+    "title": "Hesabı sil",
+    "message": "Hesabınız {{graceDays}} gün içinde silinmek üzere planlanacak. Bundan önce istediğiniz zaman tekrar giriş yaparak iptal edebilirsiniz. Sonrasında hesabınız ve kişisel verileriniz kalıcı olarak anonimleştirilir. Emin misiniz?",
+    "scheduled": "Hesabınız {{graceDays}} gün içinde silinmek üzere planlandı. İptal etmek için bu süre dolmadan tekrar giriş yapın.",
+    "error": "Hesap silme planlanamadı. Lütfen tekrar deneyin."
   }
 }

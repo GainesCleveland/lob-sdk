@@ -960,5 +960,13 @@
     "description": "Mỗi bài học đề cập một tình huống đáng biết.",
     "allSeen": "Bạn đã xem tất cả bài học của hướng dẫn.",
     "viewMissed": "Xem bài học đã bỏ lỡ"
+  },
+  "deleteAccount": "Xóa tài khoản",
+  "deleteAccountModal": {
+    "hint": "Thao tác này sẽ lên lịch xóa tài khoản của bạn. Bạn có thể hoàn tác bằng cách đăng nhập lại trong thời gian gia hạn.",
+    "title": "Xóa tài khoản",
+    "message": "Tài khoản của bạn sẽ được lên lịch xóa sau {{graceDays}} ngày. Bạn có thể hủy bất cứ lúc nào trước đó bằng cách đăng nhập lại. Sau đó, tài khoản và dữ liệu cá nhân của bạn sẽ được ẩn danh vĩnh viễn. Bạn có chắc chắn không?",
+    "scheduled": "Tài khoản của bạn được lên lịch xóa sau {{graceDays}} ngày. Đăng nhập lại trước thời hạn đó để hủy.",
+    "error": "Không thể lên lịch xóa tài khoản. Vui lòng thử lại."
   }
 }

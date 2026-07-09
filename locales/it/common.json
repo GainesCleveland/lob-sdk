@@ -773,5 +773,13 @@
     "message": "La tua partita lenta è pronta.",
     "goToGame": "Vai alla partita",
     "ignore": "Ignora"
+  },
+  "deleteAccount": "Elimina account",
+  "deleteAccountModal": {
+    "hint": "Questo programma l'eliminazione del tuo account. Puoi annullarla effettuando di nuovo l'accesso durante il periodo di tolleranza.",
+    "title": "Elimina account",
+    "message": "Il tuo account verrà programmato per l'eliminazione tra {{graceDays}} giorni. Puoi annullare in qualsiasi momento prima effettuando di nuovo l'accesso. Dopodiché, il tuo account e i tuoi dati personali verranno anonimizzati in modo permanente. Sei sicuro?",
+    "scheduled": "Il tuo account è programmato per l'eliminazione tra {{graceDays}} giorni. Effettua di nuovo l'accesso prima di allora per annullarla.",
+    "error": "Impossibile programmare l'eliminazione dell'account. Riprova."
   }
 }

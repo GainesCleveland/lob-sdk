@@ -773,5 +773,13 @@
     "message": "Sua partida lenta está pronta.",
     "goToGame": "Ir para a partida",
     "ignore": "Ignorar"
+  },
+  "deleteAccount": "Excluir conta",
+  "deleteAccountModal": {
+    "hint": "Isto agenda a exclusão da sua conta. Você pode desfazer entrando novamente durante o período de carência.",
+    "title": "Excluir conta",
+    "message": "Sua conta será agendada para exclusão em {{graceDays}} dias. Você pode cancelar a qualquer momento antes disso entrando novamente. Depois disso, sua conta e seus dados pessoais serão anonimizados permanentemente. Tem certeza?",
+    "scheduled": "Sua conta está agendada para exclusão em {{graceDays}} dias. Entre novamente antes desse prazo para cancelar.",
+    "error": "Não foi possível agendar a exclusão da conta. Tente novamente."
   }
 }
