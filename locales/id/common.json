@@ -814,5 +814,13 @@
   "max": "Maksimal",
   "noAmmoRegain": "Tanpa pemulihan amunisi",
   "flankMeleeOrgModifier": "Modifier org jarak dekat sisi",
-  "rearCharge": "Serangan dari belakang"
+  "rearCharge": "Serangan dari belakang",
+  "deleteAccount": "Hapus akun",
+  "deleteAccountModal": {
+    "hint": "Ini menjadwalkan penghapusan akun Anda. Anda dapat membatalkannya dengan masuk kembali selama masa tenggang.",
+    "title": "Hapus akun",
+    "message": "Akun Anda akan dijadwalkan untuk dihapus dalam {{graceDays}} hari. Anda dapat membatalkan kapan saja sebelumnya dengan masuk kembali. Setelah itu, akun dan data pribadi Anda akan dianonimkan secara permanen. Apakah Anda yakin?",
+    "scheduled": "Akun Anda dijadwalkan untuk dihapus dalam {{graceDays}} hari. Masuk kembali sebelum batas waktu tersebut untuk membatalkannya.",
+    "error": "Tidak dapat menjadwalkan penghapusan akun. Silakan coba lagi."
+  }
 }

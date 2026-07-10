@@ -930,5 +930,13 @@
   "max": "Maksymalny",
   "noAmmoRegain": "Brak odzyskiwania amunicji",
   "flankMeleeOrgModifier": "Modyfikator org. wręcz z flanki",
-  "rearCharge": "Szarża od tyłu"
+  "rearCharge": "Szarża od tyłu",
+  "deleteAccount": "Usuń konto",
+  "deleteAccountModal": {
+    "hint": "To zaplanuje usunięcie Twojego konta. Możesz to cofnąć, logując się ponownie w okresie karencji.",
+    "title": "Usuń konto",
+    "message": "Twoje konto zostanie zaplanowane do usunięcia za {{graceDays}} dni. Możesz anulować w dowolnym momencie wcześniej, logując się ponownie. Potem Twoje konto i dane osobowe zostaną trwale zanonimizowane. Czy na pewno?",
+    "scheduled": "Twoje konto jest zaplanowane do usunięcia za {{graceDays}} dni. Zaloguj się ponownie przed tym terminem, aby anulować.",
+    "error": "Nie udało się zaplanować usunięcia konta. Spróbuj ponownie."
+  }
 }

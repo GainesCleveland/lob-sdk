@@ -990,5 +990,13 @@
   },
   "noAmmoRegain": "탄약 보충 없음",
   "flankMeleeOrgModifier": "측면 근접 조직력 수정치",
-  "rearCharge": "후방 돌격"
+  "rearCharge": "후방 돌격",
+  "deleteAccount": "계정 삭제",
+  "deleteAccountModal": {
+    "hint": "계정 삭제가 예약됩니다. 유예 기간 동안 다시 로그인하면 취소할 수 있습니다.",
+    "title": "계정 삭제",
+    "message": "계정이 {{graceDays}}일 후 삭제되도록 예약됩니다. 그 전에 다시 로그인하면 언제든지 취소할 수 있습니다. 이후에는 계정과 개인정보가 영구적으로 익명화됩니다. 확실합니까?",
+    "scheduled": "계정이 {{graceDays}}일 후 삭제되도록 예약되었습니다. 취소하려면 그 기한 전에 다시 로그인하세요.",
+    "error": "계정 삭제를 예약할 수 없습니다. 다시 시도해 주세요."
+  }
 }

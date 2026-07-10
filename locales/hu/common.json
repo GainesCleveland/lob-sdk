@@ -769,5 +769,13 @@
   "max": "Maximális",
   "noAmmoRegain": "Nincs lőszer-visszanyerés",
   "flankMeleeOrgModifier": "Szárnyi közelharci org módosító",
-  "rearCharge": "Hátba támadás"
+  "rearCharge": "Hátba támadás",
+  "deleteAccount": "Fiók törlése",
+  "deleteAccountModal": {
+    "hint": "Ez ütemezi a fiókod törlését. Visszavonhatod, ha a türelmi időszak alatt újra bejelentkezel.",
+    "title": "Fiók törlése",
+    "message": "A fiókod {{graceDays}} nap múlva törlésre lesz ütemezve. Ezt bármikor visszavonhatod előtte, ha újra bejelentkezel. Ezután a fiókod és személyes adataid véglegesen anonimizálásra kerülnek. Biztos vagy benne?",
+    "scheduled": "A fiókod {{graceDays}} nap múlva törlésre van ütemezve. Jelentkezz be újra a határidő előtt a visszavonáshoz.",
+    "error": "A fiók törlését nem sikerült ütemezni. Kérjük, próbáld újra."
+  }
 }
