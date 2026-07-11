@@ -93,6 +93,44 @@ export function fireEdgeRegionPolygon(
   return pts;
 }
 
+/** Squared distance from point `p` to the segment `a`->`b`. */
+function pointToSegmentDistanceSq(p: Point2, a: Point2, b: Point2): number {
+  const abx = b.x - a.x;
+  const aby = b.y - a.y;
+  const lenSq = abx * abx + aby * aby;
+  const apx = p.x - a.x;
+  const apy = p.y - a.y;
+  let t = lenSq > 0 ? (apx * abx + apy * aby) / lenSq : 0;
+  t = Math.max(0, Math.min(1, t));
+  const dx = apx - t * abx;
+  const dy = apy - t * aby;
+  return dx * dx + dy * dy;
+}
+
+/** Min squared distance from point `p` to any edge of polygon `poly`. */
+function pointToPolygonEdgesDistanceSq(p: Point2, poly: Point2[]): number {
+  let min = Infinity;
+  for (let i = 0; i < poly.length; i++) {
+    const d = pointToSegmentDistanceSq(p, poly[i], poly[(i + 1) % poly.length]);
+    if (d < min) min = d;
+  }
+  return min;
+}
+
+/**
+ * Minimum edge-to-edge distance between two DISJOINT convex polygons. For convex
+ * shapes the closest pair is always a vertex against the other's edge (vertex-vertex
+ * falls out as a segment endpoint), so it suffices to test every vertex of each
+ * against every edge of the other. Callers must rule out overlap first (returns a
+ * spurious positive if the polygons intersect).
+ */
+function convexPolygonsGap(a: Point2[], b: Point2[]): number {
+  let minSq = Infinity;
+  for (const p of a) minSq = Math.min(minSq, pointToPolygonEdgesDistanceSq(p, b));
+  for (const p of b) minSq = Math.min(minSq, pointToPolygonEdgesDistanceSq(p, a));
+  return Math.sqrt(minSq);
+}
+
 /**
  * A unit's collision footprint as a single convex primitive. Two implementations,
  * `ObbShape` (a rotated rectangle, napoleonic) and `CircleShape` (WW2), share this
@@ -111,6 +149,12 @@ export interface CollisionShape {
   boundingRadius(): number;
   /** Overlap as a fraction (0..1) of the smaller footprint's area; 0 = disjoint. */
   overlapRatio(other: CollisionShape): number;
+  /**
+   * Smallest gap between the two footprints (edge to edge): 0 when they touch or
+   * overlap, else the positive separation distance. Pair-dispatched by concrete
+   * type, like `overlapRatio`.
+   */
+  distanceTo(other: CollisionShape): number;
 }
 
 /** A rotated rectangle (oriented bounding box) given by its four corners. */
@@ -146,6 +190,19 @@ export class ObbShape implements CollisionShape {
     }
     return 0;
   }
+
+  distanceTo(other: CollisionShape): number {
+    if (other instanceof ObbShape) {
+      // Any overlap (a vertex inside, or crossing edges) means zero gap.
+      if (convexOverlapRatio(this.corners, other.corners) > 0) return 0;
+      return convexPolygonsGap(this.corners, other.corners);
+    }
+    // The circle owns the exact circle-vs-rectangle math; delegate to it.
+    if (other instanceof CircleShape) {
+      return other.distanceTo(this);
+    }
+    return 0;
+  }
 }
 
 /** A circle given by its centre and radius. */
@@ -169,6 +226,34 @@ export class CircleShape implements CollisionShape {
       return this.overlapWithObb(other);
     }
     return 0;
+  }
+
+  distanceTo(other: CollisionShape): number {
+    if (other instanceof CircleShape) {
+      const d = Math.hypot(
+        other.center.x - this.center.x,
+        other.center.y - this.center.y,
+      );
+      return Math.max(0, d - this.radius - other.radius);
+    }
+    if (other instanceof ObbShape) {
+      return this.distanceToObb(other);
+    }
+    return 0;
+  }
+
+  /** Gap from this circle to a rotated rectangle; 0 when they touch or overlap. */
+  private distanceToObb(obb: ObbShape): number {
+    // Closest point on the box to the circle centre, in the box's local frame.
+    const { cx, cy, ux, uy, vx, vy, hu, hv } = obbLocalFrame(obb.corners);
+    const relX = this.center.x - cx;
+    const relY = this.center.y - cy;
+    const lx = relX * ux + relY * uy;
+    const ly = relX * vx + relY * vy;
+    const dx = lx - Math.max(-hu, Math.min(hu, lx));
+    const dy = ly - Math.max(-hv, Math.min(hv, ly));
+    // Hypot is 0 when the centre is inside the box.
+    return Math.max(0, Math.hypot(dx, dy) - this.radius);
   }
 
   /**
