@@ -293,9 +293,9 @@
   "topWidth": "Szerokość góry",
   "bottomWidth": "Szerokość dołu",
   "height": "Wysokość",
-  "orgModifierByTargetOrg": "Zmniejszone przez Org. Celu",
+  "orgDamageModifierByTargetOrg": "Zmniejszone przez Org. Celu",
   "damageModifierByTargetHp": "Modyfikator Obrażeń według HP Celu",
-  "lBy": "przez",
+  "value": "wartość",
   "terrainHitboxHeight": "Wysokość Hitboxa Terenu",
   "Terrain": "Teren",
   "projectileAbsorption": "Absorpcja Pocisków",
@@ -421,7 +421,7 @@
     "lossesRatio": "Stosunek Strat",
     "objectives": "Punkty",
     "timeUnderPressure": "Czas pod presją",
-    "timeUnderPressureTooltip": "Czas pod presją to czas, w którym drużyna kontroluje <0>{{percentage}}%</0> punktów PZ lub mniej. Im dłużej drużyna pozostaje pod presją, tym więcej punktów zwycięstwa traci.",
+    "timeUnderPressureTooltip": "Czas pod presją to czas, w którym drużyna posiada <0>{{percentage}}%</0> PZ celów lub mniej. Pod presją drużyna traci <1>{{vpPerTurn}}</1> PZ na turę.",
     "unitsOrgRegain": "Odzyskiwanie Org. Jednostek"
   },
   "offerDrawModal": {
@@ -853,6 +853,9 @@
   "baseAmmo": "Podstawowa amunicja",
   "range": "Zasięg",
   "discord": {
+    "joinTitle": "Dołącz do oficjalnego Discorda Lines of Battle",
+    "joinSubtitle": "Rozmawiaj ze społecznością, znajduj przeciwników i śledź najnowsze wiadomości.",
+    "joinButton": "Dołącz do serwera",
     "link": "Połącz Discord",
     "unlink": "Rozłącz Discord",
     "confirmMessage": "Czy na pewno chcesz rozłączyć swoje konto Discord?",
@@ -884,6 +887,8 @@
   "clear": "Wyczyść",
   "privacy": "Prywatność",
   "showCountry": "Pokaż kraj",
+  "country": "Kraj",
+  "noCountry": "Brak kraju",
   "switchToEra": "Przełącz na {{era}}",
   "goHome": "Strona główna",
   "sendFailed": "Nie udało się wysłać wiadomości",
@@ -925,5 +930,13 @@
   "max": "Maksymalny",
   "noAmmoRegain": "Brak odzyskiwania amunicji",
   "flankMeleeOrgModifier": "Modyfikator org. wręcz z flanki",
-  "rearCharge": "Szarża od tyłu"
+  "rearCharge": "Szarża od tyłu",
+  "deleteAccount": "Usuń konto",
+  "deleteAccountModal": {
+    "hint": "To zaplanuje usunięcie Twojego konta. Możesz to cofnąć, logując się ponownie w okresie karencji.",
+    "title": "Usuń konto",
+    "message": "Twoje konto zostanie zaplanowane do usunięcia za {{graceDays}} dni. Możesz anulować w dowolnym momencie wcześniej, logując się ponownie. Potem Twoje konto i dane osobowe zostaną trwale zanonimizowane. Czy na pewno?",
+    "scheduled": "Twoje konto jest zaplanowane do usunięcia za {{graceDays}} dni. Zaloguj się ponownie przed tym terminem, aby anulować.",
+    "error": "Nie udało się zaplanować usunięcia konta. Spróbuj ponownie."
+  }
 }

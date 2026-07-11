@@ -339,15 +339,6 @@ export interface GameConstants {
   VP_SMALL_DEFAULT_POINTS: number;
 
   /**
-   * Base value for calculating victory points penalty from ticks under pressure.
-   * The penalty is calculated as: -(ticksUnderPressure * (VP_TICKS_UNDER_PRESSURE_BASE / TICKS_PER_TURN))
-   * This represents the base VP penalty per tick. When divided by TICKS_PER_TURN, it gives the VP penalty per turn.
-   *
-   * Example: If this is 0.5 and TICKS_PER_TURN is 16, the penalty is 0.5/16 = 0.03125 VP per tick, or 0.5 VP per turn.
-   */
-  VP_TICKS_UNDER_PRESSURE_BASE: number;
-
-  /**
    * VP value of the auto-spawned neutral objective, as a multiple of a small
    * objective's VP. 0 disables the feature (no neutral objective is spawned).
    * The neutral spawns once, when deployment ends, on placeable-objective maps.
@@ -456,24 +447,34 @@ export enum EngagementRange {
   Max = 2,
 }
 
-export interface OrgModifierByTargetOrg {
-  start: number;
-  end: number;
-  modifier: number;
+/**
+ * Linear modifier keyed on the target's own stat proportion (HP or org). `from`/`to` are the
+ * stat proportions (0..1) between which the effect ramps (typically `from > to`, so it grows as
+ * the stat drops); `value` is the full effect. Independent of `maxRange`. Applied via
+ * `getNegativeLinearModifier`.
+ */
+export interface TargetStatModifier {
+  from: number;
+  to: number;
+  value: number;
 }
 
+/**
+ * A ranged damage range band. `from`/`to` are fractions (0..1) of the weapon's
+ * `maxRange`; `damageModifier` interpolates the HP-damage modifier across the band
+ * (near edge -> far edge) and `orgDamageModifier` interpolates the relative org-damage
+ * modifier (default 0 = no change). A flat band sets near == far.
+ */
 export interface DamageTypeRange {
-  start: number;
-  end: number;
-  startMod: number;
-  endMod: number;
+  from: number;
+  to: number;
+  damageModifier: { near: number; far: number };
+  orgDamageModifier?: { near: number; far: number };
   name?: string;
-  /** Autofire engagement tier whose threshold is this band's `end`. Untagged = `Max`. */
+  /** Autofire engagement tier this band belongs to. Untagged = `Max`. */
   engagementTier?: EngagementRange;
-  /** Per-band override of the damage type's `orgDamageRatio` (e.g. a long-range cannon band). */
-  orgDamageRatio?: number;
-  /** Per-band override of the damage type's `orgModifierByTargetOrg`. */
-  orgModifierByTargetOrg?: OrgModifierByTargetOrg;
+  /** Per-band override of the damage type's `orgDamageModifierByTargetOrg`. */
+  orgDamageModifierByTargetOrg?: TargetStatModifier;
 }
 
 /**
@@ -497,27 +498,18 @@ export interface RangedDamageTypeTemplate {
   damageModifier?: number;
   orgDamageRatio: number;
   /**
-   * Modifies org bonus based on target's organization proportion.
-   * Uses getNegativeLinearModifier to calculate the modifier:
-   * - start: Organization proportion where modifier starts applying (typically 1.0 = 100%)
-   * - end: Organization proportion where modifier reaches full effect (typically 0.0 = 0%)
-   * - modifier: The maximum modifier value to apply to orgBonus
-   * The modifier is applied linearly between start and end based on target's current org proportion.
+   * Modifies the org bonus based on the target's organization proportion.
+   * See {@link TargetStatModifier}: ramps from `from` (proportion where it starts,
+   * typically 1.0) to `to` (proportion of full effect, typically 0.0), full effect `value`.
    */
-  orgModifierByTargetOrg?: OrgModifierByTargetOrg;
+  orgDamageModifierByTargetOrg?: TargetStatModifier;
   /**
-   * Modifies damage modifier based on target's HP proportion.
-   * Uses getNegativeLinearModifier to calculate the modifier:
-   * - start: HP proportion where modifier starts applying (typically 1.0 = 100%)
-   * - end: HP proportion where modifier reaches full effect (typically 0.0 = 0%)
-   * - modifier: The maximum modifier value to apply to damageModifier
-   * The modifier is applied linearly between start and end based on target's current HP proportion.
+   * Modifies the damage modifier based on the target's HP proportion.
+   * See {@link TargetStatModifier}.
    */
-  damageModifierByTargetHp?: {
-    start: number;
-    end: number;
-    modifier: number;
-  };
+  damageModifierByTargetHp?: TargetStatModifier;
+  /** Weapon's max range (absolute); each band's `from`/`to` is a fraction of this. */
+  maxRange: number;
   ranges: DamageTypeRange[];
   arcHeight?: number;
   /**
@@ -647,7 +639,14 @@ export interface ObjectivesRule {
    * proportion of the non-neutral objective victory points, the team
    * will start being under pressure.
    */
-  pressureThreshold: number;
+  vpPressureThreshold: number;
+  /**
+   * Era-default base value for the under-pressure VP penalty, applied as
+   * -(ticksUnderPressure * (vpTicksUnderPressureBase / TICKS_PER_TURN)). 0 disables it.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpTicksUnderPressureBase getter (scenario > battle type > this).
+   */
+  vpTicksUnderPressureBase: number;
 }
 
 export interface AllyCollisionRule {

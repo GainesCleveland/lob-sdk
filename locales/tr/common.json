@@ -288,11 +288,11 @@
   "topWidth": "Üst Genişlik",
   "bottomWidth": "Alt Genişlik",
   "height": "Yükseklik",
-  "orgModifierByTargetOrg": "Hedef Organizasyonuna Göre Azalt",
+  "orgDamageModifierByTargetOrg": "Hedef Organizasyonuna Göre Azalt",
   "damageModifierByTargetHp": "Hedef HP'ye Göre Hasar Modifikatörü",
   "from": "dan",
   "to": "e",
-  "lBy": "tarafından",
+  "value": "değer",
   "terrainHitboxHeight": "Arazi Çarpışma Kutusu Yüksekliği",
   "Terrain": "Arazi",
   "projectileAbsorption": "Mermi Emilimi",
@@ -404,7 +404,7 @@
     "lossesRatio": "Kayıp Oranı",
     "objectives": "Hedefler",
     "timeUnderPressure": "Baskı Altındaki Süre",
-    "timeUnderPressureTooltip": "Baskı altındaki süre, bir takımın hedeflerin <0>{{percentage}}%</0>'ini ZP veya daha azını kontrol ettiği süredir. Bir takım ne kadar uzun süre baskı altında kalırsa, o kadar çok zafer puanı kaybeder.",
+    "timeUnderPressureTooltip": "Baskı süresi, bir takımın hedef ZP'sinin <0>{{percentage}}%</0>'ini veya daha azını elinde tuttuğu süredir. Baskı altında bir takım tur başına <1>{{vpPerTurn}}</1> ZP kaybeder.",
     "unitsOrgRegain": "Birim organizasyon kazanımı"
   },
   "offerDrawModal": {
@@ -697,6 +697,9 @@
   "baseAmmo": "Temel cephane",
   "range": "Menzil",
   "discord": {
+    "joinTitle": "Resmi Lines of Battle Discord'una katıl",
+    "joinSubtitle": "Toplulukla sohbet et, rakip bul ve en son haberleri öğren.",
+    "joinButton": "Sunucuya katıl",
     "link": "Discord Bağla",
     "unlink": "Discord Bağlantısını Kes",
     "confirmMessage": "Discord hesabınızın bağlantısını kesmek istediğinizden emin misiniz?",
@@ -738,6 +741,8 @@
   "clear": "Temizle",
   "privacy": "Gizlilik",
   "showCountry": "Ülkeyi göster",
+  "country": "Ülke",
+  "noCountry": "Ülke yok",
   "switchToEra": "{{era}} dönemine geç",
   "goHome": "Ana Sayfaya Git",
   "sendFailed": "İleti gönderilemedi",
@@ -805,5 +810,13 @@
   "max": "Maksimum",
   "noAmmoRegain": "Cephane yenilenmez",
   "flankMeleeOrgModifier": "Flank yakın dövüş org değiştirici",
-  "rearCharge": "Arkadan hücum"
+  "rearCharge": "Arkadan hücum",
+  "deleteAccount": "Hesabı sil",
+  "deleteAccountModal": {
+    "hint": "Bu, hesabınızın silinmesini planlar. Ödemesiz dönem içinde tekrar giriş yaparak geri alabilirsiniz.",
+    "title": "Hesabı sil",
+    "message": "Hesabınız {{graceDays}} gün içinde silinmek üzere planlanacak. Bundan önce istediğiniz zaman tekrar giriş yaparak iptal edebilirsiniz. Sonrasında hesabınız ve kişisel verileriniz kalıcı olarak anonimleştirilir. Emin misiniz?",
+    "scheduled": "Hesabınız {{graceDays}} gün içinde silinmek üzere planlandı. İptal etmek için bu süre dolmadan tekrar giriş yapın.",
+    "error": "Hesap silme planlanamadı. Lütfen tekrar deneyin."
+  }
 }

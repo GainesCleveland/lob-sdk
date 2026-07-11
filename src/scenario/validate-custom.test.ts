@@ -31,7 +31,7 @@ function makeScenario(partial: Partial<Scenario>): Scenario {
   };
 }
 
-function makeMeleeDt(overrides: Partial<MeleeDamageTypeTemplate> = {}): DamageTypeTemplate {
+function makeMeleeDt(overrides: Partial<MeleeDamageTypeTemplate> = {}): MeleeDamageTypeTemplate {
   return {
     id: 10000,
     name: "custom-melee",
@@ -533,7 +533,8 @@ describe("validateScenarioCustomDefs", () => {
               name: "valid-ranged",
               orgDamageRatio: 0.5,
               ranged: true,
-              ranges: [{ start: 0, end: 100, startMod: 1, endMod: 1 }],
+              maxRange: 100,
+              ranges: [{ from: 0, to: 1, damageModifier: { near: 1, far: 1 } }],
               projectileWidth: 4,
               areaOfEffect: {
                 type: "circular",
@@ -547,6 +548,99 @@ describe("validateScenarioCustomDefs", () => {
       );
       expect(
         errors.some((e) => /needs at least one range bracket/.test(e.message)),
+      ).toBe(false);
+    });
+
+    it("flags a ranged damage type missing maxRange", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99005,
+              name: "no-max-range",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              ranges: [{ from: 0, to: 1, damageModifier: { near: 1, far: 1 } }],
+              projectileWidth: 4,
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some((e) => /needs a max range greater than 0/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("flags a band with out-of-range or inverted from/to", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99006,
+              name: "bad-band-bounds",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              maxRange: 100,
+              // from > to (inverted) and to > 1 (out of range).
+              ranges: [{ from: 0.8, to: 1.5, damageModifier: { near: 1, far: 1 } }],
+              projectileWidth: 4,
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some((e) => /must satisfy 0 <= from <= to <= 1/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("flags a last band that stops short of maxRange", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99007,
+              name: "short-last-band",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              maxRange: 100,
+              ranges: [{ from: 0, to: 0.9, damageModifier: { near: 1, far: 1 } }],
+              projectileWidth: 4,
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some((e) => /last band must reach max range/.test(e.message)),
+      ).toBe(true);
+    });
+
+    it("accepts a ranged type whose first band starts past 0 (min-range weapon)", () => {
+      const errors = validateScenarioCustomDefs(
+        makeScenario({
+          customDamageTypes: [
+            {
+              id: 99008,
+              name: "min-range-weapon",
+              orgDamageRatio: 0.5,
+              ranged: true,
+              maxRange: 100,
+              // Cannonball-style dead zone: fires only from 30% of max range out.
+              ranges: [{ from: 0.3, to: 1, damageModifier: { near: 1, far: 1 } }],
+              projectileWidth: 4,
+            } as unknown as DamageTypeTemplate,
+          ],
+        }),
+        era,
+      );
+      expect(
+        errors.some(
+          (e) =>
+            /must satisfy 0 <= from <= to <= 1/.test(e.message) ||
+            /last band must reach max range/.test(e.message),
+        ),
       ).toBe(false);
     });
 

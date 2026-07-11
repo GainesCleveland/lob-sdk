@@ -288,11 +288,11 @@
   "topWidth": "obere Breite",
   "bottomWidth": "untere Breite",
   "height": "Höhe",
-  "orgModifierByTargetOrg": "Verminderd durch Org des Ziels",
+  "orgDamageModifierByTargetOrg": "Verminderd durch Org des Ziels",
   "damageModifierByTargetHp": "Schadenmodifikator durch KP des Ziels",
   "from": "von",
   "to": "an",
-  "lBy": "von",
+  "value": "Wert",
   "terrainHitboxHeight": "Höhe der Geländehitbox",
   "Terrain": "Gelände",
   "projectileAbsorption": "Projektileabsorption",
@@ -404,7 +404,7 @@
     "lossesRatio": "Verhältnis der Verluste",
     "objectives": "Objektive",
     "timeUnderPressure": "Zeit unter Druck",
-    "timeUnderPressureTooltip": "Zeit unter Druck ist die Zeit, in der ein Team <0>{{percentage}}%</0> der Ziele SP oder weniger kontrolliert. Je länger ein Team unter Druck steht, desto mehr Siegpunkte verliert es.",
+    "timeUnderPressureTooltip": "Zeit unter Druck ist die Zeit, in der ein Team <0>{{percentage}}%</0> der Objektiv-VP oder weniger hält. Unter Druck verliert ein Team <1>{{vpPerTurn}}</1> VP pro Zug.",
     "unitsOrgRegain": "Einheiten Org Wiedergewinnung"
   },
   "offerDrawModal": {
@@ -695,6 +695,9 @@
   "baseAmmo": "Grundmunition",
   "range": "Reichweite",
   "discord": {
+    "joinTitle": "Tritt dem offiziellen Lines of Battle Discord bei",
+    "joinSubtitle": "Chatte mit der Community, finde Gegner und erhalte die neuesten Neuigkeiten.",
+    "joinButton": "Server beitreten",
     "link": "Discord verknüpfen",
     "unlink": "Discord trennen",
     "confirmMessage": "Sind Sie sicher, dass Sie Ihr Discord-Konto trennen möchten?",
@@ -736,6 +739,8 @@
   "clear": "Löschen",
   "privacy": "Datenschutz",
   "showCountry": "Land anzeigen",
+  "country": "Land",
+  "noCountry": "Kein Land",
   "switchToEra": "Zu {{era}} wechseln",
   "goHome": "Zur Startseite",
   "sendFailed": "Nachricht konnte nicht gesendet werden",
@@ -805,5 +810,13 @@
   "max": "Maximal",
   "noAmmoRegain": "Keine Munitionsregeneration",
   "flankMeleeOrgModifier": "Flankennahkampf-Org-Modifikator",
-  "rearCharge": "Angriff von hinten"
+  "rearCharge": "Angriff von hinten",
+  "deleteAccount": "Konto löschen",
+  "deleteAccountModal": {
+    "hint": "Dies plant die Löschung deines Kontos. Du kannst sie rückgängig machen, indem du dich während der Kulanzfrist wieder anmeldest.",
+    "title": "Konto löschen",
+    "message": "Dein Konto wird in {{graceDays}} Tagen zur Löschung vorgemerkt. Du kannst dies jederzeit vorher abbrechen, indem du dich wieder anmeldest. Danach werden dein Konto und deine persönlichen Daten dauerhaft anonymisiert. Bist du sicher?",
+    "scheduled": "Dein Konto ist zur Löschung in {{graceDays}} Tagen vorgemerkt. Melde dich vorher wieder an, um sie abzubrechen.",
+    "error": "Kontolöschung konnte nicht geplant werden. Bitte versuche es erneut."
+  }
 }

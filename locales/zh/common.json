@@ -313,9 +313,9 @@
   "heightModifierPerLevel": "每等级高度修正",
   "damageModifierPerLevel": "每等级伤害修正",
   "maxElevationDiff": "最大高度差",
-  "orgModifierByTargetOrg": "基于目标组织度的组织度修正",
+  "orgDamageModifierByTargetOrg": "基于目标组织度的组织度修正",
   "damageModifierByTargetHp": "基于目标HP的伤害修正",
-  "lBy": "修正",
+  "value": "值",
   "terrainHitboxHeight": "地形遮蔽高度",
   "projectileAbsorption": "枪炮弹抗性",
   "terrainPName": "地形：{{name}}",
@@ -447,7 +447,7 @@
     "lossesRatio": "损伤比",
     "objectives": "目标点",
     "timeUnderPressure": "受压时间",
-    "timeUnderPressureTooltip": "受压时间是指团队控制<0>{{percentage}}%</0>的目标点分值及以下的时间。团队受压时间越长，损失的胜利点数就越多。",
+    "timeUnderPressureTooltip": "受压时间是指一支队伍持有的目标胜利点占比不超过 <0>{{percentage}}%</0> 的时间。受压时，队伍每回合损失 <1>{{vpPerTurn}}</1> 胜利点。",
     "unitsOrgRegain": "单位组织度恢复"
   },
   "offerDrawModal": {
@@ -938,6 +938,9 @@
   "show": "显示",
   "hide": "隐藏",
   "discord": {
+    "joinTitle": "加入 Lines of Battle 官方 Discord",
+    "joinSubtitle": "与社区交流、寻找对手，并获取最新资讯。",
+    "joinButton": "加入服务器",
     "link": "绑定Discord",
     "unlink": "解绑Discord",
     "confirmMessage": "你确定你要解绑你的Discord账号？",
@@ -974,6 +977,8 @@
   "clear": "清除",
   "privacy": "隐私",
   "showCountry": "显示国家",
+  "country": "国家",
+  "noCountry": "无国家",
   "switchToEra": "切换到 {{era}}",
   "goHome": "返回主页",
   "notAvailableForAllUnits": "不适用于所有单位",
@@ -1007,5 +1012,13 @@
   },
   "noAmmoRegain": "弹药不可补充",
   "flankMeleeOrgModifier": "侧翼近战组织度修正",
-  "rearCharge": "背后冲锋"
+  "rearCharge": "背后冲锋",
+  "deleteAccount": "删除账户",
+  "deleteAccountModal": {
+    "hint": "此操作将安排删除您的账户。您可以在宽限期内重新登录以撤销。",
+    "title": "删除账户",
+    "message": "您的账户将在 {{graceDays}} 天后被安排删除。在此之前，您随时可以通过重新登录取消。之后，您的账户和个人数据将被永久匿名化。您确定吗？",
+    "scheduled": "您的账户已安排在 {{graceDays}} 天后删除。请在期限之前重新登录以取消。",
+    "error": "无法安排账户删除。请重试。"
+  }
 }

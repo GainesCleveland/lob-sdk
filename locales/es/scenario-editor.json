@@ -28,7 +28,11 @@
     "orgModifier": "Modificador de org",
     "invalidJson": "JSON no válido",
     "resizeMap": "Redimensionar mapa",
-    "addLanguage": "Agregar idioma"
+    "addLanguage": "Agregar idioma",
+    "optionBuiltIn": "{{name}} (integrada)",
+    "optionCustom": "{{name}} (personalizada)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modificador de velocidad de rotación"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Proyectil",
       "rangeBrackets": "Tramos de alcance",
-      "areaOfEffect": "Área de efecto"
+      "areaOfEffect": "Área de efecto",
+      "targetStatModifiers": "Modificadores según stat del objetivo"
     },
     "fields": {
       "ranged": "A distancia",
@@ -300,7 +305,9 @@
       "shotSound": "Sonido del disparo",
       "shotAnim": "Animación del disparo",
       "extendRange": "Extender alcance",
-      "aimMode": "Modo de puntería"
+      "aimMode": "Modo de puntería",
+      "maxRange": "Alcance máx.",
+      "engagementTier": "Nivel de fuego automático"
     },
     "aimMode": {
       "targetCenter": "Centro del objetivo (estallidos circulares)",
@@ -310,7 +317,13 @@
       "start": "Inicio",
       "end": "Fin",
       "startMod": "Mod. inicio",
-      "endMod": "Mod. fin"
+      "endMod": "Mod. fin",
+      "from": "Desde (%)",
+      "to": "Hasta (%)",
+      "damageHeader": "Modificador de daño (%)",
+      "orgHeader": "Modificador de org (%)",
+      "near": "cerca",
+      "far": "lejos"
     },
     "aoe": {
       "absorptionModifier": "Modificador de absorción",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "El id de tipo de daño {{id}} pertenece a la integrada \"{{name}}\". Conserva el nombre para sobrescribirla, o elige un id diferente.",
       "nameBelongsToBuiltIn": "El nombre \"{{name}}\" pertenece al id integrado {{id}}. Asigna el id a {{id}} para sobrescribirlo, o elige un nombre diferente.",
       "orgDamageRatioRequired": "orgDamageRatio es obligatorio",
-      "rangedNeedsBracket": "Los tipos de daño a distancia necesitan al menos un tramo de alcance"
+      "rangedNeedsBracket": "Los tipos de daño a distancia necesitan al menos un tramo de alcance",
+      "maxRangeRequired": "El alcance máximo debe ser mayor que 0",
+      "rangeBandBounds": "El Desde/Hasta de cada banda debe estar entre 0 y 100%, con Desde ≤ Hasta.",
+      "lastBandMustReachMax": "La última banda debe llegar al 100% (rango máximo)."
+    },
+    "engagementTier": {
+      "low": "Bajo (corto)",
+      "medium": "Efectivo (medio)",
+      "max": "Máx (por defecto)"
+    },
+    "targetStat": {
+      "helper": "En % de la stat del objetivo. Sin efecto por encima de 'from'; 'value' completo en o por debajo de 'to'. Crece a medida que baja el HP/org del objetivo."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Intransitable para",
       "attackModifier": "Modificador de ataque",
       "defenseModifier": "Modificador de defensa",
-      "projectileAbsorptionByDamageType": "Absorción de proyectiles por tipo de daño"
+      "projectileAbsorptionByDamageType": "Absorción de proyectiles por tipo de daño",
+      "runSpeedModifier": "Modificador de velocidad de carrera"
     },
     "errors": {
       "idInUse": "El id de categoría de terreno \"{{id}}\" ya está en uso",
@@ -629,5 +654,15 @@
       "yMin": "Y mín",
       "yMax": "Y máx"
     }
+  },
+  "scoring": {
+    "heading": "Pesos de VP (override del escenario)",
+    "hint": "Deja un campo vacío para heredar el valor por defecto del tipo de batalla o de la era.",
+    "casualties": "Peso de bajas",
+    "underPressure": "Penalización bajo presión",
+    "pressureThreshold": "Umbral de presión",
+    "casualtiesInfo": "VP máximos por la diferencia de bajas entre equipos. Más alto favorece el desgaste sobre mantener objetivos.",
+    "underPressureInfo": "VP que un equipo pierde por turno bajo presión. 0 desactiva la penalización.",
+    "pressureThresholdInfo": "Un equipo está bajo presión mientras tiene este % de VP de objetivos o menos."
   }
 }

@@ -28,7 +28,11 @@
     "orgModifier": "Modyfikator org.",
     "invalidJson": "Nieprawidłowy JSON",
     "resizeMap": "Zmień rozmiar mapy",
-    "addLanguage": "Dodaj język"
+    "addLanguage": "Dodaj język",
+    "optionBuiltIn": "{{name}} (wbudowana)",
+    "optionCustom": "{{name}} (niestandardowa)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modyfikator prędkości obrotu"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Pocisk",
       "rangeBrackets": "Przedziały zasięgu",
-      "areaOfEffect": "Obszar działania"
+      "areaOfEffect": "Obszar działania",
+      "targetStatModifiers": "Modyfikatory wg statystyki celu"
     },
     "fields": {
       "ranged": "Dystansowy",
@@ -300,7 +305,9 @@
       "shotSound": "Dźwięk strzału",
       "shotAnim": "Animacja strzału",
       "extendRange": "Wydłuż zasięg",
-      "aimMode": "Tryb celowania"
+      "aimMode": "Tryb celowania",
+      "maxRange": "Maks. zasięg",
+      "engagementTier": "Poziom automatycznego ognia"
     },
     "aimMode": {
       "targetCenter": "Środek celu (wybuchy okrągłe)",
@@ -310,7 +317,13 @@
       "start": "Początek",
       "end": "Koniec",
       "startMod": "Mod. początku",
-      "endMod": "Mod. końca"
+      "endMod": "Mod. końca",
+      "from": "Od (%)",
+      "to": "Do (%)",
+      "damageHeader": "Modyfikator obrażeń (%)",
+      "orgHeader": "Modyfikator org (%)",
+      "near": "blisko",
+      "far": "daleko"
     },
     "aoe": {
       "absorptionModifier": "Modyfikator absorpcji",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "ID typu obrażeń {{id}} należy do wbudowanego \"{{name}}\". Zachowaj nazwę, aby je nadpisać, lub wybierz inne id.",
       "nameBelongsToBuiltIn": "Nazwa \"{{name}}\" należy do wbudowanego id {{id}}. Ustaw id na {{id}}, aby je nadpisać, lub wybierz inną nazwę.",
       "orgDamageRatioRequired": "orgDamageRatio jest wymagane",
-      "rangedNeedsBracket": "Dystansowe typy obrażeń wymagają co najmniej jednego przedziału zasięgu"
+      "rangedNeedsBracket": "Dystansowe typy obrażeń wymagają co najmniej jednego przedziału zasięgu",
+      "maxRangeRequired": "Maks. zasięg musi być większy niż 0",
+      "rangeBandBounds": "Wartości Od/Do każdego pasma muszą być w zakresie 0–100%, przy czym Od ≤ Do.",
+      "lastBandMustReachMax": "Ostatnie pasmo musi sięgać 100% (maks. zasięg)."
+    },
+    "engagementTier": {
+      "low": "Niski (bliski)",
+      "medium": "Skuteczny (średni)",
+      "max": "Maks (domyślny)"
+    },
+    "targetStat": {
+      "helper": "W % statystyki celu. Brak efektu powyżej 'from'; pełne 'value' przy/poniżej 'to'. Rośnie, gdy HP/org celu spada."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Nieprzejezdny dla",
       "attackModifier": "Modyfikator ataku",
       "defenseModifier": "Modyfikator obrony",
-      "projectileAbsorptionByDamageType": "Absorpcja pocisków według typu obrażeń"
+      "projectileAbsorptionByDamageType": "Absorpcja pocisków według typu obrażeń",
+      "runSpeedModifier": "Modyfikator prędkości biegu"
     },
     "errors": {
       "idInUse": "ID kategorii terenu \"{{id}}\" jest już używane",
@@ -631,5 +656,15 @@
       "yMin": "Y min",
       "yMax": "Y maks"
     }
+  },
+  "scoring": {
+    "heading": "Wagi PZ (nadpisanie scenariusza)",
+    "hint": "Pozostaw pole puste, aby odziedziczyć domyślną wartość typu bitwy lub ery.",
+    "casualties": "Waga strat",
+    "underPressure": "Kara pod presją",
+    "pressureThreshold": "Próg presji",
+    "casualtiesInfo": "Maks. PZ z różnicy strat między drużynami. Wyżej premiuje wyniszczanie zamiast utrzymywania celów.",
+    "underPressureInfo": "PZ tracone przez drużynę na turę pod presją. 0 wyłącza karę.",
+    "pressureThresholdInfo": "Drużyna jest pod presją, gdy posiada ten % PZ celów lub mniej."
   }
 }

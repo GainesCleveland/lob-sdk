@@ -28,7 +28,11 @@
     "orgModifier": "Org modifier",
     "invalidJson": "Invalid JSON",
     "resizeMap": "Resize Map",
-    "addLanguage": "Add Language"
+    "addLanguage": "Add Language",
+    "optionBuiltIn": "{{name}} (built-in)",
+    "optionCustom": "{{name}} (custom)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Rotation speed modifier"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Projectile",
       "rangeBrackets": "Range brackets",
-      "areaOfEffect": "Area of effect"
+      "areaOfEffect": "Area of effect",
+      "targetStatModifiers": "Target-stat modifiers"
     },
     "fields": {
       "ranged": "Ranged",
@@ -300,7 +305,9 @@
       "shotSound": "Shot sound",
       "shotAnim": "Shot anim",
       "extendRange": "Extend range",
-      "aimMode": "Aim mode"
+      "aimMode": "Aim mode",
+      "maxRange": "Max range",
+      "engagementTier": "Autofire tier"
     },
     "aimMode": {
       "targetCenter": "Target centre (circular blasts)",
@@ -310,7 +317,13 @@
       "start": "Start",
       "end": "End",
       "startMod": "Start mod",
-      "endMod": "End mod"
+      "endMod": "End mod",
+      "from": "From (%)",
+      "to": "To (%)",
+      "damageHeader": "Damage modifier (%)",
+      "orgHeader": "Org modifier (%)",
+      "near": "near",
+      "far": "far"
     },
     "aoe": {
       "absorptionModifier": "Absorption modifier",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "Damage type id {{id}} belongs to built-in \"{{name}}\". Keep the name to override it, or pick a different id.",
       "nameBelongsToBuiltIn": "Name \"{{name}}\" belongs to built-in id {{id}}. Set id to {{id}} to override it, or pick a different name.",
       "orgDamageRatioRequired": "orgDamageRatio is required",
-      "rangedNeedsBracket": "Ranged damage types need at least one range bracket"
+      "rangedNeedsBracket": "Ranged damage types need at least one range bracket",
+      "maxRangeRequired": "Max range must be greater than 0",
+      "rangeBandBounds": "Each band's From/To must be within 0–100%, with From ≤ To.",
+      "lastBandMustReachMax": "The last band must reach 100% (max range)."
+    },
+    "engagementTier": {
+      "low": "Low (close)",
+      "medium": "Effective (mid)",
+      "max": "Max (default)"
+    },
+    "targetStat": {
+      "helper": "In % of the target's stat. No effect above 'from'; full 'value' at or below 'to'. Grows as the target's HP/org drops."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Impassable for",
       "attackModifier": "Attack modifier",
       "defenseModifier": "Defense modifier",
-      "projectileAbsorptionByDamageType": "Projectile absorption by damage type"
+      "projectileAbsorptionByDamageType": "Projectile absorption by damage type",
+      "runSpeedModifier": "Run speed modifier"
     },
     "errors": {
       "idInUse": "Terrain category id \"{{id}}\" is already in use",
@@ -629,5 +654,15 @@
       "yMin": "Y min",
       "yMax": "Y max"
     }
+  },
+  "scoring": {
+    "heading": "VP weights (scenario override)",
+    "hint": "Leave a field empty to inherit the battle-type or era default.",
+    "casualties": "Casualties weight",
+    "underPressure": "Under-pressure penalty",
+    "pressureThreshold": "Pressure threshold",
+    "casualtiesInfo": "Max VP from the casualty difference between teams. Higher favours attrition over holding objectives.",
+    "underPressureInfo": "VP a team loses per turn while under pressure. 0 disables the penalty.",
+    "pressureThresholdInfo": "A team is under pressure while it holds this % of objective VP or less."
   }
 }

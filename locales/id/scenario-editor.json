@@ -28,7 +28,11 @@
     "orgModifier": "Modifier org",
     "invalidJson": "JSON tidak valid",
     "resizeMap": "Ubah Ukuran Peta",
-    "addLanguage": "Tambah Bahasa"
+    "addLanguage": "Tambah Bahasa",
+    "optionBuiltIn": "{{name}} (bawaan)",
+    "optionCustom": "{{name}} (kustom)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modifier kecepatan rotasi"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Proyektil",
       "rangeBrackets": "Rentang jarak",
-      "areaOfEffect": "Area efek"
+      "areaOfEffect": "Area efek",
+      "targetStatModifiers": "Pengubah berdasarkan stat target"
     },
     "fields": {
       "ranged": "Jarak jauh",
@@ -300,7 +305,9 @@
       "shotSound": "Suara tembakan",
       "shotAnim": "Animasi tembakan",
       "extendRange": "Perluas jangkauan",
-      "aimMode": "Mode bidik"
+      "aimMode": "Mode bidik",
+      "maxRange": "Jangkauan maks.",
+      "engagementTier": "Tingkat tembak otomatis"
     },
     "aimMode": {
       "targetCenter": "Pusat target (ledakan melingkar)",
@@ -310,7 +317,13 @@
       "start": "Awal",
       "end": "Akhir",
       "startMod": "Mod awal",
-      "endMod": "Mod akhir"
+      "endMod": "Mod akhir",
+      "from": "Dari (%)",
+      "to": "Sampai (%)",
+      "damageHeader": "Pengubah kerusakan (%)",
+      "orgHeader": "Pengubah org (%)",
+      "near": "dekat",
+      "far": "jauh"
     },
     "aoe": {
       "absorptionModifier": "Modifier penyerapan",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "ID tipe kerusakan {{id}} milik bawaan \"{{name}}\". Pertahankan nama untuk menimpanya, atau pilih id berbeda.",
       "nameBelongsToBuiltIn": "Nama \"{{name}}\" milik id bawaan {{id}}. Atur id ke {{id}} untuk menimpanya, atau pilih nama berbeda.",
       "orgDamageRatioRequired": "orgDamageRatio wajib diisi",
-      "rangedNeedsBracket": "Tipe kerusakan jarak jauh memerlukan setidaknya satu rentang jarak"
+      "rangedNeedsBracket": "Tipe kerusakan jarak jauh memerlukan setidaknya satu rentang jarak",
+      "maxRangeRequired": "Jangkauan maks. harus lebih besar dari 0",
+      "rangeBandBounds": "Dari/Ke tiap pita harus antara 0 dan 100%, dengan Dari ≤ Ke.",
+      "lastBandMustReachMax": "Pita terakhir harus mencapai 100% (jangkauan maks)."
+    },
+    "engagementTier": {
+      "low": "Rendah (dekat)",
+      "medium": "Efektif (menengah)",
+      "max": "Maks (bawaan)"
+    },
+    "targetStat": {
+      "helper": "Dalam % stat target. Tanpa efek di atas 'from'; 'value' penuh pada/di bawah 'to'. Meningkat saat HP/org target turun."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Tidak dapat dilewati oleh",
       "attackModifier": "Modifier serangan",
       "defenseModifier": "Modifier pertahanan",
-      "projectileAbsorptionByDamageType": "Penyerapan proyektil menurut tipe kerusakan"
+      "projectileAbsorptionByDamageType": "Penyerapan proyektil menurut tipe kerusakan",
+      "runSpeedModifier": "Modifier kecepatan lari"
     },
     "errors": {
       "idInUse": "ID kategori medan \"{{id}}\" sudah digunakan",
@@ -628,5 +653,15 @@
       "yMin": "Y min",
       "yMax": "Y maks"
     }
+  },
+  "scoring": {
+    "heading": "Bobot VP (penggantian skenario)",
+    "hint": "Biarkan kolom kosong untuk mewarisi default tipe pertempuran atau era.",
+    "casualties": "Bobot korban",
+    "underPressure": "Penalti di bawah tekanan",
+    "pressureThreshold": "Ambang tekanan",
+    "casualtiesInfo": "VP maks. dari selisih korban antar tim. Lebih tinggi mengutamakan atrisi daripada menahan objektif.",
+    "underPressureInfo": "VP yang hilang per giliran saat tim di bawah tekanan. 0 menonaktifkan penalti.",
+    "pressureThresholdInfo": "Sebuah tim berada di bawah tekanan selama memegang persentase VP objektif ini atau kurang."
   }
 }

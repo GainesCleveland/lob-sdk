@@ -310,9 +310,9 @@
   "heightModifierPerLevel": "معدل الارتفاع لكل مستوى",
   "damageModifierPerLevel": "معدل الضرر لكل مستوى",
   "maxElevationDiff": "أقصى فرق ارتفاع",
-  "orgModifierByTargetOrg": "يقل حسب تنظيم الهدف",
+  "orgDamageModifierByTargetOrg": "يقل حسب تنظيم الهدف",
   "damageModifierByTargetHp": "تعديل الضرر حسب صحة الهدف",
-  "lBy": "بواسطة",
+  "value": "قيمة",
   "terrainHitboxHeight": "ارتفاع صندوق التصادم للتضاريس",
   "projectileAbsorption": "امتصاص المقذوفات",
   "terrainPName": "التضاريس: {{name}}",
@@ -442,7 +442,7 @@
     "lossesRatio": "نسبة الخسائر",
     "objectives": "الأهداف",
     "timeUnderPressure": "الوقت تحت الضغط",
-    "timeUnderPressureTooltip": "الوقت تحت الضغط هو الوقت الذي يملك فيه الفريق <0>{{percentage}}%</0> من الأهداف نقاط النصر أو أقل. كلما طال الوقت الذي يقضيه الفريق تحت الضغط، كلما فقد نقاط نصر أكثر.",
+    "timeUnderPressureTooltip": "وقت الضغط هو الوقت الذي يملك فيه الفريق <0>{{percentage}}%</0> من نقاط نصر الأهداف أو أقل. تحت الضغط، يخسر الفريق <1>{{vpPerTurn}}</1> نقطة نصر لكل دور.",
     "unitsOrgRegain": "استعادة تنظيم الوحدات"
   },
   "offerDrawModal": {
@@ -930,6 +930,9 @@
   "baseAmmo": "ذخيرة أساسية",
   "range": "المدى",
   "discord": {
+    "joinTitle": "انضم إلى سيرفر Discord الرسمي للعبة Lines of Battle",
+    "joinSubtitle": "تحدث مع المجتمع، وابحث عن خصوم، واطّلع على آخر الأخبار.",
+    "joinButton": "انضم إلى السيرفر",
     "link": "ربط Discord",
     "unlink": "إلغاء ربط Discord",
     "confirmMessage": "هل أنت متأكد من أنك تريد إلغاء ربط حساب Discord الخاص بك؟",
@@ -959,6 +962,8 @@
   "clear": "مسح",
   "privacy": "الخصوصية",
   "showCountry": "إظهار البلد",
+  "country": "الدولة",
+  "noCountry": "لا توجد دولة",
   "switchToEra": "التبديل إلى {{era}}",
   "goHome": "العودة إلى الصفحة الرئيسية",
   "profileChart": {
@@ -1000,5 +1005,13 @@
   },
   "noAmmoRegain": "لا استعادة للذخيرة",
   "flankMeleeOrgModifier": "معدل تنظيم القتال القريب الجانبي",
-  "rearCharge": "هجوم من الخلف"
+  "rearCharge": "هجوم من الخلف",
+  "deleteAccount": "حذف الحساب",
+  "deleteAccountModal": {
+    "hint": "هذا يجدول حذف حسابك. يمكنك التراجع عنه بتسجيل الدخول مرة أخرى خلال فترة السماح.",
+    "title": "حذف الحساب",
+    "message": "ستتم جدولة حسابك للحذف خلال {{graceDays}} يومًا. يمكنك الإلغاء في أي وقت قبل ذلك بتسجيل الدخول مرة أخرى. بعد ذلك، سيتم إخفاء هوية حسابك وبياناتك الشخصية بشكل دائم. هل أنت متأكد؟",
+    "scheduled": "تمت جدولة حسابك للحذف خلال {{graceDays}} يومًا. سجّل الدخول مرة أخرى قبل ذلك الموعد لإلغائه.",
+    "error": "تعذّرت جدولة حذف الحساب. يرجى المحاولة مرة أخرى."
+  }
 }

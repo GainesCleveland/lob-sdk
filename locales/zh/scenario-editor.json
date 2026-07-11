@@ -28,7 +28,11 @@
     "orgModifier": "组织度修正",
     "invalidJson": "无效的 JSON",
     "resizeMap": "调整地图大小",
-    "addLanguage": "添加语言"
+    "addLanguage": "添加语言",
+    "optionBuiltIn": "{{name}}（内置）",
+    "optionCustom": "{{name}}（自定义）",
+    "nameWithKind": "{{name}}（{{kind}}）",
+    "rotationSpeedModifier": "转向速度修正"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "弹丸",
       "rangeBrackets": "距离区段",
-      "areaOfEffect": "作用范围"
+      "areaOfEffect": "作用范围",
+      "targetStatModifiers": "基于目标属性的修正"
     },
     "fields": {
       "ranged": "远程",
@@ -300,7 +305,9 @@
       "shotSound": "射击音效",
       "shotAnim": "射击动画",
       "extendRange": "延伸距离",
-      "aimMode": "瞄准模式"
+      "aimMode": "瞄准模式",
+      "maxRange": "最大射程",
+      "engagementTier": "自动开火档位"
     },
     "aimMode": {
       "targetCenter": "目标中心（圆形爆炸）",
@@ -310,7 +317,13 @@
       "start": "起点",
       "end": "终点",
       "startMod": "起点修正",
-      "endMod": "终点修正"
+      "endMod": "终点修正",
+      "from": "从 (%)",
+      "to": "到 (%)",
+      "damageHeader": "伤害修正 (%)",
+      "orgHeader": "组织度修正 (%)",
+      "near": "近",
+      "far": "远"
     },
     "aoe": {
       "absorptionModifier": "吸收修正",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "伤害类型 id {{id}} 属于内置 “{{name}}”。保留该名称以覆盖它，或选择其他 id。",
       "nameBelongsToBuiltIn": "名称 “{{name}}” 属于内置 id {{id}}。将 id 设为 {{id}} 以覆盖它，或选择其他名称。",
       "orgDamageRatioRequired": "orgDamageRatio 为必填项",
-      "rangedNeedsBracket": "远程伤害类型至少需要一个距离区段"
+      "rangedNeedsBracket": "远程伤害类型至少需要一个距离区段",
+      "maxRangeRequired": "最大射程必须大于 0",
+      "rangeBandBounds": "每个区段的“起/止”必须在0到100%之间，且起 ≤ 止。",
+      "lastBandMustReachMax": "最后一个区段必须达到100%（最大射程）。"
+    },
+    "engagementTier": {
+      "low": "低（近）",
+      "medium": "有效（中）",
+      "max": "最大（默认）"
+    },
+    "targetStat": {
+      "helper": "按目标属性的百分比。高于'from'无效；在'to'及以下为完整'value'。随目标HP/组织度下降而增强。"
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "对以下不可通行",
       "attackModifier": "攻击修正",
       "defenseModifier": "防御修正",
-      "projectileAbsorptionByDamageType": "按伤害类型的弹丸吸收"
+      "projectileAbsorptionByDamageType": "按伤害类型的弹丸吸收",
+      "runSpeedModifier": "奔跑速度修正"
     },
     "errors": {
       "idInUse": "地形类别 id “{{id}}” 已被占用",
@@ -628,5 +653,15 @@
       "yMin": "Y 最小",
       "yMax": "Y 最大"
     }
+  },
+  "scoring": {
+    "heading": "胜利点权重（场景覆盖）",
+    "hint": "留空以继承战斗类型或时代的默认值。",
+    "casualties": "伤亡权重",
+    "underPressure": "受压惩罚",
+    "pressureThreshold": "压力阈值",
+    "casualtiesInfo": "来自双方伤亡差的最大胜利点。越高越偏向消耗而非占领目标。",
+    "underPressureInfo": "队伍在受压时每回合损失的胜利点。0 表示禁用。",
+    "pressureThresholdInfo": "当一支队伍持有的目标胜利点占比不高于此百分比时，即处于受压状态。"
   }
 }

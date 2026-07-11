@@ -28,7 +28,11 @@
     "orgModifier": "Hệ số tổ chức",
     "invalidJson": "JSON không hợp lệ",
     "resizeMap": "Đổi kích thước bản đồ",
-    "addLanguage": "Thêm ngôn ngữ"
+    "addLanguage": "Thêm ngôn ngữ",
+    "optionBuiltIn": "{{name}} (tích hợp)",
+    "optionCustom": "{{name}} (tùy chỉnh)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Hệ số tốc độ xoay"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Đạn",
       "rangeBrackets": "Khoảng tầm bắn",
-      "areaOfEffect": "Vùng ảnh hưởng"
+      "areaOfEffect": "Vùng ảnh hưởng",
+      "targetStatModifiers": "Hệ số theo chỉ số mục tiêu"
     },
     "fields": {
       "ranged": "Tầm xa",
@@ -300,7 +305,9 @@
       "shotSound": "Âm thanh bắn",
       "shotAnim": "Hoạt ảnh bắn",
       "extendRange": "Mở rộng tầm",
-      "aimMode": "Chế độ ngắm"
+      "aimMode": "Chế độ ngắm",
+      "maxRange": "Tầm tối đa",
+      "engagementTier": "Cấp tự động bắn"
     },
     "aimMode": {
       "targetCenter": "Tâm mục tiêu (nổ tròn)",
@@ -310,7 +317,13 @@
       "start": "Bắt đầu",
       "end": "Kết thúc",
       "startMod": "Hệ số đầu",
-      "endMod": "Hệ số cuối"
+      "endMod": "Hệ số cuối",
+      "from": "Từ (%)",
+      "to": "Đến (%)",
+      "damageHeader": "Hệ số sát thương (%)",
+      "orgHeader": "Hệ số tổ chức (%)",
+      "near": "gần",
+      "far": "xa"
     },
     "aoe": {
       "absorptionModifier": "Hệ số hấp thụ",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "ID loại sát thương {{id}} thuộc về loại tích hợp \"{{name}}\". Giữ tên để ghi đè, hoặc chọn id khác.",
       "nameBelongsToBuiltIn": "Tên \"{{name}}\" thuộc về id tích hợp {{id}}. Đặt id thành {{id}} để ghi đè, hoặc chọn tên khác.",
       "orgDamageRatioRequired": "orgDamageRatio là bắt buộc",
-      "rangedNeedsBracket": "Loại sát thương tầm xa cần ít nhất một khoảng tầm bắn"
+      "rangedNeedsBracket": "Loại sát thương tầm xa cần ít nhất một khoảng tầm bắn",
+      "maxRangeRequired": "Tầm tối đa phải lớn hơn 0",
+      "rangeBandBounds": "Giá trị Từ/Đến của mỗi dải phải trong khoảng 0 đến 100%, với Từ ≤ Đến.",
+      "lastBandMustReachMax": "Dải cuối cùng phải đạt 100% (tầm bắn tối đa)."
+    },
+    "engagementTier": {
+      "low": "Thấp (gần)",
+      "medium": "Hiệu quả (trung)",
+      "max": "Tối đa (mặc định)"
+    },
+    "targetStat": {
+      "helper": "Theo % chỉ số mục tiêu. Không hiệu lực trên 'from'; 'value' đầy đủ tại/dưới 'to'. Tăng khi HP/tổ chức của mục tiêu giảm."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Không thể qua đối với",
       "attackModifier": "Hệ số tấn công",
       "defenseModifier": "Hệ số phòng thủ",
-      "projectileAbsorptionByDamageType": "Hấp thụ đạn theo loại sát thương"
+      "projectileAbsorptionByDamageType": "Hấp thụ đạn theo loại sát thương",
+      "runSpeedModifier": "Hệ số tốc độ chạy"
     },
     "errors": {
       "idInUse": "ID danh mục địa hình \"{{id}}\" đã được sử dụng",
@@ -628,5 +653,15 @@
       "yMin": "Y tối thiểu",
       "yMax": "Y tối đa"
     }
+  },
+  "scoring": {
+    "heading": "Trọng số VP (ghi đè kịch bản)",
+    "hint": "Để trống một ô để kế thừa giá trị mặc định của loại trận đấu hoặc thời đại.",
+    "casualties": "Trọng số thương vong",
+    "underPressure": "Hình phạt khi bị áp lực",
+    "pressureThreshold": "Ngưỡng áp lực",
+    "casualtiesInfo": "VP tối đa từ chênh lệch thương vong giữa các đội. Cao hơn thiên về tiêu hao hơn là giữ mục tiêu.",
+    "underPressureInfo": "VP mà một đội mất mỗi lượt khi bị áp lực. 0 để tắt hình phạt.",
+    "pressureThresholdInfo": "Một đội bị áp lực khi nắm giữ tỷ lệ % VP mục tiêu này hoặc thấp hơn."
   }
 }

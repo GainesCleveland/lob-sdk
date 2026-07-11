@@ -119,8 +119,7 @@
       "4lb-canister-fire",
       "explosive-shell",
       "howitzer-canister",
-      "rocket",
-      "rocket-long"
+      "rocket"
     ]
   },
   {
@@ -184,8 +183,7 @@
       "4lb-canister-fire",
       "howitzer-canister",
       "horse-archer-bow",
-      "rocket",
-      "rocket-long"
+      "rocket"
     ],
     "effects": [
       {
@@ -196,7 +194,7 @@
   },
   {
     "id": "ship",
-    "collisionShape": { "type": 1, "frontage": 12, "depth": 24 },
+    "collisionShape": { "type": 1, "frontage": 15, "depth": 50 },
     "allyCollisionLevel": 2,
     "enemyCollisionLevel": 2,
     "fireEdges": [

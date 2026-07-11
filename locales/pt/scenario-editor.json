@@ -28,7 +28,11 @@
     "orgModifier": "Modificador de org",
     "invalidJson": "JSON inválido",
     "resizeMap": "Redimensionar Mapa",
-    "addLanguage": "Adicionar Idioma"
+    "addLanguage": "Adicionar Idioma",
+    "optionBuiltIn": "{{name}} (interno)",
+    "optionCustom": "{{name}} (personalizado)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modificador de velocidade de rotação"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Projétil",
       "rangeBrackets": "Faixas de alcance",
-      "areaOfEffect": "Área de efeito"
+      "areaOfEffect": "Área de efeito",
+      "targetStatModifiers": "Modificadores por stat do alvo"
     },
     "fields": {
       "ranged": "À distância",
@@ -300,7 +305,9 @@
       "shotSound": "Som do disparo",
       "shotAnim": "Animação do disparo",
       "extendRange": "Estender alcance",
-      "aimMode": "Modo de mira"
+      "aimMode": "Modo de mira",
+      "maxRange": "Alcance máx.",
+      "engagementTier": "Nível de tiro automático"
     },
     "aimMode": {
       "targetCenter": "Centro do alvo (explosões circulares)",
@@ -310,7 +317,13 @@
       "start": "Início",
       "end": "Fim",
       "startMod": "Mod. inicial",
-      "endMod": "Mod. final"
+      "endMod": "Mod. final",
+      "from": "De (%)",
+      "to": "Até (%)",
+      "damageHeader": "Modificador de dano (%)",
+      "orgHeader": "Modificador de org (%)",
+      "near": "perto",
+      "far": "longe"
     },
     "aoe": {
       "absorptionModifier": "Modificador de absorção",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "O id de tipo de dano {{id}} pertence ao interno \"{{name}}\". Mantenha o nome para sobrescrevê-lo, ou escolha um id diferente.",
       "nameBelongsToBuiltIn": "O nome \"{{name}}\" pertence ao id interno {{id}}. Defina o id como {{id}} para sobrescrevê-lo, ou escolha um nome diferente.",
       "orgDamageRatioRequired": "orgDamageRatio é obrigatório",
-      "rangedNeedsBracket": "Tipos de dano à distância precisam de pelo menos uma faixa de alcance"
+      "rangedNeedsBracket": "Tipos de dano à distância precisam de pelo menos uma faixa de alcance",
+      "maxRangeRequired": "O alcance máx. deve ser maior que 0",
+      "rangeBandBounds": "O De/Até de cada banda deve estar entre 0 e 100%, com De ≤ Até.",
+      "lastBandMustReachMax": "A última banda deve alcançar 100% (alcance máx)."
+    },
+    "engagementTier": {
+      "low": "Baixo (perto)",
+      "medium": "Efetivo (médio)",
+      "max": "Máx (padrão)"
+    },
+    "targetStat": {
+      "helper": "Em % da stat do alvo. Sem efeito acima de 'from'; 'value' completo em/abaixo de 'to'. Cresce conforme HP/org do alvo cai."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Intransponível para",
       "attackModifier": "Modificador de ataque",
       "defenseModifier": "Modificador de defesa",
-      "projectileAbsorptionByDamageType": "Absorção de projéteis por tipo de dano"
+      "projectileAbsorptionByDamageType": "Absorção de projéteis por tipo de dano",
+      "runSpeedModifier": "Modificador de velocidade de corrida"
     },
     "errors": {
       "idInUse": "O id de categoria de terreno \"{{id}}\" já está em uso",
@@ -629,5 +654,15 @@
       "yMin": "Y mín",
       "yMax": "Y máx"
     }
+  },
+  "scoring": {
+    "heading": "Pesos de VP (substituição do cenário)",
+    "hint": "Deixe um campo vazio para herdar o padrão do tipo de batalha ou da era.",
+    "casualties": "Peso de baixas",
+    "underPressure": "Penalidade sob pressão",
+    "pressureThreshold": "Limite de pressão",
+    "casualtiesInfo": "VP máximos pela diferença de baixas entre as equipes. Maior favorece o desgaste em vez de manter objetivos.",
+    "underPressureInfo": "VP que uma equipe perde por turno sob pressão. 0 desativa a penalidade.",
+    "pressureThresholdInfo": "Uma equipe fica sob pressão enquanto detém esta % de VP de objetivos ou menos."
   }
 }

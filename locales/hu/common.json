@@ -288,11 +288,11 @@
   "topWidth": "Felső szélesség",
   "bottomWidth": "Alsó szélesség",
   "height": "Magasság",
-  "orgModifierByTargetOrg": "Org csökkenés a célpont Org-jából vonatkozóan",
+  "orgDamageModifierByTargetOrg": "Org csökkenés a célpont Org-jából vonatkozóan",
   "damageModifierByTargetHp": "Sebzés módosító a célpont HP-jából",
   "from": "from",
   "to": "to",
-  "lBy": "by",
+  "value": "érték",
   "terrainHitboxHeight": "Környezet Hitboxjának Magassága",
   "Terrain": "Terep",
   "projectileAbsorption": "Lövedékelnyelés",
@@ -404,7 +404,7 @@
     "lossesRatio": "Veszteségi Ráta",
     "objectives": "Objektívák",
     "timeUnderPressure": "Idő nyomás alatt",
-    "timeUnderPressureTooltip": "A nyomás alatti idő az az idő, amikor egy csapat az objektívák <0>{{percentage}}%</0>-át GP vagy kevesebbet irányítja. Minél tovább marad egy csapat nyomás alatt, annál több győzelmi pontot veszít el.",
+    "timeUnderPressureTooltip": "A nyomás alatti idő az az idő, amíg egy csapat a cél-GP <0>{{percentage}}%</0>-át vagy kevesebbet birtokol. Nyomás alatt egy csapat körönként <1>{{vpPerTurn}}</1> GP-t veszít.",
     "unitsOrgRegain": "Egységek felépülése (Org)"
   },
   "offerDrawModal": {
@@ -632,6 +632,9 @@
   },
   "range": "Távolság",
   "discord": {
+    "joinTitle": "Csatlakozz a hivatalos Lines of Battle Discordhoz",
+    "joinSubtitle": "Beszélgess a közösséggel, találj ellenfeleket, és értesülj a legfrissebb hírekről.",
+    "joinButton": "Csatlakozás a szerverhez",
     "link": "Discord összekapcsolása",
     "unlink": "Discord leválasztása",
     "confirmMessage": "Biztosan le szeretnéd választani a Discord fiókodat?",
@@ -693,6 +696,8 @@
   "clear": "Törlés",
   "privacy": "Adatvédelem",
   "showCountry": "Ország megjelenítése",
+  "country": "Ország",
+  "noCountry": "Nincs ország",
   "switchToEra": "Váltás erre: {{era}}",
   "goHome": "Kezdőlap",
   "sendFailed": "Az üzenet küldése sikertelen",
@@ -764,5 +769,13 @@
   "max": "Maximális",
   "noAmmoRegain": "Nincs lőszer-visszanyerés",
   "flankMeleeOrgModifier": "Szárnyi közelharci org módosító",
-  "rearCharge": "Hátba támadás"
+  "rearCharge": "Hátba támadás",
+  "deleteAccount": "Fiók törlése",
+  "deleteAccountModal": {
+    "hint": "Ez ütemezi a fiókod törlését. Visszavonhatod, ha a türelmi időszak alatt újra bejelentkezel.",
+    "title": "Fiók törlése",
+    "message": "A fiókod {{graceDays}} nap múlva törlésre lesz ütemezve. Ezt bármikor visszavonhatod előtte, ha újra bejelentkezel. Ezután a fiókod és személyes adataid véglegesen anonimizálásra kerülnek. Biztos vagy benne?",
+    "scheduled": "A fiókod {{graceDays}} nap múlva törlésre van ütemezve. Jelentkezz be újra a határidő előtt a visszavonáshoz.",
+    "error": "A fiók törlését nem sikerült ütemezni. Kérjük, próbáld újra."
+  }
 }

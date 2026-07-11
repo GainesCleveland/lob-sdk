@@ -28,7 +28,11 @@
     "orgModifier": "Org değiştirici",
     "invalidJson": "Geçersiz JSON",
     "resizeMap": "Haritayı Yeniden Boyutlandır",
-    "addLanguage": "Dil Ekle"
+    "addLanguage": "Dil Ekle",
+    "optionBuiltIn": "{{name}} (yerleşik)",
+    "optionCustom": "{{name}} (özel)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Dönüş hızı değiştirici"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Mermi",
       "rangeBrackets": "Menzil aralıkları",
-      "areaOfEffect": "Etki alanı"
+      "areaOfEffect": "Etki alanı",
+      "targetStatModifiers": "Hedef istatistiğine göre değiştiriciler"
     },
     "fields": {
       "ranged": "Uzak mesafe",
@@ -300,7 +305,9 @@
       "shotSound": "Atış sesi",
       "shotAnim": "Atış animasyonu",
       "extendRange": "Menzili uzat",
-      "aimMode": "Nişan modu"
+      "aimMode": "Nişan modu",
+      "maxRange": "Maks. menzil",
+      "engagementTier": "Otomatik ateş kademesi"
     },
     "aimMode": {
       "targetCenter": "Hedef merkezi (dairesel patlamalar)",
@@ -310,7 +317,13 @@
       "start": "Başlangıç",
       "end": "Bitiş",
       "startMod": "Başlangıç değiştirici",
-      "endMod": "Bitiş değiştirici"
+      "endMod": "Bitiş değiştirici",
+      "from": "Başlangıç (%)",
+      "to": "Bitiş (%)",
+      "damageHeader": "Hasar değiştiricisi (%)",
+      "orgHeader": "Org değiştiricisi (%)",
+      "near": "yakın",
+      "far": "uzak"
     },
     "aoe": {
       "absorptionModifier": "Emilim değiştirici",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "Hasar türü id {{id}}, yerleşik \"{{name}}\" türüne ait. Geçersiz kılmak için adı koruyun ya da farklı bir id seçin.",
       "nameBelongsToBuiltIn": "\"{{name}}\" adı, yerleşik id {{id}}'e ait. Geçersiz kılmak için id'yi {{id}} olarak ayarlayın ya da farklı bir ad seçin.",
       "orgDamageRatioRequired": "orgDamageRatio gereklidir",
-      "rangedNeedsBracket": "Uzak mesafe hasar türleri en az bir menzil aralığına ihtiyaç duyar"
+      "rangedNeedsBracket": "Uzak mesafe hasar türleri en az bir menzil aralığına ihtiyaç duyar",
+      "maxRangeRequired": "Maks. menzil 0'dan büyük olmalıdır",
+      "rangeBandBounds": "Her bandın Başlangıç/Bitiş değeri %0 ile %100 arasında ve Başlangıç ≤ Bitiş olmalı.",
+      "lastBandMustReachMax": "Son bant %100'e (maks menzil) ulaşmalı."
+    },
+    "engagementTier": {
+      "low": "Düşük (yakın)",
+      "medium": "Etkili (orta)",
+      "max": "Maks (varsayılan)"
+    },
+    "targetStat": {
+      "helper": "Hedef istatistiğinin %'si. 'from' üzerinde etki yok; 'to' değerinde/altında tam 'value'. Hedefin HP/Org'u düştükçe artar."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Geçilemez",
       "attackModifier": "Saldırı değiştirici",
       "defenseModifier": "Savunma değiştirici",
-      "projectileAbsorptionByDamageType": "Hasar türüne göre mermi emilimi"
+      "projectileAbsorptionByDamageType": "Hasar türüne göre mermi emilimi",
+      "runSpeedModifier": "Koşu hızı değiştirici"
     },
     "errors": {
       "idInUse": "Arazi kategorisi id \"{{id}}\" zaten kullanımda",
@@ -629,5 +654,15 @@
       "yMin": "Y min",
       "yMax": "Y maks"
     }
+  },
+  "scoring": {
+    "heading": "ZP ağırlıkları (senaryo geçersiz kılma)",
+    "hint": "Savaş türü veya çağ varsayılanını devralmak için bir alanı boş bırakın.",
+    "casualties": "Kayıp ağırlığı",
+    "underPressure": "Baskı altında ceza",
+    "pressureThreshold": "Baskı eşiği",
+    "casualtiesInfo": "Takımlar arası kayıp farkından kazanılan maks. ZP. Yüksek olması hedef tutmaktan çok yıpratmayı öne çıkarır.",
+    "underPressureInfo": "Bir takımın baskı altında tur başına kaybettiği ZP. 0 cezayı kapatır.",
+    "pressureThresholdInfo": "Bir takım, hedef ZP'sinin bu yüzdesini veya daha azını elinde tuttuğu sürece baskı altındadır."
   }
 }

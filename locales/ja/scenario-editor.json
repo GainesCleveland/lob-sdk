@@ -28,7 +28,11 @@
     "orgModifier": "組織修正",
     "invalidJson": "無効なJSON",
     "resizeMap": "マップのサイズ変更",
-    "addLanguage": "言語を追加"
+    "addLanguage": "言語を追加",
+    "optionBuiltIn": "{{name}}（組み込み）",
+    "optionCustom": "{{name}}（カスタム）",
+    "nameWithKind": "{{name}}（{{kind}}）",
+    "rotationSpeedModifier": "回転速度修正"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "弾丸",
       "rangeBrackets": "射程区分",
-      "areaOfEffect": "効果範囲"
+      "areaOfEffect": "効果範囲",
+      "targetStatModifiers": "対象ステータス修正"
     },
     "fields": {
       "ranged": "遠距離",
@@ -300,7 +305,9 @@
       "shotSound": "射撃音",
       "shotAnim": "射撃アニメーション",
       "extendRange": "射程を延長",
-      "aimMode": "照準モード"
+      "aimMode": "照準モード",
+      "maxRange": "最大射程",
+      "engagementTier": "自動射撃の段階"
     },
     "aimMode": {
       "targetCenter": "標的の中心（円形の爆発）",
@@ -310,7 +317,13 @@
       "start": "開始",
       "end": "終了",
       "startMod": "開始修正",
-      "endMod": "終了修正"
+      "endMod": "終了修正",
+      "from": "開始 (%)",
+      "to": "終了 (%)",
+      "damageHeader": "ダメージ修正 (%)",
+      "orgHeader": "組織修正 (%)",
+      "near": "近",
+      "far": "遠"
     },
     "aoe": {
       "absorptionModifier": "吸収修正",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "ダメージタイプID {{id}} は組み込みの「{{name}}」に属しています。上書きするには名前を維持するか、別のIDを選んでください。",
       "nameBelongsToBuiltIn": "名前「{{name}}」は組み込みID {{id}} に属しています。上書きするにはIDを {{id}} に設定するか、別の名前を選んでください。",
       "orgDamageRatioRequired": "orgDamageRatio は必須です",
-      "rangedNeedsBracket": "遠距離ダメージタイプには少なくとも1つの射程区分が必要です"
+      "rangedNeedsBracket": "遠距離ダメージタイプには少なくとも1つの射程区分が必要です",
+      "maxRangeRequired": "最大射程は0より大きくなければなりません",
+      "rangeBandBounds": "各バンドの開始/終了は0〜100%の範囲で、開始 ≤ 終了である必要があります。",
+      "lastBandMustReachMax": "最後のバンドは100%（最大射程）に達する必要があります。"
+    },
+    "engagementTier": {
+      "low": "低（近距離）",
+      "medium": "有効（中距離）",
+      "max": "最大（既定）"
+    },
+    "targetStat": {
+      "helper": "対象ステータスの%。'from'超で効果なし、'to'以下で'value'が最大。対象のHP/組織が下がるほど増加。"
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "通行不可の対象",
       "attackModifier": "攻撃修正",
       "defenseModifier": "防御修正",
-      "projectileAbsorptionByDamageType": "ダメージタイプ別の弾丸吸収"
+      "projectileAbsorptionByDamageType": "ダメージタイプ別の弾丸吸収",
+      "runSpeedModifier": "走行速度修正"
     },
     "errors": {
       "idInUse": "地形カテゴリーID「{{id}}」は既に使用されています",
@@ -628,5 +653,15 @@
       "yMin": "Y 最小",
       "yMax": "Y 最大"
     }
+  },
+  "scoring": {
+    "heading": "VP配分（シナリオ上書き）",
+    "hint": "空欄にすると戦闘タイプまたは時代の既定値を継承します。",
+    "casualties": "損失の重み",
+    "underPressure": "プレッシャー下のペナルティ",
+    "pressureThreshold": "プレッシャー閾値",
+    "casualtiesInfo": "両チームの損失差から得られる最大VP。高いほど拠点確保より消耗戦を重視。",
+    "underPressureInfo": "プレッシャー下でチームが毎ターン失うVP。0で無効。",
+    "pressureThresholdInfo": "チームが保持する拠点VPの割合がこの%以下のとき、プレッシャー状態になります。"
   }
 }

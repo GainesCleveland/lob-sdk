@@ -28,7 +28,11 @@
     "orgModifier": "ตัวปรับ Org",
     "invalidJson": "JSON ไม่ถูกต้อง",
     "resizeMap": "ปรับขนาดแผนที่",
-    "addLanguage": "เพิ่มภาษา"
+    "addLanguage": "เพิ่มภาษา",
+    "optionBuiltIn": "{{name}} (ในตัว)",
+    "optionCustom": "{{name}} (กำหนดเอง)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "ตัวปรับความเร็วการหมุน"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "กระสุน",
       "rangeBrackets": "ช่วงระยะ",
-      "areaOfEffect": "พื้นที่ส่งผล"
+      "areaOfEffect": "พื้นที่ส่งผล",
+      "targetStatModifiers": "ตัวปรับตามสเตตัสของเป้าหมาย"
     },
     "fields": {
       "ranged": "ระยะไกล",
@@ -300,7 +305,9 @@
       "shotSound": "เสียงยิง",
       "shotAnim": "อนิเมชันการยิง",
       "extendRange": "ขยายระยะ",
-      "aimMode": "โหมดเล็ง"
+      "aimMode": "โหมดเล็ง",
+      "maxRange": "ระยะสูงสุด",
+      "engagementTier": "ระดับการยิงอัตโนมัติ"
     },
     "aimMode": {
       "targetCenter": "ศูนย์กลางเป้าหมาย (การระเบิดเป็นวง)",
@@ -310,7 +317,13 @@
       "start": "เริ่ม",
       "end": "สิ้นสุด",
       "startMod": "ตัวปรับเริ่ม",
-      "endMod": "ตัวปรับสิ้นสุด"
+      "endMod": "ตัวปรับสิ้นสุด",
+      "from": "จาก (%)",
+      "to": "ถึง (%)",
+      "damageHeader": "ตัวปรับความเสียหาย (%)",
+      "orgHeader": "ตัวปรับ Org (%)",
+      "near": "ใกล้",
+      "far": "ไกล"
     },
     "aoe": {
       "absorptionModifier": "ตัวปรับการดูดซับ",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "ID ประเภทความเสียหาย {{id}} เป็นของแบบในตัว \"{{name}}\" คงชื่อไว้เพื่อแทนที่ หรือเลือก id อื่น",
       "nameBelongsToBuiltIn": "ชื่อ \"{{name}}\" เป็นของ id ในตัว {{id}} ตั้ง id เป็น {{id}} เพื่อแทนที่ หรือเลือกชื่ออื่น",
       "orgDamageRatioRequired": "ต้องระบุ orgDamageRatio",
-      "rangedNeedsBracket": "ประเภทความเสียหายระยะไกลต้องมีช่วงระยะอย่างน้อยหนึ่งช่วง"
+      "rangedNeedsBracket": "ประเภทความเสียหายระยะไกลต้องมีช่วงระยะอย่างน้อยหนึ่งช่วง",
+      "maxRangeRequired": "ระยะสูงสุดต้องมากกว่า 0",
+      "rangeBandBounds": "ค่าจาก/ถึงของแต่ละช่วงต้องอยู่ระหว่าง 0 ถึง 100% โดยจาก ≤ ถึง",
+      "lastBandMustReachMax": "ช่วงสุดท้ายต้องถึง 100% (ระยะสูงสุด)"
+    },
+    "engagementTier": {
+      "low": "ต่ำ (ใกล้)",
+      "medium": "มีผล (กลาง)",
+      "max": "สูงสุด (ค่าเริ่มต้น)"
+    },
+    "targetStat": {
+      "helper": "เป็น % ของสเตตัสเป้าหมาย ไม่มีผลเหนือ 'from'; 'value' เต็มที่ที่/ต่ำกว่า 'to' เพิ่มขึ้นเมื่อ HP/org ของเป้าหมายลดลง"
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "ผ่านไม่ได้สำหรับ",
       "attackModifier": "ตัวปรับการโจมตี",
       "defenseModifier": "ตัวปรับการป้องกัน",
-      "projectileAbsorptionByDamageType": "การดูดซับกระสุนตามประเภทความเสียหาย"
+      "projectileAbsorptionByDamageType": "การดูดซับกระสุนตามประเภทความเสียหาย",
+      "runSpeedModifier": "ตัวปรับความเร็ววิ่ง"
     },
     "errors": {
       "idInUse": "ID หมวดหมู่ภูมิประเทศ \"{{id}}\" ถูกใช้งานแล้ว",
@@ -628,5 +653,15 @@
       "yMin": "Y ต่ำสุด",
       "yMax": "Y สูงสุด"
     }
+  },
+  "scoring": {
+    "heading": "น้ำหนัก VP (แทนที่ในฉาก)",
+    "hint": "เว้นว่างไว้เพื่อสืบทอดค่าเริ่มต้นของประเภทการรบหรือยุคสมัย",
+    "casualties": "น้ำหนักการสูญเสีย",
+    "underPressure": "บทลงโทษภายใต้แรงกดดัน",
+    "pressureThreshold": "เกณฑ์แรงกดดัน",
+    "casualtiesInfo": "VP สูงสุดจากผลต่างการสูญเสียระหว่างทีม ยิ่งสูงยิ่งเน้นการบั่นทอนมากกว่าการยึดเป้าหมาย",
+    "underPressureInfo": "VP ที่ทีมเสียต่อเทิร์นขณะอยู่ภายใต้แรงกดดัน 0 เพื่อปิดบทลงโทษ",
+    "pressureThresholdInfo": "ทีมจะอยู่ภายใต้แรงกดดันขณะที่ถือครอง VP เป้าหมายเป็นเปอร์เซ็นต์นี้หรือน้อยกว่า"
   }
 }

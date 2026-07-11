@@ -1,7 +1,8 @@
 {
   "currencyShop": {
     "title": "Dapatkan <0/>",
-    "subtitle": "Buka kosmetik yang menakjubkan dan tampil beda dari yang lain!"
+    "subtitle": "Buka kosmetik yang menakjubkan dan tampil beda dari yang lain!",
+    "unavailable": "Toko sedang tidak tersedia saat ini. Silakan coba lagi nanti."
   },
 
   "aboutCurrencies": "Tentang Mata Uang",

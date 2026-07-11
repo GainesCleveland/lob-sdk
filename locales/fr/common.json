@@ -277,11 +277,11 @@
   "topWidth": "Élévation max",
   "bottomWidth": "Élévation min",
   "height": "Hauteur",
-  "orgModifierByTargetOrg": "Diminuer par l'organisation de la cible",
+  "orgDamageModifierByTargetOrg": "Diminuer par l'organisation de la cible",
   "damageModifierByTargetHp": "Modificateur de Dégâts par PV de la Cible",
   "from": "depuis",
   "to": "vers",
-  "lBy": "par",
+  "value": "valeur",
   "terrainHitboxHeight": "Hauteur du masque de collision du terrain",
   "Terrain": "Terrain",
   "projectileAbsorption": "Absorption des projectiles",
@@ -393,7 +393,7 @@
     "lossesRatio": "Ratio de pertes",
     "objectives": "Objectifs",
     "timeUnderPressure": "Temps sous pression",
-    "timeUnderPressureTooltip": "Le temps sous pression est le temps pendant lequel une équipe contrôle <0>{{percentage}}%</0> des objectifs Pv ou moins. Plus une équipe reste sous pression longtemps, plus elle perd de points de victoire.",
+    "timeUnderPressureTooltip": "Le temps sous pression est le temps pendant lequel une équipe détient <0>{{percentage}}%</0> des PV d'objectifs ou moins. Sous pression, une équipe perd <1>{{vpPerTurn}}</1> PV par tour.",
     "unitsOrgRegain": "Regain d'organisation des unités"
   },
   "offerDrawModal": {
@@ -708,6 +708,9 @@
   "baseAmmo": "Munitions de base",
   "range": "Portée",
   "discord": {
+    "joinTitle": "Rejoignez le Discord officiel de Lines of Battle",
+    "joinSubtitle": "Discutez avec la communauté, trouvez des adversaires et suivez l'actualité.",
+    "joinButton": "Rejoindre le serveur",
     "link": "Lier Discord",
     "unlink": "Délier Discord",
     "confirmMessage": "Êtes-vous sûr de vouloir délier votre compte Discord ?",
@@ -749,6 +752,8 @@
   "clear": "Effacer",
   "privacy": "Confidentialité",
   "showCountry": "Afficher le pays",
+  "country": "Pays",
+  "noCountry": "Aucun pays",
   "switchToEra": "Passer à {{era}}",
   "goHome": "Retourner à l'accueil",
   "sendFailed": "Échec de l'envoi du message",
@@ -818,5 +823,13 @@
   "max": "Maximal",
   "noAmmoRegain": "Pas de regain de munitions",
   "flankMeleeOrgModifier": "Modificateur org. mêlée de flanc",
-  "rearCharge": "Charge par l'arrière"
+  "rearCharge": "Charge par l'arrière",
+  "deleteAccount": "Supprimer le compte",
+  "deleteAccountModal": {
+    "hint": "Ceci programme la suppression de votre compte. Vous pouvez l'annuler en vous reconnectant pendant le délai de grâce.",
+    "title": "Supprimer le compte",
+    "message": "Votre compte sera programmé pour suppression dans {{graceDays}} jours. Vous pouvez annuler à tout moment avant en vous reconnectant. Ensuite, votre compte et vos données personnelles seront anonymisés de façon permanente. Êtes-vous sûr ?",
+    "scheduled": "Votre compte est programmé pour suppression dans {{graceDays}} jours. Reconnectez-vous avant cette échéance pour l'annuler.",
+    "error": "Impossible de programmer la suppression du compte. Veuillez réessayer."
+  }
 }

@@ -306,9 +306,9 @@
   "heightModifierPerLevel": "단계 당 높이 변동치",
   "damageModifierPerLevel": "단계 당 피해량 변동치",
   "maxElevationDiff": "최대 고도 차이",
-  "orgModifierByTargetOrg": "표적 조직력에 의한 감소치",
+  "orgDamageModifierByTargetOrg": "표적 조직력에 의한 감소치",
   "damageModifierByTargetHp": "표적 체력에 의한 피해 수정치",
-  "lBy": "에 의해",
+  "value": "값",
   "terrainHitboxHeight": "지형 적중영역 높이",
   "projectileAbsorption": "발사체 흡수치",
   "terrainPName": "지형 : {{name}}",
@@ -438,7 +438,7 @@
     "lossesRatio": "손실률",
     "objectives": "지점목표",
     "timeUnderPressure": "압박 시간",
-    "timeUnderPressureTooltip": "압박 시간은 팀이 지점목표를 <0>{{percentage}}%</0> VP 이하로 점령한 시간을 말합니다. 압박 시간이 길어질수록 더 많은 승점을 잃게 됩니다.",
+    "timeUnderPressureTooltip": "압박 시간은 팀이 목표 VP의 <0>{{percentage}}%</0> 이하를 보유한 시간입니다. 압박 상태에서 팀은 매 턴 <1>{{vpPerTurn}}</1> VP를 잃습니다.",
     "unitsOrgRegain": "부대 조직력 회복"
   },
   "offerDrawModal": {
@@ -925,6 +925,9 @@
   "baseAmmo": "기본 탄약",
   "range": "범위",
   "discord": {
+    "joinTitle": "Lines of Battle 공식 Discord에 참여하세요",
+    "joinSubtitle": "커뮤니티와 소통하고 상대를 찾고 최신 소식을 받아보세요.",
+    "joinButton": "서버 참여",
     "link": "Discord 연결",
     "unlink": "Discord 연결 해제",
     "confirmMessage": "Discord 계정 연결을 해제하시겠습니까?",
@@ -954,6 +957,8 @@
   "clear": "정리",
   "privacy": "개인정보",
   "showCountry": "국가 표시",
+  "country": "국가",
+  "noCountry": "국가 없음",
   "switchToEra": "{{era}}(으)로 전환",
   "goHome": "홈페이지로 이동",
   "profileChart": {
@@ -985,5 +990,13 @@
   },
   "noAmmoRegain": "탄약 보충 없음",
   "flankMeleeOrgModifier": "측면 근접 조직력 수정치",
-  "rearCharge": "후방 돌격"
+  "rearCharge": "후방 돌격",
+  "deleteAccount": "계정 삭제",
+  "deleteAccountModal": {
+    "hint": "계정 삭제가 예약됩니다. 유예 기간 동안 다시 로그인하면 취소할 수 있습니다.",
+    "title": "계정 삭제",
+    "message": "계정이 {{graceDays}}일 후 삭제되도록 예약됩니다. 그 전에 다시 로그인하면 언제든지 취소할 수 있습니다. 이후에는 계정과 개인정보가 영구적으로 익명화됩니다. 확실합니까?",
+    "scheduled": "계정이 {{graceDays}}일 후 삭제되도록 예약되었습니다. 취소하려면 그 기한 전에 다시 로그인하세요.",
+    "error": "계정 삭제를 예약할 수 없습니다. 다시 시도해 주세요."
+  }
 }

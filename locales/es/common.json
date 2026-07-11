@@ -287,11 +287,11 @@
   "topWidth": "Ancho superior",
   "bottomWidth": "Ancho inferior",
   "height": "Altura",
-  "orgModifierByTargetOrg": "Disminuir según la org del objetivo",
+  "orgDamageModifierByTargetOrg": "Disminuir según la org del objetivo",
   "damageModifierByTargetHp": "Modificador de Daño según PV del Objetivo",
   "from": "de",
   "to": "a",
-  "lBy": "por",
+  "value": "valor",
   "terrainHitboxHeight": "Altura de la hitbox del terreno",
   "Terrain": "Terreno",
   "projectileAbsorption": "Absorción de proyectiles",
@@ -407,7 +407,7 @@
     "lossesRatio": "Ratio de Pérdidas",
     "objectives": "Objetivos",
     "timeUnderPressure": "Tiempo bajo presión",
-    "timeUnderPressureTooltip": "El tiempo bajo presión es el tiempo en que un equipo controla <0>{{percentage}}%</0> de los objetivos PV o menos. Cuanto más tiempo permanezca un equipo bajo presión, más puntos de victoria perderá.",
+    "timeUnderPressureTooltip": "El tiempo bajo presión es el tiempo que un equipo tiene <0>{{percentage}}%</0> de los VP de objetivos o menos. Bajo presión, un equipo pierde <1>{{vpPerTurn}}</1> VP por turno.",
     "unitsOrgRegain": "Recuperación de la Org de las Unidades"
   },
   "offerDrawModal": {
@@ -821,6 +821,9 @@
   "show": "Mostrar",
   "hide": "Ocultar",
   "discord": {
+    "joinTitle": "Únete al Discord oficial de Lines of Battle",
+    "joinSubtitle": "Habla con la comunidad, encuentra rivales y entérate de las últimas novedades.",
+    "joinButton": "Unirse al servidor",
     "link": "Vincular Discord",
     "unlink": "Desvincular Discord",
     "confirmMessage": "¿Estás seguro de que quieres desvincular tu cuenta de Discord?",
@@ -854,6 +857,8 @@
   "clear": "Limpiar",
   "privacy": "Privacidad",
   "showCountry": "Mostrar país",
+  "country": "País",
+  "noCountry": "Sin país",
   "sendFailed": "Error al enviar el mensaje",
   "chatUnreadCount": "{{count}} sin leer",
   "user": "Usuario",
@@ -889,5 +894,13 @@
   "max": "Máximo",
   "noAmmoRegain": "Sin recuperación de munición",
   "flankMeleeOrgModifier": "Modificador de org en cuerpo a cuerpo de flanco",
-  "rearCharge": "Carga por retaguardia"
+  "rearCharge": "Carga por retaguardia",
+  "deleteAccount": "Eliminar cuenta",
+  "deleteAccountModal": {
+    "hint": "Esto programa la eliminación de tu cuenta. Puedes deshacerla volviendo a iniciar sesión durante el período de gracia.",
+    "title": "Eliminar cuenta",
+    "message": "Tu cuenta quedará programada para eliminarse en {{graceDays}} días. Puedes cancelar en cualquier momento antes volviendo a iniciar sesión. Después de eso, tu cuenta y tus datos personales se anonimizarán de forma permanente. ¿Estás seguro?",
+    "scheduled": "Tu cuenta está programada para eliminarse en {{graceDays}} días. Vuelve a iniciar sesión antes de ese plazo para cancelarla.",
+    "error": "No se pudo programar la eliminación de la cuenta. Inténtalo de nuevo."
+  }
 }

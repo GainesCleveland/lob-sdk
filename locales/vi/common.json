@@ -310,9 +310,9 @@
   "heightModifierPerLevel": "Hệ số chiều cao mỗi cấp",
   "damageModifierPerLevel": "Hệ số sát thương mỗi cấp",
   "maxElevationDiff": "Chênh lệch độ cao tối đa",
-  "orgModifierByTargetOrg": "Giảm theo tổ chức mục tiêu",
+  "orgDamageModifierByTargetOrg": "Giảm theo tổ chức mục tiêu",
   "damageModifierByTargetHp": "Sửa đổi sát thương theo HP mục tiêu",
-  "lBy": "bởi",
+  "value": "giá trị",
   "terrainHitboxHeight": "Chiều cao hitbox địa hình",
   "projectileAbsorption": "Hấp thụ đạn",
   "terrainPName": "Địa hình: {{name}}",
@@ -442,7 +442,7 @@
     "lossesRatio": "Tỷ lệ tổn thất",
     "objectives": "Mục tiêu",
     "timeUnderPressure": "Thời gian bị áp lực",
-    "timeUnderPressureTooltip": "Thời gian bị áp lực là thời gian một đội có <0>{{percentage}}%</0> mục tiêu ĐCT hoặc ít hơn. Đội càng bị áp lực lâu, càng mất nhiều điểm chiến thắng.",
+    "timeUnderPressureTooltip": "Thời gian bị áp lực là khoảng thời gian một đội nắm giữ <0>{{percentage}}%</0> VP mục tiêu hoặc ít hơn. Khi bị áp lực, một đội mất <1>{{vpPerTurn}}</1> VP mỗi lượt.",
     "unitsOrgRegain": "Hồi phục tổ chức đơn vị"
   },
   "offerDrawModal": {
@@ -929,6 +929,9 @@
   "baseAmmo": "Đạn cơ sở",
   "range": "Tầm",
   "discord": {
+    "joinTitle": "Tham gia Discord chính thức của Lines of Battle",
+    "joinSubtitle": "Trò chuyện với cộng đồng, tìm đối thủ và cập nhật tin tức mới nhất.",
+    "joinButton": "Tham gia máy chủ",
     "link": "Liên kết Discord",
     "unlink": "Hủy liên kết Discord",
     "confirmMessage": "Bạn có chắc chắn muốn hủy liên kết tài khoản Discord của mình?",
@@ -958,6 +961,8 @@
   "clear": "Xóa",
   "privacy": "Quyền riêng tư",
   "showCountry": "Hiển thị quốc gia",
+  "country": "Quốc gia",
+  "noCountry": "Không có quốc gia",
   "switchToEra": "Chuyển sang {{era}}",
   "goHome": "Về trang chủ",
   "profileChart": {
@@ -989,5 +994,13 @@
   },
   "noAmmoRegain": "Không hồi đạn",
   "flankMeleeOrgModifier": "Hệ số tổ chức cận chiến sườn",
-  "rearCharge": "Đột kích từ phía sau"
+  "rearCharge": "Đột kích từ phía sau",
+  "deleteAccount": "Xóa tài khoản",
+  "deleteAccountModal": {
+    "hint": "Thao tác này sẽ lên lịch xóa tài khoản của bạn. Bạn có thể hoàn tác bằng cách đăng nhập lại trong thời gian gia hạn.",
+    "title": "Xóa tài khoản",
+    "message": "Tài khoản của bạn sẽ được lên lịch xóa sau {{graceDays}} ngày. Bạn có thể hủy bất cứ lúc nào trước đó bằng cách đăng nhập lại. Sau đó, tài khoản và dữ liệu cá nhân của bạn sẽ được ẩn danh vĩnh viễn. Bạn có chắc chắn không?",
+    "scheduled": "Tài khoản của bạn được lên lịch xóa sau {{graceDays}} ngày. Đăng nhập lại trước thời hạn đó để hủy.",
+    "error": "Không thể lên lịch xóa tài khoản. Vui lòng thử lại."
+  }
 }

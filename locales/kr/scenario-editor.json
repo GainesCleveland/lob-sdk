@@ -28,7 +28,11 @@
     "orgModifier": "조직력 수정치",
     "invalidJson": "잘못된 JSON",
     "resizeMap": "맵 크기 조정",
-    "addLanguage": "언어 추가"
+    "addLanguage": "언어 추가",
+    "optionBuiltIn": "{{name}} (기본 제공)",
+    "optionCustom": "{{name}} (사용자 지정)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "회전 속도 수정치"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "발사체",
       "rangeBrackets": "사거리 구간",
-      "areaOfEffect": "유효 범위"
+      "areaOfEffect": "유효 범위",
+      "targetStatModifiers": "대상 스탯 기반 수정"
     },
     "fields": {
       "ranged": "사격",
@@ -300,7 +305,9 @@
       "shotSound": "사격 소리",
       "shotAnim": "사격 애니메이션",
       "extendRange": "사거리 연장",
-      "aimMode": "조준 방식"
+      "aimMode": "조준 방식",
+      "maxRange": "최대 사거리",
+      "engagementTier": "자동 사격 단계"
     },
     "aimMode": {
       "targetCenter": "표적 중심 (원형 폭발)",
@@ -310,7 +317,13 @@
       "start": "시작",
       "end": "끝",
       "startMod": "시작 수정치",
-      "endMod": "끝 수정치"
+      "endMod": "끝 수정치",
+      "from": "시작 (%)",
+      "to": "끝 (%)",
+      "damageHeader": "피해 수정 (%)",
+      "orgHeader": "조직력 수정 (%)",
+      "near": "근접",
+      "far": "원거리"
     },
     "aoe": {
       "absorptionModifier": "흡수 수정치",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "피해 유형 id {{id}} 은(는) 기본 제공 \"{{name}}\" 에 속합니다. 재정의하려면 이름을 유지하거나 다른 id를 선택하세요.",
       "nameBelongsToBuiltIn": "이름 \"{{name}}\" 은(는) 기본 제공 id {{id}} 에 속합니다. 재정의하려면 id를 {{id}} 로 설정하거나 다른 이름을 선택하세요.",
       "orgDamageRatioRequired": "orgDamageRatio is required",
-      "rangedNeedsBracket": "사격 피해 유형에는 최소 하나의 사거리 구간이 필요합니다"
+      "rangedNeedsBracket": "사격 피해 유형에는 최소 하나의 사거리 구간이 필요합니다",
+      "maxRangeRequired": "최대 사거리는 0보다 커야 합니다",
+      "rangeBandBounds": "각 구간의 시작/끝은 0~100% 사이여야 하며 시작 ≤ 끝이어야 합니다.",
+      "lastBandMustReachMax": "마지막 구간은 100%(최대 사거리)에 도달해야 합니다."
+    },
+    "engagementTier": {
+      "low": "낮음 (근거리)",
+      "medium": "유효 (중거리)",
+      "max": "최대 (기본값)"
+    },
+    "targetStat": {
+      "helper": "대상 스탯의 %. 'from' 초과 시 효과 없음, 'to' 이하에서 'value' 최대. 대상의 HP/조직력이 낮을수록 증가."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "통행 불가 대상",
       "attackModifier": "공격 수정치",
       "defenseModifier": "방어 수정치",
-      "projectileAbsorptionByDamageType": "피해 유형별 발사체 흡수치"
+      "projectileAbsorptionByDamageType": "피해 유형별 발사체 흡수치",
+      "runSpeedModifier": "달리기 속도 수정치"
     },
     "errors": {
       "idInUse": "지형 유형 id \"{{id}}\" 이(가) 이미 사용 중입니다",
@@ -628,5 +653,15 @@
       "yMin": "Y 최소",
       "yMax": "Y 최대"
     }
+  },
+  "scoring": {
+    "heading": "VP 가중치 (시나리오 재정의)",
+    "hint": "비워두면 전투 유형 또는 시대의 기본값을 상속합니다.",
+    "casualties": "사상자 가중치",
+    "underPressure": "압박 시 패널티",
+    "pressureThreshold": "압박 임계값",
+    "casualtiesInfo": "양 팀의 사상자 차이로 얻는 최대 VP. 높을수록 거점 유지보다 소모전을 중시합니다.",
+    "underPressureInfo": "압박 상태에서 팀이 매 턴 잃는 VP. 0이면 비활성화됩니다.",
+    "pressureThresholdInfo": "팀이 보유한 목표 VP 비율이 이 % 이하일 때 압박 상태가 됩니다."
   }
 }

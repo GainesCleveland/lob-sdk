@@ -28,7 +28,11 @@
     "orgModifier": "Org-Modifikator",
     "invalidJson": "Ungültiges JSON",
     "resizeMap": "Karte skalieren",
-    "addLanguage": "Sprache hinzufügen"
+    "addLanguage": "Sprache hinzufügen",
+    "optionBuiltIn": "{{name}} (integriert)",
+    "optionCustom": "{{name}} (benutzerdefiniert)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Drehgeschwindigkeitsmodifikator"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Projektil",
       "rangeBrackets": "Reichweitenbereiche",
-      "areaOfEffect": "Wirkungsbereich"
+      "areaOfEffect": "Wirkungsbereich",
+      "targetStatModifiers": "Zielwert-Modifikatoren"
     },
     "fields": {
       "ranged": "Fernkampf",
@@ -300,7 +305,9 @@
       "shotSound": "Schussgeräusch",
       "shotAnim": "Schussanimation",
       "extendRange": "Reichweite erweitern",
-      "aimMode": "Zielmodus"
+      "aimMode": "Zielmodus",
+      "maxRange": "Max. Reichweite",
+      "engagementTier": "Autofeuer-Stufe"
     },
     "aimMode": {
       "targetCenter": "Zielmitte (kreisförmige Explosionen)",
@@ -310,7 +317,13 @@
       "start": "Start",
       "end": "Ende",
       "startMod": "Start-Mod.",
-      "endMod": "End-Mod."
+      "endMod": "End-Mod.",
+      "from": "Von (%)",
+      "to": "Bis (%)",
+      "damageHeader": "Schadensmodifikator (%)",
+      "orgHeader": "Org-Modifikator (%)",
+      "near": "nah",
+      "far": "fern"
     },
     "aoe": {
       "absorptionModifier": "Absorptionsmodifikator",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "Schadenstyp-ID {{id}} gehört zum integrierten \"{{name}}\". Behalte den Namen, um ihn zu überschreiben, oder wähle eine andere ID.",
       "nameBelongsToBuiltIn": "Der Name \"{{name}}\" gehört zur integrierten ID {{id}}. Setze die ID auf {{id}}, um sie zu überschreiben, oder wähle einen anderen Namen.",
       "orgDamageRatioRequired": "orgDamageRatio ist erforderlich",
-      "rangedNeedsBracket": "Fernkampfschadenstypen benötigen mindestens einen Reichweitenbereich"
+      "rangedNeedsBracket": "Fernkampfschadenstypen benötigen mindestens einen Reichweitenbereich",
+      "maxRangeRequired": "Max. Reichweite muss größer als 0 sein",
+      "rangeBandBounds": "Von/Bis jeder Bande muss zwischen 0 und 100% liegen, mit Von ≤ Bis.",
+      "lastBandMustReachMax": "Die letzte Bande muss 100% (max. Reichweite) erreichen."
+    },
+    "engagementTier": {
+      "low": "Niedrig (nah)",
+      "medium": "Effektiv (mittel)",
+      "max": "Max (Standard)"
+    },
+    "targetStat": {
+      "helper": "In % der Ziel-Stat. Keine Wirkung über 'from'; volles 'value' bei/unter 'to'. Wächst, wenn HP/Org des Ziels sinkt."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Unpassierbar für",
       "attackModifier": "Angriffsmodifikator",
       "defenseModifier": "Verteidigungsmodifikator",
-      "projectileAbsorptionByDamageType": "Projektilabsorption nach Schadenstyp"
+      "projectileAbsorptionByDamageType": "Projektilabsorption nach Schadenstyp",
+      "runSpeedModifier": "Laufgeschwindigkeitsmodifikator"
     },
     "errors": {
       "idInUse": "Geländekategorie-ID \"{{id}}\" wird bereits verwendet",
@@ -629,5 +654,15 @@
       "yMin": "Y min",
       "yMax": "Y max"
     }
+  },
+  "scoring": {
+    "heading": "VP-Gewichte (Szenario-Override)",
+    "hint": "Lassen Sie ein Feld leer, um den Standardwert des Kampftyps oder der Ära zu übernehmen.",
+    "casualties": "Verlust-Gewichtung",
+    "underPressure": "Strafe unter Druck",
+    "pressureThreshold": "Druckschwelle",
+    "casualtiesInfo": "Maximale VP aus der Verlustdifferenz zwischen den Teams. Höher belohnt Abnutzung statt Objektivhaltung.",
+    "underPressureInfo": "VP, die ein Team pro Zug unter Druck verliert. 0 deaktiviert die Strafe.",
+    "pressureThresholdInfo": "Ein Team steht unter Druck, solange es diesen % der Objektiv-VP oder weniger hält."
   }
 }

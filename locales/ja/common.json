@@ -314,9 +314,9 @@
   "heightModifierPerLevel": "高度差毎の効果範囲の高さ修正",
   "damageModifierPerLevel": "高度差毎の効果範囲でのダメージ修正",
   "maxElevationDiff": "高度差による修正を受ける最大高度差",
-  "orgModifierByTargetOrg": "標的の組織力による組織ダメージ修正",
+  "orgDamageModifierByTargetOrg": "標的の組織力による組織ダメージ修正",
   "damageModifierByTargetHp": "標的のHPによるダメージ修正",
-  "lBy": "によって",
+  "value": "値",
   "terrainHitboxHeight": "地形ヒットボックスの高さ",
   "projectileAbsorption": "弾丸吸収",
   "terrainPName": "地形: {{name}}",
@@ -448,7 +448,7 @@
     "lossesRatio": "損失比率",
     "objectives": "目標",
     "timeUnderPressure": "圧迫時間",
-    "timeUnderPressureTooltip": "圧迫時間とは、チームが目標の<0>{{percentage}}%</0> VP以下を制御している時間です。チームが圧迫状態にある時間が長いほど、より多くの勝利ポイントを失います。",
+    "timeUnderPressureTooltip": "プレッシャー時間とは、チームが拠点VPの <0>{{percentage}}%</0> 以下を保持している時間です。プレッシャー下では、チームは毎ターン <1>{{vpPerTurn}}</1> VPを失います。",
     "unitsOrgRegain": "ユニットの組織回復"
   },
   "offerDrawModal": {
@@ -941,6 +941,9 @@
   "show": "表示",
   "hide": "非表示",
   "discord": {
+    "joinTitle": "Lines of Battle 公式Discordに参加",
+    "joinSubtitle": "コミュニティと交流し、対戦相手を見つけ、最新情報をチェックしよう。",
+    "joinButton": "サーバーに参加",
     "link": "Discordをリンク",
     "unlink": "Discordのリンクを解除",
     "confirmMessage": "Discordアカウントのリンクを解除してもよろしいですか？",
@@ -977,6 +980,8 @@
   "clear": "クリア",
   "privacy": "プライバシー",
   "showCountry": "国を表示",
+  "country": "国",
+  "noCountry": "国なし",
   "notAvailableForAllUnits": "全てのユニットで利用できません",
   "unitsHaveDifferentFormations": "選択したユニットはそれぞれ異なる隊形をとる",
   "profileChart": {
@@ -1010,5 +1015,13 @@
   },
   "noAmmoRegain": "弾薬の補充なし",
   "flankMeleeOrgModifier": "側面白兵組織修正",
-  "rearCharge": "背後からの突撃"
+  "rearCharge": "背後からの突撃",
+  "deleteAccount": "アカウントを削除",
+  "deleteAccountModal": {
+    "hint": "これによりアカウントの削除が予約されます。猶予期間中に再度ログインすると取り消せます。",
+    "title": "アカウントを削除",
+    "message": "アカウントは{{graceDays}}日後に削除される予定になります。それまでは再度ログインすればいつでもキャンセルできます。その後、アカウントと個人データは完全に匿名化されます。よろしいですか？",
+    "scheduled": "アカウントは{{graceDays}}日後に削除される予定です。キャンセルするにはその期限までに再度ログインしてください。",
+    "error": "アカウント削除を予約できませんでした。もう一度お試しください。"
+  }
 }

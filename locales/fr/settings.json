@@ -125,6 +125,10 @@
     "title": "La sélection des unités au repos inclut les ordres inchangés",
     "description": "Désactivé : uniquement les unités sans ordre. Activé : aussi les unités qui ont encore l'ordre du tour précédent si vous ne l'avez pas modifié pendant ce tour."
   },
+  "applyOrderTypeToSelection": {
+    "title": "Le type d'ordre s'applique à la sélection",
+    "description": "Activé : changer le type de mouvement le réapplique aux ordres actuels des unités sélectionnées, et le bouton d'ordre suit votre sélection. Désactivé : il définit seulement le type du prochain ordre que vous tracez (classique)."
+  },
   "showChat": {
     "title": "Afficher le chat"
   },

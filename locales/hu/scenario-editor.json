@@ -28,7 +28,11 @@
     "orgModifier": "Org módosító",
     "invalidJson": "Érvénytelen JSON",
     "resizeMap": "Pálya átméretezése",
-    "addLanguage": "Nyelv hozzáadása"
+    "addLanguage": "Nyelv hozzáadása",
+    "optionBuiltIn": "{{name}} (beépített)",
+    "optionCustom": "{{name}} (egyéni)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Forgási sebesség módosító"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "Lövedék",
       "rangeBrackets": "Hatótáv-sávok",
-      "areaOfEffect": "Hatásterület"
+      "areaOfEffect": "Hatásterület",
+      "targetStatModifiers": "Célpont-statisztika módosítók"
     },
     "fields": {
       "ranged": "Távolsági",
@@ -300,7 +305,9 @@
       "shotSound": "Lövéshang",
       "shotAnim": "Lövésanimáció",
       "extendRange": "Hatótáv kiterjesztése",
-      "aimMode": "Célzási mód"
+      "aimMode": "Célzási mód",
+      "maxRange": "Max. hatótáv",
+      "engagementTier": "Automatikus tüzelés szintje"
     },
     "aimMode": {
       "targetCenter": "Célpont közepe (körkörös robbanások)",
@@ -310,7 +317,13 @@
       "start": "Kezdet",
       "end": "Vég",
       "startMod": "Kezdő mód.",
-      "endMod": "Vég mód."
+      "endMod": "Vég mód.",
+      "from": "Kezdet (%)",
+      "to": "Vég (%)",
+      "damageHeader": "Sebzésmódosító (%)",
+      "orgHeader": "Org-módosító (%)",
+      "near": "közel",
+      "far": "távol"
     },
     "aoe": {
       "absorptionModifier": "Elnyelés módosító",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "A(z) {{id}} sebzéstípus id a beépített \"{{name}}\"-hoz tartozik. Tartsd meg a nevet a felülbírálásához, vagy válassz másik id-t.",
       "nameBelongsToBuiltIn": "A(z) \"{{name}}\" név a beépített {{id}} id-hoz tartozik. Állítsd az id-t {{id}}-ra a felülbírálásához, vagy válassz másik nevet.",
       "orgDamageRatioRequired": "orgDamageRatio megadása kötelező",
-      "rangedNeedsBracket": "A távolsági sebzéstípusokhoz legalább egy hatótáv-sáv kell"
+      "rangedNeedsBracket": "A távolsági sebzéstípusokhoz legalább egy hatótáv-sáv kell",
+      "maxRangeRequired": "A max. hatótávnak nagyobbnak kell lennie 0-nál",
+      "rangeBandBounds": "Minden sáv Kezdő/Vég értéke 0 és 100% között legyen, Kezdő ≤ Vég.",
+      "lastBandMustReachMax": "Az utolsó sávnak el kell érnie a 100%-ot (max. hatótáv)."
+    },
+    "engagementTier": {
+      "low": "Alacsony (közel)",
+      "medium": "Hatékony (közepes)",
+      "max": "Max (alapértelmezett)"
+    },
+    "targetStat": {
+      "helper": "A célpont statisztikájának %-a. 'from' felett nincs hatás; teljes 'value' a 'to' értéknél/alatta. Nő, ahogy a célpont HP/Org csökken."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "Járhatatlan a következőknek",
       "attackModifier": "Támadás módosító",
       "defenseModifier": "Védekezés módosító",
-      "projectileAbsorptionByDamageType": "Lövedékelnyelés sebzéstípus szerint"
+      "projectileAbsorptionByDamageType": "Lövedékelnyelés sebzéstípus szerint",
+      "runSpeedModifier": "Futási sebesség módosító"
     },
     "errors": {
       "idInUse": "A(z) \"{{id}}\" terepkategória id már használatban van",
@@ -629,5 +654,15 @@
       "yMin": "Y min",
       "yMax": "Y max"
     }
+  },
+  "scoring": {
+    "heading": "GP-súlyok (pálya-felülbírálás)",
+    "hint": "Hagyj egy mezőt üresen, hogy örökölje a csatatípus vagy korszak alapértékét.",
+    "casualties": "Veszteség súlya",
+    "underPressure": "Nyomás alatti büntetés",
+    "pressureThreshold": "Nyomásküszöb",
+    "casualtiesInfo": "Max. GP a csapatok közti veszteségkülönbségből. Magasabb érték a felőrlést részesíti előnyben a célpontok tartásával szemben.",
+    "underPressureInfo": "A csapat által körönként elvesztett GP nyomás alatt. 0 kikapcsolja a büntetést.",
+    "pressureThresholdInfo": "Egy csapat nyomás alatt van, amíg a cél-GP ennyi százalékát vagy kevesebbet birtokol."
   }
 }

@@ -28,7 +28,11 @@
     "orgModifier": "معدل التنظيم",
     "invalidJson": "JSON غير صالح",
     "resizeMap": "تغيير حجم الخريطة",
-    "addLanguage": "إضافة لغة"
+    "addLanguage": "إضافة لغة",
+    "optionBuiltIn": "{{name}} (مدمج)",
+    "optionCustom": "{{name}} (مخصص)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "معدل سرعة الدوران"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "المقذوف",
       "rangeBrackets": "نطاقات المدى",
-      "areaOfEffect": "منطقة التأثير"
+      "areaOfEffect": "منطقة التأثير",
+      "targetStatModifiers": "معدّلات حسب إحصاء الهدف"
     },
     "fields": {
       "ranged": "بعيد",
@@ -300,7 +305,9 @@
       "shotSound": "صوت الطلقة",
       "shotAnim": "رسم الطلقة",
       "extendRange": "تمديد المدى",
-      "aimMode": "وضع التصويب"
+      "aimMode": "وضع التصويب",
+      "maxRange": "المدى الأقصى",
+      "engagementTier": "مستوى الإطلاق التلقائي"
     },
     "aimMode": {
       "targetCenter": "مركز الهدف (انفجارات دائرية)",
@@ -310,7 +317,13 @@
       "start": "البداية",
       "end": "النهاية",
       "startMod": "معدل البداية",
-      "endMod": "معدل النهاية"
+      "endMod": "معدل النهاية",
+      "from": "من (%)",
+      "to": "إلى (%)",
+      "damageHeader": "معدّل الضرر (%)",
+      "orgHeader": "معدّل التنظيم (%)",
+      "near": "قريب",
+      "far": "بعيد"
     },
     "aoe": {
       "absorptionModifier": "معدل الامتصاص",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "معرّف نوع الضرر {{id}} يخص المدمج \"{{name}}\". احتفظ بالاسم لتجاوزه، أو اختر معرّفاً مختلفاً.",
       "nameBelongsToBuiltIn": "الاسم \"{{name}}\" يخص المعرّف المدمج {{id}}. اضبط المعرّف على {{id}} لتجاوزه، أو اختر اسماً مختلفاً.",
       "orgDamageRatioRequired": "orgDamageRatio مطلوب",
-      "rangedNeedsBracket": "أنواع الضرر البعيد تحتاج إلى نطاق مدى واحد على الأقل"
+      "rangedNeedsBracket": "أنواع الضرر البعيد تحتاج إلى نطاق مدى واحد على الأقل",
+      "maxRangeRequired": "يجب أن يكون المدى الأقصى أكبر من 0",
+      "rangeBandBounds": "يجب أن تكون قيم «من/إلى» لكل نطاق بين 0 و100%، مع من ≤ إلى.",
+      "lastBandMustReachMax": "يجب أن يصل النطاق الأخير إلى 100% (المدى الأقصى)."
+    },
+    "engagementTier": {
+      "low": "منخفض (قريب)",
+      "medium": "فعّال (متوسط)",
+      "max": "الأقصى (افتراضي)"
+    },
+    "targetStat": {
+      "helper": "بنسبة % من إحصاء الهدف. لا تأثير فوق 'from'؛ 'value' كامل عند/تحت 'to'. يزداد كلما انخفض HP/تنظيم الهدف."
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "غير سالك لـ",
       "attackModifier": "معدل الهجوم",
       "defenseModifier": "معدل الدفاع",
-      "projectileAbsorptionByDamageType": "امتصاص المقذوفات حسب نوع الضرر"
+      "projectileAbsorptionByDamageType": "امتصاص المقذوفات حسب نوع الضرر",
+      "runSpeedModifier": "معدل سرعة الجري"
     },
     "errors": {
       "idInUse": "معرّف فئة التضاريس \"{{id}}\" مستخدم بالفعل",
@@ -633,5 +658,15 @@
       "yMin": "Y الأدنى",
       "yMax": "Y الأقصى"
     }
+  },
+  "scoring": {
+    "heading": "أوزان نقاط النصر (تجاوز السيناريو)",
+    "hint": "اترك الحقل فارغًا لوراثة القيمة الافتراضية لنوع المعركة أو الحقبة.",
+    "casualties": "وزن الخسائر",
+    "underPressure": "عقوبة تحت الضغط",
+    "pressureThreshold": "عتبة الضغط",
+    "casualtiesInfo": "أقصى نقاط نصر من فارق الخسائر بين الفريقين. الأعلى يفضّل الاستنزاف على الاحتفاظ بالأهداف.",
+    "underPressureInfo": "نقاط النصر التي يخسرها الفريق كل دور تحت الضغط. 0 يعطّل العقوبة.",
+    "pressureThresholdInfo": "يكون الفريق تحت الضغط طالما يملك هذه النسبة من نقاط نصر الأهداف أو أقل."
   }
 }

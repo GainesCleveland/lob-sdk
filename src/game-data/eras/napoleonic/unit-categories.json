@@ -71,7 +71,6 @@
     "damageTypeResistances": {
       "bayonet": 0,
       "cavalry-sabre": 0,
-      "cavalry-lance": 0.15,
       "musket": -0.5,
       "marksman-musket": -0.35,
       "rifle": -0.35,
@@ -140,8 +139,7 @@
       "6lb-canister-fire": 0.4,
       "4lb-canister-fire": 0.4,
       "howitzer-canister": 0.4,
-      "rocket": 0.9,
-      "rocket-long": 0.9
+      "rocket": 0.9
     },
     "autofirePriority": {
       "scoutCavalry": -1,
@@ -174,7 +172,6 @@
     },
     "damageTypeResistances": {
       "bayonet": 0,
-      "cavalry-lance": 0.15,
       "dragoon-sword": 0,
       "cavalry-sword": 0,
       "musket": -0.6,
@@ -221,7 +218,6 @@
     },
     "damageTypeResistances": {
       "bayonet": 0,
-      "cavalry-lance": 0.15,
       "cavalry-sword": 0,
       "dragoon-sword": 0,
       "cavalry-sabre": 0,
@@ -269,7 +265,6 @@
     "damageTypeResistances": {
       "bayonet": 0,
       "cavalry-sabre": 0,
-      "cavalry-lance": 0.15,
       "dragoon-sword": 0,
       "musket": -0.5,
       "marksman-musket": -0.35,
@@ -378,8 +373,7 @@
       "4lb-canister-fire": 0.75,
       "explosive-shell": 0.65,
       "howitzer-canister": 0.75,
-      "rocket": 0.9,
-      "rocket-long": 0.9
+      "rocket": 0.9
     },
     "autofirePriority": {
       "artillery": 2,

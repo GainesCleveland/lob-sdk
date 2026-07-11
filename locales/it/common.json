@@ -288,11 +288,11 @@
   "topWidth": "Larghezza superiore",
   "bottomWidth": "Larghezza inferiore",
   "height": "Altezza",
-  "orgModifierByTargetOrg": "Riduci in base all'organizzazione del bersaglio",
+  "orgDamageModifierByTargetOrg": "Riduci in base all'organizzazione del bersaglio",
   "damageModifierByTargetHp": "Modificatore Danno per PV del Bersaglio",
   "from": "da",
   "to": "a",
-  "lBy": "da",
+  "value": "valore",
   "terrainHitboxHeight": "Altezza hitbox del terreno",
   "Terrain": "Terreno",
   "projectileAbsorption": "Assorbimento proiettili",
@@ -404,7 +404,7 @@
     "lossesRatio": "Rapporto perdite",
     "objectives": "Obiettivi",
     "timeUnderPressure": "Tempo sotto pressione",
-    "timeUnderPressureTooltip": "Il tempo sotto pressione è il tempo in cui una squadra controlla <0>{{percentage}}%</0> degli obiettivi PV o meno. Più a lungo una squadra rimane sotto pressione, più punti vittoria perde.",
+    "timeUnderPressureTooltip": "Il tempo sotto pressione è il tempo in cui una squadra detiene <0>{{percentage}}%</0> dei VP degli obiettivi o meno. Sotto pressione, una squadra perde <1>{{vpPerTurn}}</1> VP per turno.",
     "unitsOrgRegain": "Recupero organizzazione unità"
   },
   "offerDrawModal": {
@@ -696,6 +696,9 @@
   "baseAmmo": "Munizioni base",
   "range": "Gittata",
   "discord": {
+    "joinTitle": "Unisciti al Discord ufficiale di Lines of Battle",
+    "joinSubtitle": "Chatta con la community, trova avversari e resta aggiornato sulle ultime novità.",
+    "joinButton": "Entra nel server",
     "link": "Collega Discord",
     "unlink": "Scollega Discord",
     "confirmMessage": "Sei sicuro di voler scollegare il tuo account Discord?",
@@ -737,6 +740,8 @@
   "clear": "Cancella",
   "privacy": "Privacy",
   "showCountry": "Mostra paese",
+  "country": "Paese",
+  "noCountry": "Nessun paese",
   "switchToEra": "Passa a {{era}}",
   "goHome": "Vai alla Home",
   "sendFailed": "Invio del messaggio non riuscito",
@@ -806,5 +811,13 @@
   "max": "Massimo",
   "noAmmoRegain": "Nessun recupero munizioni",
   "flankMeleeOrgModifier": "Modificatore org. corpo a corpo sul fianco",
-  "rearCharge": "Carica alle spalle"
+  "rearCharge": "Carica alle spalle",
+  "deleteAccount": "Elimina account",
+  "deleteAccountModal": {
+    "hint": "Questo programma l'eliminazione del tuo account. Puoi annullarla effettuando di nuovo l'accesso durante il periodo di tolleranza.",
+    "title": "Elimina account",
+    "message": "Il tuo account verrà programmato per l'eliminazione tra {{graceDays}} giorni. Puoi annullare in qualsiasi momento prima effettuando di nuovo l'accesso. Dopodiché, il tuo account e i tuoi dati personali verranno anonimizzati in modo permanente. Sei sicuro?",
+    "scheduled": "Il tuo account è programmato per l'eliminazione tra {{graceDays}} giorni. Effettua di nuovo l'accesso prima di allora per annullarla.",
+    "error": "Impossibile programmare l'eliminazione dell'account. Riprova."
+  }
 }

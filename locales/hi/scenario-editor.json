@@ -28,7 +28,11 @@
     "orgModifier": "संगठन संशोधक",
     "invalidJson": "अमान्य JSON",
     "resizeMap": "मानचित्र आकार बदलें",
-    "addLanguage": "भाषा जोड़ें"
+    "addLanguage": "भाषा जोड़ें",
+    "optionBuiltIn": "{{name}} (अंतर्निहित)",
+    "optionCustom": "{{name}} (कस्टम)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "घूर्णन गति संशोधक"
   },
   "editorPanel": {
     "tabs": {
@@ -287,7 +291,8 @@
     "sections": {
       "projectile": "प्रोजेक्टाइल",
       "rangeBrackets": "रेंज ब्रैकेट",
-      "areaOfEffect": "प्रभाव क्षेत्र"
+      "areaOfEffect": "प्रभाव क्षेत्र",
+      "targetStatModifiers": "लक्ष्य स्टैट आधारित संशोधक"
     },
     "fields": {
       "ranged": "दूरस्थ",
@@ -300,7 +305,9 @@
       "shotSound": "शॉट ध्वनि",
       "shotAnim": "शॉट एनिमेशन",
       "extendRange": "रेंज बढ़ाएं",
-      "aimMode": "निशाना मोड"
+      "aimMode": "निशाना मोड",
+      "maxRange": "अधिकतम रेंज",
+      "engagementTier": "स्वचालित आग स्तर"
     },
     "aimMode": {
       "targetCenter": "लक्ष्य केंद्र (गोलाकार विस्फोट)",
@@ -310,7 +317,13 @@
       "start": "आरंभ",
       "end": "अंत",
       "startMod": "आरंभ संशोधक",
-      "endMod": "अंत संशोधक"
+      "endMod": "अंत संशोधक",
+      "from": "से (%)",
+      "to": "तक (%)",
+      "damageHeader": "क्षति संशोधक (%)",
+      "orgHeader": "संगठन संशोधक (%)",
+      "near": "नज़दीक",
+      "far": "दूर"
     },
     "aoe": {
       "absorptionModifier": "अवशोषण संशोधक",
@@ -336,7 +349,18 @@
       "idBelongsToBuiltIn": "क्षति प्रकार id {{id}} अंतर्निहित \"{{name}}\" का है। इसे अधिरोहित करने के लिए नाम रखें, या कोई अलग id चुनें।",
       "nameBelongsToBuiltIn": "नाम \"{{name}}\" अंतर्निहित id {{id}} का है। इसे अधिरोहित करने के लिए id को {{id}} पर सेट करें, या कोई अलग नाम चुनें।",
       "orgDamageRatioRequired": "orgDamageRatio आवश्यक है",
-      "rangedNeedsBracket": "दूरस्थ क्षति प्रकारों को कम से कम एक रेंज ब्रैकेट चाहिए"
+      "rangedNeedsBracket": "दूरस्थ क्षति प्रकारों को कम से कम एक रेंज ब्रैकेट चाहिए",
+      "maxRangeRequired": "अधिकतम रेंज 0 से अधिक होनी चाहिए",
+      "rangeBandBounds": "प्रत्येक बैंड का From/To 0 से 100% के बीच होना चाहिए, From ≤ To के साथ।",
+      "lastBandMustReachMax": "अंतिम बैंड को 100% (अधिकतम रेंज) तक पहुँचना चाहिए।"
+    },
+    "engagementTier": {
+      "low": "कम (निकट)",
+      "medium": "प्रभावी (मध्यम)",
+      "max": "अधिकतम (डिफ़ॉल्ट)"
+    },
+    "targetStat": {
+      "helper": "लक्ष्य के स्टैट का %। 'from' से ऊपर कोई प्रभाव नहीं; 'to' पर या नीचे पूरा 'value'। लक्ष्य का HP/संगठन घटने पर बढ़ता है।"
     }
   },
   "terrainCategoryModal": {
@@ -366,7 +390,8 @@
       "impassableFor": "इनके लिए अगम्य",
       "attackModifier": "हमला संशोधक",
       "defenseModifier": "रक्षा संशोधक",
-      "projectileAbsorptionByDamageType": "क्षति प्रकार द्वारा प्रोजेक्टाइल अवशोषण"
+      "projectileAbsorptionByDamageType": "क्षति प्रकार द्वारा प्रोजेक्टाइल अवशोषण",
+      "runSpeedModifier": "दौड़ गति संशोधक"
     },
     "errors": {
       "idInUse": "भूभाग श्रेणी id \"{{id}}\" पहले से उपयोग में है",
@@ -629,5 +654,15 @@
       "yMin": "Y न्यून",
       "yMax": "Y अधिक"
     }
+  },
+  "scoring": {
+    "heading": "VP भार (परिदृश्य ओवरराइड)",
+    "hint": "युद्ध प्रकार या युग के डिफ़ॉल्ट को इनहेरिट करने के लिए फ़ील्ड खाली छोड़ें।",
+    "casualties": "हताहत भार",
+    "underPressure": "दबाव में दंड",
+    "pressureThreshold": "दबाव सीमा",
+    "casualtiesInfo": "टीमों के बीच हताहत अंतर से अधिकतम VP। अधिक होने पर लक्ष्य पकड़ने के बजाय क्षय पर ज़ोर।",
+    "underPressureInfo": "दबाव में हर टर्न में टीम जितने VP खोती है। 0 से दंड बंद।",
+    "pressureThresholdInfo": "जब तक टीम के पास लक्ष्य VP का यह % या कम है, वह दबाव में रहती है।"
   }
 }

@@ -310,9 +310,9 @@
   "heightModifierPerLevel": "प्रति स्तर ऊंचाई संशोधक",
   "damageModifierPerLevel": "प्रति स्तर क्षति संशोधक",
   "maxElevationDiff": "अधिकतम ऊंचाई अंतर",
-  "orgModifierByTargetOrg": "लक्ष्य संगठन से कम करें",
+  "orgDamageModifierByTargetOrg": "लक्ष्य संगठन से कम करें",
   "damageModifierByTargetHp": "लक्ष्य एचपी द्वारा क्षति संशोधक",
-  "lBy": "द्वारा",
+  "value": "मान",
   "terrainHitboxHeight": "भूभाग हिटबॉक्स ऊंचाई",
   "projectileAbsorption": "प्रोजेक्टाइल अवशोषण",
   "terrainPName": "भूभाग: {{name}}",
@@ -442,7 +442,7 @@
     "lossesRatio": "हानि अनुपात",
     "objectives": "उद्देश्य",
     "timeUnderPressure": "दबाव के तहत समय",
-    "timeUnderPressureTooltip": "दबाव के तहत समय वह समय है जब एक टीम के पास उद्देश्यों का <0>{{percentage}}%</0> विजय अंक या उससे कम होता है। जितनी देर एक टीम दबाव में रहती है, उतने अधिक विजय अंक वे खोते हैं।",
+    "timeUnderPressureTooltip": "दबाव में समय वह समय है जब किसी टीम के पास लक्ष्य VP का <0>{{percentage}}%</0> या कम होता है। दबाव में, टीम हर टर्न <1>{{vpPerTurn}}</1> VP खोती है।",
     "unitsOrgRegain": "इकाइयाँ संगठन पुनर्प्राप्ति"
   },
   "offerDrawModal": {
@@ -930,6 +930,9 @@
   "baseAmmo": "आधार गोला-बारूद",
   "range": "रेंज",
   "discord": {
+    "joinTitle": "Lines of Battle के आधिकारिक Discord से जुड़ें",
+    "joinSubtitle": "समुदाय से बातचीत करें, प्रतिद्वंद्वी खोजें और नवीनतम समाचार पाएं।",
+    "joinButton": "सर्वर से जुड़ें",
     "link": "Discord लिंक करें",
     "unlink": "Discord अनलिंक करें",
     "confirmMessage": "क्या आप वाकई अपना Discord खाता अनलिंक करना चाहते हैं?",
@@ -959,6 +962,8 @@
   "clear": "साफ़ करें",
   "privacy": "गोपनीयता",
   "showCountry": "देश दिखाएं",
+  "country": "देश",
+  "noCountry": "कोई देश नहीं",
   "switchToEra": "{{era}} पर स्विच करें",
   "goHome": "मुख्य पृष्ठ पर जाएं",
   "profileChart": {
@@ -992,5 +997,13 @@
   },
   "noAmmoRegain": "गोला-बारूद पुनः नहीं मिलता",
   "flankMeleeOrgModifier": "फ्लैंक हाथापाई संगठन संशोधक",
-  "rearCharge": "पीछे से आक्रमण"
+  "rearCharge": "पीछे से आक्रमण",
+  "deleteAccount": "खाता हटाएं",
+  "deleteAccountModal": {
+    "hint": "यह आपके खाते को हटाने के लिए निर्धारित करता है। आप छूट अवधि के दौरान दोबारा लॉग इन करके इसे पूर्ववत कर सकते हैं।",
+    "title": "खाता हटाएं",
+    "message": "आपका खाता {{graceDays}} दिनों में हटाने के लिए निर्धारित किया जाएगा। आप इससे पहले कभी भी दोबारा लॉग इन करके रद्द कर सकते हैं। उसके बाद, आपका खाता और व्यक्तिगत डेटा स्थायी रूप से गुमनाम कर दिया जाएगा। क्या आप निश्चित हैं?",
+    "scheduled": "आपका खाता {{graceDays}} दिनों में हटाने के लिए निर्धारित है। इसे रद्द करने के लिए उस समय से पहले दोबारा लॉग इन करें।",
+    "error": "खाता हटाना निर्धारित नहीं किया जा सका। कृपया पुनः प्रयास करें।"
+  }
 }

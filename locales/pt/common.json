@@ -288,11 +288,11 @@
   "topWidth": "Largura Superior",
   "bottomWidth": "Largura Inferior",
   "height": "Altura",
-  "orgModifierByTargetOrg": "Diminuir por Organização do Alvo",
+  "orgDamageModifierByTargetOrg": "Diminuir por Organização do Alvo",
   "damageModifierByTargetHp": "Modificador de Dano por HP do Alvo",
   "from": "de",
   "to": "para",
-  "lBy": "por",
+  "value": "valor",
   "terrainHitboxHeight": "Altura da Hitbox do Terreno",
   "Terrain": "Terreno",
   "projectileAbsorption": "Absorção de Projéteis",
@@ -404,7 +404,7 @@
     "lossesRatio": "Proporção de Perdas",
     "objectives": "Objetivos",
     "timeUnderPressure": "Tempo sob pressão",
-    "timeUnderPressureTooltip": "Tempo sob pressão é o tempo em que uma equipe controla <0>{{percentage}}%</0> dos objetivos PV ou menos. Quanto mais tempo uma equipe fica sob pressão, mais pontos de vitória ela perde.",
+    "timeUnderPressureTooltip": "Tempo sob pressão é o tempo em que uma equipe detém <0>{{percentage}}%</0> dos VP de objetivos ou menos. Sob pressão, uma equipe perde <1>{{vpPerTurn}}</1> VP por turno.",
     "unitsOrgRegain": "Recuperação de organização das unidades"
   },
   "offerDrawModal": {
@@ -696,6 +696,9 @@
   "baseAmmo": "Munição base",
   "range": "Alcance",
   "discord": {
+    "joinTitle": "Entre no Discord oficial de Lines of Battle",
+    "joinSubtitle": "Converse com a comunidade, encontre adversários e receba as últimas novidades.",
+    "joinButton": "Entrar no servidor",
     "link": "Vincular Discord",
     "unlink": "Desvincular Discord",
     "confirmMessage": "Tem certeza de que deseja desvincular sua conta Discord?",
@@ -737,6 +740,8 @@
   "clear": "Limpar",
   "privacy": "Privacidade",
   "showCountry": "Mostrar país",
+  "country": "País",
+  "noCountry": "Sem país",
   "switchToEra": "Mudar para {{era}}",
   "goHome": "Ir para o Início",
   "sendFailed": "Falha ao enviar mensagem",
@@ -806,5 +811,13 @@
   "max": "Máximo",
   "noAmmoRegain": "Sem recuperação de munição",
   "flankMeleeOrgModifier": "Modificador org. corpo a corpo de flanco",
-  "rearCharge": "Carga pela retaguarda"
+  "rearCharge": "Carga pela retaguarda",
+  "deleteAccount": "Excluir conta",
+  "deleteAccountModal": {
+    "hint": "Isto agenda a exclusão da sua conta. Você pode desfazer entrando novamente durante o período de carência.",
+    "title": "Excluir conta",
+    "message": "Sua conta será agendada para exclusão em {{graceDays}} dias. Você pode cancelar a qualquer momento antes disso entrando novamente. Depois disso, sua conta e seus dados pessoais serão anonimizados permanentemente. Tem certeza?",
+    "scheduled": "Sua conta está agendada para exclusão em {{graceDays}} dias. Entre novamente antes desse prazo para cancelar.",
+    "error": "Não foi possível agendar a exclusão da conta. Tente novamente."
+  }
 }

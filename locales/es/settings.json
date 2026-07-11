@@ -128,6 +128,10 @@
     "title": "La selección de inactivos incluye órdenes sin cambios",
     "description": "Desactivado: solo unidades sin órdenes. Activado: también unidades que aún tienen la orden del turno anterior si no la cambiaste en este turno."
   },
+  "applyOrderTypeToSelection": {
+    "title": "El tipo de orden se aplica a la selección",
+    "description": "Activado: cambiar el tipo de movimiento reasigna las órdenes actuales de las unidades seleccionadas y el botón de orden refleja tu selección. Desactivado: solo define el tipo de la próxima orden que dibujes (clásico)."
+  },
   "showChat": {
     "title": "Mostrar chat"
   },

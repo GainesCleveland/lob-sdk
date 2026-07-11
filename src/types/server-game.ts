@@ -111,11 +111,17 @@ export interface BattleTypeTemplate {
    */
   vpLossRatioPoints?: number;
   /**
-   * Per-battle-type override for the under-pressure VP rate (the era's
-   * VP_TICKS_UNDER_PRESSURE_BASE). Omit to inherit the era default. Resolved via
+   * Per-battle-type override for the under-pressure VP rate (the objectives
+   * rule's vpTicksUnderPressureBase). Omit to inherit the era default. Resolved via
    * the BaseGame.vpTicksUnderPressureBase getter (scenario override > battle type > era).
    */
   vpTicksUnderPressureBase?: number;
+  /**
+   * Per-battle-type override for the under-pressure objective-share threshold
+   * (the objectives rule's vpPressureThreshold). Omit to inherit the era default.
+   * Resolved via the BaseGame.vpPressureThreshold getter (scenario override > battle type > era).
+   */
+  vpPressureThreshold?: number;
   /** Default army composition for this battle type. */
   defaultArmy: UnitCounts;
   /** If Supply Lines rule enabled, this will be the logistics per big objective. */
@@ -286,10 +292,11 @@ export interface DamageHit {
   /** Organization bonus/penalty applied. */
   orgBonus: number;
   /**
-   * Per-band override of the damage type's `orgDamageRatio`, resolved at shot time from the
-   * firing distance. Falls back to the damage type's `orgDamageRatio` when absent.
+   * Relative org-damage modifier for this shot, interpolated from the firing distance across
+   * the range band (`orgDamageModifier` near/far). Applied as `orgDamageRatio * (1 + modifier)`;
+   * absent or 0 means the damage type's flat org ratio.
    */
-  orgDamageRatio?: number;
+  orgRangeModifier?: number;
   /**
    * Per-hit reorg-debuff magnitude, pre-scaled by how much of the nominal attack landed
    * (ranged: modifiers x `stepStrength`; melee: the modifier product), so a spent or

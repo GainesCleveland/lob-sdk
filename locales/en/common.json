@@ -314,9 +314,9 @@
   "heightModifierPerLevel": "Height Modifier per Level",
   "damageModifierPerLevel": "Damage Modifier per Level",
   "maxElevationDiff": "Max Elevation Difference",
-  "orgModifierByTargetOrg": "Org Modifier by Target Org",
+  "orgDamageModifierByTargetOrg": "Org Modifier by Target Org",
   "damageModifierByTargetHp": "Damage Modifier by Target HP",
-  "lBy": "by",
+  "value": "value",
   "terrainHitboxHeight": "Terrain Hitbox Height",
   "projectileAbsorption": "Projectile Absorption",
   "terrainPName": "Terrain: {{name}}",
@@ -448,7 +448,7 @@
     "lossesRatio": "Losses Ratio",
     "objectives": "Objectives",
     "timeUnderPressure": "Time under pressure",
-    "timeUnderPressureTooltip": "Time under pressure is the time a team has the <0>{{percentage}}%</0> of the objectives VPs or less. The longer a team is under pressure, the more victory points they lose.",
+    "timeUnderPressureTooltip": "Time under pressure is the time a team holds <0>{{percentage}}%</0> of the objective VPs or less. While under pressure, a team loses <1>{{vpPerTurn}}</1> VP per turn.",
     "unitsOrgRegain": "Units org regain"
   },
   "offerDrawModal": {
@@ -941,6 +941,9 @@
   "show": "Show",
   "hide": "Hide",
   "discord": {
+    "joinTitle": "Join the official Lines of Battle Discord",
+    "joinSubtitle": "Chat with the community, find opponents, and get the latest news.",
+    "joinButton": "Join the server",
     "link": "Link Discord",
     "unlink": "Unlink Discord",
     "confirmMessage": "Are you sure you want to unlink your Discord account?",
@@ -977,6 +980,8 @@
   "clear": "Clear",
   "privacy": "Privacy",
   "showCountry": "Show country",
+  "country": "Country",
+  "noCountry": "No country",
   "notAvailableForAllUnits": "Not available for all units",
   "unitsHaveDifferentFormations": "Selected units have different formations",
   "profileChart": {
@@ -1010,5 +1015,13 @@
   },
   "noAmmoRegain": "No ammo regain",
   "flankMeleeOrgModifier": "Flank melee org modifier",
-  "rearCharge": "Rear charge"
+  "rearCharge": "Rear charge",
+  "deleteAccount": "Delete account",
+  "deleteAccountModal": {
+    "hint": "This schedules your account for deletion. You can undo it by logging back in during the grace period.",
+    "title": "Delete account",
+    "message": "Your account will be scheduled for deletion in {{graceDays}} days. You can cancel any time before then by logging back in. After that, your account and personal data are permanently anonymized. Are you sure?",
+    "scheduled": "Your account is scheduled for deletion in {{graceDays}} days. Log in again before then to cancel it.",
+    "error": "Could not schedule account deletion. Please try again."
+  }
 }
