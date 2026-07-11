@@ -88,10 +88,18 @@ export interface BattleTypeTemplate {
   ticksToCaptureSmall: number;
   /** Number of ticks required to capture big objectives. */
   ticksToCaptureBig: number;
-  /** Victory points per big objective. */
-  bigVps: number;
-  /** Victory points per small objective. */
-  smallVps: number;
+  /**
+   * Per-battle-type override for the default big objective VP (the objectives
+   * rule's vpBigDefaultPoints). Omit to inherit the era default. Resolved via the
+   * BaseGame.vpBigDefaultPoints getter (scenario override > battle type > era).
+   */
+  vpBigDefaultPoints?: number;
+  /**
+   * Per-battle-type override for the default small objective VP (the objectives
+   * rule's vpSmallDefaultPoints). Omit to inherit the era default. Resolved via the
+   * BaseGame.vpSmallDefaultPoints getter (scenario override > battle type > era).
+   */
+  vpSmallDefaultPoints?: number;
   /**
    * Minimum distance, in world pixels, kept between a team's objectives when
    * repositioned during deployment. Omit or set to 0 to disable. Read via
@@ -105,8 +113,8 @@ export interface BattleTypeTemplate {
    */
   smallObjectivesPerSide?: number;
   /**
-   * Per-battle-type override for the casualties VP weight (the era's
-   * VP_LOSS_RATIO_POINTS). Omit to inherit the era default. Resolved via the
+   * Per-battle-type override for the casualties VP weight (the objectives
+   * rule's vpLossRatioPoints). Omit to inherit the era default. Resolved via the
    * BaseGame.vpLossRatioPoints getter (scenario override > battle type > era).
    */
   vpLossRatioPoints?: number;
@@ -122,6 +130,18 @@ export interface BattleTypeTemplate {
    * Resolved via the BaseGame.vpPressureThreshold getter (scenario override > battle type > era).
    */
   vpPressureThreshold?: number;
+  /**
+   * Per-battle-type override for the starting/base VP (the objectives rule's
+   * vpBasePoints). Omit to inherit the era default. Resolved via the
+   * BaseGame.vpBasePoints getter (scenario override > battle type > era).
+   */
+  vpBasePoints?: number;
+  /**
+   * Per-battle-type override for the tie-break margin VP (the objectives rule's
+   * vpPointsToTieBreak). Omit to inherit the era default. Resolved via the
+   * BaseGame.vpPointsToTieBreak getter (scenario override > battle type > era).
+   */
+  vpPointsToTieBreak?: number;
   /** Default army composition for this battle type. */
   defaultArmy: UnitCounts;
   /** If Supply Lines rule enabled, this will be the logistics per big objective. */

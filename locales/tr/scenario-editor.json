@@ -111,9 +111,11 @@
     }
   },
   "vpBalance": {
-    "heading": "ZP dengesi (kayıplar vs hedefler)",
+    "heading": "ZP dengesi (taban, kayıplar, hedefler)",
+    "baseTooltip": "Taban: {{vp}} VP",
     "casualtiesTooltip": "Kayıplar: {{vp}} VP",
     "objectivesTooltip": "Hedefler: {{vp}} VP",
+    "baseSummary": "Taban {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Kayıplar {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Hedefler {{pct}}% ({{vp}} VP)"
   },
@@ -628,9 +630,11 @@
   "scoring": {
     "heading": "ZP ağırlıkları (senaryo geçersiz kılma)",
     "hint": "Savaş türü veya çağ varsayılanını devralmak için bir alanı boş bırakın.",
+    "basePoints": "Taban ağırlığı",
     "casualties": "Kayıp ağırlığı",
     "underPressure": "Baskı altında ceza",
     "pressureThreshold": "Baskı eşiği",
+    "basePointsInfo": "Kayıplar, hedefler veya baskı uygulanmadan önce her iki takımın aldığı başlangıç ZP'si.",
     "casualtiesInfo": "Takımlar arası kayıp farkından kazanılan maks. ZP. Yüksek olması hedef tutmaktan çok yıpratmayı öne çıkarır.",
     "underPressureInfo": "Bir takımın baskı altında tur başına kaybettiği ZP. 0 cezayı kapatır.",
     "pressureThresholdInfo": "Bir takım, hedef ZP'sinin bu yüzdesini veya daha azını elinde tuttuğu sürece baskı altındadır."

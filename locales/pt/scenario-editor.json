@@ -111,9 +111,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Equilíbrio de PV (baixas vs objetivos)",
+    "heading": "Equilíbrio de PV (base, baixas, objetivos)",
+    "baseTooltip": "Base: {{vp}} VP",
     "casualtiesTooltip": "Baixas: {{vp}} VP",
     "objectivesTooltip": "Objetivos: {{vp}} VP",
+    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Baixas {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objetivos {{pct}}% ({{vp}} VP)"
   },
@@ -628,9 +630,11 @@
   "scoring": {
     "heading": "Pesos de VP (substituição do cenário)",
     "hint": "Deixe um campo vazio para herdar o padrão do tipo de batalha ou da era.",
+    "basePoints": "Peso base",
     "casualties": "Peso de baixas",
     "underPressure": "Penalidade sob pressão",
     "pressureThreshold": "Limite de pressão",
+    "basePointsInfo": "VP iniciais que ambas as equipes recebem antes de aplicar baixas, objetivos ou pressão.",
     "casualtiesInfo": "VP máximos pela diferença de baixas entre as equipes. Maior favorece o desgaste em vez de manter objetivos.",
     "underPressureInfo": "VP que uma equipe perde por turno sob pressão. 0 desativa a penalidade.",
     "pressureThresholdInfo": "Uma equipe fica sob pressão enquanto detém esta % de VP de objetivos ou menos."

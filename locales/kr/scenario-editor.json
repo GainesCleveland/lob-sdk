@@ -111,9 +111,11 @@
     }
   },
   "vpBalance": {
-    "heading": "승점 균형 (사상자 대 지점목표)",
+    "heading": "승점 균형 (기본, 사상자, 지점목표)",
+    "baseTooltip": "기본: {{vp}} VP",
     "casualtiesTooltip": "사상자: {{vp}} VP",
     "objectivesTooltip": "지점목표: {{vp}} VP",
+    "baseSummary": "기본 {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "사상자 {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "지점목표 {{pct}}% ({{vp}} VP)"
   },
@@ -627,9 +629,11 @@
   "scoring": {
     "heading": "VP 가중치 (시나리오 재정의)",
     "hint": "비워두면 전투 유형 또는 시대의 기본값을 상속합니다.",
+    "basePoints": "기본 가중치",
     "casualties": "사상자 가중치",
     "underPressure": "압박 시 패널티",
     "pressureThreshold": "압박 임계값",
+    "basePointsInfo": "사상자, 거점, 압박이 적용되기 전에 양 팀이 받는 시작 VP.",
     "casualtiesInfo": "양 팀의 사상자 차이로 얻는 최대 VP. 높을수록 거점 유지보다 소모전을 중시합니다.",
     "underPressureInfo": "압박 상태에서 팀이 매 턴 잃는 VP. 0이면 비활성화됩니다.",
     "pressureThresholdInfo": "팀이 보유한 목표 VP 비율이 이 % 이하일 때 압박 상태가 됩니다."

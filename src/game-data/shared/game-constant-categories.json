@@ -106,9 +106,6 @@
   "FOW_LEVEL_2_DISTANCE": "fogOfWar",
   "FOW_LEVEL_3_DISTANCE": "fogOfWar",
 
-  "VP_BASE_POINTS": "victoryPoints",
-  "VP_LOSS_RATIO_POINTS": "victoryPoints",
-  "VP_POINTS_TO_TIE_BREAK": "victoryPoints",
   "NEUTRAL_OBJECTIVE_VP_MULTIPLIER": "victoryPoints",
   "NEUTRAL_OBJECTIVE_DRIFT_FACTOR": "victoryPoints",
 

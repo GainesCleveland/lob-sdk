@@ -111,9 +111,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Keseimbangan VP (korban vs objektif)",
+    "heading": "Keseimbangan VP (dasar, korban, objektif)",
+    "baseTooltip": "Dasar: {{vp}} VP",
     "casualtiesTooltip": "Korban: {{vp}} VP",
     "objectivesTooltip": "Objektif: {{vp}} VP",
+    "baseSummary": "Dasar {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Korban {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objektif {{pct}}% ({{vp}} VP)"
   },
@@ -627,9 +629,11 @@
   "scoring": {
     "heading": "Bobot VP (penggantian skenario)",
     "hint": "Biarkan kolom kosong untuk mewarisi default tipe pertempuran atau era.",
+    "basePoints": "Bobot dasar",
     "casualties": "Bobot korban",
     "underPressure": "Penalti di bawah tekanan",
     "pressureThreshold": "Ambang tekanan",
+    "basePointsInfo": "VP awal yang didapat kedua tim sebelum korban, objektif, atau tekanan diterapkan.",
     "casualtiesInfo": "VP maks. dari selisih korban antar tim. Lebih tinggi mengutamakan atrisi daripada menahan objektif.",
     "underPressureInfo": "VP yang hilang per giliran saat tim di bawah tekanan. 0 menonaktifkan penalti.",
     "pressureThresholdInfo": "Sebuah tim berada di bawah tekanan selama memegang persentase VP objektif ini atau kurang."

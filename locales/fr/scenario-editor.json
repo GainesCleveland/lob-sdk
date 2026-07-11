@@ -111,9 +111,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Équilibre VP (pertes vs objectifs)",
+    "heading": "Équilibre VP (base, pertes, objectifs)",
+    "baseTooltip": "Base : {{vp}} VP",
     "casualtiesTooltip": "Pertes : {{vp}} VP",
     "objectivesTooltip": "Objectifs : {{vp}} VP",
+    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Pertes {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objectifs {{pct}}% ({{vp}} VP)"
   },
@@ -628,9 +630,11 @@
   "scoring": {
     "heading": "Poids des PV (remplacement du scénario)",
     "hint": "Laissez un champ vide pour hériter de la valeur par défaut du type de bataille ou de l'ère.",
+    "basePoints": "Poids de base",
     "casualties": "Poids des pertes",
     "underPressure": "Pénalité sous pression",
     "pressureThreshold": "Seuil de pression",
+    "basePointsInfo": "PV de départ attribués aux deux équipes avant l'application des pertes, objectifs ou pression.",
     "casualtiesInfo": "PV max issus de la différence de pertes entre équipes. Plus élevé favorise l'usure plutôt que la tenue des objectifs.",
     "underPressureInfo": "PV qu'une équipe perd par tour sous pression. 0 désactive la pénalité.",
     "pressureThresholdInfo": "Une équipe est sous pression tant qu'elle détient ce % des PV d'objectifs ou moins."
