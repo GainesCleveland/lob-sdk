@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VP balance (base, casualties, objectives)",
-    "baseTooltip": "Base: {{vp}} VP",
+    "heading": "VP balance (casualties vs objectives)",
+    "baseAnnotation": "Base: {{vp}} VP per team",
     "casualtiesTooltip": "Casualties: {{vp}} VP",
     "objectivesTooltip": "Objectives: {{vp}} VP",
-    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Casualties {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objectives {{pct}}% ({{vp}} VP)"
   },

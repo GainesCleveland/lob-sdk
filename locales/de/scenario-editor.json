@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VP-Bilanz (Basis, Verluste, Ziele)",
-    "baseTooltip": "Basis: {{vp}} VP",
+    "heading": "VP-Bilanz (Verluste vs Ziele)",
+    "baseAnnotation": "Basis: {{vp}} VP pro Team",
     "casualtiesTooltip": "Verluste: {{vp}} VP",
     "objectivesTooltip": "Ziele: {{vp}} VP",
-    "baseSummary": "Basis {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Verluste {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Ziele {{pct}}% ({{vp}} VP)"
   },

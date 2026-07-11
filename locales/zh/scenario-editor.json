@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VP 平衡（基础、伤亡、目标点）",
-    "baseTooltip": "基础：{{vp}} VP",
+    "heading": "VP 平衡（伤亡 vs 目标点）",
+    "baseAnnotation": "基础：每队 {{vp}} VP",
     "casualtiesTooltip": "伤亡：{{vp}} VP",
     "objectivesTooltip": "目标点：{{vp}} VP",
-    "baseSummary": "基础 {{pct}}%（{{vp}} VP）",
     "casualtiesSummary": "伤亡 {{pct}}%（{{vp}} VP）",
     "objectivesSummary": "目标点 {{pct}}%（{{vp}} VP）"
   },

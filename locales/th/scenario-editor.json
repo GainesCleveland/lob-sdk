@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "สมดุล VP (พื้นฐาน, ความสูญเสีย, เป้าหมาย)",
-    "baseTooltip": "พื้นฐาน: {{vp}} VP",
+    "heading": "สมดุล VP (ความสูญเสีย vs เป้าหมาย)",
+    "baseAnnotation": "พื้นฐาน: {{vp}} VP ต่อทีม",
     "casualtiesTooltip": "ความสูญเสีย: {{vp}} VP",
     "objectivesTooltip": "เป้าหมาย: {{vp}} VP",
-    "baseSummary": "พื้นฐาน {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "ความสูญเสีย {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "เป้าหมาย {{pct}}% ({{vp}} VP)"
   },

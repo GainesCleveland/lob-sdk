@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Баланс ОП (база, потери, ключевые позиции)",
-    "baseTooltip": "База: {{vp}} ОП",
+    "heading": "Баланс ОП (потери vs ключевые позиции)",
+    "baseAnnotation": "База: {{vp}} ОП за команду",
     "casualtiesTooltip": "Потери: {{vp}} ОП",
     "objectivesTooltip": "Ключевые позиции: {{vp}} ОП",
-    "baseSummary": "База {{pct}}% ({{vp}} ОП)",
     "casualtiesSummary": "Потери {{pct}}% ({{vp}} ОП)",
     "objectivesSummary": "Ключевые позиции {{pct}}% ({{vp}} ОП)"
   },

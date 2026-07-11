@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VP egyensúly (alap, veszteségek, objektívák)",
-    "baseTooltip": "Alap: {{vp}} VP",
+    "heading": "VP egyensúly (veszteségek vs objektívák)",
+    "baseAnnotation": "Alap: {{vp}} VP csapatonként",
     "casualtiesTooltip": "Veszteségek: {{vp}} VP",
     "objectivesTooltip": "Objektívák: {{vp}} VP",
-    "baseSummary": "Alap {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Veszteségek {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objektívák {{pct}}% ({{vp}} VP)"
   },

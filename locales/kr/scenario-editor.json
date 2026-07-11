@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "승점 균형 (기본, 사상자, 지점목표)",
-    "baseTooltip": "기본: {{vp}} VP",
+    "heading": "승점 균형 (사상자 vs 지점목표)",
+    "baseAnnotation": "기본: 팀당 {{vp}} VP",
     "casualtiesTooltip": "사상자: {{vp}} VP",
     "objectivesTooltip": "지점목표: {{vp}} VP",
-    "baseSummary": "기본 {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "사상자 {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "지점목표 {{pct}}% ({{vp}} VP)"
   },

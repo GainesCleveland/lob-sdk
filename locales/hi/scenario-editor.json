@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VP संतुलन (आधार, हताहत, उद्देश्य)",
-    "baseTooltip": "आधार: {{vp}} VP",
+    "heading": "VP संतुलन (हताहत vs उद्देश्य)",
+    "baseAnnotation": "आधार: {{vp}} VP प्रति टीम",
     "casualtiesTooltip": "हताहत: {{vp}} VP",
     "objectivesTooltip": "उद्देश्य: {{vp}} VP",
-    "baseSummary": "आधार {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "हताहत {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "उद्देश्य {{pct}}% ({{vp}} VP)"
   },
