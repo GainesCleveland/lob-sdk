@@ -200,7 +200,11 @@ export class RandomMapGenerator {
       this._getScaledZones(scenario)?.[battleSize] ??
       this._getRandomZones(scenario);
 
-    if (randomZones) {
+    // A persisted scenario from before the randomDeploymentZones restructure
+    // carries the legacy four-field shape, which has no `top` array. Treat any
+    // such (or otherwise malformed) value as "no random zones" and fall back to
+    // defaults rather than crashing in _computePercentZones.
+    if (randomZones && Array.isArray(randomZones.top)) {
       return this._computePercentZones(
         randomZones,
         terrains,
