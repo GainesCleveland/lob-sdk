@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "VPバランス（基本、損害、目標）",
-    "baseTooltip": "基本: {{vp}} VP",
+    "heading": "VPバランス（損害 vs 目標）",
+    "baseAnnotation": "基本: {{vp}} VP（各チーム）",
     "casualtiesTooltip": "損害: {{vp}} VP",
     "objectivesTooltip": "目標: {{vp}} VP",
-    "baseSummary": "基本 {{pct}}%（{{vp}} VP）",
     "casualtiesSummary": "損害 {{pct}}%（{{vp}} VP）",
     "objectivesSummary": "目標 {{pct}}%（{{vp}} VP）"
   },

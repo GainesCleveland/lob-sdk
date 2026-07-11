@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Bilans PZ (baza, straty, cele)",
-    "baseTooltip": "Baza: {{vp}} VP",
+    "heading": "Bilans PZ (straty vs cele)",
+    "baseAnnotation": "Baza: {{vp}} VP na drużynę",
     "casualtiesTooltip": "Straty: {{vp}} VP",
     "objectivesTooltip": "Cele: {{vp}} VP",
-    "baseSummary": "Baza {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Straty {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Cele {{pct}}% ({{vp}} VP)"
   },

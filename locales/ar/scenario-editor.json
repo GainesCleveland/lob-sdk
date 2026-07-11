@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "توازن نقاط النصر (الأساس، الخسائر، الأهداف)",
-    "baseTooltip": "الأساس: {{vp}} VP",
+    "heading": "توازن نقاط النصر (الخسائر vs الأهداف)",
+    "baseAnnotation": "الأساس: {{vp}} VP لكل فريق",
     "casualtiesTooltip": "الخسائر: {{vp}} VP",
     "objectivesTooltip": "الأهداف: {{vp}} VP",
-    "baseSummary": "الأساس {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "الخسائر {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "الأهداف {{pct}}% ({{vp}} VP)"
   },

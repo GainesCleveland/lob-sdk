@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Cân bằng ĐCT (cơ bản, thương vong, mục tiêu)",
-    "baseTooltip": "Cơ bản: {{vp}} VP",
+    "heading": "Cân bằng ĐCT (thương vong vs mục tiêu)",
+    "baseAnnotation": "Cơ bản: {{vp}} VP mỗi đội",
     "casualtiesTooltip": "Thương vong: {{vp}} VP",
     "objectivesTooltip": "Mục tiêu: {{vp}} VP",
-    "baseSummary": "Cơ bản {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Thương vong {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Mục tiêu {{pct}}% ({{vp}} VP)"
   },

@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Équilibre VP (base, pertes, objectifs)",
-    "baseTooltip": "Base : {{vp}} VP",
+    "heading": "Équilibre VP (pertes vs objectifs)",
+    "baseAnnotation": "Base : {{vp}} VP par équipe",
     "casualtiesTooltip": "Pertes : {{vp}} VP",
     "objectivesTooltip": "Objectifs : {{vp}} VP",
-    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Pertes {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objectifs {{pct}}% ({{vp}} VP)"
   },

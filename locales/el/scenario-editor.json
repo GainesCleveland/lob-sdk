@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Ισορροπία VP (βάση, απώλειες, στόχοι)",
-    "baseTooltip": "Βάση: {{vp}} VP",
+    "heading": "Ισορροπία VP (απώλειες vs στόχοι)",
+    "baseAnnotation": "Βάση: {{vp}} VP ανά ομάδα",
     "casualtiesTooltip": "Απώλειες: {{vp}} VP",
     "objectivesTooltip": "Στόχοι: {{vp}} VP",
-    "baseSummary": "Βάση {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Απώλειες {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Στόχοι {{pct}}% ({{vp}} VP)"
   },

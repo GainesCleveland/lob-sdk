@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Keseimbangan VP (dasar, korban, objektif)",
-    "baseTooltip": "Dasar: {{vp}} VP",
+    "heading": "Keseimbangan VP (korban vs objektif)",
+    "baseAnnotation": "Dasar: {{vp}} VP per tim",
     "casualtiesTooltip": "Korban: {{vp}} VP",
     "objectivesTooltip": "Objektif: {{vp}} VP",
-    "baseSummary": "Dasar {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Korban {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objektif {{pct}}% ({{vp}} VP)"
   },

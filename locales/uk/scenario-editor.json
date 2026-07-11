@@ -112,11 +112,10 @@
     }
   },
   "vpBalance": {
-    "heading": "Баланс ОП (база, втрати, цілі)",
-    "baseTooltip": "База: {{vp}} VP",
+    "heading": "Баланс ОП (втрати vs цілі)",
+    "baseAnnotation": "База: {{vp}} VP за команду",
     "casualtiesTooltip": "Втрати: {{vp}} VP",
     "objectivesTooltip": "Цілі: {{vp}} VP",
-    "baseSummary": "База {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Втрати {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Цілі {{pct}}% ({{vp}} VP)"
   },
