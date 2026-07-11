@@ -7,9 +7,6 @@
     "none": "Немає",
     "remove": "Вилучити",
     "select": "Вибрати...",
-    "optionBuiltIn": "{{name}} (вбудована)",
-    "optionCustom": "{{name}} (власна)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(невідомо)",
     "chooseScenarioFile": "Виберіть файл сценарію",
     "positionX": "Позиція X",
@@ -19,7 +16,6 @@
     "identity": "Ідентифікація",
     "formationId": "ID формування",
     "movementModifier": "Модифікатор руху",
-    "rotationSpeedModifier": "Модифікатор швидкості повороту",
     "rangedAttackModifier": "Модифікатор дальньої атаки",
     "chargeBonusModifier": "Модифікатор бонусу натиску",
     "chargeResistanceModifier": "Модифікатор стійкості до натиску",
@@ -32,7 +28,11 @@
     "orgModifier": "Модифікатор бойового духу",
     "invalidJson": "Недійсний JSON",
     "resizeMap": "Змінити розмір карти",
-    "addLanguage": "Додати мову"
+    "addLanguage": "Додати мову",
+    "optionBuiltIn": "{{name}} (вбудована)",
+    "optionCustom": "{{name}} (власна)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Модифікатор швидкості повороту"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Створити підрозділ",
-    "usingCopiedUnits": "Використовуються скопійовані підрозділи"
+    "usingCopiedUnits": "Використовуються скопійовані підрозділи",
+    "customLabel": "{{name}} (власний)"
   },
   "objectivePanel": {
     "title": "Вибрана ціль",
@@ -129,6 +130,7 @@
     "frontagePx": "Фронт (px)",
     "depthPx": "Глибина (px)",
     "runMovementModifier": "Модифікатор руху при бігу",
+    "rotationSpeedModifier": "Модифікатор швидкості повороту",
     "disable180Turn": "Вимкнути поворот на 180°",
     "formingSpeedModifier": "Модифікатор швидкості формування",
     "timeToForm": "Час на формування (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Редагувати власний шаблон підрозділу",
+    "optBuiltIn": "{{name}} (вбудований)",
+    "optCustom": "{{name}} (власний)",
     "typeId": "ID типу",
     "meleeAttack": "Рукопашна атака",
     "meleeDefense": "Рукопашний захист",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Редагувати власну категорію підрозділів",
+    "optionBuiltIn": "{{name}} (вбудована)",
+    "optionCustom": "{{name}} (власна)",
     "errors": {
       "idInUse": "ID категорії підрозділів \"{{id}}\" вже використовується",
       "firingAltitudeRequired": "firingAltitude є обов'язковим",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Початок",
       "end": "Кінець",
+      "startMod": "Мод. початку",
+      "endMod": "Мод. кінця",
       "from": "Від (%)",
       "to": "До (%)",
       "damageHeader": "Модифікатор ушкоджень (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Перевизначає конфігурацію категорії місцевості ери для цього сценарію. Id зафіксовано до вбудованої категорії - місцевості зберігають свої призначення категорій, ви лише налаштовуєте модифікатори.",
     "perUnitCategoryHint": "Ключі - це id категорій підрозділів. Використовуйте символ підстановки `*`, щоб задати значення за замовчуванням для всіх категорій без явного запису.",
     "projectileAbsorptionHint": "Ключі - це назви типів ушкоджень.",
+    "option": {
+      "builtIn": "{{name}} (вбудована)",
+      "custom": "{{name}} (власна)"
+    },
     "fields": {
       "color": "Колір",
       "staminaCostModifier": "Модифікатор вартості витривалості",
-      "runSpeedModifier": "Модифікатор швидкості бігу",
       "hitboxHeight": "Висота колізійної зони",
       "visionAbsorption": "Поглинання видимості",
       "pushDistanceModifier": "Модифікатор дистанції поштовху",
@@ -379,7 +390,8 @@
       "impassableFor": "Непрохідна для",
       "attackModifier": "Модифікатор атаки",
       "defenseModifier": "Модифікатор захисту",
-      "projectileAbsorptionByDamageType": "Поглинання снарядів за типом ушкодження"
+      "projectileAbsorptionByDamageType": "Поглинання снарядів за типом ушкодження",
+      "runSpeedModifier": "Модифікатор швидкості бігу"
     },
     "errors": {
       "idInUse": "ID категорії місцевості \"{{id}}\" вже використовується",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Поки немає власних типів ушкоджень.",
       "ranged": "дальній",
       "melee": "ближній",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Не можна видалити \"{{name}}\" - ще використовується у {{refs}}. Спершу вилучіть ці посилання.",
       "addDamageType": "Додати тип ушкодження",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "категорії місцевості",
       "kindSprites": "спрайти",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "нічого",
       "title": "Імпортувати {{kind}} зі сценарію",
       "pickFilePrompt": "Виберіть файл сценарію (JSON, який створює кнопка Завантажити в редакторі), щоб імпортувати з нього власні {{kind}}.",
@@ -626,6 +640,22 @@
     "invalidJsonFile": "Недійсний файл JSON. Будь ласка, перевірте формат файлу.",
     "confirmOverwriteWarning": "Будь ласка, підтвердіть, що ви розумієте, що це перезапише місцевість.",
     "selectedNotProcedural": "Вибраний сценарій не є процедурним шаблоном."
+  },
+  "randomDeployment": {
+    "title": "Зони розгортання",
+    "explanation": "Де з'являються юніти кожної команди, у відсотках від карти. Залиште симетрію для чесного бою або зніміть позначку, щоб задати кожну сторону.",
+    "symmetric": "Симетрична карта (дзеркалити зверху вниз)",
+    "topSide": "Верхня сторона",
+    "bottomSide": "Нижня сторона",
+    "bothSides": "Обидві сторони",
+    "noZones": "Немає зон — генератор використовує типові значення.",
+    "addZone": "Додати зону",
+    "fields": {
+      "xMin": "X мін",
+      "xMax": "X макс",
+      "yMin": "Y мін",
+      "yMax": "Y макс"
+    }
   },
   "scoring": {
     "heading": "Ваги ОП (перевизначення сценарію)",

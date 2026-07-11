@@ -7,9 +7,6 @@
     "none": "Brak",
     "remove": "Usuń",
     "select": "Wybierz...",
-    "optionBuiltIn": "{{name}} (wbudowana)",
-    "optionCustom": "{{name}} (niestandardowa)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(nieznane)",
     "chooseScenarioFile": "Wybierz plik scenariusza",
     "positionX": "Pozycja X",
@@ -19,7 +16,6 @@
     "identity": "Tożsamość",
     "formationId": "ID formacji",
     "movementModifier": "Modyfikator ruchu",
-    "rotationSpeedModifier": "Modyfikator prędkości obrotu",
     "rangedAttackModifier": "Modyfikator ataku dystansowego",
     "chargeBonusModifier": "Modyfikator bonusu szarży",
     "chargeResistanceModifier": "Modyfikator odporności na szarżę",
@@ -32,7 +28,11 @@
     "orgModifier": "Modyfikator org.",
     "invalidJson": "Nieprawidłowy JSON",
     "resizeMap": "Zmień rozmiar mapy",
-    "addLanguage": "Dodaj język"
+    "addLanguage": "Dodaj język",
+    "optionBuiltIn": "{{name}} (wbudowana)",
+    "optionCustom": "{{name}} (niestandardowa)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modyfikator prędkości obrotu"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Stwórz jednostkę",
-    "usingCopiedUnits": "Używanie skopiowanych jednostek"
+    "usingCopiedUnits": "Używanie skopiowanych jednostek",
+    "customLabel": "{{name}} (niestandardowa)"
   },
   "objectivePanel": {
     "title": "Wybrany cel",
@@ -129,6 +130,7 @@
     "frontagePx": "Szerokość frontu (px)",
     "depthPx": "Głębokość (px)",
     "runMovementModifier": "Modyfikator ruchu biegiem",
+    "rotationSpeedModifier": "Modyfikator prędkości obrotu",
     "disable180Turn": "Wyłącz zwrot o 180°",
     "formingSpeedModifier": "Modyfikator prędkości formowania",
     "timeToForm": "Czas formowania (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Edytuj niestandardowy szablon jednostki",
+    "optBuiltIn": "{{name}} (wbudowany)",
+    "optCustom": "{{name}} (niestandardowy)",
     "typeId": "ID typu",
     "meleeAttack": "Atak wręcz",
     "meleeDefense": "Obrona wręcz",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Edytuj niestandardową kategorię jednostki",
+    "optionBuiltIn": "{{name}} (wbudowana)",
+    "optionCustom": "{{name}} (niestandardowa)",
     "errors": {
       "idInUse": "ID kategorii jednostki \"{{id}}\" jest już używane",
       "firingAltitudeRequired": "firingAltitude jest wymagane",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Początek",
       "end": "Koniec",
+      "startMod": "Mod. początku",
+      "endMod": "Mod. końca",
       "from": "Od (%)",
       "to": "Do (%)",
       "damageHeader": "Modyfikator obrażeń (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Nadpisuje konfigurację kategorii terenu epoki dla tego scenariusza. ID jest ustalone na wbudowaną kategorię - tereny zachowują przypisania kategorii, dostosowujesz tylko modyfikatory.",
     "perUnitCategoryHint": "Klucze to ID kategorii jednostek. Użyj wieloznacznika `*`, aby ustawić wartość domyślną stosowaną do wszystkich kategorii bez jawnego wpisu.",
     "projectileAbsorptionHint": "Klucze to nazwy typów obrażeń.",
+    "option": {
+      "builtIn": "{{name}} (wbudowana)",
+      "custom": "{{name}} (niestandardowa)"
+    },
     "fields": {
       "color": "Kolor",
       "staminaCostModifier": "Modyfikator kosztu wytrzymałości",
-      "runSpeedModifier": "Modyfikator prędkości biegu",
       "hitboxHeight": "Wysokość hitboxa",
       "visionAbsorption": "Absorpcja widoczności",
       "pushDistanceModifier": "Modyfikator dystansu pchania",
@@ -379,7 +390,8 @@
       "impassableFor": "Nieprzejezdny dla",
       "attackModifier": "Modyfikator ataku",
       "defenseModifier": "Modyfikator obrony",
-      "projectileAbsorptionByDamageType": "Absorpcja pocisków według typu obrażeń"
+      "projectileAbsorptionByDamageType": "Absorpcja pocisków według typu obrażeń",
+      "runSpeedModifier": "Modyfikator prędkości biegu"
     },
     "errors": {
       "idInUse": "ID kategorii terenu \"{{id}}\" jest już używane",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Brak niestandardowych typów obrażeń.",
       "ranged": "dystansowy",
       "melee": "wręcz",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Nie można usunąć \"{{name}}\" - wciąż używany przez {{refs}}. Najpierw usuń te odwołania.",
       "addDamageType": "Dodaj typ obrażeń",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "kategorie terenu",
       "kindSprites": "sprite'y",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "nic",
       "title": "Importuj {{kind}} ze scenariusza",
       "pickFilePrompt": "Wybierz plik scenariusza (JSON tworzony przyciskiem Pobierz w edytorze), aby zaimportować z niego niestandardowe {{kind}}.",
@@ -626,6 +640,22 @@
     "invalidJsonFile": "Nieprawidłowy plik JSON. Sprawdź format pliku.",
     "confirmOverwriteWarning": "Potwierdź, że rozumiesz, iż nadpisze to teren.",
     "selectedNotProcedural": "Wybrany scenariusz nie jest szablonem proceduralnym."
+  },
+  "randomDeployment": {
+    "title": "Strefy rozstawienia",
+    "explanation": "Gdzie zaczynają jednostki każdej drużyny, w procentach mapy. Zachowaj symetrię dla uczciwej gry lub odznacz, aby zdefiniować każdą stronę.",
+    "symmetric": "Mapa symetryczna (odbij górę na dół)",
+    "topSide": "Góra",
+    "bottomSide": "Dół",
+    "bothSides": "Obie strony",
+    "noZones": "Brak stref — generator używa wartości domyślnych.",
+    "addZone": "Dodaj strefę",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X maks",
+      "yMin": "Y min",
+      "yMax": "Y maks"
+    }
   },
   "scoring": {
     "heading": "Wagi PZ (nadpisanie scenariusza)",

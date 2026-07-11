@@ -1,7 +1,8 @@
 import { getDeploymentZonesByMapSize, getMapSizeIndex } from "./map-size";
 import {
   GameMap,
-  RandomTeamDeploymentZones,
+  RandomDeploymentZone,
+  RandomDeploymentZones,
   Size,
   TeamDeploymentZones,
 } from "@lob-sdk/types";
@@ -150,16 +151,16 @@ export class RandomMapGenerator {
     return scenario.deploymentZones;
   }
 
-  /** Reads percentage-based zones. */
+  /** Reads percentage-based zones (already normalized to the current shape). */
   private _getRandomZones(
     scenario: Scenario,
-  ): RandomTeamDeploymentZones | undefined {
+  ): RandomDeploymentZones | undefined {
     return scenario.randomDeploymentZones;
   }
 
   private _getScaledZones(
     scenario: Scenario,
-  ): Record<Size, RandomTeamDeploymentZones> | undefined {
+  ): Record<Size, RandomDeploymentZones> | undefined {
     return scenario.scaledDeploymentZones;
   }
 
@@ -199,7 +200,11 @@ export class RandomMapGenerator {
       this._getScaledZones(scenario)?.[battleSize] ??
       this._getRandomZones(scenario);
 
-    if (randomZones) {
+    // A persisted scenario from before the randomDeploymentZones restructure
+    // carries the legacy four-field shape, which has no `top` array. Treat any
+    // such (or otherwise malformed) value as "no random zones" and fall back to
+    // defaults rather than crashing in _computePercentZones.
+    if (randomZones && Array.isArray(randomZones.top)) {
       return this._computePercentZones(
         randomZones,
         terrains,
@@ -234,7 +239,7 @@ export class RandomMapGenerator {
   }
 
   private _computePercentZones(
-    deploymentZones: RandomTeamDeploymentZones,
+    deploymentZones: RandomDeploymentZones,
     terrains: TerrainType[][],
     tileSize: number,
     seed: number,
@@ -245,42 +250,46 @@ export class RandomMapGenerator {
 
     const build = (
       team: number,
-      type: "main" | "forward",
-      zone: RandomTeamDeploymentZones[keyof RandomTeamDeploymentZones],
+      zone: RandomDeploymentZone,
     ): TeamDeploymentZone => ({
       team,
-      type,
+      type: zone.role,
       x:
         getRandomInt(
-          this.percentToTiles(zone.minX, tilesX),
-          this.percentToTiles(zone.maxX, tilesX),
+          this.percentToTiles(zone.rect.x.min, tilesX),
+          this.percentToTiles(zone.rect.x.max, tilesX),
           random,
         ) * tileSize,
       y:
         getRandomInt(
-          this.percentToTiles(zone.minY, tilesY),
-          this.percentToTiles(zone.maxY, tilesY),
+          this.percentToTiles(zone.rect.y.min, tilesY),
+          this.percentToTiles(zone.rect.y.max, tilesY),
           random,
         ) * tileSize,
-      width: this.percentToTiles(zone.width, tilesX) * tileSize,
-      height: this.percentToTiles(zone.height, tilesY) * tileSize,
+      width: this.percentToTiles(zone.rect.width, tilesX) * tileSize,
+      height: this.percentToTiles(zone.rect.height, tilesY) * tileSize,
     });
 
+    // The top side is authored; the bottom side is its exact vertical mirror
+    // unless the scenario overrides it. Mirroring in pixels (rather than
+    // converting a separate bottom config) keeps the sides symmetric despite
+    // percentToTiles flooring every edge toward the top, which would otherwise
+    // hand the bottom team a consistent first-side advantage.
+    const mapHeightPx = tilesY * tileSize;
+    const mirrorToBottom = (zone: TeamDeploymentZone): TeamDeploymentZone => ({
+      ...zone,
+      team: 1,
+      y: mapHeightPx - zone.y - zone.height,
+    });
+
+    const topZones = deploymentZones.top.map((zone) => build(2, zone));
+    const bottomZones = deploymentZones.bottom
+      ? deploymentZones.bottom.map((zone) => build(1, zone))
+      : topZones.map(mirrorToBottom);
+
     return [
-      {
-        team: 1,
-        zones: [
-          build(1, "main", deploymentZones.bottomMainDeploymentZone),
-          build(1, "forward", deploymentZones.bottomForwardDeploymentZone),
-        ],
-      },
-      {
-        team: 2,
-        zones: [
-          build(2, "main", deploymentZones.topMainDeploymentZone),
-          build(2, "forward", deploymentZones.topForwardDeploymentZone),
-        ],
-      },
+      { team: 1, zones: bottomZones },
+      { team: 2, zones: topZones },
     ];
   }
 

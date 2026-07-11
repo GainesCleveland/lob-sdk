@@ -7,9 +7,6 @@
     "none": "Keine",
     "remove": "Entfernen",
     "select": "Auswählen...",
-    "optionBuiltIn": "{{name}} (integriert)",
-    "optionCustom": "{{name}} (benutzerdefiniert)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(unbekannt)",
     "chooseScenarioFile": "Szenariodatei wählen",
     "positionX": "Position X",
@@ -19,7 +16,6 @@
     "identity": "Identität",
     "formationId": "Formations-ID",
     "movementModifier": "Bewegungsmodifikator",
-    "rotationSpeedModifier": "Drehgeschwindigkeitsmodifikator",
     "rangedAttackModifier": "Fernkampfangriffsmodifikator",
     "chargeBonusModifier": "Ansturmbonusmodifikator",
     "chargeResistanceModifier": "Ansturmwiderstandsmodifikator",
@@ -32,7 +28,11 @@
     "orgModifier": "Org-Modifikator",
     "invalidJson": "Ungültiges JSON",
     "resizeMap": "Karte skalieren",
-    "addLanguage": "Sprache hinzufügen"
+    "addLanguage": "Sprache hinzufügen",
+    "optionBuiltIn": "{{name}} (integriert)",
+    "optionCustom": "{{name}} (benutzerdefiniert)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Drehgeschwindigkeitsmodifikator"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Einheit erstellen",
-    "usingCopiedUnits": "Kopierte Einheiten werden verwendet"
+    "usingCopiedUnits": "Kopierte Einheiten werden verwendet",
+    "customLabel": "{{name}} (benutzerdefiniert)"
   },
   "objectivePanel": {
     "title": "Ausgewähltes Ziel",
@@ -129,6 +130,7 @@
     "frontagePx": "Frontbreite (px)",
     "depthPx": "Tiefe (px)",
     "runMovementModifier": "Laufbewegungsmodifikator",
+    "rotationSpeedModifier": "Drehgeschwindigkeitsmodifikator",
     "disable180Turn": "180°-Drehung deaktivieren",
     "formingSpeedModifier": "Formierungsgeschwindigkeitsmodifikator",
     "timeToForm": "Zeit zum Formieren (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Benutzerdefinierte Einheitenvorlage bearbeiten",
+    "optBuiltIn": "{{name}} (integriert)",
+    "optCustom": "{{name}} (benutzerdefiniert)",
     "typeId": "Typ-ID",
     "meleeAttack": "Nahkampfangriff",
     "meleeDefense": "Nahkampfverteidigung",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Benutzerdefinierte Einheitenkategorie bearbeiten",
+    "optionBuiltIn": "{{name}} (integriert)",
+    "optionCustom": "{{name}} (benutzerdefiniert)",
     "errors": {
       "idInUse": "Einheitenkategorie-ID \"{{id}}\" wird bereits verwendet",
       "firingAltitudeRequired": "firingAltitude ist erforderlich",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Start",
       "end": "Ende",
+      "startMod": "Start-Mod.",
+      "endMod": "End-Mod.",
       "from": "Von (%)",
       "to": "Bis (%)",
       "damageHeader": "Schadensmodifikator (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Überschreibt die Geländekategorie-Konfiguration der Epoche für dieses Szenario. Die ID ist auf eine integrierte Kategorie festgelegt - Gelände behalten ihre Kategoriezuweisungen, du passt nur die Modifikatoren an.",
     "perUnitCategoryHint": "Die Schlüssel sind Einheitenkategorie-IDs. Verwende den Platzhalter `*`, um einen Standardwert für alle Kategorien ohne expliziten Eintrag festzulegen.",
     "projectileAbsorptionHint": "Die Schlüssel sind Schadenstyp-Namen.",
+    "option": {
+      "builtIn": "{{name}} (integriert)",
+      "custom": "{{name}} (benutzerdefiniert)"
+    },
     "fields": {
       "color": "Farbe",
       "staminaCostModifier": "Ausdauerkostenmodifikator",
-      "runSpeedModifier": "Laufgeschwindigkeitsmodifikator",
       "hitboxHeight": "Hitbox-Höhe",
       "visionAbsorption": "Sichtabsorption",
       "pushDistanceModifier": "Schubdistanzmodifikator",
@@ -379,7 +390,8 @@
       "impassableFor": "Unpassierbar für",
       "attackModifier": "Angriffsmodifikator",
       "defenseModifier": "Verteidigungsmodifikator",
-      "projectileAbsorptionByDamageType": "Projektilabsorption nach Schadenstyp"
+      "projectileAbsorptionByDamageType": "Projektilabsorption nach Schadenstyp",
+      "runSpeedModifier": "Laufgeschwindigkeitsmodifikator"
     },
     "errors": {
       "idInUse": "Geländekategorie-ID \"{{id}}\" wird bereits verwendet",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Noch keine benutzerdefinierten Schadenstypen.",
       "ranged": "Fernkampf",
       "melee": "Nahkampf",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, ID {{id}})",
       "deleteBlocked": "\"{{name}}\" kann nicht gelöscht werden - noch verwendet von {{refs}}. Entferne zuerst diese Verweise.",
       "addDamageType": "Schadenstyp hinzufügen",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "Geländekategorien",
       "kindSprites": "Sprites",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "nichts",
       "title": "{{kind}} aus Szenario importieren",
       "pickFilePrompt": "Wähle eine Szenariodatei (das JSON, das die Schaltfläche Herunterladen im Editor erzeugt), um ihre benutzerdefinierten {{kind}} zu importieren.",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "Ungültige JSON-Datei. Bitte überprüfe das Dateiformat.",
     "confirmOverwriteWarning": "Bitte bestätige, dass du verstehst, dass dies das Gelände überschreibt.",
     "selectedNotProcedural": "Das ausgewählte Szenario ist keine prozedurale Vorlage."
+  },
+  "randomDeployment": {
+    "title": "Aufstellungszonen",
+    "explanation": "Wo die Einheiten jedes Teams starten, in Prozent der Karte. Symmetrisch lassen für ein faires Spiel, oder abwählen, um jede Seite einzeln festzulegen.",
+    "symmetric": "Symmetrische Karte (oben nach unten spiegeln)",
+    "topSide": "Obere Seite",
+    "bottomSide": "Untere Seite",
+    "bothSides": "Beide Seiten",
+    "noZones": "Keine Zonen — der Generator nutzt Standardwerte.",
+    "addZone": "Zone hinzufügen",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   },
   "scoring": {
     "heading": "VP-Gewichte (Szenario-Override)",

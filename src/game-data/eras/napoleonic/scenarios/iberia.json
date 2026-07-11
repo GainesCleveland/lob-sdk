@@ -5,38 +5,26 @@
   "baseTerrain": 0,
   "ranked": true,
   "randomDeploymentZones": {
-    "topMainDeploymentZone": {
-      "minX": 5,
-      "maxX": 5,
-      "minY": 3,
-      "maxY": 3,
-      "width": 90,
-      "height": 10
-    },
-    "topForwardDeploymentZone": {
-      "minX": 5,
-      "maxX": 5,
-      "minY": 13,
-      "maxY": 13,
-      "width": 90,
-      "height": 10
-    },
-    "bottomMainDeploymentZone": {
-      "minX": 5,
-      "maxX": 5,
-      "minY": 90,
-      "maxY": 90,
-      "width": 90,
-      "height": 10
-    },
-    "bottomForwardDeploymentZone": {
-      "minX": 5,
-      "maxX": 5,
-      "minY": 80,
-      "maxY": 80,
-      "width": 90,
-      "height": 10
-    }
+    "top": [
+      {
+        "role": "main",
+        "rect": {
+          "x": { "min": 5, "max": 5 },
+          "y": { "min": 3, "max": 3 },
+          "width": 90,
+          "height": 10
+        }
+      },
+      {
+        "role": "forward",
+        "rect": {
+          "x": { "min": 5, "max": 5 },
+          "y": { "min": 13, "max": 13 },
+          "width": 90,
+          "height": 10
+        }
+      }
+    ]
   },
 
   "instructions": [

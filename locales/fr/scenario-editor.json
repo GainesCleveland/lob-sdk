@@ -7,9 +7,6 @@
     "none": "Aucun",
     "remove": "Retirer",
     "select": "Sélectionner...",
-    "optionBuiltIn": "{{name}} (intégré)",
-    "optionCustom": "{{name}} (personnalisé)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(inconnu)",
     "chooseScenarioFile": "Choisir un fichier de scénario",
     "positionX": "Position X",
@@ -19,7 +16,6 @@
     "identity": "Identité",
     "formationId": "ID de formation",
     "movementModifier": "Modificateur de mouvement",
-    "rotationSpeedModifier": "Modificateur de vitesse de rotation",
     "rangedAttackModifier": "Modificateur d'attaque à distance",
     "chargeBonusModifier": "Modificateur de bonus en charge",
     "chargeResistanceModifier": "Modificateur de résistance aux charges",
@@ -32,7 +28,11 @@
     "orgModifier": "Modificateur d'org.",
     "invalidJson": "JSON invalide",
     "resizeMap": "Redimensionner la carte",
-    "addLanguage": "Ajouter une langue"
+    "addLanguage": "Ajouter une langue",
+    "optionBuiltIn": "{{name}} (intégré)",
+    "optionCustom": "{{name}} (personnalisé)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modificateur de vitesse de rotation"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Créer une unité",
-    "usingCopiedUnits": "Utilisation des unités copiées"
+    "usingCopiedUnits": "Utilisation des unités copiées",
+    "customLabel": "{{name}} (personnalisé)"
   },
   "objectivePanel": {
     "title": "Objectif sélectionné",
@@ -129,6 +130,7 @@
     "frontagePx": "Front (px)",
     "depthPx": "Profondeur (px)",
     "runMovementModifier": "Modificateur de mouvement en courant",
+    "rotationSpeedModifier": "Modificateur de vitesse de rotation",
     "disable180Turn": "Désactiver le demi-tour 180°",
     "formingSpeedModifier": "Modificateur de vitesse de formation",
     "timeToForm": "Temps pour former (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Modifier le modèle d'unité personnalisé",
+    "optBuiltIn": "{{name}} (intégré)",
+    "optCustom": "{{name}} (personnalisé)",
     "typeId": "ID de type",
     "meleeAttack": "Attaque en mêlée",
     "meleeDefense": "Défense en mêlée",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Modifier la catégorie d'unité personnalisée",
+    "optionBuiltIn": "{{name}} (intégré)",
+    "optionCustom": "{{name}} (personnalisé)",
     "errors": {
       "idInUse": "L'ID de catégorie d'unité \"{{id}}\" est déjà utilisé",
       "firingAltitudeRequired": "firingAltitude est requis",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Début",
       "end": "Fin",
+      "startMod": "Mod. début",
+      "endMod": "Mod. fin",
       "from": "De (%)",
       "to": "À (%)",
       "damageHeader": "Modificateur de dégâts (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Remplace la configuration de catégorie de terrain de l'époque pour ce scénario. L'id est fixé à une catégorie intégrée - les terrains conservent leurs affectations de catégorie, vous n'ajustez que les modificateurs.",
     "perUnitCategoryHint": "Les clés sont des ids de catégorie d'unité. Utilisez le joker `*` pour définir une valeur par défaut appliquée à toutes les catégories sans entrée explicite.",
     "projectileAbsorptionHint": "Les clés sont des noms de types de dégâts.",
+    "option": {
+      "builtIn": "{{name}} (intégré)",
+      "custom": "{{name}} (personnalisé)"
+    },
     "fields": {
       "color": "Couleur",
       "staminaCostModifier": "Modificateur de coût d'endurance",
-      "runSpeedModifier": "Modificateur de vitesse de course",
       "hitboxHeight": "Hauteur du masque de collision",
       "visionAbsorption": "Absorption de vision",
       "pushDistanceModifier": "Modificateur de distance de poussée",
@@ -379,7 +390,8 @@
       "impassableFor": "Infranchissable pour",
       "attackModifier": "Modificateur d'attaque",
       "defenseModifier": "Modificateur de défense",
-      "projectileAbsorptionByDamageType": "Absorption des projectiles par type de dégâts"
+      "projectileAbsorptionByDamageType": "Absorption des projectiles par type de dégâts",
+      "runSpeedModifier": "Modificateur de vitesse de course"
     },
     "errors": {
       "idInUse": "L'ID de catégorie de terrain \"{{id}}\" est déjà utilisé",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Aucun type de dégâts personnalisé pour le moment.",
       "ranged": "à distance",
       "melee": "mêlée",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Impossible de supprimer \"{{name}}\" - encore utilisé par {{refs}}. Retirez d'abord ces références.",
       "addDamageType": "Ajouter un type de dégâts",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "catégories de terrain",
       "kindSprites": "sprites",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "rien",
       "title": "Importer {{kind}} depuis un scénario",
       "pickFilePrompt": "Choisissez un fichier de scénario (le JSON produit par le bouton Télécharger de l'éditeur) pour en importer les {{kind}} personnalisés.",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "Fichier JSON invalide. Veuillez vérifier le format du fichier.",
     "confirmOverwriteWarning": "Veuillez confirmer que vous comprenez que cela écrasera le terrain.",
     "selectedNotProcedural": "Le scénario sélectionné n'est pas un modèle procédural."
+  },
+  "randomDeployment": {
+    "title": "Zones de déploiement",
+    "explanation": "Où commencent les unités de chaque équipe, en pourcentages de la carte. Gardez la symétrie pour une partie équitable, ou décochez pour définir chaque côté.",
+    "symmetric": "Carte symétrique (miroir haut-bas)",
+    "topSide": "Côté haut",
+    "bottomSide": "Côté bas",
+    "bothSides": "Les deux côtés",
+    "noZones": "Aucune zone — le générateur utilise les valeurs par défaut.",
+    "addZone": "Ajouter une zone",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   },
   "scoring": {
     "heading": "Poids des PV (remplacement du scénario)",

@@ -7,9 +7,6 @@
     "none": "Κανένα",
     "remove": "Αφαίρεση",
     "select": "Επιλέξτε...",
-    "optionBuiltIn": "{{name}} (ενσωματωμένο)",
-    "optionCustom": "{{name}} (προσαρμοσμένο)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(άγνωστο)",
     "chooseScenarioFile": "Επιλέξτε αρχείο σεναρίου",
     "positionX": "Θέση X",
@@ -19,7 +16,6 @@
     "identity": "Ταυτότητα",
     "formationId": "ID σχηματισμού",
     "movementModifier": "Τροποποιητής κίνησης",
-    "rotationSpeedModifier": "Τροποποιητής ταχύτητας περιστροφής",
     "rangedAttackModifier": "Τροποποιητής επίθεσης εξ αποστάσεως",
     "chargeBonusModifier": "Τροποποιητής μπόνους όρμησης",
     "chargeResistanceModifier": "Τροποποιητής αντίστασης όρμησης",
@@ -32,7 +28,11 @@
     "orgModifier": "Τροποποιητής org",
     "invalidJson": "Μη έγκυρο JSON",
     "resizeMap": "Αλλαγή μεγέθους χάρτη",
-    "addLanguage": "Προσθήκη γλώσσας"
+    "addLanguage": "Προσθήκη γλώσσας",
+    "optionBuiltIn": "{{name}} (ενσωματωμένο)",
+    "optionCustom": "{{name}} (προσαρμοσμένο)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Τροποποιητής ταχύτητας περιστροφής"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Δημιουργία Μονάδας",
-    "usingCopiedUnits": "Χρήση αντιγραμμένων μονάδων"
+    "usingCopiedUnits": "Χρήση αντιγραμμένων μονάδων",
+    "customLabel": "{{name}} (προσαρμοσμένο)"
   },
   "objectivePanel": {
     "title": "Επιλεγμένος Στόχος",
@@ -129,6 +130,7 @@
     "frontagePx": "Μέτωπο (px)",
     "depthPx": "Βάθος (px)",
     "runMovementModifier": "Τροποποιητής κίνησης τρεξίματος",
+    "rotationSpeedModifier": "Τροποποιητής ταχύτητας περιστροφής",
     "disable180Turn": "Απενεργοποίηση στροφής 180°",
     "formingSpeedModifier": "Τροποποιητής ταχύτητας σχηματισμού",
     "timeToForm": "Χρόνος σχηματισμού (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Επεξεργασία προσαρμοσμένου προτύπου μονάδας",
+    "optBuiltIn": "{{name}} (ενσωματωμένο)",
+    "optCustom": "{{name}} (προσαρμοσμένο)",
     "typeId": "ID τύπου",
     "meleeAttack": "Επίθεση εκ του σύνεγγυς",
     "meleeDefense": "Άμυνα εκ του σύνεγγυς",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Επεξεργασία προσαρμοσμένης κατηγορίας μονάδας",
+    "optionBuiltIn": "{{name}} (ενσωματωμένο)",
+    "optionCustom": "{{name}} (προσαρμοσμένο)",
     "errors": {
       "idInUse": "Το ID κατηγορίας μονάδας \"{{id}}\" χρησιμοποιείται ήδη",
       "firingAltitudeRequired": "Το firingAltitude είναι υποχρεωτικό",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Αρχή",
       "end": "Τέλος",
+      "startMod": "Τροπ. αρχής",
+      "endMod": "Τροπ. τέλους",
       "from": "Από (%)",
       "to": "Έως (%)",
       "damageHeader": "Τροποποιητής ζημιάς (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Παρακάμπτει τη διαμόρφωση κατηγορίας εδάφους της εποχής για αυτό το σενάριο. Το id είναι κλειδωμένο σε ενσωματωμένη κατηγορία - τα εδάφη κρατούν τις αναθέσεις κατηγορίας τους, εσείς ρυθμίζετε μόνο τους τροποποιητές.",
     "perUnitCategoryHint": "Τα κλειδιά είναι ids κατηγοριών μονάδων. Χρησιμοποιήστε το μπαλαντέρ `*` για να ορίσετε μια προεπιλογή που εφαρμόζεται σε όλες τις κατηγορίες χωρίς ρητή καταχώρηση.",
     "projectileAbsorptionHint": "Τα κλειδιά είναι ονόματα τύπων ζημιάς.",
+    "option": {
+      "builtIn": "{{name}} (ενσωματωμένο)",
+      "custom": "{{name}} (προσαρμοσμένο)"
+    },
     "fields": {
       "color": "Χρώμα",
       "staminaCostModifier": "Τροποποιητής κόστους σθένους",
-      "runSpeedModifier": "Τροποποιητής ταχύτητας τρεξίματος",
       "hitboxHeight": "Ύψος hitbox",
       "visionAbsorption": "Απορρόφηση ορατότητας",
       "pushDistanceModifier": "Τροποποιητής απόστασης ώθησης",
@@ -379,7 +390,8 @@
       "impassableFor": "Αδιάβατο για",
       "attackModifier": "Τροποποιητής επίθεσης",
       "defenseModifier": "Τροποποιητής άμυνας",
-      "projectileAbsorptionByDamageType": "Απορρόφηση βλημάτων ανά τύπο ζημιάς"
+      "projectileAbsorptionByDamageType": "Απορρόφηση βλημάτων ανά τύπο ζημιάς",
+      "runSpeedModifier": "Τροποποιητής ταχύτητας τρεξίματος"
     },
     "errors": {
       "idInUse": "Το ID κατηγορίας εδάφους \"{{id}}\" χρησιμοποιείται ήδη",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Δεν υπάρχουν ακόμη προσαρμοσμένοι τύποι ζημιάς.",
       "ranged": "εξ αποστάσεως",
       "melee": "εκ του σύνεγγυς",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Αδύνατη η διαγραφή του \"{{name}}\" - χρησιμοποιείται ακόμη από {{refs}}. Αφαιρέστε πρώτα αυτές τις αναφορές.",
       "addDamageType": "Προσθήκη τύπου ζημιάς",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "κατηγορίες εδάφους",
       "kindSprites": "sprites",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "τίποτα",
       "title": "Εισαγωγή {{kind}} από σενάριο",
       "pickFilePrompt": "Επιλέξτε αρχείο σεναρίου (το JSON που παράγει το κουμπί Λήψη του επεξεργαστή) για να εισαγάγετε τα προσαρμοσμένα του {{kind}}.",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "Μη έγκυρο αρχείο JSON. Ελέγξτε τη μορφή του αρχείου.",
     "confirmOverwriteWarning": "Επιβεβαιώστε ότι κατανοείτε πως αυτό θα αντικαταστήσει το έδαφος.",
     "selectedNotProcedural": "Το επιλεγμένο σενάριο δεν είναι διαδικαστικό πρότυπο."
+  },
+  "randomDeployment": {
+    "title": "Ζώνες ανάπτυξης",
+    "explanation": "Πού ξεκινούν οι μονάδες κάθε ομάδας, ως ποσοστά του χάρτη. Κράτησέ το συμμετρικό για δίκαιο παιχνίδι ή ξετσέκαρε για να ορίσεις κάθε πλευρά.",
+    "symmetric": "Συμμετρικός χάρτης (καθρέφτισμα πάνω-κάτω)",
+    "topSide": "Πάνω πλευρά",
+    "bottomSide": "Κάτω πλευρά",
+    "bothSides": "Και οι δύο πλευρές",
+    "noZones": "Καμία ζώνη — η γεννήτρια χρησιμοποιεί προεπιλογές.",
+    "addZone": "Προσθήκη ζώνης",
+    "fields": {
+      "xMin": "X ελάχ.",
+      "xMax": "X μέγ.",
+      "yMin": "Y ελάχ.",
+      "yMax": "Y μέγ."
+    }
   },
   "scoring": {
     "heading": "Βάρη VP (παράκαμψη σεναρίου)",

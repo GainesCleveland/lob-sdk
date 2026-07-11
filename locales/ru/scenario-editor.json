@@ -7,9 +7,6 @@
     "none": "Нет",
     "remove": "Убрать",
     "select": "Выбрать...",
-    "optionBuiltIn": "{{name}} (встроенная)",
-    "optionCustom": "{{name}} (своя)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(неизвестно)",
     "chooseScenarioFile": "Выбрать файл сценария",
     "positionX": "Позиция X",
@@ -19,7 +16,6 @@
     "identity": "Обозначение",
     "formationId": "ID построения",
     "movementModifier": "Модификатор движения",
-    "rotationSpeedModifier": "Модификатор скорости поворота",
     "rangedAttackModifier": "Модификатор огневой мощи",
     "chargeBonusModifier": "Модификатор натиска",
     "chargeResistanceModifier": "Модификатор сопротивления натиску",
@@ -32,7 +28,11 @@
     "orgModifier": "Модификатор организации",
     "invalidJson": "Недопустимый JSON",
     "resizeMap": "Изменить размер карты",
-    "addLanguage": "Добавить язык"
+    "addLanguage": "Добавить язык",
+    "optionBuiltIn": "{{name}} (встроенная)",
+    "optionCustom": "{{name}} (своя)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Модификатор скорости поворота"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Создать юнит",
-    "usingCopiedUnits": "Используются скопированные юниты"
+    "usingCopiedUnits": "Используются скопированные юниты",
+    "customLabel": "{{name}} (свой)"
   },
   "objectivePanel": {
     "title": "Выбранная ключевая позиция",
@@ -129,6 +130,7 @@
     "frontagePx": "Фронт (px)",
     "depthPx": "Глубина (px)",
     "runMovementModifier": "Модификатор движения при беге",
+    "rotationSpeedModifier": "Модификатор скорости поворота",
     "disable180Turn": "Отключить разворот на 180°",
     "formingSpeedModifier": "Модификатор скорости перестроения",
     "timeToForm": "Время на построение (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Изменить свой шаблон юнита",
+    "optBuiltIn": "{{name}} (встроенный)",
+    "optCustom": "{{name}} (свой)",
     "typeId": "ID типа",
     "meleeAttack": "Ближний бой - Атака",
     "meleeDefense": "Ближний бой - Защита",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Изменить свою категорию юнита",
+    "optionBuiltIn": "{{name}} (встроенная)",
+    "optionCustom": "{{name}} (своя)",
     "errors": {
       "idInUse": "ID категории юнита \"{{id}}\" уже используется",
       "firingAltitudeRequired": "Требуется firingAltitude",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Начало",
       "end": "Конец",
+      "startMod": "Мод. начала",
+      "endMod": "Мод. конца",
       "from": "От (%)",
       "to": "До (%)",
       "damageHeader": "Модификатор урона (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Переопределяет конфигурацию категории местности эпохи для этого сценария. ID привязан к встроенной категории - местности сохраняют назначения категорий, вы лишь подстраиваете модификаторы.",
     "perUnitCategoryHint": "Ключи - это ID категорий юнитов. Используйте подстановку `*`, чтобы задать значение по умолчанию для всех категорий без явной записи.",
     "projectileAbsorptionHint": "Ключи - это названия типов урона.",
+    "option": {
+      "builtIn": "{{name}} (встроенная)",
+      "custom": "{{name}} (своя)"
+    },
     "fields": {
       "color": "Цвет",
       "staminaCostModifier": "Модификатор стоимости выносливости",
-      "runSpeedModifier": "Модификатор скорости бега",
       "hitboxHeight": "Высота объектов местности",
       "visionAbsorption": "Поглощение обзора",
       "pushDistanceModifier": "Модификатор дистанции отталкивания",
@@ -379,7 +390,8 @@
       "impassableFor": "Непроходимо для",
       "attackModifier": "Модификатор атаки",
       "defenseModifier": "Модификатор защиты",
-      "projectileAbsorptionByDamageType": "Поглощение снарядов по типу урона"
+      "projectileAbsorptionByDamageType": "Поглощение снарядов по типу урона",
+      "runSpeedModifier": "Модификатор скорости бега"
     },
     "errors": {
       "idInUse": "ID категории местности \"{{id}}\" уже используется",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Пока нет своих типов урона.",
       "ranged": "огонь",
       "melee": "ближний бой",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Нельзя удалить \"{{name}}\" - всё ещё используется в {{refs}}. Сначала уберите эти ссылки.",
       "addDamageType": "Добавить тип урона",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "категории местности",
       "kindSprites": "спрайты",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "ничего",
       "title": "Импорт {{kind}} из сценария",
       "pickFilePrompt": "Выберите файл сценария (JSON, создаваемый кнопкой «Скачать» редактора), чтобы импортировать из него свои {{kind}}.",
@@ -626,6 +640,22 @@
     "invalidJsonFile": "Недопустимый файл JSON. Пожалуйста, проверьте формат файла.",
     "confirmOverwriteWarning": "Пожалуйста, подтвердите, что вы понимаете, что это перезапишет местность.",
     "selectedNotProcedural": "Выбранный сценарий не является процедурным шаблоном."
+  },
+  "randomDeployment": {
+    "title": "Зоны развёртывания",
+    "explanation": "Где появляются юниты каждой команды, в процентах от карты. Оставьте симметрию для честного боя или снимите галочку, чтобы задать каждую сторону.",
+    "symmetric": "Симметричная карта (зеркалить сверху вниз)",
+    "topSide": "Верхняя сторона",
+    "bottomSide": "Нижняя сторона",
+    "bothSides": "Обе стороны",
+    "noZones": "Нет зон — генератор использует значения по умолчанию.",
+    "addZone": "Добавить зону",
+    "fields": {
+      "xMin": "X мин",
+      "xMax": "X макс",
+      "yMin": "Y мин",
+      "yMax": "Y макс"
+    }
   },
   "scoring": {
     "heading": "Веса ОП (переопределение сценария)",

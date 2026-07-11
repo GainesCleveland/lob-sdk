@@ -7,9 +7,6 @@
     "none": "None",
     "remove": "Remove",
     "select": "Select...",
-    "optionBuiltIn": "{{name}} (built-in)",
-    "optionCustom": "{{name}} (custom)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(unknown)",
     "chooseScenarioFile": "Choose scenario file",
     "positionX": "Position X",
@@ -19,7 +16,6 @@
     "identity": "Identity",
     "formationId": "Formation ID",
     "movementModifier": "Movement modifier",
-    "rotationSpeedModifier": "Rotation speed modifier",
     "rangedAttackModifier": "Ranged attack modifier",
     "chargeBonusModifier": "Charge bonus modifier",
     "chargeResistanceModifier": "Charge resistance modifier",
@@ -32,7 +28,11 @@
     "orgModifier": "Org modifier",
     "invalidJson": "Invalid JSON",
     "resizeMap": "Resize Map",
-    "addLanguage": "Add Language"
+    "addLanguage": "Add Language",
+    "optionBuiltIn": "{{name}} (built-in)",
+    "optionCustom": "{{name}} (custom)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Rotation speed modifier"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Create Unit",
-    "usingCopiedUnits": "Using copied units"
+    "usingCopiedUnits": "Using copied units",
+    "customLabel": "{{name}} (custom)"
   },
   "objectivePanel": {
     "title": "Selected Objective",
@@ -129,6 +130,7 @@
     "frontagePx": "Frontage (px)",
     "depthPx": "Depth (px)",
     "runMovementModifier": "Run movement modifier",
+    "rotationSpeedModifier": "Rotation speed modifier",
     "disable180Turn": "Disable 180° turn",
     "formingSpeedModifier": "Forming speed modifier",
     "timeToForm": "Time to form (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Edit custom unit template",
+    "optBuiltIn": "{{name}} (built-in)",
+    "optCustom": "{{name}} (custom)",
     "typeId": "Type ID",
     "meleeAttack": "Melee attack",
     "meleeDefense": "Melee defense",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Edit custom unit category",
+    "optionBuiltIn": "{{name}} (built-in)",
+    "optionCustom": "{{name}} (custom)",
     "errors": {
       "idInUse": "Unit category id \"{{id}}\" is already in use",
       "firingAltitudeRequired": "firingAltitude is required",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Start",
       "end": "End",
+      "startMod": "Start mod",
+      "endMod": "End mod",
       "from": "From (%)",
       "to": "To (%)",
       "damageHeader": "Damage modifier (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Overrides the era's terrain category config for this scenario. The id is fixed to a built-in category - terrains keep their category assignments, you only adjust the modifiers.",
     "perUnitCategoryHint": "Keys are unit category ids. Use the `*` wildcard to set a default applied to all categories that don't have an explicit entry.",
     "projectileAbsorptionHint": "Keys are damage type names.",
+    "option": {
+      "builtIn": "{{name}} (built-in)",
+      "custom": "{{name}} (custom)"
+    },
     "fields": {
       "color": "Color",
       "staminaCostModifier": "Stamina cost modifier",
-      "runSpeedModifier": "Run speed modifier",
       "hitboxHeight": "Hitbox height",
       "visionAbsorption": "Vision absorption",
       "pushDistanceModifier": "Push distance modifier",
@@ -379,7 +390,8 @@
       "impassableFor": "Impassable for",
       "attackModifier": "Attack modifier",
       "defenseModifier": "Defense modifier",
-      "projectileAbsorptionByDamageType": "Projectile absorption by damage type"
+      "projectileAbsorptionByDamageType": "Projectile absorption by damage type",
+      "runSpeedModifier": "Run speed modifier"
     },
     "errors": {
       "idInUse": "Terrain category id \"{{id}}\" is already in use",
@@ -441,6 +453,7 @@
       "noDamageTypes": "No custom damage types yet.",
       "ranged": "ranged",
       "melee": "melee",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Can't delete \"{{name}}\" - still used by {{refs}}. Remove those references first.",
       "addDamageType": "Add damage type",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "terrain categories",
       "kindSprites": "sprites",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "nothing",
       "title": "Import {{kind}} from scenario",
       "pickFilePrompt": "Pick a scenario file (the JSON the editor's Download button produces) to import its custom {{kind}} from.",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "Invalid JSON file. Please check the file format.",
     "confirmOverwriteWarning": "Please confirm that you understand this will overwrite the terrain.",
     "selectedNotProcedural": "Selected scenario is not a procedural template."
+  },
+  "randomDeployment": {
+    "title": "Deployment zones",
+    "explanation": "Where each team's units start, as percentages of the map. Keep it symmetric for a fair match, or uncheck to author each side.",
+    "symmetric": "Symmetric map (mirror top to bottom)",
+    "topSide": "Top side",
+    "bottomSide": "Bottom side",
+    "bothSides": "Both sides",
+    "noZones": "No zones — the generator uses defaults.",
+    "addZone": "Add zone",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   },
   "scoring": {
     "heading": "VP weights (scenario override)",

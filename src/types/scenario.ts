@@ -211,43 +211,44 @@ export interface LegacyHybridScenario extends BaseScenario {
   fixedArmy?: boolean;
 }
 
-export interface RandomTeamDeploymentZones {
-  /** Specify deployment zones in tile coordinates. If you want fixed deployment zones, use the same min/max values.*/
-  topMainDeploymentZone: {
-    /* X/Y Coordinates are the top/left corner of the deployment zone in map % */
-    minX: number;
-    maxX: number;
-    minY: number;
-    maxY: number;
-    /* Width in map percent */
-    width: number;
-    /* Height in map percent */
-    height: number;
-  };
-  topForwardDeploymentZone: {
-    minX: number;
-    maxX: number;
-    minY: number;
-    maxY: number;
-    width: number;
-    height: number;
-  };
-  bottomMainDeploymentZone: {
-    minX: number;
-    maxX: number;
-    minY: number;
-    maxY: number;
-    width: number;
-    height: number;
-  };
-  bottomForwardDeploymentZone: {
-    minX: number;
-    maxX: number;
-    minY: number;
-    maxY: number;
-    width: number;
-    height: number;
-  };
+/** An inclusive placement range, in map percent (0-100). */
+export interface PercentRange {
+  min: number;
+  max: number;
+}
+
+/**
+ * A percentage-based deployment sub-zone. The top-left origin is placed randomly
+ * within the {@link PercentRange} x/y ranges (use `min === max` for a fixed
+ * origin); the zone spans `width` x `height`. All values are map percentages.
+ */
+export interface DeploymentZoneRect {
+  x: PercentRange;
+  y: PercentRange;
+  width: number;
+  height: number;
+}
+
+/** A percentage-based deployment zone tagged with the role that fills it. */
+export interface RandomDeploymentZone {
+  /** Which units deploy here — see {@link DeploymentZoneType}. */
+  role: DeploymentZoneType;
+  rect: DeploymentZoneRect;
+}
+
+/**
+ * Percentage-based deployment zones for a procedural map.
+ *
+ * Only the {@link top} side is authored. Omit {@link bottom} for a fair map: the
+ * bottom team is generated as the exact vertical mirror of {@link top}, so the
+ * two sides stay symmetric regardless of tile rounding. Provide {@link bottom}
+ * only for intentionally asymmetric scenarios.
+ */
+export interface RandomDeploymentZones {
+  /** Zones for the top side of the map (team 2). */
+  top: RandomDeploymentZone[];
+  /** Zones for the bottom side (team 1). Omit to mirror {@link top}. */
+  bottom?: RandomDeploymentZone[];
 }
 
 /**
@@ -261,15 +262,11 @@ export interface LegacyRandomScenario extends BaseScenario {
   version?: never;
   /** Base terrain type to use for generation. */
   baseTerrain?: TerrainType;
-  /** Default deployment zone if a scaled deployment zone is not provided. Follows default map size deployment zones if not provided even if scaled deployment zones are provided. */
-  defaultDeploymentZones?: RandomTeamDeploymentZones;
-  /** Scaled deployment zones for each battle type (first is micro, second clash, and so on) */
-  scaledDeploymentZones?: Record<Size, RandomTeamDeploymentZones>;
   /** Instructions for procedural generation of the scenario. */
   instructions: AnyInstruction[];
   /** Discriminator: random scenarios never carry pixel deployment zones. */
   deploymentZones?: never;
-  /** Discriminator: random scenarios use {@link defaultDeploymentZones} instead. */
+  /** Discriminator: legacy random scenarios never carry deployment zones. */
   randomDeploymentZones?: never;
   /** Discriminator: random scenarios always generate the map procedurally. */
   map?: never;
@@ -354,9 +351,9 @@ export interface Scenario {
    */
   deploymentZones?: TeamDeploymentZones[];
   /** Default percentage-based zones used by procedural scenarios. */
-  randomDeploymentZones?: RandomTeamDeploymentZones;
+  randomDeploymentZones?: RandomDeploymentZones;
   /** Per-battle-size scaled percentage-based zones. */
-  scaledDeploymentZones?: Record<Size, RandomTeamDeploymentZones>;
+  scaledDeploymentZones?: Record<Size, RandomDeploymentZones>;
 
   /** Player setups. Required for fixed-roster scenarios; optional otherwise. */
   players?: PlayerSetup[];

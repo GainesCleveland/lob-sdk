@@ -7,9 +7,6 @@
     "none": "कोई नहीं",
     "remove": "हटाएं",
     "select": "चुनें...",
-    "optionBuiltIn": "{{name}} (अंतर्निहित)",
-    "optionCustom": "{{name}} (कस्टम)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(अज्ञात)",
     "chooseScenarioFile": "परिदृश्य फ़ाइल चुनें",
     "positionX": "स्थिति X",
@@ -19,7 +16,6 @@
     "identity": "पहचान",
     "formationId": "गठन ID",
     "movementModifier": "गति संशोधक",
-    "rotationSpeedModifier": "घूर्णन गति संशोधक",
     "rangedAttackModifier": "दूरस्थ हमला संशोधक",
     "chargeBonusModifier": "चार्ज बोनस संशोधक",
     "chargeResistanceModifier": "चार्ज प्रतिरोध संशोधक",
@@ -32,7 +28,11 @@
     "orgModifier": "संगठन संशोधक",
     "invalidJson": "अमान्य JSON",
     "resizeMap": "मानचित्र आकार बदलें",
-    "addLanguage": "भाषा जोड़ें"
+    "addLanguage": "भाषा जोड़ें",
+    "optionBuiltIn": "{{name}} (अंतर्निहित)",
+    "optionCustom": "{{name}} (कस्टम)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "घूर्णन गति संशोधक"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "इकाई बनाएं",
-    "usingCopiedUnits": "कॉपी की गई इकाइयों का उपयोग"
+    "usingCopiedUnits": "कॉपी की गई इकाइयों का उपयोग",
+    "customLabel": "{{name}} (कस्टम)"
   },
   "objectivePanel": {
     "title": "चयनित उद्देश्य",
@@ -129,6 +130,7 @@
     "frontagePx": "सामने की चौड़ाई (px)",
     "depthPx": "गहराई (px)",
     "runMovementModifier": "दौड़ गति संशोधक",
+    "rotationSpeedModifier": "घूर्णन गति संशोधक",
     "disable180Turn": "180° मोड़ अक्षम करें",
     "formingSpeedModifier": "गठन गति संशोधक",
     "timeToForm": "गठन का समय (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "कस्टम इकाई टेम्पलेट संपादित करें",
+    "optBuiltIn": "{{name}} (अंतर्निहित)",
+    "optCustom": "{{name}} (कस्टम)",
     "typeId": "प्रकार ID",
     "meleeAttack": "हाथापाई हमला",
     "meleeDefense": "हाथापाई रक्षा",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "कस्टम इकाई श्रेणी संपादित करें",
+    "optionBuiltIn": "{{name}} (अंतर्निहित)",
+    "optionCustom": "{{name}} (कस्टम)",
     "errors": {
       "idInUse": "इकाई श्रेणी id \"{{id}}\" पहले से उपयोग में है",
       "firingAltitudeRequired": "firingAltitude आवश्यक है",
@@ -310,6 +316,8 @@
     "range": {
       "start": "आरंभ",
       "end": "अंत",
+      "startMod": "आरंभ संशोधक",
+      "endMod": "अंत संशोधक",
       "from": "से (%)",
       "to": "तक (%)",
       "damageHeader": "क्षति संशोधक (%)",
@@ -365,10 +373,13 @@
     "identityHint": "इस परिदृश्य के लिए युग की भूभाग श्रेणी कॉन्फ़िग को अधिरोहित करता है। id एक अंतर्निहित श्रेणी पर तय है - भूभाग अपनी श्रेणी असाइनमेंट रखते हैं, आप केवल संशोधक समायोजित करते हैं।",
     "perUnitCategoryHint": "कुंजियाँ इकाई श्रेणी id हैं। `*` वाइल्डकार्ड का उपयोग एक डिफ़ॉल्ट सेट करने के लिए करें जो उन सभी श्रेणियों पर लागू हो जिनकी कोई स्पष्ट प्रविष्टि नहीं है।",
     "projectileAbsorptionHint": "कुंजियाँ क्षति प्रकार नाम हैं।",
+    "option": {
+      "builtIn": "{{name}} (अंतर्निहित)",
+      "custom": "{{name}} (कस्टम)"
+    },
     "fields": {
       "color": "रंग",
       "staminaCostModifier": "सहनशक्ति लागत संशोधक",
-      "runSpeedModifier": "दौड़ गति संशोधक",
       "hitboxHeight": "हिटबॉक्स ऊंचाई",
       "visionAbsorption": "दृष्टि अवशोषण",
       "pushDistanceModifier": "धक्का दूरी संशोधक",
@@ -379,7 +390,8 @@
       "impassableFor": "इनके लिए अगम्य",
       "attackModifier": "हमला संशोधक",
       "defenseModifier": "रक्षा संशोधक",
-      "projectileAbsorptionByDamageType": "क्षति प्रकार द्वारा प्रोजेक्टाइल अवशोषण"
+      "projectileAbsorptionByDamageType": "क्षति प्रकार द्वारा प्रोजेक्टाइल अवशोषण",
+      "runSpeedModifier": "दौड़ गति संशोधक"
     },
     "errors": {
       "idInUse": "भूभाग श्रेणी id \"{{id}}\" पहले से उपयोग में है",
@@ -441,6 +453,7 @@
       "noDamageTypes": "अभी तक कोई कस्टम क्षति प्रकार नहीं।",
       "ranged": "दूरस्थ",
       "melee": "हाथापाई",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "\"{{name}}\" हटाया नहीं जा सकता - अब भी {{refs}} द्वारा उपयोग में। पहले उन संदर्भों को हटाएं।",
       "addDamageType": "क्षति प्रकार जोड़ें",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "भूभाग श्रेणियाँ",
       "kindSprites": "स्प्राइट",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "कुछ नहीं",
       "title": "परिदृश्य से {{kind}} आयात करें",
       "pickFilePrompt": "इसके कस्टम {{kind}} आयात करने के लिए एक परिदृश्य फ़ाइल चुनें (वह JSON जो संपादक का डाउनलोड बटन बनाता है)।",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "अमान्य JSON फ़ाइल। कृपया फ़ाइल प्रारूप जांचें।",
     "confirmOverwriteWarning": "कृपया पुष्टि करें कि आप समझते हैं कि यह भूभाग को अधिलेखित कर देगा।",
     "selectedNotProcedural": "चयनित परिदृश्य एक प्रक्रियात्मक टेम्पलेट नहीं है।"
+  },
+  "randomDeployment": {
+    "title": "तैनाती क्षेत्र",
+    "explanation": "प्रत्येक टीम की इकाइयाँ कहाँ शुरू होती हैं, मानचित्र के प्रतिशत में। निष्पक्ष मैच के लिए सममित रखें, या प्रत्येक पक्ष सेट करने के लिए अनचेक करें।",
+    "symmetric": "सममित मानचित्र (ऊपर से नीचे दर्पण)",
+    "topSide": "ऊपरी ओर",
+    "bottomSide": "निचली ओर",
+    "bothSides": "दोनों ओर",
+    "noZones": "कोई क्षेत्र नहीं — जनरेटर डिफ़ॉल्ट उपयोग करता है।",
+    "addZone": "क्षेत्र जोड़ें",
+    "fields": {
+      "xMin": "X न्यून",
+      "xMax": "X अधिक",
+      "yMin": "Y न्यून",
+      "yMax": "Y अधिक"
+    }
   },
   "scoring": {
     "heading": "VP भार (परिदृश्य ओवरराइड)",

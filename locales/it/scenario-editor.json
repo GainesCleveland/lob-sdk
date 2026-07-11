@@ -7,9 +7,6 @@
     "none": "Nessuno",
     "remove": "Rimuovi",
     "select": "Seleziona...",
-    "optionBuiltIn": "{{name}} (integrata)",
-    "optionCustom": "{{name}} (personalizzata)",
-    "nameWithKind": "{{name}} ({{kind}})",
     "unknown": "(sconosciuto)",
     "chooseScenarioFile": "Scegli file scenario",
     "positionX": "Posizione X",
@@ -19,7 +16,6 @@
     "identity": "Identità",
     "formationId": "ID formazione",
     "movementModifier": "Modificatore movimento",
-    "rotationSpeedModifier": "Modificatore velocità rotazione",
     "rangedAttackModifier": "Modificatore attacco a distanza",
     "chargeBonusModifier": "Modificatore bonus carica",
     "chargeResistanceModifier": "Modificatore resistenza carica",
@@ -32,7 +28,11 @@
     "orgModifier": "Modificatore org.",
     "invalidJson": "JSON non valido",
     "resizeMap": "Ridimensiona mappa",
-    "addLanguage": "Aggiungi lingua"
+    "addLanguage": "Aggiungi lingua",
+    "optionBuiltIn": "{{name}} (integrata)",
+    "optionCustom": "{{name}} (personalizzata)",
+    "nameWithKind": "{{name}} ({{kind}})",
+    "rotationSpeedModifier": "Modificatore velocità rotazione"
   },
   "editorPanel": {
     "tabs": {
@@ -83,7 +83,8 @@
   },
   "createUnit": {
     "title": "Crea unità",
-    "usingCopiedUnits": "Uso delle unità copiate"
+    "usingCopiedUnits": "Uso delle unità copiate",
+    "customLabel": "{{name}} (personalizzata)"
   },
   "objectivePanel": {
     "title": "Obiettivo selezionato",
@@ -129,6 +130,7 @@
     "frontagePx": "Frontale (px)",
     "depthPx": "Profondità (px)",
     "runMovementModifier": "Modificatore movimento in corsa",
+    "rotationSpeedModifier": "Modificatore velocità rotazione",
     "disable180Turn": "Disabilita inversione a 180°",
     "formingSpeedModifier": "Modificatore velocità formazione",
     "timeToForm": "Tempo per formare (ticks)",
@@ -158,6 +160,8 @@
   },
   "unitTemplateModal": {
     "title": "Modifica modello di unità personalizzato",
+    "optBuiltIn": "{{name}} (integrata)",
+    "optCustom": "{{name}} (personalizzata)",
     "typeId": "ID tipo",
     "meleeAttack": "Attacco corpo a corpo",
     "meleeDefense": "Difesa corpo a corpo",
@@ -215,6 +219,8 @@
   },
   "unitCategoryModal": {
     "title": "Modifica categoria di unità personalizzata",
+    "optionBuiltIn": "{{name}} (integrata)",
+    "optionCustom": "{{name}} (personalizzata)",
     "errors": {
       "idInUse": "L'id categoria di unità \"{{id}}\" è già in uso",
       "firingAltitudeRequired": "firingAltitude è obbligatorio",
@@ -310,6 +316,8 @@
     "range": {
       "start": "Inizio",
       "end": "Fine",
+      "startMod": "Mod. inizio",
+      "endMod": "Mod. fine",
       "from": "Da (%)",
       "to": "A (%)",
       "damageHeader": "Modificatore danno (%)",
@@ -365,10 +373,13 @@
     "identityHint": "Sovrascrive la configurazione della categoria di terreno dell'epoca per questo scenario. L'id è fisso a una categoria integrata - i terreni mantengono le loro assegnazioni di categoria, regoli solo i modificatori.",
     "perUnitCategoryHint": "Le chiavi sono id di categorie di unità. Usa il carattere jolly `*` per impostare un predefinito applicato a tutte le categorie senza una voce esplicita.",
     "projectileAbsorptionHint": "Le chiavi sono nomi di tipi di danno.",
+    "option": {
+      "builtIn": "{{name}} (integrata)",
+      "custom": "{{name}} (personalizzata)"
+    },
     "fields": {
       "color": "Colore",
       "staminaCostModifier": "Modificatore costo resistenza",
-      "runSpeedModifier": "Modificatore velocità di corsa",
       "hitboxHeight": "Altezza hitbox",
       "visionAbsorption": "Assorbimento visione",
       "pushDistanceModifier": "Modificatore distanza di spinta",
@@ -379,7 +390,8 @@
       "impassableFor": "Impraticabile per",
       "attackModifier": "Modificatore attacco",
       "defenseModifier": "Modificatore difesa",
-      "projectileAbsorptionByDamageType": "Assorbimento proiettili per tipo di danno"
+      "projectileAbsorptionByDamageType": "Assorbimento proiettili per tipo di danno",
+      "runSpeedModifier": "Modificatore velocità di corsa"
     },
     "errors": {
       "idInUse": "L'id categoria di terreno \"{{id}}\" è già in uso",
@@ -441,6 +453,7 @@
       "noDamageTypes": "Ancora nessun tipo di danno personalizzato.",
       "ranged": "a distanza",
       "melee": "corpo a corpo",
+      "cloneOptionLabel": "{{name}} ({{kind}})",
       "itemLabel": "{{name}} ({{kind}}, id {{id}})",
       "deleteBlocked": "Impossibile eliminare \"{{name}}\" - ancora usato da {{refs}}. Rimuovi prima quei riferimenti.",
       "addDamageType": "Aggiungi tipo di danno",
@@ -466,6 +479,7 @@
       "kindTerrainCategories": "categorie di terreno",
       "kindSprites": "sprite",
       "unitItemLabel": "{{name}} (#{{type}})",
+      "damageTypeItemLabel": "{{name}} ({{kind}})",
       "nothing": "nulla",
       "title": "Importa {{kind}} da scenario",
       "pickFilePrompt": "Scegli un file scenario (il JSON prodotto dal pulsante Scarica dell'editor) per importarne i/le {{kind}} personalizzati/e.",
@@ -624,6 +638,22 @@
     "invalidJsonFile": "File JSON non valido. Controlla il formato del file.",
     "confirmOverwriteWarning": "Conferma di aver compreso che questo sovrascriverà il terreno.",
     "selectedNotProcedural": "Lo scenario selezionato non è un modello procedurale."
+  },
+  "randomDeployment": {
+    "title": "Zone di schieramento",
+    "explanation": "Dove iniziano le unità di ogni squadra, in percentuali della mappa. Mantieni la simmetria per una partita equa, o deseleziona per definire ogni lato.",
+    "symmetric": "Mappa simmetrica (specchia dall'alto in basso)",
+    "topSide": "Lato superiore",
+    "bottomSide": "Lato inferiore",
+    "bothSides": "Entrambi i lati",
+    "noZones": "Nessuna zona — il generatore usa i valori predefiniti.",
+    "addZone": "Aggiungi zona",
+    "fields": {
+      "xMin": "X min",
+      "xMax": "X max",
+      "yMin": "Y min",
+      "yMax": "Y max"
+    }
   },
   "scoring": {
     "heading": "Pesi VP (override dello scenario)",
