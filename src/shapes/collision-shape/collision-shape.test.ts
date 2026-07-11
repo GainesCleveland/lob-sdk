@@ -87,6 +87,65 @@ describe("rotated ObbShape overlap (exercises the non-axis-aligned clip path)", 
   });
 });
 
+describe("distanceTo (edge-to-edge gap, 0 when touching/overlapping)", () => {
+  const rotatedSquare = (cx: number, cy: number, h: number, angle: number) => {
+    const cos = Math.cos(angle);
+    const sin = Math.sin(angle);
+    const local = [
+      { x: -h, y: -h },
+      { x: h, y: -h },
+      { x: h, y: h },
+      { x: -h, y: h },
+    ];
+    return new ObbShape(
+      local.map((p) => ({
+        x: cx + p.x * cos - p.y * sin,
+        y: cy + p.x * sin + p.y * cos,
+      })),
+    );
+  };
+
+  it("circle-circle gap is centre distance minus both radii", () => {
+    const a = new CircleShape({ x: 0, y: 0 }, 5);
+    expect(a.distanceTo(new CircleShape({ x: 20, y: 0 }, 5))).toBe(10); // 20 - 5 - 5
+    expect(a.distanceTo(new CircleShape({ x: 10, y: 0 }, 5))).toBe(0); // exactly touching
+    expect(a.distanceTo(new CircleShape({ x: 6, y: 0 }, 5))).toBe(0); // overlapping
+  });
+
+  it("obb-obb gap is the clear space between the boxes", () => {
+    // Two 10-wide squares (half-size 5) centres 20 apart on X: 20 - 5 - 5 = 10 gap.
+    const a = square(0, 0, 5);
+    expect(a.distanceTo(square(20, 0, 5))).toBeCloseTo(10);
+    expect(a.distanceTo(square(10, 0, 5))).toBeCloseTo(0); // edges touching
+    expect(a.distanceTo(square(4, 0, 5))).toBe(0); // overlapping
+    expect(a.distanceTo(square(0, 0, 5))).toBe(0); // identical
+  });
+
+  it("obb-obb gap uses the nearest corner on a diagonal offset", () => {
+    // Squares at (0,0) and (20,20), both half-size 5. Nearest corners are
+    // (5,5) and (15,15): gap = hypot(10,10) = 14.142.
+    const a = square(0, 0, 5);
+    expect(a.distanceTo(square(20, 20, 5))).toBeCloseTo(Math.hypot(10, 10));
+  });
+
+  it("is symmetric and handles rotation", () => {
+    const a = square(0, 0, 5);
+    const diamond = rotatedSquare(20, 0, 5, Math.PI / 4);
+    // Diamond's near vertex points at the square: at x = 20 - 5*sqrt(2) ~= 12.93,
+    // square's near edge at x=5, so gap ~= 7.93.
+    expect(a.distanceTo(diamond)).toBeCloseTo(20 - 5 * Math.SQRT2 - 5);
+    expect(a.distanceTo(diamond)).toBeCloseTo(diamond.distanceTo(a), 5);
+  });
+
+  it("circle-obb gap measures from the circle to the nearest box edge", () => {
+    const rect = square(0, 0, 5); // spans x,y in [-5,5]
+    expect(rect.distanceTo(new CircleShape({ x: 20, y: 0 }, 5))).toBe(10); // 20 - 5(box) - 5(r)
+    expect(new CircleShape({ x: 20, y: 0 }, 5).distanceTo(rect)).toBe(10); // symmetric
+    expect(rect.distanceTo(new CircleShape({ x: 10, y: 0 }, 5))).toBe(0); // touching
+    expect(rect.distanceTo(new CircleShape({ x: 0, y: 0 }, 5))).toBe(0); // circle inside box
+  });
+});
+
 describe("mixed circle / obb overlap (keeps the circle exact)", () => {
   it("is 1 when the smaller circle sits inside the rectangle", () => {
     const rect = square(0, 0, 50);

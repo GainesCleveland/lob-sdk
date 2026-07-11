@@ -177,8 +177,8 @@ export interface GameConstants {
   DEFAULT_DEPLOYMENT_ZONE_SEPARATION: number;
 
   MAX_PLAYERS: number;
-  /** 16 ** 2 */
-  MIN_FOLLOW_ALLY_DISTANCE_SQUARED: number;
+  /** Edge-to-edge gap in px a unit keeps when following or advancing to an ally; 0 = touching. */
+  MIN_FOLLOW_ALLY_DISTANCE: number;
   ALLY_HARD_COLLISION_THRESHOLD: number;
 
   /** Movement path proximity thresholds */
