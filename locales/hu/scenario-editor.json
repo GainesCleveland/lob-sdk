@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "VP egyensúly (veszteségek vs objektívák)",
+    "heading": "VP egyensúly (alap, veszteségek, objektívák)",
+    "baseTooltip": "Alap: {{vp}} VP",
     "casualtiesTooltip": "Veszteségek: {{vp}} VP",
     "objectivesTooltip": "Objektívák: {{vp}} VP",
+    "baseSummary": "Alap {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Veszteségek {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objektívák {{pct}}% ({{vp}} VP)"
   },
@@ -658,9 +660,11 @@
   "scoring": {
     "heading": "GP-súlyok (pálya-felülbírálás)",
     "hint": "Hagyj egy mezőt üresen, hogy örökölje a csatatípus vagy korszak alapértékét.",
+    "basePoints": "Alap súlya",
     "casualties": "Veszteség súlya",
     "underPressure": "Nyomás alatti büntetés",
     "pressureThreshold": "Nyomásküszöb",
+    "basePointsInfo": "Kezdő GP, amelyet mindkét csapat megkap, mielőtt a veszteségek, célpontok vagy nyomás érvényesülne.",
     "casualtiesInfo": "Max. GP a csapatok közti veszteségkülönbségből. Magasabb érték a felőrlést részesíti előnyben a célpontok tartásával szemben.",
     "underPressureInfo": "A csapat által körönként elvesztett GP nyomás alatt. 0 kikapcsolja a büntetést.",
     "pressureThresholdInfo": "Egy csapat nyomás alatt van, amíg a cél-GP ennyi százalékát vagy kevesebbet birtokol."

@@ -1729,5 +1729,5 @@
   },
   "allowDynamicArmy": false,
   "allowDeploymentPhase": false,
-  "customGameConstants": { "VP_BASE_POINTS": 300 }
+  "vpBasePoints": 300
 }

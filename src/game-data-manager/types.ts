@@ -296,49 +296,6 @@ export interface GameConstants {
    */
 
   /**
-   * Starting victory points for each team at the beginning of the game.
-   * Both teams start with this base amount, and then additional points are added or subtracted
-   * based on objectives captured, loss ratios, and other factors.
-   */
-  VP_BASE_POINTS: number;
-
-  /**
-   * Maximum victory points that can be awarded based on loss ratio comparison.
-   * The proportion of casualties (power lost) between teams is compared.
-   * The team with fewer casualties receives positive points, while the team with more casualties receives negative points.
-   * Points are distributed proportionally based on the difference in loss ratios, up to this maximum value.
-   *
-   * Example: If this is 10, and Team 1 lost 20% while Team 2 lost 40%, the difference is 20% (0.2),
-   * so Team 1 gets +2 points and Team 2 gets -2 points. The maximum of 10 would only be reached if
-   * one team lost 0% and the other lost 100% (difference of 1.0).
-   */
-  VP_LOSS_RATIO_POINTS: number;
-
-  /**
-   * Margin of victory points used to determine the winner when the max turn limit is reached.
-   * A team is defeated if their VP difference (their points minus opponent's points) plus this value <= 0.
-   * A team can be behind by up to this many points and still avoid defeat; otherwise they lose and the game ends.
-   *
-   * Example: If this is 10, Team 1 with 45 points vs Team 2 with 50 points: -5 + 10 = 5 > 0, so it's a tie.
-   * But if Team 1 had 40 points: -10 + 10 = 0 <= 0, so Team 1 is defeated.
-   */
-  VP_POINTS_TO_TIE_BREAK: number;
-
-  /**
-   * Default victory points awarded for capturing a big objective.
-   * Used when an objective doesn't have custom victory points explicitly set.
-   * Big objectives are typically more strategically important than small objectives.
-   */
-  VP_BIG_DEFAULT_POINTS: number;
-
-  /**
-   * Default victory points awarded for capturing a small objective.
-   * Used when an objective doesn't have custom victory points explicitly set.
-   * Small objectives typically award fewer points than big objectives.
-   */
-  VP_SMALL_DEFAULT_POINTS: number;
-
-  /**
    * VP value of the auto-spawned neutral objective, as a multiple of a small
    * objective's VP. 0 disables the feature (no neutral objective is spawned).
    * The neutral spawns once, when deployment ends, on placeable-objective maps.
@@ -647,6 +604,43 @@ export interface ObjectivesRule {
    * BaseGame.vpTicksUnderPressureBase getter (scenario > battle type > this).
    */
   vpTicksUnderPressureBase: number;
+  /**
+   * Era-default starting victory points each team begins the game with, before
+   * objectives, loss ratios, or pressure adjust the score.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpBasePoints getter (scenario > battle type > this).
+   */
+  vpBasePoints: number;
+  /**
+   * Era-default maximum victory points awarded from the loss-ratio comparison.
+   * The team with proportionally fewer casualties gains up to this many points
+   * and the other loses the same, scaled by the difference in loss ratios.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpLossRatioPoints getter (scenario > battle type > this).
+   */
+  vpLossRatioPoints: number;
+  /**
+   * Era-default margin-of-victory points used to decide the winner at the max
+   * turn limit. A team is defeated if its VP difference plus this value <= 0, so
+   * it may trail by up to this many points and still avoid defeat.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpPointsToTieBreak getter (scenario > battle type > this).
+   */
+  vpPointsToTieBreak: number;
+  /**
+   * Era-default victory points for capturing a big objective, used when an
+   * objective has no explicit VP set.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpBigDefaultPoints getter (scenario > battle type > this).
+   */
+  vpBigDefaultPoints: number;
+  /**
+   * Era-default victory points for capturing a small objective, used when an
+   * objective has no explicit VP set.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.vpSmallDefaultPoints getter (scenario > battle type > this).
+   */
+  vpSmallDefaultPoints: number;
 }
 
 export interface AllyCollisionRule {

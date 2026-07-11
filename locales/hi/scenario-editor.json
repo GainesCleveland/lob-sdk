@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "VP संतुलन (हताहत बनाम उद्देश्य)",
+    "heading": "VP संतुलन (आधार, हताहत, उद्देश्य)",
+    "baseTooltip": "आधार: {{vp}} VP",
     "casualtiesTooltip": "हताहत: {{vp}} VP",
     "objectivesTooltip": "उद्देश्य: {{vp}} VP",
+    "baseSummary": "आधार {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "हताहत {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "उद्देश्य {{pct}}% ({{vp}} VP)"
   },
@@ -658,9 +660,11 @@
   "scoring": {
     "heading": "VP भार (परिदृश्य ओवरराइड)",
     "hint": "युद्ध प्रकार या युग के डिफ़ॉल्ट को इनहेरिट करने के लिए फ़ील्ड खाली छोड़ें।",
+    "basePoints": "आधार भार",
     "casualties": "हताहत भार",
     "underPressure": "दबाव में दंड",
     "pressureThreshold": "दबाव सीमा",
+    "basePointsInfo": "आरंभिक VP जो दोनों टीमों को हताहत, लक्ष्य या दबाव लागू होने से पहले मिलते हैं।",
     "casualtiesInfo": "टीमों के बीच हताहत अंतर से अधिकतम VP। अधिक होने पर लक्ष्य पकड़ने के बजाय क्षय पर ज़ोर।",
     "underPressureInfo": "दबाव में हर टर्न में टीम जितने VP खोती है। 0 से दंड बंद।",
     "pressureThresholdInfo": "जब तक टीम के पास लक्ष्य VP का यह % या कम है, वह दबाव में रहती है।"

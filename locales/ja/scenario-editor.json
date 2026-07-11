@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "VPバランス（損害 対 目標）",
+    "heading": "VPバランス（基本、損害、目標）",
+    "baseTooltip": "基本: {{vp}} VP",
     "casualtiesTooltip": "損害: {{vp}} VP",
     "objectivesTooltip": "目標: {{vp}} VP",
+    "baseSummary": "基本 {{pct}}%（{{vp}} VP）",
     "casualtiesSummary": "損害 {{pct}}%（{{vp}} VP）",
     "objectivesSummary": "目標 {{pct}}%（{{vp}} VP）"
   },
@@ -657,9 +659,11 @@
   "scoring": {
     "heading": "VP配分（シナリオ上書き）",
     "hint": "空欄にすると戦闘タイプまたは時代の既定値を継承します。",
+    "basePoints": "基本の重み",
     "casualties": "損失の重み",
     "underPressure": "プレッシャー下のペナルティ",
     "pressureThreshold": "プレッシャー閾値",
+    "basePointsInfo": "損害・拠点・プレッシャーが適用される前に両チームが得る初期VP。",
     "casualtiesInfo": "両チームの損失差から得られる最大VP。高いほど拠点確保より消耗戦を重視。",
     "underPressureInfo": "プレッシャー下でチームが毎ターン失うVP。0で無効。",
     "pressureThresholdInfo": "チームが保持する拠点VPの割合がこの%以下のとき、プレッシャー状態になります。"

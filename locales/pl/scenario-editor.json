@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Bilans PZ (straty vs cele)",
+    "heading": "Bilans PZ (baza, straty, cele)",
+    "baseTooltip": "Baza: {{vp}} VP",
     "casualtiesTooltip": "Straty: {{vp}} VP",
     "objectivesTooltip": "Cele: {{vp}} VP",
+    "baseSummary": "Baza {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Straty {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Cele {{pct}}% ({{vp}} VP)"
   },
@@ -660,9 +662,11 @@
   "scoring": {
     "heading": "Wagi PZ (nadpisanie scenariusza)",
     "hint": "Pozostaw pole puste, aby odziedziczyć domyślną wartość typu bitwy lub ery.",
+    "basePoints": "Waga bazowa",
     "casualties": "Waga strat",
     "underPressure": "Kara pod presją",
     "pressureThreshold": "Próg presji",
+    "basePointsInfo": "Początkowe PZ, które obie drużyny otrzymują przed uwzględnieniem strat, celów lub presji.",
     "casualtiesInfo": "Maks. PZ z różnicy strat między drużynami. Wyżej premiuje wyniszczanie zamiast utrzymywania celów.",
     "underPressureInfo": "PZ tracone przez drużynę na turę pod presją. 0 wyłącza karę.",
     "pressureThresholdInfo": "Drużyna jest pod presją, gdy posiada ten % PZ celów lub mniej."

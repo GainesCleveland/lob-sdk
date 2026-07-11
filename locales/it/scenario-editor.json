@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Bilancio PV (perdite vs obiettivi)",
+    "heading": "Bilancio PV (base, perdite, obiettivi)",
+    "baseTooltip": "Base: {{vp}} VP",
     "casualtiesTooltip": "Perdite: {{vp}} VP",
     "objectivesTooltip": "Obiettivi: {{vp}} VP",
+    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Perdite {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Obiettivi {{pct}}% ({{vp}} VP)"
   },
@@ -658,9 +660,11 @@
   "scoring": {
     "heading": "Pesi VP (override dello scenario)",
     "hint": "Lascia un campo vuoto per ereditare il valore predefinito del tipo di battaglia o dell'era.",
+    "basePoints": "Peso base",
     "casualties": "Peso delle perdite",
     "underPressure": "Penalità sotto pressione",
     "pressureThreshold": "Soglia di pressione",
+    "basePointsInfo": "VP iniziali che entrambe le squadre ricevono prima di applicare perdite, obiettivi o pressione.",
     "casualtiesInfo": "VP massimi dalla differenza di perdite tra le squadre. Più alto favorisce il logoramento rispetto al mantenere gli obiettivi.",
     "underPressureInfo": "VP che una squadra perde per turno sotto pressione. 0 disattiva la penalità.",
     "pressureThresholdInfo": "Una squadra è sotto pressione finché detiene questa % di VP degli obiettivi o meno."

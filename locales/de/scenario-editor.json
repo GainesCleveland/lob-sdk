@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "VP-Bilanz (Verluste vs. Ziele)",
+    "heading": "VP-Bilanz (Basis, Verluste, Ziele)",
+    "baseTooltip": "Basis: {{vp}} VP",
     "casualtiesTooltip": "Verluste: {{vp}} VP",
     "objectivesTooltip": "Ziele: {{vp}} VP",
+    "baseSummary": "Basis {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Verluste {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Ziele {{pct}}% ({{vp}} VP)"
   },
@@ -658,9 +660,11 @@
   "scoring": {
     "heading": "VP-Gewichte (Szenario-Override)",
     "hint": "Lassen Sie ein Feld leer, um den Standardwert des Kampftyps oder der Ära zu übernehmen.",
+    "basePoints": "Basis-Gewichtung",
     "casualties": "Verlust-Gewichtung",
     "underPressure": "Strafe unter Druck",
     "pressureThreshold": "Druckschwelle",
+    "basePointsInfo": "Anfangs-VP, die beide Teams erhalten, bevor Verluste, Objektive oder Druck angewendet werden.",
     "casualtiesInfo": "Maximale VP aus der Verlustdifferenz zwischen den Teams. Höher belohnt Abnutzung statt Objektivhaltung.",
     "underPressureInfo": "VP, die ein Team pro Zug unter Druck verliert. 0 deaktiviert die Strafe.",
     "pressureThresholdInfo": "Ein Team steht unter Druck, solange es diesen % der Objektiv-VP oder weniger hält."

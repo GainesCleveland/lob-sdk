@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "VP balance (casualties vs objectives)",
+    "heading": "VP balance (base, casualties, objectives)",
+    "baseTooltip": "Base: {{vp}} VP",
     "casualtiesTooltip": "Casualties: {{vp}} VP",
     "objectivesTooltip": "Objectives: {{vp}} VP",
+    "baseSummary": "Base {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Casualties {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Objectives {{pct}}% ({{vp}} VP)"
   },
@@ -658,9 +660,11 @@
   "scoring": {
     "heading": "VP weights (scenario override)",
     "hint": "Leave a field empty to inherit the battle-type or era default.",
+    "basePoints": "Base points weight",
     "casualties": "Casualties weight",
     "underPressure": "Under-pressure penalty",
     "pressureThreshold": "Pressure threshold",
+    "basePointsInfo": "Starting VP both teams get before casualties, objectives, or pressure are applied.",
     "casualtiesInfo": "Max VP from the casualty difference between teams. Higher favours attrition over holding objectives.",
     "underPressureInfo": "VP a team loses per turn while under pressure. 0 disables the penalty.",
     "pressureThresholdInfo": "A team is under pressure while it holds this % of objective VP or less."

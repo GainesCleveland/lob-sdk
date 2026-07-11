@@ -389,8 +389,8 @@ export interface Scenario {
   placeableObjectives?: boolean;
 
   /**
-   * Per-scenario override for the casualties VP weight (the era's
-   * VP_LOSS_RATIO_POINTS). Highest-priority override. Omit to inherit the
+   * Per-scenario override for the casualties VP weight (the objectives rule's
+   * vpLossRatioPoints). Highest-priority override. Omit to inherit the
    * battle-type override or the era default. Resolved (layered) via the
    * BaseGame.vpLossRatioPoints / vpTicksUnderPressureBase getters.
    */
@@ -411,6 +411,34 @@ export interface Scenario {
    * the BaseGame.vpPressureThreshold getter.
    */
   vpPressureThreshold?: number;
+
+  /**
+   * Per-scenario override for the starting/base VP (the objectives rule's
+   * vpBasePoints). Highest-priority override. Omit to inherit the battle-type
+   * override or the era default. Resolved (layered) via the BaseGame.vpBasePoints getter.
+   */
+  vpBasePoints?: number;
+
+  /**
+   * Per-scenario override for the tie-break margin VP (the objectives rule's
+   * vpPointsToTieBreak). Highest-priority override. Omit to inherit the battle-type
+   * override or the era default. Resolved (layered) via the BaseGame.vpPointsToTieBreak getter.
+   */
+  vpPointsToTieBreak?: number;
+
+  /**
+   * Per-scenario override for the default big objective VP (the objectives rule's
+   * vpBigDefaultPoints). Highest-priority override. Omit to inherit the battle-type
+   * override or the era default. Resolved (layered) via the BaseGame.vpBigDefaultPoints getter.
+   */
+  vpBigDefaultPoints?: number;
+
+  /**
+   * Per-scenario override for the default small objective VP (the objectives rule's
+   * vpSmallDefaultPoints). Highest-priority override. Omit to inherit the battle-type
+   * override or the era default. Resolved (layered) via the BaseGame.vpSmallDefaultPoints getter.
+   */
+  vpSmallDefaultPoints?: number;
 
   /**
    * Data-driven tutorial overlays. Evaluated client-side by the TutorialRunner

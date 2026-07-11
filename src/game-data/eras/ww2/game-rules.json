@@ -41,7 +41,12 @@
   "objectives": {
     "radius": 24,
     "vpPressureThreshold": 0.4,
-    "vpTicksUnderPressureBase": 2.0
+    "vpTicksUnderPressureBase": 2.0,
+    "vpBasePoints": 25,
+    "vpLossRatioPoints": 300,
+    "vpPointsToTieBreak": 10,
+    "vpBigDefaultPoints": 75,
+    "vpSmallDefaultPoints": 15
   },
   "organization": {
     "speedModifier": -0.15,

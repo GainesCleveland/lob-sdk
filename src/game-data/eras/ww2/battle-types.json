@@ -5,8 +5,8 @@
     "unitCaps": {},
     "ticksToCaptureSmall": 2,
     "ticksToCaptureBig": 4,
-    "bigVps": 50,
-    "smallVps": 2,
+    "vpBigDefaultPoints": 50,
+    "vpSmallDefaultPoints": 2,
     "defaultArmy": {
       "1": 36,
       "2": 8,

@@ -112,9 +112,11 @@
     }
   },
   "vpBalance": {
-    "heading": "Cân bằng ĐCT (thương vong vs mục tiêu)",
+    "heading": "Cân bằng ĐCT (cơ bản, thương vong, mục tiêu)",
+    "baseTooltip": "Cơ bản: {{vp}} VP",
     "casualtiesTooltip": "Thương vong: {{vp}} VP",
     "objectivesTooltip": "Mục tiêu: {{vp}} VP",
+    "baseSummary": "Cơ bản {{pct}}% ({{vp}} VP)",
     "casualtiesSummary": "Thương vong {{pct}}% ({{vp}} VP)",
     "objectivesSummary": "Mục tiêu {{pct}}% ({{vp}} VP)"
   },
@@ -657,9 +659,11 @@
   "scoring": {
     "heading": "Trọng số VP (ghi đè kịch bản)",
     "hint": "Để trống một ô để kế thừa giá trị mặc định của loại trận đấu hoặc thời đại.",
+    "basePoints": "Trọng số cơ bản",
     "casualties": "Trọng số thương vong",
     "underPressure": "Hình phạt khi bị áp lực",
     "pressureThreshold": "Ngưỡng áp lực",
+    "basePointsInfo": "VP khởi đầu mà cả hai đội nhận được trước khi tính thương vong, mục tiêu hoặc áp lực.",
     "casualtiesInfo": "VP tối đa từ chênh lệch thương vong giữa các đội. Cao hơn thiên về tiêu hao hơn là giữ mục tiêu.",
     "underPressureInfo": "VP mà một đội mất mỗi lượt khi bị áp lực. 0 để tắt hình phạt.",
     "pressureThresholdInfo": "Một đội bị áp lực khi nắm giữ tỷ lệ % VP mục tiêu này hoặc thấp hơn."
