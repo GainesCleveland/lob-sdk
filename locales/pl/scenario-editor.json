@@ -626,5 +626,15 @@
     "invalidJsonFile": "Nieprawidłowy plik JSON. Sprawdź format pliku.",
     "confirmOverwriteWarning": "Potwierdź, że rozumiesz, iż nadpisze to teren.",
     "selectedNotProcedural": "Wybrany scenariusz nie jest szablonem proceduralnym."
+  },
+  "scoring": {
+    "heading": "Wagi PZ (nadpisanie scenariusza)",
+    "hint": "Pozostaw pole puste, aby odziedziczyć domyślną wartość typu bitwy lub ery.",
+    "casualties": "Waga strat",
+    "underPressure": "Kara pod presją",
+    "pressureThreshold": "Próg presji",
+    "casualtiesInfo": "Maks. PZ z różnicy strat między drużynami. Wyżej premiuje wyniszczanie zamiast utrzymywania celów.",
+    "underPressureInfo": "PZ tracone przez drużynę na turę pod presją. 0 wyłącza karę.",
+    "pressureThresholdInfo": "Drużyna jest pod presją, gdy posiada ten % PZ celów lub mniej."
   }
 }

@@ -624,5 +624,15 @@
     "invalidJsonFile": "Fichier JSON invalide. Veuillez vérifier le format du fichier.",
     "confirmOverwriteWarning": "Veuillez confirmer que vous comprenez que cela écrasera le terrain.",
     "selectedNotProcedural": "Le scénario sélectionné n'est pas un modèle procédural."
+  },
+  "scoring": {
+    "heading": "Poids des PV (remplacement du scénario)",
+    "hint": "Laissez un champ vide pour hériter de la valeur par défaut du type de bataille ou de l'ère.",
+    "casualties": "Poids des pertes",
+    "underPressure": "Pénalité sous pression",
+    "pressureThreshold": "Seuil de pression",
+    "casualtiesInfo": "PV max issus de la différence de pertes entre équipes. Plus élevé favorise l'usure plutôt que la tenue des objectifs.",
+    "underPressureInfo": "PV qu'une équipe perd par tour sous pression. 0 désactive la pénalité.",
+    "pressureThresholdInfo": "Une équipe est sous pression tant qu'elle détient ce % des PV d'objectifs ou moins."
   }
 }
