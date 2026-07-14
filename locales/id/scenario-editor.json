@@ -665,7 +665,13 @@
     "basePointsInfo": "VP awal yang didapat kedua tim sebelum korban, objektif, atau tekanan diterapkan.",
     "casualtiesInfo": "VP maks. dari selisih korban antar tim. Lebih tinggi mengutamakan atrisi daripada menahan objektif.",
     "underPressureInfo": "VP yang hilang per giliran saat tim di bawah tekanan. 0 menonaktifkan penalti.",
-    "pressureThresholdInfo": "Sebuah tim berada di bawah tekanan selama memegang persentase VP objektif ini atau kurang."
+    "pressureThresholdInfo": "Sebuah tim berada di bawah tekanan selama memegang persentase VP objektif ini atau kurang.",
+    "bigDefault": "VP objektif besar bawaan",
+    "bigDefaultInfo": "VP cadangan untuk objektif besar yang tidak mengatur nilainya sendiri. Objektif individual masih dapat menggantinya.",
+    "smallDefault": "VP objektif kecil bawaan",
+    "smallDefaultInfo": "VP cadangan untuk objektif kecil yang tidak mengatur nilainya sendiri. Objektif individual masih dapat menggantinya.",
+    "tieBreak": "Selisih pemecah seri",
+    "tieBreakInfo": "Pada giliran terakhir, tim yang tertinggal dalam VP lebih dari nilai ini dianggap kalah."
   },
   "objectiveZones": {
     "heading": "Zona objektif (penggantian skenario)",

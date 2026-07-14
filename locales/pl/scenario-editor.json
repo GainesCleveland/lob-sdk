@@ -668,7 +668,13 @@
     "basePointsInfo": "Początkowe PZ, które obie drużyny otrzymują przed uwzględnieniem strat, celów lub presji.",
     "casualtiesInfo": "Maks. PZ z różnicy strat między drużynami. Wyżej premiuje wyniszczanie zamiast utrzymywania celów.",
     "underPressureInfo": "PZ tracone przez drużynę na turę pod presją. 0 wyłącza karę.",
-    "pressureThresholdInfo": "Drużyna jest pod presją, gdy posiada ten % PZ celów lub mniej."
+    "pressureThresholdInfo": "Drużyna jest pod presją, gdy posiada ten % PZ celów lub mniej.",
+    "bigDefault": "Domyślne PZ dużego celu",
+    "bigDefaultInfo": "Zapasowe PZ dla dużego celu, który nie ma własnej wartości. Poszczególne cele mogą to nadpisać.",
+    "smallDefault": "Domyślne PZ małego celu",
+    "smallDefaultInfo": "Zapasowe PZ dla małego celu, który nie ma własnej wartości. Poszczególne cele mogą to nadpisać.",
+    "tieBreak": "Margines rozstrzygający remis",
+    "tieBreakInfo": "W ostatniej turze drużyna tracąca w PZ więcej niż tyle jest uznawana za pokonaną."
   },
   "objectiveZones": {
     "heading": "Strefy celów (nadpisanie scenariusza)",

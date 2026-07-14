@@ -665,7 +665,13 @@
     "basePointsInfo": "사상자, 거점, 압박이 적용되기 전에 양 팀이 받는 시작 VP.",
     "casualtiesInfo": "양 팀의 사상자 차이로 얻는 최대 VP. 높을수록 거점 유지보다 소모전을 중시합니다.",
     "underPressureInfo": "압박 상태에서 팀이 매 턴 잃는 VP. 0이면 비활성화됩니다.",
-    "pressureThresholdInfo": "팀이 보유한 목표 VP 비율이 이 % 이하일 때 압박 상태가 됩니다."
+    "pressureThresholdInfo": "팀이 보유한 목표 VP 비율이 이 % 이하일 때 압박 상태가 됩니다.",
+    "bigDefault": "대형 목표 기본 VP",
+    "bigDefaultInfo": "자체 값을 설정하지 않은 대형 목표에 적용되는 기본 VP. 개별 목표에서 재정의할 수 있습니다.",
+    "smallDefault": "소형 목표 기본 VP",
+    "smallDefaultInfo": "자체 값을 설정하지 않은 소형 목표에 적용되는 기본 VP. 개별 목표에서 재정의할 수 있습니다.",
+    "tieBreak": "무승부 판정 격차",
+    "tieBreakInfo": "마지막 턴에 VP가 이 값보다 더 크게 뒤진 팀은 패배로 처리됩니다."
   },
   "objectiveZones": {
     "heading": "목표 구역 (시나리오 재정의)",

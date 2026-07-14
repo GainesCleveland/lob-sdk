@@ -665,7 +665,13 @@
     "basePointsInfo": "VP khởi đầu mà cả hai đội nhận được trước khi tính thương vong, mục tiêu hoặc áp lực.",
     "casualtiesInfo": "VP tối đa từ chênh lệch thương vong giữa các đội. Cao hơn thiên về tiêu hao hơn là giữ mục tiêu.",
     "underPressureInfo": "VP mà một đội mất mỗi lượt khi bị áp lực. 0 để tắt hình phạt.",
-    "pressureThresholdInfo": "Một đội bị áp lực khi nắm giữ tỷ lệ % VP mục tiêu này hoặc thấp hơn."
+    "pressureThresholdInfo": "Một đội bị áp lực khi nắm giữ tỷ lệ % VP mục tiêu này hoặc thấp hơn.",
+    "bigDefault": "VP mặc định mục tiêu lớn",
+    "bigDefaultInfo": "VP dự phòng cho mục tiêu lớn không tự đặt giá trị. Từng mục tiêu vẫn có thể ghi đè.",
+    "smallDefault": "VP mặc định mục tiêu nhỏ",
+    "smallDefaultInfo": "VP dự phòng cho mục tiêu nhỏ không tự đặt giá trị. Từng mục tiêu vẫn có thể ghi đè.",
+    "tieBreak": "Biên phá hòa",
+    "tieBreakInfo": "Ở lượt cuối, đội bị dẫn trước về VP nhiều hơn mức này bị coi là thua."
   },
   "objectiveZones": {
     "heading": "Vùng mục tiêu (ghi đè kịch bản)",

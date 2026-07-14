@@ -666,7 +666,13 @@
     "basePointsInfo": "VP iniziali che entrambe le squadre ricevono prima di applicare perdite, obiettivi o pressione.",
     "casualtiesInfo": "VP massimi dalla differenza di perdite tra le squadre. Più alto favorisce il logoramento rispetto al mantenere gli obiettivi.",
     "underPressureInfo": "VP che una squadra perde per turno sotto pressione. 0 disattiva la penalità.",
-    "pressureThresholdInfo": "Una squadra è sotto pressione finché detiene questa % di VP degli obiettivi o meno."
+    "pressureThresholdInfo": "Una squadra è sotto pressione finché detiene questa % di VP degli obiettivi o meno.",
+    "bigDefault": "VP predefiniti grande obiettivo",
+    "bigDefaultInfo": "VP di ripiego per un grande obiettivo che non imposta un valore proprio. I singoli obiettivi possono comunque sovrascriverlo.",
+    "smallDefault": "VP predefiniti piccolo obiettivo",
+    "smallDefaultInfo": "VP di ripiego per un piccolo obiettivo che non imposta un valore proprio. I singoli obiettivi possono comunque sovrascriverlo.",
+    "tieBreak": "Margine di spareggio",
+    "tieBreakInfo": "All'ultimo turno, una squadra in svantaggio di VP oltre questo margine è considerata sconfitta."
   },
   "objectiveZones": {
     "heading": "Zone degli obiettivi (override dello scenario)",
