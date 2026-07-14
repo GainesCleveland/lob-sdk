@@ -11,7 +11,7 @@
     "ticksToCaptureBig": 64,
     "vpBigDefaultPoints": 60,
     "vpSmallDefaultPoints": 15,
-    "objectiveSpacing": 300,
+    "objectiveSpacing": 256,
     "smallObjectivesPerSide": 1,
     "centralNeutralObjectives": 2,
     "defaultArmy": {
@@ -39,7 +39,7 @@
     "ticksToCaptureBig": 64,
     "vpBigDefaultPoints": 60,
     "vpSmallDefaultPoints": 15,
-    "objectiveSpacing": 300,
+    "objectiveSpacing": 256,
     "smallObjectivesPerSide": 1,
     "centralNeutralObjectives": 2,
     "defaultArmy": {
@@ -68,7 +68,7 @@
     "ticksToCaptureBig": 128,
     "vpBigDefaultPoints": 60,
     "vpSmallDefaultPoints": 15,
-    "objectiveSpacing": 350,
+    "objectiveSpacing": 256,
     "smallObjectivesPerSide": 1,
     "centralNeutralObjectives": 2,
     "defaultArmy": {
@@ -97,7 +97,7 @@
     "ticksToCaptureBig": 128,
     "vpBigDefaultPoints": 60,
     "vpSmallDefaultPoints": 15,
-    "objectiveSpacing": 400,
+    "objectiveSpacing": 256,
     "smallObjectivesPerSide": 2,
     "centralNeutralObjectives": 3,
     "defaultArmy": {
@@ -126,7 +126,7 @@
     "ticksToCaptureBig": 128,
     "vpBigDefaultPoints": 60,
     "vpSmallDefaultPoints": 15,
-    "objectiveSpacing": 450,
+    "objectiveSpacing": 256,
     "smallObjectivesPerSide": 2,
     "centralNeutralObjectives": 3,
     "defaultArmy": {
