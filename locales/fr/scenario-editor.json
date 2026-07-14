@@ -667,5 +667,13 @@
     "casualtiesInfo": "PV max issus de la différence de pertes entre équipes. Plus élevé favorise l'usure plutôt que la tenue des objectifs.",
     "underPressureInfo": "PV qu'une équipe perd par tour sous pression. 0 désactive la pénalité.",
     "pressureThresholdInfo": "Une équipe est sous pression tant qu'elle détient ce % des PV d'objectifs ou moins."
+  },
+  "objectiveZones": {
+    "heading": "Zones d'objectifs (remplacement du scénario)",
+    "hint": "De combien réduire les zones d'objectifs plaçables. Laissez un champ vide pour hériter de la valeur par défaut du type de bataille ou de l'ère.",
+    "smallInset": "Rognage de la zone des petits objectifs",
+    "bigInset": "Rognage de la zone des grands objectifs",
+    "smallInsetInfo": "De combien rétrécir la zone des petits objectifs de chaque côté. Rogne uniquement la largeur, en conservant la hauteur.",
+    "bigInsetInfo": "De combien réduire la boîte des grands objectifs de chaque côté, centrée dans la zone de déploiement."
   }
 }

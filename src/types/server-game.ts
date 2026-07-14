@@ -149,6 +149,19 @@ export interface BattleTypeTemplate {
    * BaseGame.vpPointsToTieBreak getter (scenario override > battle type > era).
    */
   vpPointsToTieBreak?: number;
+  /**
+   * Per-battle-type override for the small-objective zone horizontal inset (the
+   * objectives rule's smallObjectiveZoneHorizontalInset). Omit to inherit the era
+   * default. Resolved via the BaseGame.smallObjectiveZoneHorizontalInset getter
+   * (scenario override > battle type > era).
+   */
+  smallObjectiveZoneHorizontalInset?: number;
+  /**
+   * Per-battle-type override for the big-objective zone inset (the objectives
+   * rule's bigObjectiveZoneInset). Omit to inherit the era default. Resolved via
+   * the BaseGame.bigObjectiveZoneInset getter (scenario override > battle type > era).
+   */
+  bigObjectiveZoneInset?: number;
   /** Default army composition for this battle type. */
   defaultArmy: UnitCounts;
   /** If Supply Lines rule enabled, this will be the logistics per big objective. */

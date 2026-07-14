@@ -666,5 +666,13 @@
     "casualtiesInfo": "来自双方伤亡差的最大胜利点。越高越偏向消耗而非占领目标。",
     "underPressureInfo": "队伍在受压时每回合损失的胜利点。0 表示禁用。",
     "pressureThresholdInfo": "当一支队伍持有的目标胜利点占比不高于此百分比时，即处于受压状态。"
+  },
+  "objectiveZones": {
+    "heading": "目标区域（场景覆盖）",
+    "hint": "将可放置的目标区域缩小多少。留空以继承战斗类型或时代的默认值。",
+    "smallInset": "小目标区域裁剪",
+    "bigInset": "大目标区域裁剪",
+    "smallInsetInfo": "小目标区域每侧收窄多少。仅裁剪宽度，保持高度。",
+    "bigInsetInfo": "大目标框每侧缩小多少，在部署区域内居中。"
   }
 }

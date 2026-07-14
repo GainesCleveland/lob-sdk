@@ -666,5 +666,13 @@
     "casualtiesInfo": "VP maks. dari selisih korban antar tim. Lebih tinggi mengutamakan atrisi daripada menahan objektif.",
     "underPressureInfo": "VP yang hilang per giliran saat tim di bawah tekanan. 0 menonaktifkan penalti.",
     "pressureThresholdInfo": "Sebuah tim berada di bawah tekanan selama memegang persentase VP objektif ini atau kurang."
+  },
+  "objectiveZones": {
+    "heading": "Zona objektif (penggantian skenario)",
+    "hint": "Seberapa besar mengecilkan zona objektif yang dapat ditempatkan. Biarkan kolom kosong untuk mewarisi default tipe pertempuran atau era.",
+    "smallInset": "Pemangkasan zona objektif kecil",
+    "bigInset": "Pemangkasan zona objektif besar",
+    "smallInsetInfo": "Seberapa besar mempersempit zona objektif kecil di setiap sisi. Hanya memangkas lebarnya, mempertahankan tingginya.",
+    "bigInsetInfo": "Seberapa besar mengecilkan kotak objektif besar di setiap sisi, berpusat di dalam zona penempatan."
   }
 }

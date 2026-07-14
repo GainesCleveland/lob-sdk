@@ -666,5 +666,13 @@
     "casualtiesInfo": "VP tối đa từ chênh lệch thương vong giữa các đội. Cao hơn thiên về tiêu hao hơn là giữ mục tiêu.",
     "underPressureInfo": "VP mà một đội mất mỗi lượt khi bị áp lực. 0 để tắt hình phạt.",
     "pressureThresholdInfo": "Một đội bị áp lực khi nắm giữ tỷ lệ % VP mục tiêu này hoặc thấp hơn."
+  },
+  "objectiveZones": {
+    "heading": "Vùng mục tiêu (ghi đè kịch bản)",
+    "hint": "Thu nhỏ các vùng mục tiêu có thể đặt bao nhiêu. Để trống một ô để kế thừa giá trị mặc định của loại trận đấu hoặc thời đại.",
+    "smallInset": "Cắt vùng mục tiêu nhỏ",
+    "bigInset": "Cắt vùng mục tiêu lớn",
+    "smallInsetInfo": "Thu hẹp vùng mục tiêu nhỏ ở mỗi bên bao nhiêu. Chỉ cắt chiều rộng, giữ nguyên chiều cao.",
+    "bigInsetInfo": "Thu nhỏ ô mục tiêu lớn ở mỗi bên bao nhiêu, căn giữa trong vùng triển khai."
   }
 }

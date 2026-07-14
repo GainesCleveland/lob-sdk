@@ -667,5 +667,13 @@
     "casualtiesInfo": "VP máximos pela diferença de baixas entre as equipes. Maior favorece o desgaste em vez de manter objetivos.",
     "underPressureInfo": "VP que uma equipe perde por turno sob pressão. 0 desativa a penalidade.",
     "pressureThresholdInfo": "Uma equipe fica sob pressão enquanto detém esta % de VP de objetivos ou menos."
+  },
+  "objectiveZones": {
+    "heading": "Zonas de objetivos (substituição do cenário)",
+    "hint": "O quanto reduzir as zonas de objetivos posicionáveis. Deixe um campo vazio para herdar o padrão do tipo de batalha ou da era.",
+    "smallInset": "Corte da zona de objetivos pequenos",
+    "bigInset": "Corte da zona de objetivos grandes",
+    "smallInsetInfo": "O quanto estreitar a zona de objetivos pequenos de cada lado. Corta apenas a largura, mantendo a altura.",
+    "bigInsetInfo": "O quanto reduzir a caixa de objetivos grandes de cada lado, centralizada na zona de implantação."
   }
 }

@@ -667,5 +667,13 @@
     "casualtiesInfo": "Max. GP a csapatok közti veszteségkülönbségből. Magasabb érték a felőrlést részesíti előnyben a célpontok tartásával szemben.",
     "underPressureInfo": "A csapat által körönként elvesztett GP nyomás alatt. 0 kikapcsolja a büntetést.",
     "pressureThresholdInfo": "Egy csapat nyomás alatt van, amíg a cél-GP ennyi százalékát vagy kevesebbet birtokol."
+  },
+  "objectiveZones": {
+    "heading": "Célpont-zónák (pálya-felülbírálás)",
+    "hint": "Mennyivel kicsinyítse a lerakható célpont-zónákat. Hagyj egy mezőt üresen, hogy örökölje a csatatípus vagy korszak alapértékét.",
+    "smallInset": "Kis célpont zóna nyírása",
+    "bigInset": "Nagy célpont zóna nyírása",
+    "smallInsetInfo": "Mennyivel szűkítse a kis célpontok zónáját mindkét oldalon. Csak a szélességet nyírja, a magasságot megtartja.",
+    "bigInsetInfo": "Mennyivel kicsinyítse a nagy célpontok dobozát mindkét oldalon, a bevetési zónában középre igazítva."
   }
 }

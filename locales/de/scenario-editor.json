@@ -667,5 +667,13 @@
     "casualtiesInfo": "Maximale VP aus der Verlustdifferenz zwischen den Teams. Höher belohnt Abnutzung statt Objektivhaltung.",
     "underPressureInfo": "VP, die ein Team pro Zug unter Druck verliert. 0 deaktiviert die Strafe.",
     "pressureThresholdInfo": "Ein Team steht unter Druck, solange es diesen % der Objektiv-VP oder weniger hält."
+  },
+  "objectiveZones": {
+    "heading": "Objektivzonen (Szenario-Override)",
+    "hint": "Wie stark die platzierbaren Objektivzonen verkleinert werden. Lassen Sie ein Feld leer, um den Standardwert des Kampftyps oder der Ära zu übernehmen.",
+    "smallInset": "Beschnitt der Zone für kleine Objektive",
+    "bigInset": "Beschnitt der Zone für große Objektive",
+    "smallInsetInfo": "Wie stark die Zone für kleine Objektive auf jeder Seite verschmälert wird. Beschneidet nur die Breite und behält die Höhe.",
+    "bigInsetInfo": "Wie stark die Box für große Objektive auf jeder Seite verkleinert wird, zentriert innerhalb der Einsatzzone."
   }
 }

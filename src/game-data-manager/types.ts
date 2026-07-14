@@ -641,6 +641,22 @@ export interface ObjectivesRule {
    * BaseGame.vpSmallDefaultPoints getter (scenario > battle type > this).
    */
   vpSmallDefaultPoints: number;
+  /**
+   * Era-default horizontal inset (fraction trimmed per side, 0-0.5) of the
+   * small-objective placement zone: trims only its width so the dashed box is
+   * narrower, keeping its vertical reach.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.smallObjectiveZoneHorizontalInset getter (scenario > battle type > this).
+   */
+  smallObjectiveZoneHorizontalInset: number;
+  /**
+   * Era-default inset (fraction trimmed per side, 0-0.5, centered) of the
+   * big-objective placement box inside the deployment zone, so it reads as its
+   * own smaller area. The big objective spawns at the center, which the inset preserves.
+   * Battle types and scenarios may override it; resolved via the
+   * BaseGame.bigObjectiveZoneInset getter (scenario > battle type > this).
+   */
+  bigObjectiveZoneInset: number;
 }
 
 export interface AllyCollisionRule {

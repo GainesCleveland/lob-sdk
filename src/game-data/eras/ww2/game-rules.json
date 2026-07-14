@@ -46,7 +46,9 @@
     "vpLossRatioPoints": 300,
     "vpPointsToTieBreak": 10,
     "vpBigDefaultPoints": 75,
-    "vpSmallDefaultPoints": 15
+    "vpSmallDefaultPoints": 15,
+    "smallObjectiveZoneHorizontalInset": 0.2,
+    "bigObjectiveZoneInset": 0.2
   },
   "organization": {
     "speedModifier": -0.15,

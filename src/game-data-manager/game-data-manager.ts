@@ -1503,10 +1503,25 @@ export class GameDataManager {
 
   /**
    * Try to get a normalized scenario by name. Returns `null` if missing.
+   * A scenario registered via {@link registerScenario} (e.g. the editor's live
+   * scenario) lives only in the normalized cache with no raw entry, so it is
+   * checked first.
    */
   public tryGetScenario(scenarioName: ScenarioName): Scenario | null {
+    const registered = this.normalizedScenarios.get(scenarioName);
+    if (registered) return registered;
     if (!this.scenarios[scenarioName]) return null;
     return this.getScenario(scenarioName);
+  }
+
+  /**
+   * Registers a normalized scenario under a name so getScenario/tryGetScenario
+   * resolve it. Stored by reference (no raw entry, no re-normalization), so a
+   * caller that edits the object in place - the map editor - sees updates live.
+   * Intended for editor/runtime-authored scenarios, not the era-loaded catalog.
+   */
+  public registerScenario(name: ScenarioName, scenario: Scenario): void {
+    this.normalizedScenarios.set(name, scenario);
   }
 
   /**
