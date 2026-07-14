@@ -1519,9 +1519,18 @@ export class GameDataManager {
    * resolve it. Stored by reference (no raw entry, no re-normalization), so a
    * caller that edits the object in place - the map editor - sees updates live.
    * Intended for editor/runtime-authored scenarios, not the era-loaded catalog.
+   *
+   * Like loadCustomDefs, this mutates the manager: on an era singleton the entry
+   * leaks across games, so call it on a per-game instance or pair it with
+   * {@link unregisterScenario} on teardown.
    */
   public registerScenario(name: ScenarioName, scenario: Scenario): void {
     this.normalizedScenarios.set(name, scenario);
+  }
+
+  /** Removes a scenario added via {@link registerScenario}. */
+  public unregisterScenario(name: ScenarioName): void {
+    this.normalizedScenarios.delete(name);
   }
 
   /**
