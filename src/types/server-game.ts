@@ -101,22 +101,25 @@ export interface BattleTypeTemplate {
    */
   vpSmallDefaultPoints?: number;
   /**
-   * Minimum distance, in world pixels, kept between a team's objectives when
-   * repositioned during deployment. Omit or set to 0 to disable. Read via
-   * GameDataManager.getObjectiveSpacing.
+   * Per-battle-type override for the minimum distance, in world pixels, kept
+   * between a team's objectives when repositioned during deployment. Omit to
+   * inherit the era default (0 = disabled). Resolved via
+   * GameDataManager.getObjectiveSpacing (battle type > era).
    */
   objectiveSpacing?: number;
   /**
-   * Number of small objectives each side owns and may reposition during the
-   * deployment phase. Omit or set to 0 for none. Read via
-   * GameDataManager.getSmallObjectivesPerSide.
+   * Per-battle-type override for the number of small objectives each side owns
+   * and may reposition during the deployment phase. Omit to inherit the era
+   * default (0 = none). Resolved via GameDataManager.getSmallObjectivesPerSide
+   * (battle type > era).
    */
   smallObjectivesPerSide?: number;
   /**
-   * Number of neutral objectives spawned on the no-man's-land line at the end of
-   * deployment, spread along that line as a contested tiebreaker row. Omit for
-   * the single drifting neutral objective. Read via
-   * GameDataManager.getCentralNeutralObjectives.
+   * Per-battle-type override for the number of neutral objectives spawned on the
+   * no-man's-land line at the end of deployment, spread along that line as a
+   * contested tiebreaker row. Omit to inherit the era default (1 = the single
+   * drifting neutral objective). Resolved via
+   * GameDataManager.getCentralNeutralObjectives (battle type > era).
    */
   centralNeutralObjectives?: number;
   /**

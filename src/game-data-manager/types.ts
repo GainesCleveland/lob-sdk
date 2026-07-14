@@ -657,6 +657,26 @@ export interface ObjectivesRule {
    * BaseGame.bigObjectiveZoneInset getter (scenario > battle type > this).
    */
   bigObjectiveZoneInset: number;
+  /**
+   * Era-default minimum distance, in world pixels, kept between a team's
+   * objectives when repositioned during deployment (0 disables spacing, e.g.
+   * preset scenarios). Battle types may override it; resolved via
+   * GameDataManager.getObjectiveSpacing (battle type > this).
+   */
+  objectiveSpacing: number;
+  /**
+   * Era-default number of small objectives each side owns and may reposition
+   * during the deployment phase (0 = none). Battle types may override it;
+   * resolved via GameDataManager.getSmallObjectivesPerSide (battle type > this).
+   */
+  smallObjectivesPerSide: number;
+  /**
+   * Era-default number of neutral objectives spawned on the no-man's-land line
+   * at the end of deployment (1 = the single drifting neutral). Battle types may
+   * override it; resolved via GameDataManager.getCentralNeutralObjectives
+   * (battle type > this).
+   */
+  centralNeutralObjectives: number;
 }
 
 export interface AllyCollisionRule {

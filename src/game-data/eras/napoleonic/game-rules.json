@@ -62,7 +62,10 @@
     "vpBigDefaultPoints": 45,
     "vpSmallDefaultPoints": 15,
     "smallObjectiveZoneHorizontalInset": 0.2,
-    "bigObjectiveZoneInset": 0.2
+    "bigObjectiveZoneInset": 0.2,
+    "objectiveSpacing": 0,
+    "smallObjectivesPerSide": 0,
+    "centralNeutralObjectives": 1
   },
   "organization": {
     "speedModifier": -0.2,

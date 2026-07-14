@@ -754,8 +754,8 @@ export class GameDataManager {
 
   /**
    * Gets the minimum spacing, in world pixels, kept between a team's objectives
-   * during deployment placement. Falls back to 0 (rule disabled) when the
-   * battle type is null or omits objectiveSpacing.
+   * during deployment placement. Falls back to the objectives rule's era default
+   * when the battle type is null or omits objectiveSpacing.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The minimum objective spacing in world pixels.
    */
@@ -763,13 +763,13 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.objectiveSpacing
       : undefined;
-    return fromBattleType ?? 0;
+    return fromBattleType ?? this.getGameRules().objectives.objectiveSpacing;
   }
 
   /**
    * Gets how many small objectives each side owns and may place during the
-   * deployment phase, falling back to 0 when the battle type is null or omits
-   * smallObjectivesPerSide.
+   * deployment phase, falling back to the objectives rule's era default when the
+   * battle type is null or omits smallObjectivesPerSide.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The number of small objectives per side.
    */
@@ -779,13 +779,14 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.smallObjectivesPerSide
       : undefined;
-    return fromBattleType ?? 0;
+    return fromBattleType ?? this.getGameRules().objectives.smallObjectivesPerSide;
   }
 
   /**
    * Gets how many neutral central objectives spawn on the no-man's-land line at
-   * the end of deployment, defaulting to 1 (the historical single drifting
-   * objective) when the battle type is null or omits centralNeutralObjectives.
+   * the end of deployment, falling back to the objectives rule's era default
+   * (1, the historical single drifting objective) when the battle type is null
+   * or omits centralNeutralObjectives.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The number of central neutral objectives.
    */
@@ -795,7 +796,9 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.centralNeutralObjectives
       : undefined;
-    return fromBattleType ?? 1;
+    return (
+      fromBattleType ?? this.getGameRules().objectives.centralNeutralObjectives
+    );
   }
 
   /**
