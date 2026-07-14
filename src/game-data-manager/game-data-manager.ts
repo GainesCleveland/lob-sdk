@@ -754,8 +754,8 @@ export class GameDataManager {
 
   /**
    * Gets the minimum spacing, in world pixels, kept between a team's objectives
-   * during deployment placement. Falls back to 0 (rule disabled) when the
-   * battle type is null or omits objectiveSpacing.
+   * during deployment placement. Falls back to the objectives rule's era default
+   * when the battle type is null or omits objectiveSpacing.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The minimum objective spacing in world pixels.
    */
@@ -763,13 +763,13 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.objectiveSpacing
       : undefined;
-    return fromBattleType ?? 0;
+    return fromBattleType ?? this.getGameRules().objectives.objectiveSpacing;
   }
 
   /**
    * Gets how many small objectives each side owns and may place during the
-   * deployment phase, falling back to 0 when the battle type is null or omits
-   * smallObjectivesPerSide.
+   * deployment phase, falling back to the objectives rule's era default when the
+   * battle type is null or omits smallObjectivesPerSide.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The number of small objectives per side.
    */
@@ -779,13 +779,14 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.smallObjectivesPerSide
       : undefined;
-    return fromBattleType ?? 0;
+    return fromBattleType ?? this.getGameRules().objectives.smallObjectivesPerSide;
   }
 
   /**
    * Gets how many neutral central objectives spawn on the no-man's-land line at
-   * the end of deployment, defaulting to 1 (the historical single drifting
-   * objective) when the battle type is null or omits centralNeutralObjectives.
+   * the end of deployment, falling back to the objectives rule's era default
+   * (1, the historical single drifting objective) when the battle type is null
+   * or omits centralNeutralObjectives.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns The number of central neutral objectives.
    */
@@ -795,7 +796,9 @@ export class GameDataManager {
     const fromBattleType = battleType
       ? this.tryGetBattleType(battleType)?.centralNeutralObjectives
       : undefined;
-    return fromBattleType ?? 1;
+    return (
+      fromBattleType ?? this.getGameRules().objectives.centralNeutralObjectives
+    );
   }
 
   /**
@@ -1503,10 +1506,34 @@ export class GameDataManager {
 
   /**
    * Try to get a normalized scenario by name. Returns `null` if missing.
+   * A scenario registered via {@link registerScenario} (e.g. the editor's live
+   * scenario) lives only in the normalized cache with no raw entry, so it is
+   * checked first.
    */
   public tryGetScenario(scenarioName: ScenarioName): Scenario | null {
+    const registered = this.normalizedScenarios.get(scenarioName);
+    if (registered) return registered;
     if (!this.scenarios[scenarioName]) return null;
     return this.getScenario(scenarioName);
+  }
+
+  /**
+   * Registers a normalized scenario under a name so getScenario/tryGetScenario
+   * resolve it. Stored by reference (no raw entry, no re-normalization), so a
+   * caller that edits the object in place - the map editor - sees updates live.
+   * Intended for editor/runtime-authored scenarios, not the era-loaded catalog.
+   *
+   * Like loadCustomDefs, this mutates the manager: on an era singleton the entry
+   * leaks across games, so call it on a per-game instance or pair it with
+   * {@link unregisterScenario} on teardown.
+   */
+  public registerScenario(name: ScenarioName, scenario: Scenario): void {
+    this.normalizedScenarios.set(name, scenario);
+  }
+
+  /** Removes a scenario added via {@link registerScenario}. */
+  public unregisterScenario(name: ScenarioName): void {
+    this.normalizedScenarios.delete(name);
   }
 
   /**

@@ -57,6 +57,39 @@ describe("GameDataManager", () => {
     });
   });
 
+  describe("registerScenario / tryGetScenario", () => {
+    const EDITOR_NAME = "__editor_test_scenario__";
+    afterEach(() => gameDataManager.unregisterScenario(EDITOR_NAME));
+
+    it("returns null for an unknown scenario name", () => {
+      expect(gameDataManager.tryGetScenario("__does_not_exist__")).toBe(null);
+    });
+
+    it("resolves a registered scenario by reference and reflects in-place edits", () => {
+      // Clone a real normalized scenario so the fixture is a valid Scenario.
+      const scenario = structuredClone(
+        gameDataManager.getScenario(gameDataManager.getScenarioNames()[0]),
+      );
+      gameDataManager.registerScenario(EDITOR_NAME, scenario);
+
+      // Same object, no re-normalization (the editor edits it live in place).
+      expect(gameDataManager.tryGetScenario(EDITOR_NAME)).toBe(scenario);
+      scenario.bigObjectiveZoneInset = 0.3;
+      expect(
+        gameDataManager.tryGetScenario(EDITOR_NAME)?.bigObjectiveZoneInset,
+      ).toBe(0.3);
+    });
+
+    it("unregisterScenario removes the entry", () => {
+      const scenario = structuredClone(
+        gameDataManager.getScenario(gameDataManager.getScenarioNames()[0]),
+      );
+      gameDataManager.registerScenario(EDITOR_NAME, scenario);
+      gameDataManager.unregisterScenario(EDITOR_NAME);
+      expect(gameDataManager.tryGetScenario(EDITOR_NAME)).toBe(null);
+    });
+  });
+
   describe("getBattleType", () => {
     describe("default armies respect unit caps from battle-types.json", () => {
       const battleTypes = gameDataManager.getAllDynamicBattleTypes();

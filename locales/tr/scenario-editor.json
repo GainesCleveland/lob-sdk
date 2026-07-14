@@ -666,6 +666,20 @@
     "basePointsInfo": "Kayıplar, hedefler veya baskı uygulanmadan önce her iki takımın aldığı başlangıç ZP'si.",
     "casualtiesInfo": "Takımlar arası kayıp farkından kazanılan maks. ZP. Yüksek olması hedef tutmaktan çok yıpratmayı öne çıkarır.",
     "underPressureInfo": "Bir takımın baskı altında tur başına kaybettiği ZP. 0 cezayı kapatır.",
-    "pressureThresholdInfo": "Bir takım, hedef ZP'sinin bu yüzdesini veya daha azını elinde tuttuğu sürece baskı altındadır."
+    "pressureThresholdInfo": "Bir takım, hedef ZP'sinin bu yüzdesini veya daha azını elinde tuttuğu sürece baskı altındadır.",
+    "bigDefault": "Varsayılan büyük hedef ZP'si",
+    "bigDefaultInfo": "Kendi değerini belirlemeyen büyük bir hedef için yedek ZP. Tek tek hedefler yine de bunu geçersiz kılabilir.",
+    "smallDefault": "Varsayılan küçük hedef ZP'si",
+    "smallDefaultInfo": "Kendi değerini belirlemeyen küçük bir hedef için yedek ZP. Tek tek hedefler yine de bunu geçersiz kılabilir.",
+    "tieBreak": "Beraberlik bozma farkı",
+    "tieBreakInfo": "Son turda, ZP olarak bundan fazla geride olan bir takım yenilmiş sayılır."
+  },
+  "objectiveZones": {
+    "heading": "Hedef bölgeleri (senaryo geçersiz kılma)",
+    "hint": "Yerleştirilebilir hedef bölgelerinin ne kadar küçültüleceği. Savaş türü veya çağ varsayılanını devralmak için bir alanı boş bırakın.",
+    "smallInset": "Küçük hedef bölgesi kırpması",
+    "bigInset": "Büyük hedef bölgesi kırpması",
+    "smallInsetInfo": "Küçük hedef bölgesinin her iki yandan ne kadar daraltılacağı. Yalnızca genişliği kırpar, yüksekliği korur.",
+    "bigInsetInfo": "Büyük hedef kutusunun her iki yandan ne kadar küçültüleceği, konuşlanma bölgesinde ortalanmış."
   }
 }

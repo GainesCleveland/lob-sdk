@@ -666,6 +666,20 @@
     "basePointsInfo": "Anfangs-VP, die beide Teams erhalten, bevor Verluste, Objektive oder Druck angewendet werden.",
     "casualtiesInfo": "Maximale VP aus der Verlustdifferenz zwischen den Teams. Höher belohnt Abnutzung statt Objektivhaltung.",
     "underPressureInfo": "VP, die ein Team pro Zug unter Druck verliert. 0 deaktiviert die Strafe.",
-    "pressureThresholdInfo": "Ein Team steht unter Druck, solange es diesen % der Objektiv-VP oder weniger hält."
+    "pressureThresholdInfo": "Ein Team steht unter Druck, solange es diesen % der Objektiv-VP oder weniger hält.",
+    "bigDefault": "Standard-VP für große Objektive",
+    "bigDefaultInfo": "Ersatz-VP für ein großes Objektiv, das keinen eigenen Wert festlegt. Einzelne Objektive können ihn weiterhin überschreiben.",
+    "smallDefault": "Standard-VP für kleine Objektive",
+    "smallDefaultInfo": "Ersatz-VP für ein kleines Objektiv, das keinen eigenen Wert festlegt. Einzelne Objektive können ihn weiterhin überschreiben.",
+    "tieBreak": "Gleichstand-Abstand",
+    "tieBreakInfo": "In der letzten Runde gilt ein Team, das mit mehr als diesem VP-Abstand zurückliegt, als besiegt."
+  },
+  "objectiveZones": {
+    "heading": "Objektivzonen (Szenario-Override)",
+    "hint": "Wie stark die platzierbaren Objektivzonen verkleinert werden. Lassen Sie ein Feld leer, um den Standardwert des Kampftyps oder der Ära zu übernehmen.",
+    "smallInset": "Beschnitt der Zone für kleine Objektive",
+    "bigInset": "Beschnitt der Zone für große Objektive",
+    "smallInsetInfo": "Wie stark die Zone für kleine Objektive auf jeder Seite verschmälert wird. Beschneidet nur die Breite und behält die Höhe.",
+    "bigInsetInfo": "Wie stark die Box für große Objektive auf jeder Seite verkleinert wird, zentriert innerhalb der Einsatzzone."
   }
 }

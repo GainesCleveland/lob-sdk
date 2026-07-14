@@ -666,6 +666,20 @@
     "basePointsInfo": "Starting VP both teams get before casualties, objectives, or pressure are applied.",
     "casualtiesInfo": "Max VP from the casualty difference between teams. Higher favours attrition over holding objectives.",
     "underPressureInfo": "VP a team loses per turn while under pressure. 0 disables the penalty.",
-    "pressureThresholdInfo": "A team is under pressure while it holds this % of objective VP or less."
+    "pressureThresholdInfo": "A team is under pressure while it holds this % of objective VP or less.",
+    "bigDefault": "Default big-objective VP",
+    "bigDefaultInfo": "Fallback VP for a big objective that doesn't set its own value. Individual objectives can still override it.",
+    "smallDefault": "Default small-objective VP",
+    "smallDefaultInfo": "Fallback VP for a small objective that doesn't set its own value. Individual objectives can still override it.",
+    "tieBreak": "Tie-break margin",
+    "tieBreakInfo": "On the final turn, a team trailing on VP by more than this is treated as defeated."
+  },
+  "objectiveZones": {
+    "heading": "Objective zones (scenario override)",
+    "hint": "How much to shrink the placeable-objective zones. Leave a field empty to inherit the battle-type or era default.",
+    "smallInset": "Small-objective zone trim",
+    "bigInset": "Big-objective zone trim",
+    "smallInsetInfo": "How much to narrow the small-objective zone on each side. Trims only its width, keeping its vertical reach.",
+    "bigInsetInfo": "How much to shrink the big-objective box on each side, centered inside the deployment zone."
   }
 }

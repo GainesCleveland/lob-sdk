@@ -441,6 +441,22 @@ export interface Scenario {
   vpSmallDefaultPoints?: number;
 
   /**
+   * Per-scenario override for the small-objective zone horizontal inset (the
+   * objectives rule's smallObjectiveZoneHorizontalInset). Highest-priority override.
+   * Omit to inherit the battle-type override or the era default. Resolved (layered)
+   * via the BaseGame.smallObjectiveZoneHorizontalInset getter.
+   */
+  smallObjectiveZoneHorizontalInset?: number;
+
+  /**
+   * Per-scenario override for the big-objective zone inset (the objectives rule's
+   * bigObjectiveZoneInset). Highest-priority override. Omit to inherit the
+   * battle-type override or the era default. Resolved (layered) via the
+   * BaseGame.bigObjectiveZoneInset getter.
+   */
+  bigObjectiveZoneInset?: number;
+
+  /**
    * Data-driven tutorial overlays. Evaluated client-side by the TutorialRunner
    * independently of {@link triggers}; the generic trigger system never sees
    * this field. Safe to omit for non-tutorial scenarios.

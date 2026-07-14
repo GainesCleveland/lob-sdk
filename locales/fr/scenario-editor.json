@@ -666,6 +666,20 @@
     "basePointsInfo": "PV de départ attribués aux deux équipes avant l'application des pertes, objectifs ou pression.",
     "casualtiesInfo": "PV max issus de la différence de pertes entre équipes. Plus élevé favorise l'usure plutôt que la tenue des objectifs.",
     "underPressureInfo": "PV qu'une équipe perd par tour sous pression. 0 désactive la pénalité.",
-    "pressureThresholdInfo": "Une équipe est sous pression tant qu'elle détient ce % des PV d'objectifs ou moins."
+    "pressureThresholdInfo": "Une équipe est sous pression tant qu'elle détient ce % des PV d'objectifs ou moins.",
+    "bigDefault": "PV par défaut des grands objectifs",
+    "bigDefaultInfo": "PV de repli pour un grand objectif qui ne définit pas sa propre valeur. Chaque objectif peut toujours la remplacer.",
+    "smallDefault": "PV par défaut des petits objectifs",
+    "smallDefaultInfo": "PV de repli pour un petit objectif qui ne définit pas sa propre valeur. Chaque objectif peut toujours la remplacer.",
+    "tieBreak": "Marge de départage",
+    "tieBreakInfo": "Au dernier tour, une équipe en retard de plus que cette marge de PV est considérée comme vaincue."
+  },
+  "objectiveZones": {
+    "heading": "Zones d'objectifs (remplacement du scénario)",
+    "hint": "De combien réduire les zones d'objectifs plaçables. Laissez un champ vide pour hériter de la valeur par défaut du type de bataille ou de l'ère.",
+    "smallInset": "Rognage de la zone des petits objectifs",
+    "bigInset": "Rognage de la zone des grands objectifs",
+    "smallInsetInfo": "De combien rétrécir la zone des petits objectifs de chaque côté. Rogne uniquement la largeur, en conservant la hauteur.",
+    "bigInsetInfo": "De combien réduire la boîte des grands objectifs de chaque côté, centrée dans la zone de déploiement."
   }
 }
