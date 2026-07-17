@@ -296,6 +296,25 @@ export interface CustomSprite {
 }
 
 /**
+ * Scenario-tier overrides for the objectives game rule (VP scoring + objective-zone
+ * insets). Carried on GameMetadata so imported/custom scenarios - which never enter
+ * the era scenario registry - still apply them at play time; layered by BaseGame's
+ * objectives-rule getters above the battle-type and era defaults.
+ */
+export type ObjectivesRuleOverride = Pick<
+  Scenario,
+  | "vpLossRatioPoints"
+  | "vpTicksUnderPressureBase"
+  | "vpPressureThreshold"
+  | "vpBasePoints"
+  | "vpPointsToTieBreak"
+  | "vpBigDefaultPoints"
+  | "vpSmallDefaultPoints"
+  | "smallObjectiveZoneHorizontalInset"
+  | "bigObjectiveZoneInset"
+>;
+
+/**
  * Feature-based scenario schema (replaces the legacy preset/hybrid/random union).
  * All maps go through the procedural pipeline; fixed maps are wrapped in a single
  * {@link InstructionStaticMap} as the first instruction.

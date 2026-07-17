@@ -29,7 +29,11 @@ import type {
   GameRules,
 } from "../game-data-manager/types";
 import type { DeepPartial } from "../utils/object-merge";
-import type { CustomTerrainCategoryOverride, CustomSprite } from "./scenario";
+import type {
+  CustomTerrainCategoryOverride,
+  CustomSprite,
+  ObjectivesRuleOverride,
+} from "./scenario";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
 import { Vector2 } from "@lob-sdk/vector";
@@ -235,6 +239,10 @@ export interface GameMetadata {
   customGameRules?: DeepPartial<GameRules>;
   /** Sparse per-order overrides (keyed by OrderType id) deep-merged onto the era orders for this game. */
   customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
+  /** Scenario objectives-rule overrides captured at game creation. See {@link ObjectivesRuleOverride}. */
+  objectivesRuleOverride?: ObjectivesRuleOverride;
+  /** Scenario's placeable-objectives flag captured at game creation (imported scenarios have no registry entry to read). */
+  placeableObjectives?: boolean;
 }
 
 /**
