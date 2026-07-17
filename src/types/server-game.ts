@@ -29,7 +29,11 @@ import type {
   GameRules,
 } from "../game-data-manager/types";
 import type { DeepPartial } from "../utils/object-merge";
-import type { CustomTerrainCategoryOverride, CustomSprite } from "./scenario";
+import type {
+  CustomTerrainCategoryOverride,
+  CustomSprite,
+  ObjectivesRuleOverride,
+} from "./scenario";
 import { GameDataManager } from "@lob-sdk/game-data-manager";
 import { GameEra } from "@lob-sdk/game-data-manager";
 import { Vector2 } from "@lob-sdk/vector";
@@ -235,6 +239,21 @@ export interface GameMetadata {
   customGameRules?: DeepPartial<GameRules>;
   /** Sparse per-order overrides (keyed by OrderType id) deep-merged onto the era orders for this game. */
   customOrders?: Partial<Record<OrderType, DeepPartial<OrderTemplate>>>;
+  /**
+   * Scenario-tier objectives-rule overrides (VP scoring + objective-zone insets),
+   * captured from the scenario at game creation. Preset scenarios resolve these
+   * via the era scenario registry; imported/custom scenarios are never registered,
+   * so this metadata copy is how their overrides reach both the server and the
+   * client at play time. Layered above the battle-type and era defaults.
+   */
+  objectivesRuleOverride?: ObjectivesRuleOverride;
+  /**
+   * Whether the scenario lets players position objectives during deployment,
+   * captured at game creation. Same rationale as objectivesRuleOverride: imported
+   * scenarios are not in the registry, so BaseGame.hasPlaceableObjectives reads
+   * this metadata copy when there is no registered scenario.
+   */
+  placeableObjectives?: boolean;
 }
 
 /**
