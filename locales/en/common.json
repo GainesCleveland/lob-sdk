@@ -40,7 +40,7 @@
   "addPlayer": "Add player",
   "credits": "Credits",
   "settings": "Settings",
-  "leagueDescription": "Your league reflects your skill level. Win games to earn progress within your league, and once you reach the top of a league, you advance to the next one. Lose too many games and you may drop down. Hover the league badge to see your progress to the next league.",
+  "leagueDescription": "Your league reflects your skill level. Win games to earn progress within your league, and once you reach the top of a league, you advance to the next one. Lose too many games and you may drop down. Hover the league badge to see your current Elo.",
   "averageLeague": "Average League",
   "clanLeague": "Coalition League",
   "welcomeName": "Welcome {{name}}!",
