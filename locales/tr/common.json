@@ -45,7 +45,7 @@
   "addPlayer": "Oyuncu ekle",
   "credits": "Katkılar",
   "settings": "Ayarlar",
-  "leagueDescription": "Liginiz beceri seviyenizi yansıtır. Liginizde ilerlemek için maçları kazanın; zirveye ulaştığınızda bir sonraki lige yükselirsiniz. Çok fazla yenilgi sizi düşürebilir. Bir sonraki lige kalan ilerlemenizi görmek için lig rozetinin üzerine gelin.",
+  "leagueDescription": "Liginiz beceri seviyenizi yansıtır. Liginizde ilerlemek için maçları kazanın; zirveye ulaştığınızda bir sonraki lige yükselirsiniz. Çok fazla yenilgi sizi düşürebilir. Mevcut Elo puanınızı görmek için lig rozetinin üzerine gelin.",
   "averageLeague": "Ortalama Lig",
   "clanLeague": "Koalisyon Ligi",
   "welcomeName": "Hoş geldiniz {{name}}!",

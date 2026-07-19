@@ -46,7 +46,7 @@
   "addPlayer": "Dodaj gracza",
   "credits": "Autorzy",
   "settings": "Ustawienia",
-  "leagueDescription": "Twoja liga odzwierciedla twój poziom umiejętności. Wygrywaj mecze, aby zdobywać postępy w swojej lidze; po dotarciu na szczyt awansujesz do następnej. Zbyt wiele porażek może spowodować spadek. Najedź kursorem na odznakę ligi, aby zobaczyć postęp do następnej.",
+  "leagueDescription": "Twoja liga odzwierciedla twój poziom umiejętności. Wygrywaj mecze, aby zdobywać postępy w swojej lidze; po dotarciu na szczyt awansujesz do następnej. Zbyt wiele porażek może spowodować spadek. Najedź kursorem na odznakę ligi, aby zobaczyć swoje aktualne Elo.",
   "averageLeague": "Średnia liga",
   "clanLeague": "Liga koalicji",
   "welcomeName": "Witaj {{name}}!",
