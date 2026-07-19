@@ -83,7 +83,8 @@
     "matchFound": "Una vez que se encuentre un emparejamiento, serás redirigido al juego.",
     "cancelledBy": "La cola fue cancelada por {{username}}.",
     "playersInQueue": "{{count}} jugadores buscando",
-    "disconnectedReconnecting": "Conexión Perdida. Reconectando"
+    "disconnectedReconnecting": "Conexión Perdida. Reconectando",
+    "eloBoostActive": "Boost de Elo ×{{multiplier}} activo"
   },
   "fastMode": "Modo rápido",
   "slowMode": "Modo lento",

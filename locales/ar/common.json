@@ -93,7 +93,8 @@
     "matchFound": "بمجرد العثور على مباراة، سيتم توجيهك إلى اللعبة.",
     "cancelledBy": "تم إلغاء الطابور بواسطة {{username}}.",
     "playersInQueue": "{{count}} لاعب يبحث",
-    "disconnectedReconnecting": "فُقد الاتصال. إعادة الاتصال"
+    "disconnectedReconnecting": "فُقد الاتصال. إعادة الاتصال",
+    "eloBoostActive": "تعزيز Elo ×{{multiplier}} مفعّل"
   },
   "fastMode": "الوضع السريع",
   "slowMode": "الوضع البطيء",

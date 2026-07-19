@@ -94,7 +94,8 @@
     "matchFound": "Una volta trovato un avversario, sarai reindirizzato al gioco.",
     "cancelledBy": "La coda è stata cancellata da {{username}}.",
     "playersInQueue": "{{count}} giocatori in ricerca",
-    "disconnectedReconnecting": "Connessione Persa. Riconnessione"
+    "disconnectedReconnecting": "Connessione Persa. Riconnessione",
+    "eloBoostActive": "Boost Elo ×{{multiplier}} attivo"
   },
   "fastMode": "Modalità veloce",
   "slowMode": "Modalità lenta",

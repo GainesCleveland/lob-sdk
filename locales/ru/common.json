@@ -93,7 +93,8 @@
     "matchFound": "Как только соперник будет найден, система перенаправит Вас в игру.",
     "cancelledBy": "Очередь была отменена {{username}}.",
     "playersInQueue": "{{count}} игроков в очереди",
-    "disconnectedReconnecting": "Соединение Потеряно. Переподключение..."
+    "disconnectedReconnecting": "Соединение Потеряно. Переподключение...",
+    "eloBoostActive": "Elo-буст ×{{multiplier}} активен"
   },
   "fastMode": "Быстрая игра",
   "slowMode": "Медленная игра",

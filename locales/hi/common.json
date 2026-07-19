@@ -93,7 +93,8 @@
     "matchFound": "एक बार मैच मिल जाने पर, आपको खेल में पुनर्निर्देशित किया जाएगा।",
     "cancelledBy": "कतार {{username}} द्वारा रद्द कर दी गई।",
     "playersInQueue": "{{count}} खिलाड़ी खोज रहे हैं",
-    "disconnectedReconnecting": "कनेक्शन खो गया। पुन: कनेक्ट हो रहा है"
+    "disconnectedReconnecting": "कनेक्शन खो गया। पुन: कनेक्ट हो रहा है",
+    "eloBoostActive": "Elo बूस्ट ×{{multiplier}} सक्रिय"
   },
   "fastMode": "तेज़ मोड",
   "slowMode": "धीमा मोड",

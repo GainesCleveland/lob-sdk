@@ -89,7 +89,8 @@
     "matchFound": "Once a match is found, you will be redirected to the game.",
     "cancelledBy": "The queue was cancelled by {{username}}.",
     "playersInQueue": "{{count}} players searching",
-    "disconnectedReconnecting": "Connection Lost. Reconnecting"
+    "disconnectedReconnecting": "Connection Lost. Reconnecting",
+    "eloBoostActive": "Elo boost ×{{multiplier}} active"
   },
   "fastMode": "Fast Mode",
   "slowMode": "Slow Mode",

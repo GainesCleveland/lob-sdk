@@ -83,7 +83,8 @@
     "matchFound": "Lorsque ce sera fait, vous rejoindrez automatiquement la partie.",
     "cancelledBy": "La file a été annulée par {{username}}.",
     "playersInQueue": "{{count}} joueurs en recherche",
-    "disconnectedReconnecting": "Connexion Perdue. Reconnexion"
+    "disconnectedReconnecting": "Connexion Perdue. Reconnexion",
+    "eloBoostActive": "Boost Elo ×{{multiplier}} actif"
   },
   "fastMode": "Partie rapide",
   "slowMode": "Partie longue",

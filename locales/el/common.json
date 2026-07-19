@@ -95,7 +95,8 @@
     "matchFound": "Μόλις βρεθεί μια αντιστοιχία, θα μεταφερθείτε στο παιχνίδι.",
     "cancelledBy": "Η ουρά ακυρώθηκε από {{username}}.",
     "playersInQueue": "{{count}} παίκτες αναζητούν",
-    "disconnectedReconnecting": "Η Σύνδεση Χάθηκε. Επανασύνδεση"
+    "disconnectedReconnecting": "Η Σύνδεση Χάθηκε. Επανασύνδεση",
+    "eloBoostActive": "Elo boost ×{{multiplier}} ενεργό"
   },
   "fastMode": "Γρήγορη λειτουργία",
   "slowMode": "Αργή λειτουργία",
