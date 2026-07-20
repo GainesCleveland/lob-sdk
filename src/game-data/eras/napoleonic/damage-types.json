@@ -66,7 +66,7 @@
       "to": 0.5,
       "value": -0.25
     },
-    "maxRange": 72,
+    "maxRange": 90,
     "ranges": [
       {
         "from": 0,
@@ -131,7 +131,7 @@
       "to": 0.5,
       "value": -0.6
     },
-    "maxRange": 72,
+    "maxRange": 90,
     "ranges": [
       {
         "from": 0,
@@ -187,7 +187,7 @@
       "to": 0.5,
       "value": -0.5
     },
-    "maxRange": 72,
+    "maxRange": 90,
     "ranges": [
       {
         "from": 0,
@@ -233,7 +233,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 200,
+    "maxRange": 250,
     "ranges": [
       {
         "from": 0.44,
@@ -253,14 +253,14 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 88,
-          "end": 200,
-          "startTopWidth": 19,
-          "endTopWidth": 40,
-          "startBottomWidth": 16,
-          "endBottomWidth": 30,
-          "startHeight": 82,
-          "endHeight": 53
+          "start": 110,
+          "end": 250,
+          "startTopWidth": 24,
+          "endTopWidth": 50,
+          "startBottomWidth": 20,
+          "endBottomWidth": 38,
+          "startHeight": 102,
+          "endHeight": 66
         }
       ],
       "absorptionModifier": 2,
@@ -286,7 +286,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 116,
+    "maxRange": 145,
     "ranges": [
       {
         "from": 0,
@@ -336,7 +336,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 400,
+    "maxRange": 500,
     "ranges": [
       {
         "from": 0.29,
@@ -374,24 +374,24 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 116,
-          "end": 200,
-          "startTopWidth": 18,
-          "endTopWidth": 22,
-          "startBottomWidth": 14,
-          "endBottomWidth": 18,
-          "startHeight": 86,
-          "endHeight": 92
+          "start": 145,
+          "end": 250,
+          "startTopWidth": 22,
+          "endTopWidth": 28,
+          "startBottomWidth": 18,
+          "endBottomWidth": 23,
+          "startHeight": 108,
+          "endHeight": 115
         },
         {
-          "start": 200,
-          "end": 400,
-          "startTopWidth": 22,
-          "endTopWidth": 35,
-          "startBottomWidth": 18,
-          "endBottomWidth": 29,
-          "startHeight": 92,
-          "endHeight": 104
+          "start": 250,
+          "end": 500,
+          "startTopWidth": 28,
+          "endTopWidth": 44,
+          "startBottomWidth": 23,
+          "endBottomWidth": 36,
+          "startHeight": 115,
+          "endHeight": 130
         }
       ],
       "absorptionModifier": 2,
@@ -427,7 +427,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 168,
+    "maxRange": 210,
     "ranges": [
       {
         "from": 0.43,
@@ -447,14 +447,14 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 72,
-          "end": 168,
-          "startTopWidth": 26,
-          "endTopWidth": 35,
-          "startBottomWidth": 19,
-          "endBottomWidth": 29,
-          "startHeight": 58,
-          "endHeight": 43
+          "start": 90,
+          "end": 210,
+          "startTopWidth": 32,
+          "endTopWidth": 44,
+          "startBottomWidth": 24,
+          "endBottomWidth": 36,
+          "startHeight": 72,
+          "endHeight": 54
         }
       ],
       "absorptionModifier": 2,
@@ -480,7 +480,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 108,
+    "maxRange": 135,
     "ranges": [
       {
         "from": 0,
@@ -530,7 +530,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 348,
+    "maxRange": 435,
     "ranges": [
       {
         "from": 0.31,
@@ -568,24 +568,24 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 108,
-          "end": 192,
-          "startTopWidth": 16,
-          "endTopWidth": 22,
-          "startBottomWidth": 14,
-          "endBottomWidth": 20,
-          "startHeight": 80,
-          "endHeight": 88
+          "start": 135,
+          "end": 240,
+          "startTopWidth": 20,
+          "endTopWidth": 28,
+          "startBottomWidth": 18,
+          "endBottomWidth": 25,
+          "startHeight": 100,
+          "endHeight": 110
         },
         {
-          "start": 192,
-          "end": 348,
-          "startTopWidth": 22,
-          "endTopWidth": 32,
-          "startBottomWidth": 20,
-          "endBottomWidth": 29,
-          "startHeight": 88,
-          "endHeight": 100
+          "start": 240,
+          "end": 435,
+          "startTopWidth": 28,
+          "endTopWidth": 40,
+          "startBottomWidth": 25,
+          "endBottomWidth": 36,
+          "startHeight": 110,
+          "endHeight": 125
         }
       ],
       "absorptionModifier": 2,
@@ -611,7 +611,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 96,
+    "maxRange": 120,
     "ranges": [
       {
         "from": 0,
@@ -661,7 +661,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 320,
+    "maxRange": 400,
     "ranges": [
       {
         "from": 0.3,
@@ -699,24 +699,24 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 96,
-          "end": 176,
-          "startTopWidth": 16,
-          "endTopWidth": 22,
-          "startBottomWidth": 14,
-          "endBottomWidth": 20,
-          "startHeight": 76,
-          "endHeight": 84
+          "start": 120,
+          "end": 220,
+          "startTopWidth": 20,
+          "endTopWidth": 28,
+          "startBottomWidth": 18,
+          "endBottomWidth": 25,
+          "startHeight": 95,
+          "endHeight": 105
         },
         {
-          "start": 176,
-          "end": 320,
-          "startTopWidth": 22,
-          "endTopWidth": 32,
-          "startBottomWidth": 20,
-          "endBottomWidth": 29,
-          "startHeight": 84,
-          "endHeight": 96
+          "start": 220,
+          "end": 400,
+          "startTopWidth": 28,
+          "endTopWidth": 40,
+          "startBottomWidth": 25,
+          "endBottomWidth": 36,
+          "startHeight": 105,
+          "endHeight": 120
         }
       ],
       "absorptionModifier": 2,
@@ -742,7 +742,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 88,
+    "maxRange": 110,
     "ranges": [
       {
         "from": 0,
@@ -792,7 +792,7 @@
       "to": 0.65,
       "value": -0.25
     },
-    "maxRange": 300,
+    "maxRange": 375,
     "ranges": [
       {
         "from": 0.29,
@@ -830,24 +830,24 @@
       "type": "trapezoidal",
       "ranges": [
         {
-          "start": 88,
-          "end": 160,
-          "startTopWidth": 16,
-          "endTopWidth": 22,
-          "startBottomWidth": 14,
-          "endBottomWidth": 20,
-          "startHeight": 72,
-          "endHeight": 80
+          "start": 110,
+          "end": 200,
+          "startTopWidth": 20,
+          "endTopWidth": 28,
+          "startBottomWidth": 18,
+          "endBottomWidth": 25,
+          "startHeight": 90,
+          "endHeight": 100
         },
         {
-          "start": 160,
-          "end": 300,
-          "startTopWidth": 22,
-          "endTopWidth": 32,
-          "startBottomWidth": 20,
-          "endBottomWidth": 29,
-          "startHeight": 80,
-          "endHeight": 92
+          "start": 200,
+          "end": 375,
+          "startTopWidth": 28,
+          "endTopWidth": 40,
+          "startBottomWidth": 25,
+          "endBottomWidth": 36,
+          "startHeight": 100,
+          "endHeight": 115
         }
       ],
       "absorptionModifier": 2,
@@ -883,7 +883,7 @@
       "to": 0.65,
       "value": -0.35
     },
-    "maxRange": 440,
+    "maxRange": 550,
     "ranges": [
       {
         "from": 0.45,
@@ -902,10 +902,10 @@
       "type": "circular",
       "ranges": [
         {
-          "start": 200,
-          "end": 440,
-          "startRadius": 27,
-          "endRadius": 36
+          "start": 250,
+          "end": 550,
+          "startRadius": 34,
+          "endRadius": 45
         }
       ],
       "edgeDamageModifier": -0.9,
@@ -936,7 +936,7 @@
       "to": 0.6,
       "value": -0.35
     },
-    "maxRange": 340,
+    "maxRange": 425,
     "ranges": [
       {
         "from": 0.49,
@@ -955,10 +955,10 @@
       "type": "circular",
       "ranges": [
         {
-          "start": 168,
-          "end": 340,
-          "startRadius": 20,
-          "endRadius": 22
+          "start": 210,
+          "end": 425,
+          "startRadius": 25,
+          "endRadius": 28
         }
       ],
       "edgeDamageModifier": -0.9,
@@ -988,7 +988,7 @@
       "to": 0.6,
       "value": -0.15
     },
-    "maxRange": 272,
+    "maxRange": 340,
     "ranges": [
       {
         "from": 0.2,
@@ -1016,16 +1016,16 @@
       "type": "circular",
       "ranges": [
         {
-          "start": 55,
-          "end": 160,
-          "startRadius": 26,
-          "endRadius": 26
+          "start": 69,
+          "end": 200,
+          "startRadius": 32,
+          "endRadius": 32
         },
         {
-          "start": 160,
-          "end": 272,
-          "startRadius": 26,
-          "endRadius": 26
+          "start": 200,
+          "end": 340,
+          "startRadius": 32,
+          "endRadius": 32
         }
       ],
       "edgeDamageModifier": -0.05,
@@ -1046,7 +1046,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 10,
-    "maxRange": 88,
+    "maxRange": 110,
     "ranges": [
       {
         "from": 0,
@@ -1086,7 +1086,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 72,
+    "maxRange": 90,
     "ranges": [
       {
         "from": 0,
@@ -1126,7 +1126,7 @@
     "reorgDebuff": 1,
     "attackEffectDuration": 6,
     "projectileWidth": 11,
-    "maxRange": 55,
+    "maxRange": 69,
     "ranges": [
       {
         "from": 0,
@@ -1166,7 +1166,7 @@
       "to": 0.5,
       "value": -0.4
     },
-    "maxRange": 72,
+    "maxRange": 90,
     "ranges": [
       {
         "from": 0,
@@ -1217,7 +1217,7 @@
       "to": 0.4,
       "value": -0.7
     },
-    "maxRange": 120,
+    "maxRange": 150,
     "ranges": [
       {
         "from": 0,
@@ -1244,10 +1244,10 @@
       "type": "circular",
       "ranges": [
         {
-          "start": 14,
-          "end": 120,
-          "startRadius": 14,
-          "endRadius": 22
+          "start": 18,
+          "end": 150,
+          "startRadius": 18,
+          "endRadius": 28
         }
       ],
       "edgeDamageModifier": -0.1,
