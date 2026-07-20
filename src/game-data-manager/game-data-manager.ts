@@ -730,9 +730,16 @@ export class GameDataManager {
 
   /**
    * Whether units spawn with no inherent ammo (drawing their entire load from
-   * the player's global reserve instead of the unit template's `ammo`),
-   * resolving battle type > ammo rule default. The scenario override is already
-   * merged into the ammo rule via customGameRules.
+   * the player's global reserve instead of the unit template's `ammo`).
+   *
+   * Effective priority is scenario > battle type > era default. It is expressed
+   * as `battleType ?? ammoRule` because the scenario override is already
+   * deep-merged into `ammoRule` (via customGameRules) and the two overrides are
+   * mutually exclusive in practice: a scenario override only exists on a
+   * preset/custom scenario (dynamicBattleType === null, so the battle-type tier
+   * is skipped), while a battle-type override only applies to dynamic
+   * matchmaking battles (which carry no scenario customGameRules). So for any
+   * reachable game state at most one tier beyond the era default applies.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
    * @returns True when units should spawn with an empty ammo pool.
    */
