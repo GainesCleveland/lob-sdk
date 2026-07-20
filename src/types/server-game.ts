@@ -185,6 +185,12 @@ export interface BattleTypeTemplate {
   /** Whether this battle type is allowed in ranked matchmaking (defaults to false when omitted). */
   ranked?: boolean;
   /**
+   * Overrides AmmoRule.noInherentAmmo for this battle type: when true, units
+   * spawn with no inherent ammo and draw entirely from the global reserve.
+   * Falls back to the ammo rule default when omitted.
+   */
+  noInherentAmmo?: boolean;
+  /**
    * Fixed team size (players per side) for this battle type in matchmaking.
    * Defaults to 1v1 when omitted; read via GameDataManager.getBattleTypeTeamSize.
    */

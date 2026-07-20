@@ -729,6 +729,21 @@ export class GameDataManager {
   }
 
   /**
+   * Whether units spawn with no inherent ammo (drawing their entire load from
+   * the player's global reserve instead of the unit template's `ammo`),
+   * resolving battle type > ammo rule default. The scenario override is already
+   * merged into the ammo rule via customGameRules.
+   * @param battleType - The dynamic battle type, or null for preset scenarios.
+   * @returns True when units should spawn with an empty ammo pool.
+   */
+  public getNoInherentAmmo(battleType: DynamicBattleType | null): boolean {
+    const fromBattleType = battleType
+      ? this.tryGetBattleType(battleType)?.noInherentAmmo
+      : undefined;
+    return fromBattleType ?? this.getGameRules().ammo?.noInherentAmmo ?? false;
+  }
+
+  /**
    * Gets the maximum number of turns for a battle type, falling back to the
    * era's DEFAULT_MAX_TURN when the battle type is null or has no maxTurn.
    * @param battleType - The dynamic battle type, or null for preset scenarios.
