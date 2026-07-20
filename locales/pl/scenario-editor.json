@@ -52,6 +52,8 @@
     "collapsePanel": "Zwiń panel",
     "allowDynamicArmy": "Zezwól na dynamiczną armię",
     "allowDynamicArmyHelp": "Po włączeniu gracze wprowadzają własną armię na podstawie typu bitwy matchmakingu i rozstawiają ją w swoich strefach. Po wyłączeniu wcześniej rozmieszczone jednostki scenariusza tworzą pełen skład (kompozycja armii jest pomijana).",
+    "noInherentAmmo": "Brak własnej amunicji",
+    "noInherentAmmoHelp": "Po włączeniu jednostki z amunicją pojawiają się bez własnych zapasów i czerpią całe zaopatrzenie ze wspólnej rezerwy, więc nie mogą strzelać w pierwszej turze i otwierają ogień dopiero po uzupełnieniu z rezerwy.",
     "showGrid": "Pokaż siatkę",
     "showUnits": "Pokaż jednostki",
     "hideUnits": "Ukryj jednostki",

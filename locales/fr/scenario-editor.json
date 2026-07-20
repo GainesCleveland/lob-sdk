@@ -52,6 +52,8 @@
     "collapsePanel": "Réduire le panneau",
     "allowDynamicArmy": "Autoriser l'armée dynamique",
     "allowDynamicArmyHelp": "Une fois activé, les joueurs apportent leur propre armée selon le type de bataille d'appariement et la déploient dans leurs zones. Une fois désactivé, les unités pré-placées du scénario définissent l'ordre de bataille complet (la composition de l'armée est ignorée).",
+    "noInherentAmmo": "Pas de munitions propres",
+    "noInherentAmmoHelp": "Lorsque activé, les unités disposant de munitions apparaissent sans munitions propres et puisent tout leur approvisionnement dans la réserve commune ; elles ne peuvent donc pas tirer au premier tour et n'ouvrent le feu qu'une fois réapprovisionnées par la réserve.",
     "showGrid": "Afficher la grille",
     "showUnits": "Afficher les unités",
     "hideUnits": "Masquer les unités",

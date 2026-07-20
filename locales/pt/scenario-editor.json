@@ -52,6 +52,8 @@
     "collapsePanel": "Recolher painel",
     "allowDynamicArmy": "Permitir exército dinâmico",
     "allowDynamicArmyHelp": "Quando ativado, os jogadores trazem seu próprio exército com base no tipo de batalha do matchmaking e o implantam dentro de suas zonas. Quando desativado, as unidades pré-posicionadas do cenário definem todo o plantel (a composição de exército é ignorada).",
+    "noInherentAmmo": "Sem munição própria",
+    "noInherentAmmoHelp": "Quando ativado, as unidades com munição surgem sem munição própria e retiram todo o seu suprimento da reserva compartilhada, por isso não podem atirar no primeiro turno e só abrem fogo quando a reserva as reabastece.",
     "showGrid": "Mostrar grade",
     "showUnits": "Mostrar unidades",
     "hideUnits": "Ocultar unidades",
