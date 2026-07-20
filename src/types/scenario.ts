@@ -400,6 +400,15 @@ export interface Scenario {
   allowDeploymentPhase?: boolean;
 
   /**
+   * When true, units with an ammo system spawn with no inherent ammo (0 instead
+   * of their template's `ammo`) and draw their whole load from the player's
+   * global reserve, so they cannot fire on the first turn. Highest-priority
+   * override; omit to inherit the battle-type override or the default (false).
+   * Resolved (layered) via the BaseGame.noInherentAmmo getter.
+   */
+  noInherentAmmo?: boolean;
+
+  /**
    * When true, players position their own objectives during the deployment
    * phase: the big objective starts centered in the deployment box, the small
    * objectives start advanced and spaced. Auto-enabled for random

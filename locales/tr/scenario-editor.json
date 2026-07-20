@@ -52,6 +52,8 @@
     "collapsePanel": "Paneli daralt",
     "allowDynamicArmy": "Dinamik orduya izin ver",
     "allowDynamicArmyHelp": "Etkinleştirildiğinde, oyuncular eşleştirme savaş türüne göre kendi ordularını getirir ve onları kendi bölgelerine yerleştirir. Devre dışı bırakıldığında, senaryonun önceden yerleştirilmiş birimleri tüm kadroyu tanımlar (ordu kompozisyonu atlanır).",
+    "noInherentAmmo": "Kendi cephanesi yok",
+    "noInherentAmmoHelp": "Etkinleştirildiğinde, cephanesi olan birimler kendi cephaneleri olmadan doğar ve tüm ikmalini ortak rezervden alır; bu yüzden ilk turda ateş edemez ve ancak rezerv onları ikmal ettiğinde ateş açarlar.",
     "showGrid": "Izgarayı göster",
     "showUnits": "Birimleri göster",
     "hideUnits": "Birimleri gizle",

@@ -185,9 +185,10 @@ export interface BattleTypeTemplate {
   /** Whether this battle type is allowed in ranked matchmaking (defaults to false when omitted). */
   ranked?: boolean;
   /**
-   * Overrides AmmoRule.noInherentAmmo for this battle type: when true, units
-   * spawn with no inherent ammo and draw entirely from the global reserve.
-   * Falls back to the ammo rule default when omitted.
+   * Battle-type override for the "no inherent ammo" rule: when true, units in
+   * this battle type spawn with no inherent ammo and draw their whole load from
+   * the global reserve. Layered below a per-scenario override and above the
+   * default (false); resolved via the BaseGame.noInherentAmmo getter.
    */
   noInherentAmmo?: boolean;
   /**
@@ -249,6 +250,8 @@ export interface GameMetadata {
   objectivesRuleOverride?: ObjectivesRuleOverride;
   /** Scenario's placeable-objectives flag captured at game creation (imported scenarios have no registry entry to read). */
   placeableObjectives?: boolean;
+  /** Scenario's no-inherent-ammo flag captured at game creation (imported scenarios have no registry entry to read). Resolved via the BaseGame.noInherentAmmo getter. */
+  noInherentAmmo?: boolean;
 }
 
 /**

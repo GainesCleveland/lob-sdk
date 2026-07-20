@@ -567,52 +567,6 @@ describe("GameDataManager", () => {
     });
   });
 
-  describe("getNoInherentAmmo", () => {
-    it("defaults to false for the napoleonic era", () => {
-      const napoleonic = GameDataManager.get("napoleonic");
-      expect(napoleonic.getNoInherentAmmo(null)).toBe(false);
-      for (const battleType of napoleonic.getAllDynamicBattleTypes()) {
-        expect(napoleonic.getNoInherentAmmo(battleType)).toBe(false);
-      }
-    });
-
-    it("returns false for an era with no ammo rule (ww2)", () => {
-      const ww2 = GameDataManager.get("ww2");
-      expect(ww2.getNoInherentAmmo(null)).toBe(false);
-      expect(ww2.getNoInherentAmmo("operational")).toBe(false);
-    });
-
-    it("resolves a scenario override merged via customGameRules", () => {
-      const manager = GameDataManager.createWithCustomDefs("napoleonic", {
-        customGameRules: { ammo: { noInherentAmmo: true } },
-      });
-      expect(manager.getNoInherentAmmo(null)).toBe(true);
-    });
-
-    it("resolves a battle-type override over the era default", () => {
-      // Force a non-singleton instance, then override the battle type lookup so
-      // it reports noInherentAmmo (no napoleonic battle type sets it by default).
-      const manager = GameDataManager.createWithCustomDefs("napoleonic", {
-        customGameRules: { ammo: { baseReserve: 1 } },
-      });
-      expect(manager.getNoInherentAmmo("battle")).toBe(false);
-      const battleType = manager.getBattleType("battle");
-      const spy = jest
-        .spyOn(manager, "tryGetBattleType")
-        .mockReturnValue({ ...battleType, noInherentAmmo: true });
-      expect(manager.getNoInherentAmmo("battle")).toBe(true);
-      spy.mockRestore();
-    });
-
-    it("falls back to the rule default for a null or unknown battle type", () => {
-      const manager = GameDataManager.createWithCustomDefs("napoleonic", {
-        customGameRules: { ammo: { noInherentAmmo: true } },
-      });
-      expect(manager.getNoInherentAmmo(null)).toBe(true);
-      expect(manager.getNoInherentAmmo("__nonexistent__")).toBe(true);
-    });
-  });
-
   describe("getUnitDimensions", () => {
     const utm = gameDataManager.getUnitTemplateManager();
     const unitType = utm.getTemplates()[0]!.type;

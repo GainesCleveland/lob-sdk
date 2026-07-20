@@ -535,16 +535,6 @@ export interface AmmoRule {
   ammoReserve: Record<DynamicBattleType, number>;
   /** Gold-to-ammo conversion rate per dynamic battle type. */
   goldToAmmoRate: Record<DynamicBattleType, number>;
-  /**
-   * When true, units with an ammo system carry no inherent ammo load: they
-   * spawn with 0 ammo instead of their template's `ammo`, so all of their
-   * ammunition is drawn from the player's global reserve (refilled at end of
-   * turn by the AmmoSystem). The practical effect at game start is that units
-   * cannot fire on the first turn and only fire from turn 2. Overridable per
-   * battle type via BattleTypeTemplate.noInherentAmmo and per scenario via
-   * customGameRules.
-   */
-  noInherentAmmo: boolean;
 }
 
 export interface SkirmishersRule {

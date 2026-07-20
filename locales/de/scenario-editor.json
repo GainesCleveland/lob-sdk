@@ -52,6 +52,8 @@
     "collapsePanel": "Panel einklappen",
     "allowDynamicArmy": "Dynamische Armee erlauben",
     "allowDynamicArmyHelp": "Wenn aktiviert, bringen Spieler ihre eigene Armee passend zum Matchmaking-Schlachttyp mit und stellen sie in ihren Zonen auf. Wenn deaktiviert, definieren die vorplatzierten Einheiten des Szenarios den gesamten Bestand (die Armeezusammensetzung entfällt).",
+    "noInherentAmmo": "Keine eigene Munition",
+    "noInherentAmmoHelp": "Wenn aktiviert, erscheinen Einheiten mit Munitionssystem ohne eigene Munition und beziehen ihren gesamten Nachschub aus der gemeinsamen Reserve. Sie können daher in der ersten Runde nicht feuern und eröffnen das Feuer erst, wenn die Reserve sie wieder auffüllt.",
     "showGrid": "Raster anzeigen",
     "showUnits": "Einheiten anzeigen",
     "hideUnits": "Einheiten ausblenden",

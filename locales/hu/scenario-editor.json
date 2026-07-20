@@ -52,6 +52,8 @@
     "collapsePanel": "Panel összecsukása",
     "allowDynamicArmy": "Dinamikus sereg engedélyezése",
     "allowDynamicArmyHelp": "Bekapcsolva a játékosok a meccskeresési csatatípus alapján hozzák a saját seregüket, és a zónáikon belül állítják fel. Kikapcsolva a pálya előre elhelyezett egységei adják a teljes sereget (a seregösszetétel kimarad).",
+    "noInherentAmmo": "Nincs saját lőszer",
+    "noInherentAmmoHelp": "Bekapcsolva a lőszerrel rendelkező egységek saját lőszer nélkül jelennek meg, és teljes utánpótlásukat a közös tartalékból veszik, így az első körben nem tudnak tüzelni, és csak akkor nyitnak tüzet, amikor a tartalék feltölti őket.",
     "showGrid": "Rács megjelenítése",
     "showUnits": "Egységek megjelenítése",
     "hideUnits": "Egységek elrejtése",
