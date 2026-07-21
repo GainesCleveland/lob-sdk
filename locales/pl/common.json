@@ -95,7 +95,8 @@
     "matchFound": "Gdy partia zostanie znaleziona, system przekieruje cię do partii.",
     "cancelledBy": "Kolejka została anulowana przez {{username}}.",
     "playersInQueue": "{{count}} graczy szuka",
-    "disconnectedReconnecting": "Utracono Połączenie. Ponowne Łączenie"
+    "disconnectedReconnecting": "Utracono Połączenie. Ponowne Łączenie",
+    "eloBoostActive": "Boost Elo ×{{multiplier}} aktywny"
   },
   "fastMode": "Tryb Szybki",
   "slowMode": "Tryb Wolny",

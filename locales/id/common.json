@@ -95,7 +95,8 @@
     "matchFound": "Ketika permainan telah ditemukan, kamu akan diarahkan ke permainan.",
     "cancelledBy": "Antrean dibatalkan oleh {{username}}.",
     "playersInQueue": "{{count}} pemain mencari",
-    "disconnectedReconnecting": "Koneksi Terputus. Menyambung Ulang"
+    "disconnectedReconnecting": "Koneksi Terputus. Menyambung Ulang",
+    "eloBoostActive": "Boost Elo ×{{multiplier}} aktif"
   },
   "fastMode": "Mode Cepat",
   "slowMode": "Mode Lambat",

@@ -94,7 +94,8 @@
     "matchFound": "Assim que uma partida for encontrada, você será redirecionado para o jogo.",
     "cancelledBy": "A fila foi cancelada por {{username}}.",
     "playersInQueue": "{{count}} jogadores procurando",
-    "disconnectedReconnecting": "Conexão Perdida. Reconectando"
+    "disconnectedReconnecting": "Conexão Perdida. Reconectando",
+    "eloBoostActive": "Boost de Elo ×{{multiplier}} ativo"
   },
   "fastMode": "Modo Rápido",
   "slowMode": "Modo Lento",

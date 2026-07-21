@@ -94,7 +94,8 @@
     "matchFound": "Amint találtunk alkalmas ellenfelet, átleszel irányítva a csatára.",
     "cancelledBy": "A várólistát {{username}} törölte.",
     "playersInQueue": "{{count}} játékos keres",
-    "disconnectedReconnecting": "Kapcsolat Megszakadt. Újracsatlakozás"
+    "disconnectedReconnecting": "Kapcsolat Megszakadt. Újracsatlakozás",
+    "eloBoostActive": "Elo-boost ×{{multiplier}} aktív"
   },
   "fastMode": "Gyors mód",
   "slowMode": "Lassú mód",

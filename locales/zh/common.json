@@ -93,7 +93,8 @@
     "matchFound": "当搜索到匹配对象时，你会自动进入对局。",
     "cancelledBy": "匹配被{{username}}取消了。",
     "playersInQueue": "{{count}}名玩家正在匹配",
-    "disconnectedReconnecting": "连接丢失。正在重新连接"
+    "disconnectedReconnecting": "连接丢失。正在重新连接",
+    "eloBoostActive": "Elo 加成 ×{{multiplier}} 已启用"
   },
   "fastMode": "快速模式",
   "slowMode": "慢速模式",

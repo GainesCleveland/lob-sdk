@@ -89,7 +89,8 @@
     "matchFound": "マッチが見つかると、自動的にゲームに移動します。",
     "cancelledBy": "キューは{{username}}によってキャンセルされました。",
     "playersInQueue": "{{count}}人のプレイヤーが検索中",
-    "disconnectedReconnecting": "接続が切断されました。再接続中"
+    "disconnectedReconnecting": "接続が切断されました。再接続中",
+    "eloBoostActive": "Eloブースト ×{{multiplier}} 有効"
   },
   "fastMode": "高速モード",
   "slowMode": "低速モード",

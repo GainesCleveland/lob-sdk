@@ -94,7 +94,8 @@
     "matchFound": "Bir eşleşme bulunduğunda, oyuna yönlendirileceksiniz.",
     "cancelledBy": "Kuyruk {{username}} tarafından iptal edildi.",
     "playersInQueue": "{{count}} oyuncu aranıyor",
-    "disconnectedReconnecting": "Bağlantı Kesildi. Yeniden Bağlanıyor"
+    "disconnectedReconnecting": "Bağlantı Kesildi. Yeniden Bağlanıyor",
+    "eloBoostActive": "Elo boost ×{{multiplier}} aktif"
   },
   "fastMode": "Hızlı Mod",
   "slowMode": "Yavaş Mod",

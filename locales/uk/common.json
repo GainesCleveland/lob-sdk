@@ -90,7 +90,8 @@
     "matchFound": "Щойно гру буде знайдено, вас буде перенаправлено до гри.",
     "cancelledBy": "Чергу було скасовано {{username}}.",
     "playersInQueue": "{{count}} гравців шукають",
-    "disconnectedReconnecting": "Втрачено З'єднання. Перепідключення"
+    "disconnectedReconnecting": "Втрачено З'єднання. Перепідключення",
+    "eloBoostActive": "Elo-буст ×{{multiplier}} активний"
   },
   "fastMode": "Швидкий режим",
   "slowMode": "Повільний режим",

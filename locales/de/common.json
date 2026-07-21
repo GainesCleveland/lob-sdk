@@ -94,7 +94,8 @@
     "matchFound": "Sobald ein Spiel gefunden wurde, werden Sie zu diesem weitergeleitet.",
     "cancelledBy": "Die Warteschlange wurde von {{username}} abgebrochen.",
     "playersInQueue": "{{count}} Spieler suchen",
-    "disconnectedReconnecting": "Verbindung Verloren. Wiederverbindung"
+    "disconnectedReconnecting": "Verbindung Verloren. Wiederverbindung",
+    "eloBoostActive": "Elo-Boost ×{{multiplier}} aktiv"
   },
   "fastMode": "schneller Modus",
   "slowMode": "langsamer Modus",
