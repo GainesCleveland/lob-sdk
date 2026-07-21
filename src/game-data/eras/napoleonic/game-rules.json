@@ -53,7 +53,7 @@
     "maxOrgRadiusModifier": -0.6
   },
   "objectives": {
-    "radius": 50,
+    "radius": 64,
     "vpPressureThreshold": 0.4,
     "vpTicksUnderPressureBase": 0.0,
     "vpBasePoints": 55,
