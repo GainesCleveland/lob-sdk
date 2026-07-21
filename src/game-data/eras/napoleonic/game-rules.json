@@ -20,7 +20,7 @@
   },
   "ammo": {
     "baseReserve": 250000,
-    "regenerationBaseRate": 0.08,
+    "regenerationBaseRate": 0.06,
     "regenerationBonusRate": 0.16,
     "maxHpConsumptionReduction": -0.5,
     "ammoReserve": {
