@@ -73,7 +73,7 @@
       }
     ],
     "pushStrength": 10,
-    "pushDistance": 1
+    "pushDistance": 2.5
   },
   {
     "name": "dragoons",
@@ -94,7 +94,7 @@
     "runCost": 10000,
     "hp": 55000,
     "org": 82500,
-    "shattersAtOrg": -10000,
+    "shattersAtOrg": -20000,
     "routesAtOrg": 2000,
     "recoversAtOrg": 8000,
     "ralliesAtOrg": 25000,
@@ -188,7 +188,7 @@
     "type": 4,
     "category": "guardsInfantry",
     "rangedAttack": 1800,
-    "meleeAttack": 4900,
+    "meleeAttack": 5000,
     "meleeDefense": 5800,
     "meleeDamageType": "bayonet",
     "rangedDamageTypes": ["musket"],
@@ -208,7 +208,7 @@
     "routesAtOrg": 2500,
     "recoversAtOrg": 12500,
     "ralliesAtOrg": 22500,
-    "stamina": 180000,
+    "stamina": 185000,
     "orgRadius": 52,
     "orgRadiusBonus": 1900,
     "movementSound": "infantry-movement",
@@ -258,8 +258,8 @@
         }
       }
     ],
-    "pushStrength": 10,
-    "pushDistance": 1
+    "pushStrength": 12,
+    "pushDistance": 2.5
   },
   {
     "name": "lancers",
@@ -280,7 +280,7 @@
     "runCost": 10000,
     "hp": 45000,
     "org": 90000,
-    "shattersAtOrg": -15000,
+    "shattersAtOrg": -20000,
     "routesAtOrg": 2000,
     "recoversAtOrg": 7500,
     "ralliesAtOrg": 20000,
@@ -450,7 +450,7 @@
       }
     ],
     "pushStrength": 10,
-    "pushDistance": 1
+    "pushDistance": 2.5
   },
   {
     "name": "cuirassiers",
@@ -471,13 +471,13 @@
     "runCost": 10000,
     "hp": 60000,
     "org": 90000,
-    "shattersAtOrg": -15000,
+    "shattersAtOrg": -25000,
     "routesAtOrg": 2000,
     "recoversAtOrg": 7500,
     "ralliesAtOrg": 20000,
-    "stamina": 115000,
+    "stamina": 120000,
     "orgRadius": 52,
-    "orgRadiusBonus": 800,
+    "orgRadiusBonus": 900,
     "movementSound": "cavalry-movement",
     "manpower": 150,
     "gold": 100,
@@ -627,7 +627,7 @@
       }
     ],
     "pushStrength": 8,
-    "pushDistance": 1
+    "pushDistance": 2.5
   },
   {
     "name": "hussars",
@@ -648,7 +648,7 @@
     "runCost": 10000,
     "hp": 45000,
     "org": 80000,
-    "shattersAtOrg": -10000,
+    "shattersAtOrg": -15000,
     "routesAtOrg": 2000,
     "recoversAtOrg": 8000,
     "ralliesAtOrg": 20000,
@@ -757,7 +757,7 @@
     "runCost": 10000,
     "hp": 45000,
     "org": 40000,
-    "shattersAtOrg": -10000,
+    "shattersAtOrg": -15000,
     "routesAtOrg": 2000,
     "recoversAtOrg": 8000,
     "ralliesAtOrg": 20000,
@@ -866,8 +866,8 @@
         }
       }
     ],
-    "pushStrength": 10,
-    "pushDistance": 1
+    "pushStrength": 12,
+    "pushDistance": 2.5
   },
   {
     "name": "4lb_artillery",
